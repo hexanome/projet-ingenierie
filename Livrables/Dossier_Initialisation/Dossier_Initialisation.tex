@@ -15,14 +15,30 @@ Dans le cadre d'un projet d'ingénierie, l'utilité d'un dossier d'initialisatio
 %que mettre dans cette partie->voir avec Jan.
     
     \chapter{Rappel du problème}
-Le COPEVUE a lancé un appel d'offre dans le cadre de la réalisation d'un système de monitoring de sites isolés, il s'agit donc de concevoir en premier lieu une solution technique permettant de répondre aux mieux aux exigences fonctionnelles et non fonctionnelles que le COPEVUE formule. De façon synthétique notre équipe va proposer une solution permettant de surveiller des sites naturels difficiles d'accès (souvent à cause des conditions environnementales) et peu peuplés. 
+Le COPEVUE a lancé un appel d'offre dans le cadre de la réalisation d'un système de monitoring de sites isolés. Il s'agit donc de concevoir en premier lieu une solution technique permettant de répondre aux mieux aux exigences fonctionnelles et non fonctionnelles que le COPEVUE formule. De façon synthétique notre équipe va proposer une solution permettant de surveiller des sites naturels difficiles d'accès (souvent à cause des conditions environnementales) et peu peuplés. Dans ces sites isolés sont souvent regroupés des postes de travail et ces zones doivent pouvoir être surveillées en dépit de la distance qui les sépare du bureau de contröle.
     \section{Le contexte}
-    Voici un peu de texte de section.
+Notre cas d'étude se limite pour l'instant à considérer une situation simple : comment pouvoir maintenir de manière rentable des réserves de tel ou tel composé à un niveau correct bien que le site de stockage soit situer dans des zones difficiles d'accès ? L'idéal serait donc de pouvoir suivre a distance l'évolution d'un niveau d'un composé en fonction du temps.Le ravitaillement serait ainsi plus raisonnable car on saurait alors la quantité de composant à acheminer sur place. Trouver une solution fonctionnelle à cette problématique permettrait ainsi d'économiser en frais de maintenance mais aussi et surtout d'éviter certaines catastrophe écologique comme par exemple un manque d'eau dans un réservoir lors d'un feu de forêt ou encore une fuite de carburant d'un réservoir de forêt.
     \section{Les objectifs}
-    Voici un peu de texte de section.
+Il s'agit donc d'étudier et de concevoir un système autonome et qui pourra être adapté à de nombreux sites autour du monde (autant dans les zones chaudes que dans les zones froides) de mesure et de monitoring à distance de zones de travail isolées. Il devra être possible de même d'éffectuer des actions de pilotage, de configuration et de maintenance des zones. Il est intéressant de rester assez général dans les différentes actions qu'il sera possible de mener à distance afin d'avoir une solution évolutive qui saura s'adapter à d'autres cas de figure.
+Voici quelques éléments permettant d'esquisser un système qui pourrait convenir :
+\begin{itemize}
+\item Choisir une batterie de capteurs adpatés aux différents sites à couvrir.
+\item Concevoir l'architecture d'un système collectant les données.
+\item Stocker les données récupérées dans toutes les zones sur un serveur distant.
+\item Traiter ces données pour les restituer à un utilisateur.
+\item Permettre d'agir sur le système par des fonctions simples (ordre de ravitaillement, de nettoyage …)
+\item Pouvoir faire évoluer le système vers des surveillances de zones plus complexes.
+\end{itemize}
     
     \chapter{Les contraintes générales}
-    Voici un peu de texte.
+On détache certaines contraintes liées à la réalisation de ce type de système :
+\begin{itemize}
+\item Le système doit être très peu grourmand en énergie car celle-ci sera parfois rare dans les régions à équiper.
+\item Le système doit être complètement autonome car l'intervention humaine sur ce type de zone est rare.
+\item Le point précédent impose que l'on puisse maintenir et configurer le système à distance.
+\item Le système doit supporter des conditions environementales très rude (de -50 degrès à 50 degrès environ).
+\end{itemize}
+
     \section{Confidentialité}
     Voici un peu de texte de section.
     \section{Etude de l'existant}
