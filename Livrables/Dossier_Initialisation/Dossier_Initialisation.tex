@@ -33,7 +33,18 @@ Voici quelques éléments permettant d'esquisser un système qui pourrait conven
     \chapter{Les contraintes générales}
 Dans ce projet, il sera important de bien calculer les surcoûts éventuels liés au développement du système. Nous veillerons à garde notre solution compétitive vis à vis des autres solutions disponibles sur le marché. Il faudra de même prendre en compte le coût de maintenance et d'exploitation d'un tel système.
     \section{Etude de l'existant}
-    Voici un peu de texte de section.
+    \subsection{Solution existante interne à COPEVUE}
+Il n’existe actuellement aucun système de monitoring de site isolés en sein du COPEVUE. A ce jour, les sites isolés sont non automatisés, ils sont surveillés manuellement. Il n’existe aucune communication entre les sites et un quelconque serveur, ce qui necessite un déplacement constant pour maintenir les installations. Ce déplacement entraine un coup important.Il n’existe actuellement aucune entreprise ou projet qui permet de répondre à notre cahier des charges. Cependant, certains d’entre eux ce rapproche suffisament de notre cas, nous allons lister ici les informations utiles à leur sujet.
+	\subsection{Solution existante concurrente}
+\begin{itemize}
+\item One Touch Automation :
+C’est l’entreprise qui se rapproche le plus de notre futur système. Cette entreprise permet un système de monitoring abouti grâce à une très basse consommation de leurs outils. Ils surveillent des sites isolés grâce à des caméras de surveillance CCTV alimentés par un système hybride solaire/éolien. Le système est portable ou fixe.
+\item MeerCam :
+Système de surveillance automatisé de bâtiment grâce à des caméras basse consommation. Ces caméras sont équipés de trois batteries permettant une durée de vie de quatre ans.
+\item boitier ElOcom :
+Les boitiers ELOcom équipent un réseau de camion. Ce système permet la localisation et la télécommunication avec un serveur distant (liaison CANbus entre l’antenne GSM et le GPS).
+\end{itemize}
+
     \section{Exigences fonctionnelles}
 \begin{itemize}
 \item Le système doit pouvoir récupérer des données de capteurs tout autours du monde.
@@ -47,29 +58,68 @@ Dans ce projet, il sera important de bien calculer les surcoûts éventuels lié
 \end{itemize}
 
     \section{Exigences non fonctionnelles}
-%voir avec aubry pour les exigences non fonctionnelles
-%on recopie l'énoncé ?    
+\begin{itemize}
+\item INTEGRATION DE L EXISTANT : réaliser un système en adéquation avec les personnes qui travaillent déjà à la surveillance des sites sensibles, à savoir les camionneurs.
+\item ROBUSTESSE : le système doit toujours redémarré dans un état stable suite à des éventuels pannes ou redémarrage.
+\item FIABILITE : le système ne doit pas bugger ou se bloquer car tout réparage sur site du sytème est à proscrire.
+\item EVOLUTIVITE : le système conçu à l'origine pour la surveillance de cuves doit pouvoir s'adapter à de nouvelles conditions environnementales.
+\item TECHNOLOGIES : le système devra utiliser les technologies GPS et GPRS.
+\item GENERICITE : le système doit pouvoir être adapté rapidement à de nouvelles situations, il serait intéressant de considérer une démarche de progicialisation.
+\item REUTILISATION : le système conçu doit se reposer sur des technologies logicielles connues et aisément réutilisables. Il sera nécessaire de préciser quels seront les composants réutilisable.
+\item ERGONOMIE : Afin de transmettre l'information rapidement à un non informaticien, il faudra adapter l'IHM à la plateforme de travail et veiller à ce que les informations soient claires.
+\item TRACABILITE : Il est nécessaire de garder un journal d'activité du système, ce journal devra être gardé au minimum 2 ans.
+\end{itemize}
+   
     \chapter{Organisation du travail}
-    Voici un peu de texte.
+Le groupe de travail est divisé en 3 entités qui sont :
+\begin{itemize}
+\item \textbf{Le Chef de Projet} représenté par Mr Alexandre LEFOULON chargé de piloter le projet de réponse à l'appel d'offre lancé par COPEVUE concernant la conception d'un système de monitoring isolé.
+\item \textbf{Le Responsable Qualité et Documentation} représenté par Mr Jan KEROMNES chargé de dresser en accord avec les autres membres du projet les règles de travail (gestion des best practices, validation des tâches) à appliquer pour mener à bien la réponse à l'appel d'offres.
+\item \textbf{Le Groupe d'Etude Informatique} représenté par Melle Tuuli Tyrvaïnen, Mr Quentin CALVEZ, Mr Matthier COQUET et Mr Xavier SAUVAGNAT chargés de spécifier et de concevoir une solution technologique en accord avec les besoins du COPEVUE.
+\end{itemize}
+
+    
     \section{Chef de projet (CdP)}
-    Voici un peu de texte de section.
+Le chef de projet sera chargé de la rédaction de certains documents de lancements et organisationnels (ceux-ci sont détaillés plus loin).Il sera de même chargé de répartir le travail au sein de son groupe d'ingénierie. Il doit connaître l'avancement du projet et animer les séances de travail. A l'issue de chacune d'elle il devra dégager un bilan de séance et juger de l'avancement des différentes tâches. Avec l'aide du responsable qualité il veillera à valider chaque document selon les best practices et les modalités de validation définies lors de la phase d'initialisation. Dans le cas ou le projet viendrait à prendre du retard, le chef du projet veillera à redéfinir les axes de travail dont le groupe s'est peut-être trop écarté.Le chef de projet aura de même un rôle fédérateur afin d'emmener le groupe de travail vers la séléction de leur appel d'offre.
     \section{Responsable Qualité, Méthode et Documentation}
-    Voici un peu de texte de section.
+Le responsable qualité, méthode et documentation sera chargé d'insufler les bonnes pratiques au sein du groupe de travail. Celles-ci permettront ainsi de produire un travail précis et répondant le mieux aux exigences de l'appel d'offre. Ces bonnes pratiques seront symbolisées par des méthodes de travail et par l'utilisation de logiciels et de langage de modélisation précis. Tout comme pour le chef de projet, le RQ sera chargé de la rédaction de certains documents détaillés ci-après. Cet acteur indispensable à la survie d'un projet sera en constante communication avec le GEI afin de veiller à ce que l'application des bonnes pratiques soit effective et n'induise pas un surcoût en temps.
     \section{Groupe d'études informatique}
-    Voici un peu de texte de section.
+Le groupe d'étude informatique composé de 5 personnes est le noyau dur du groupe de travail. Dans le cadre de la réponse à l'appel d'offre pour la première phase du projet (étude de l'existant, étude de faisabilité et spécification des besoins) les rôles ont été répartis ainsi  :
+\begin{itemize}
+\item \textbf{Tuuli TYRVAINEN} : est chargée d'étudier les possibilités de production d'énergie dans les pays froids et dont les contraintes d'ensoleillement sont importantes, il s'agit donc des pays proches du cercle polaire (Norvège, Finlande, Suède…).
+\item \textbf{Quentin CALVEZ} : est chargé d'étudier les différents moyens de productions et de stockage d'énergie afin de répondre aux contraintes d'économie d'énergie induites par les besoins du COPEVUE. Il sera en lien direct avec Tuuli Tyrvainen afin de gérer le cas des pays nordiques.
+\item \textbf{Matthieu COQUET} : est chargé d'éffectuer l'étude de l'existant au sein de COPEVUE ainsi que l'étape de benchmarking visant à prendre des connaissances des éventuelles solutions présentes sur le marché.
+\end{itemize}
+
     
     \chapter{Listes des livrables attendus}
-    Voici un peu de texte.
+Voici une description des livrables qui seront rendus à l'issue de la phase 1. Ce dossier d'initialisation sera donc recomplété lors du commencement des phases 2 et 3.
     \section{Chef de projet}
-    Voici un peu de texte de section.
+Livrables du chef de projet :
+\begin{itemize}
+\item \textbf{Le Dossier d'Initialisation} : Ce document sert de référentiel commun entre le COPEVUE et notre équipe qui proposera une solution. Celui-ci permet de répertorier et de décrire chaque livrable. Pour la plupart des livrables, on définit leurs plan généraux. Ce livrable informera le COPEVUE des étapes d’élaboration de la solution la plus adaptée à la gestion des sites isolés. Le contenu de ce dossier est donc défini selon les parties précisées dans le sommaire (Livrables, Macro-Phasage, Répartition des rôles, Gestion des risques).
+\item \textbf{Le Relevé de Décisions} : Dossier rédigé qui rend compte des décisions prisent lors des revues de travail au sein des séances. Il justifiera les décisions concernant en particulier le dossier de faisabilité (pour la phase 1) et sera mis à jour tout au long du déroulement du projet.
+\item \textbf{La Fiche d'Argumentation Commerciale} : Ce document permettra de présenter le produit sous un angle commercial. Il donnera une vue synthétique, claire et fonctionnel de notre réponse à l'appel d'offre lancé par le COPEVUE.
+\item \textbf{La Rédaction d'une procédure} : Le chef de projet devra rédiger la procédure de son choix à savoir : soit la \og décomposition d'un sytème et choix de sous projets \fg ou \og gestion de configuration \fg.
+\end{itemize}
+
     \section{Responsable Qualité}
-    Voici un peu de texte de section.
+Livrables du responsable qualité :   
+\begin{itemize}
+\item \textbf{Le Glossaire Commun} : Ce document doit être rempli par tout à chacun au sein du groupe et servira notamment pour la compréhension des termes complexes rencontrés tout au long de la rédaction des dossiers (pour le CdP, le RQ, le GEI).
+\item \textbf{Le Dossier de structuration de la documentation et d'organisation de la production} : Dossier précisant les processus à appliquer pour gérer la production et la gestion des documents à fournir au client. Ce document a l'avantage qu'il s'agit d'un point d'attache procédurale et que chacun peut aller se renseigner dedans sur les règles impératives à appliquer lorsque l'on rédige un document.
+\item \textbf{Rédaction d'une procédure} : 
+\item \textbf{La Rédaction de la Best Practice 1} : cette Best Practice devra répondre à la problématique \og Comment rédiger une bonne procédure ?\fg
+\item \textbf{Rédaction du dossier de synthèse} :
+\end{itemize}
+
     \section{Groupe d'études informatique}
     Voici un peu de texte de section.
     
     \chapter{Organigramme des tâches}
-    Voici un peu de texte.
+%inséerer le diagramme de redmine
     \section{Macro-Phasage}
+%insérer le diagramme de redmine
     Voici un peu de texte de section.
     \section{Diagramme de Gantt}
     Voici un peu de texte de section.
