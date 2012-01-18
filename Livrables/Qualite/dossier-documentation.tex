@@ -122,9 +122,7 @@ L'auteur conserve une copie papier de la fiche.
 Si la vérification / validation est acceptée, le document passe à l'état ``vérifié'' / ``validé'', sinon il revient en état de ``travail''.
 L'auteur du document est chargé d'indiquer en page de garde du document l'état dans lequel le document se trouve, ainsi que les noms des vérificateurs / validateurs et les dates de vérification / validation.
 
-\paragraph{NB}
-
-Pour chaque document à valider, une date de retour des remarques est convenue. Si aucun retour n'est parvenu à l'auteur à la date prévue, le document est considéré comme validé.
+\paragraph{NB} Pour chaque document à valider, une date de retour des remarques est convenue. Si aucun retour n'est parvenu à l'auteur à la date prévue, le document est considéré comme validé.
 
 \subsection{Archivage du document}
 
@@ -141,6 +139,79 @@ Ainsi, chaque document reçoit une référence unique au sein du projet.
 \subsection{Structure}
 
 \section{Gestion des versions - révisions}
+
+Chaque modification d’un document doit être faite en accord avec les dispositions d’approbation des documents (voir chapitre : "cycle de vie d’un document"). 
+
+L’auteur de la modification est responsable :
+
+\begin{itemize}
+\item du respect du cycle de vérification et validation,
+\item de la diffusion des nouvelles versions,
+\item de la révision des modifications.
+\end{itemize}
+
+Le numéro de version qui apparaît sur un document correspond à la version de l'application logicielle concernée.
+
+L'indice de révision est propre à une modification :
+
+\begin{itemize}
+\item il est incrémenté à chaque modification de contenu ou de forme sur un ou plusieurs documents.
+\end{itemize}
+
+Pour certains documents, il est important de faire apparaître clairement les évolutions d'une révision à l'autre du document. A cet effet, l'option révision de Word est utilisée de la façon suivante :
+
+\begin{itemize}
+
+\item sauvegarder le document avec son indice de révision en dernier caractère (exemple : EDASTTO2.doc  contient la révision 2 du document EDASTTO)
+
+\item dupliquer le document à modifier et le sauvegarder avec l'indice de révision incrémenté (exemple : EDASTTO3.doc)
+
+\item supprimer toute trace des évolutions antérieures s'il y en avait (exemple : dans EDASTTO3.doc), pour cela :
+
+\begin{itemize}
+\item choisir Outils Révisions
+\item choisir "Accepter tout"
+\end{itemize}
+
+\item puis deux possibilités :
+
+\begin{itemize}
+
+\item effectuer les modifications en une ou plusieurs séances de travail (exemple : dans EDASTTO3.doc) puis faire apparaître les modifications par rapport à l'ancienne version :
+
+\begin{itemize}
+\item choisir Outils Révisions
+\item choisir "Comparer versions"
+\item sélectionner le nom du document original (exemple : EDASTTO2.DOC), puis "Ouvrir"
+\end{itemize}
+
+\item faire apparaître directement les modifications :
+
+\begin{itemize}
+\item choisir Outils Révisions
+\item cocher la case "Marquer les corrections en cours de frappe"
+\end{itemize}
+
+\end{itemize}
+\end{itemize}
+
+Word affiche la version modifiée du document (exemple : dans EDASTTO3.doc) avec des marques de révision indiquant le texte corrigé (trait à gauche). Ces marques de révision resteront actives dans le document jusqu'à la prochaine évolution.
+
+\paragraph{Remarques}
+
+\begin{itemize}
+\item pour que seules des marques de révision apparaissent dans les marges, choisir Outils Révisions Options, positionner la marque du Texte inséré à (Aucune) , la marque du Texte supprimé à Masqué et la marque des Lignes revues à Barre à gauche
+\item si une image est modifiée, aucune marque de révision n'apparaît dans la marge
+\item les corrections de fautes d'orthographe, de frappe ou de mise en page ne doivent pas apparaître avec des marques de révision. Pour cela, effectuer ce type de modifications sur le document initial (exemple : dans EDASTTO2.doc) avant de le dupliquer.
+\end{itemize}
+
+\paragraph{Attention} Le document original choisi pour effectuer la révision (dans notre exemple EDASTTO2.DOC), est fonction du destinataire auquel s'adresse cette révision :
+
+\begin{itemize}
+\item soit le destinataire aura en main toutes les révisions successives du document ;
+\item soit le document transmis fera la somme de toutes les relectures successives.
+\end{itemize}
+
 
 \section{Outils de production de la documentation}
 

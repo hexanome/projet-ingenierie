@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.1.5)  18 JAN 2012 09:55
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.1.5)  18 JAN 2012 13:47
 entering extended mode
  %&-line parsing enabled.
 **dossier-documentation.tex
@@ -271,12 +271,6 @@ Type X to quit or <RETURN> to proceed,
 or enter new name. (Default extension: sty)
 
 Enter file name: 
-! Interruption.
-<to be read again> 
-                   }
-l.11 \usepackage
-                [T1]{fontenc}^^M
-? 
 (/usr/share/texmf-texlive/tex/latex/base/fontenc.sty
 Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
 
@@ -448,12 +442,18 @@ LaTeX Info: Redefining \up on input line 18.
 ) [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (12.2478pt too wide) in paragraph at lines 92--93
+Overfull \hbox (12.2478pt too wide) in paragraph at lines 90--91
 \T1/lmr/m/n/10 être con-signées dans cette fiche sauf les re-mar-ques rel-a-tiv
 es à la forme du doc-u-ment (fautes de frappe, d'orthographe,
  []
 
-[2] [3] (./dossier-documentation.aux) ) 
+[2]
+Overfull \hbox (33.52525pt too wide) in paragraph at lines 167--168
+[]\T1/lmr/m/n/10 dupliquer le doc-u-ment à mod-i-fier et le sauve-g-arder avec 
+l'indice de révi-sion in-cré-menté (ex-em-ple : EDASTTO3.doc) 
+ []
+
+[3] [4] (./dossier-documentation.aux) ) 
 Here is how much of TeX's memory you used:
  2422 strings out of 495061
  30539 string characters out of 1182622
@@ -461,14 +461,14 @@ Here is how much of TeX's memory you used:
  5599 multiletter control sequences out of 15000+50000
  25380 words of font info for 22 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 25i,5n,24p,412b,127s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 25i,5n,24p,490b,180s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-
 ec.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fon
 ts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb
 >
-Output written on dossier-documentation.pdf (3 pages, 97772 bytes).
+Output written on dossier-documentation.pdf (4 pages, 105230 bytes).
 PDF statistics:
- 25 PDF objects out of 1000 (max. 8388607)
+ 28 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
