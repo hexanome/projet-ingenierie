@@ -1,26 +1,25 @@
 
 %Corps du document :
-\setlength{\parindent}{1cm}
-\begin{document}
-    \maketitle
-    \tableofcontents
-    
+%\setlength{\parindent}{1cm}    
 
-\chapter{Introduction}
+\part{Introduction}
+
 Le but de ce dossier d'initialisation est de poser les bases nécessaires au bon déroulement du projet d'ingénierie. Nous répondons dans l'ensemble des documents produits par l'hexanôme H4111 à l'appel d'offre lancé par le COPEVUE visant à concevoir un Système de monitoring à distance de sites isolés. Dans ce document sont détaillés les constituants même du projet. Nous insisterons donc sur les points de vue organisationnels liés à la conception de notre solution technique.Après avoir resitué le contexte du problème, il s'agira de définir les objectifs ainsi que les contraintes liés à ce type de projet. Sont détaillées aussi dans ce document, les méthodes de travail,la répartition des rôles au sein du groupe d'ingénierie ainsi que le planning de répartition des tâches et des charges de travail. Une description précise des livrables sera effectuée et nous donnerons un aperçu des risques que nous sommes susceptible de rencontrer.
 
-    \chapter{Contexte du document}
+\part{Contexte du document}
 Dans le cadre d'un projet d'ingénierie, l'utilité d'un dossier d'initialisation est double. Tout d'abord, celui-ci permet de préciser au client quelle seront les modalités formelles des documents et des livrables qui lui seront fournis. Ce dossier permet de lancer le projet en ce qu'il pose les bases et détaille le contenu de ce que le groupe d'ingénierie va produire tout au long des phases de vie d'un projet (spécification, conception, réalisation, tests, intégration, recette…).D'autre part, ce dossier d'initialisation sert de référentiel commun au groupe de travail. Il permet de clarifier les procédures de travail au sein du groupe humain. Ainsi s'il arrive qu'un acteur s'éloigne de ses objectifs principaux, il suffira de se référer au dossier d'initialisation pour recadrer son travail. Le Macro-Phasage permet de même de prévoir l'évolution du travail et de constater les éventuels écarts de entre ce qui avait été prévu et ce qui a été réellement fait, c'est donc un outil de gestion de risque.
-    \chapter{Documents de référence}
+\part{Documents de référence}
 %que mettre dans cette partie->voir avec Jan.
     
-    \chapter{Rappel du problème}
+\part{Rappel du problème}
 Le COPEVUE a lancé un appel d'offre dans le cadre de la réalisation d'un système de monitoring de sites isolés. Il s'agit donc de concevoir en premier lieu une solution technique permettant de répondre aux mieux aux exigences fonctionnelles et non fonctionnelles que le COPEVUE formule. De façon synthétique notre équipe va proposer une solution permettant de surveiller des sites naturels difficiles d'accès (souvent à cause des conditions environnementales) et peu peuplés. Dans ces sites isolés sont souvent regroupés des postes de travail et ces zones doivent pouvoir être surveillées en dépit de la distance qui les sépare du bureau de contröle.
-    \section{Le contexte}
+\section{Le contexte}
 Notre cas d'étude se limite pour l'instant à considérer une situation simple : comment pouvoir maintenir de manière rentable des réserves de tel ou tel composé à un niveau correct bien que le site de stockage soit situer dans des zones difficiles d'accès ? L'idéal serait donc de pouvoir suivre a distance l'évolution d'un niveau d'un composé en fonction du temps.Le ravitaillement serait ainsi plus raisonnable car on saurait alors la quantité de composant à acheminer sur place. Trouver une solution fonctionnelle à cette problématique permettrait ainsi d'économiser en frais de maintenance mais aussi et surtout d'éviter certaines catastrophe écologique comme par exemple un manque d'eau dans un réservoir lors d'un feu de forêt ou encore une fuite de carburant d'un réservoir de forêt.
-    \section{Les objectifs}
+
+\section{Les objectifs}
 Il s'agit donc d'étudier et de concevoir un système autonome et qui pourra être adapté à de nombreux sites autour du monde (autant dans les zones chaudes que dans les zones froides) de mesure et de monitoring à distance de zones de travail isolées. Il devra être possible de même d'éffectuer des actions de pilotage, de configuration et de maintenance des zones. Il est intéressant de rester assez général dans les différentes actions qu'il sera possible de mener à distance afin d'avoir une solution évolutive qui saura s'adapter à d'autres cas de figure.
 Voici quelques éléments permettant d'esquisser un système qui pourrait convenir :
+
 \begin{itemize}
 \item Choisir une batterie de capteurs adpatés aux différents sites à couvrir.
 \item Concevoir l'architecture d'un système collectant les données.
@@ -30,10 +29,11 @@ Voici quelques éléments permettant d'esquisser un système qui pourrait conven
 \item Pouvoir faire évoluer le système vers des surveillances de zones plus complexes.
 \end{itemize}
     
-    \chapter{Les contraintes générales}
+\part{Les contraintes générales}
 Dans ce projet, il sera important de bien calculer les surcoûts éventuels liés au développement du système. Nous veillerons à garde notre solution compétitive vis à vis des autres solutions disponibles sur le marché. Il faudra de même prendre en compte le coût de maintenance et d'exploitation d'un tel système.
-    \section{Etude de l'existant}
-    \subsection{Solution existante interne à COPEVUE}
+
+\section{Etude de l'existant}
+\subsection{Solution existante interne à COPEVUE}
 Il n’existe actuellement aucun système de monitoring de site isolés en sein du COPEVUE. A ce jour, les sites isolés sont non automatisés, ils sont surveillés manuellement. Il n’existe aucune communication entre les sites et un quelconque serveur, ce qui necessite un déplacement constant pour maintenir les installations. Ce déplacement entraine un coup important.Il n’existe actuellement aucune entreprise ou projet qui permet de répondre à notre cahier des charges. Cependant, certains d’entre eux ce rapproche suffisament de notre cas, nous allons lister ici les informations utiles à leur sujet.
 	\subsection{Solution existante concurrente}
 \begin{itemize}
@@ -70,7 +70,7 @@ Les boitiers ELOcom équipent un réseau de camion. Ce système permet la locali
 \item TRACABILITE : Il est nécessaire de garder un journal d'activité du système, ce journal devra être gardé au minimum 2 ans.
 \end{itemize}
    
-    \chapter{Organisation du travail}
+\part{Organisation du travail}
 Le groupe de travail est divisé en 3 entités qui sont :
 \begin{itemize}
 \item \textbf{Le Chef de Projet} représenté par Mr Alexandre LEFOULON chargé de piloter le projet de réponse à l'appel d'offre lancé par COPEVUE concernant la conception d'un système de monitoring isolé.
@@ -92,7 +92,7 @@ Le groupe d'étude informatique composé de 5 personnes est le noyau dur du grou
 \end{itemize}
 
     
-    \chapter{Listes des livrables attendus}
+    \part{Listes des livrables attendus}
 Voici une description des livrables qui seront rendus à l'issue de la phase 1. Ce dossier d'initialisation sera donc recomplété lors du commencement des phases 2 et 3.
     \section{Chef de projet}
 Livrables du chef de projet :
@@ -116,7 +116,7 @@ Livrables du responsable qualité :
     \section{Groupe d'études informatique}
     Voici un peu de texte de section.
     
-    \chapter{Organigramme des tâches}
+    \part{Organigramme des tâches}
 %inséerer le diagramme de redmine
     \section{Macro-Phasage}
 %insérer le diagramme de redmine
@@ -124,7 +124,7 @@ Livrables du responsable qualité :
     \section{Diagramme de Gantt}
     Voici un peu de texte de section.
     
-    \chapter{Modalités de suivi}
+    \part{Modalités de suivi}
     Voici un peu de texte.
     \section{Les règles de suivi}
     Voici un peu de texte de section.
@@ -133,17 +133,17 @@ Livrables du responsable qualité :
     \section{Procédures de révisions du planning}
     Voici un peu de texte de section.
     
-    \chapter{Gestion des risques}
+    \part{Gestion des risques}
     Voici un peu de texte.
     \section{Risques concernant l'application du projet}
     Voici un peu de texte de section.
     \section{Risques propres au projet}
     Voici un peu de texte de section.
     
-    \chapter{Conclusion}
+    \part{Conclusion}
     Voici un peu de texte.
     
-    \chapter{Annexes}
+    \part{Annexes}
     Voici un peu de texte.
     \section{Les fiches de tâche}
     Voici un peu de texte de section.
@@ -151,7 +151,3 @@ Livrables du responsable qualité :
     Voici un peu de texte de section.
     \section{Exemple de fiche de séance}
     Voici un peu de texte de section.
-
-
-
-\end{document}
