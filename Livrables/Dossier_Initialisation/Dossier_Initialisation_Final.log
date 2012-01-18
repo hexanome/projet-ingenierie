@@ -1,13 +1,20 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2012.1.16)  18 JAN 2012 11:20
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdftex 2012.1.16)  18 JAN 2012 11:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **Dossier_Initialisation_Final.tex
 (./Dossier_Initialisation_Final.tex
-LaTeX2e <2009/09/24>
-Babel <v3.8l> and hyphenation patterns for english, dumylang, nohyphenation, ge
-rman-x-2009-06-19, ngerman-x-2009-06-19, afrikaans, ancientgreek, ibycus, arabi
-c, armenian, basque, bulgarian, catalan, pinyin, coptic, croatian, czech, danis
+! Undefined control sequence.
+l.6 \documentclass
+                  [a4paper]{article}
+? 
+! Emergency stop.
+l.6 \documentclass
+                  [a4paper]{article}
+End of file on the terminal!
+
+!  ==> Fatal error occurred, no output PDF file produced!
+zech, danis
 h, dutch, ukenglish, usenglishmax, esperanto, estonian, ethiopic, farsi, finnis
 h, french, galician, german, ngerman, swissgerman, monogreek, greek, hungarian,
  icelandic, assamese, bengali, gujarati, hindi, kannada, malayalam, marathi, or
