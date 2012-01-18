@@ -128,14 +128,23 @@ Pour chaque document à valider, une date de retour des remarques est convenue. 
 
 \subsection{Archivage du document}
 
+Lorsqu'un document est périmé, le responsable chargé de la gestion de la documentation l'archive et veille à informer tous les détenteurs du document de sa cessation d'applicabilité.
+
 \section{Identification et structure de la documentation}
 
 \subsection{Identification}
+
+Afin d’assurer l’efficacité de la gestion de la documentation, il faut prévoir un mécanisme normalisé d’identification des documents (homogénéité).
+
+Ainsi, chaque document reçoit une référence unique au sein du projet.
+
 \subsection{Structure}
 
 \section{Gestion des versions - révisions}
 
 \section{Outils de production de la documentation}
+
+Tout nouveau document est produit sur PC ou Macintosh, en utilisant un logiciel d'édition de document compatible avec la technologie Latex, permettant de générer des documents homogènes et de grande qualité.
 
 \section{Classement}
 
@@ -144,6 +153,12 @@ Pour chaque document à valider, une date de retour des remarques est convenue. 
 \subsection{Répertoires}
 \subsection{Noms des fichiers}
 \subsection{Procédures de sauvegarde et archivage}
+
+Le répertoire du projet est sauvegardé en continu par la procédure automatique des serveurs de GitHub. Les différentes versions des documents sont archivées par le gestionnaire de révision Git, qui référence les sources Latex de tous les documents et enregistre leurs modifications au cours du temps, au sein du répertoire de travail Git.
+
+La copie centrale de ce répertoire de travail se trouve sur les serveurs de GitHub, et chaque membre travaillant sur les documents possède sa propre copie du répertoire de travail, laquelle il synchronise régulièrement avec le système de révision central. Ainsi, en cas de panne majeur sur la copie centrale ou sur l'une des copies, aucun travail n'est perdu car il suffit de restaurer un répertoire de travail en le clonant à partir d'un autre.
+
+Lorsque l'accès immédiat à un document n'est plus indispensable, le document est archivé par sécurité. Si le document est périmé, le responsable de la documentation veille à informer tous les détenteurs du document de sa cessation d'applicabilité.
 
 \part{Organisation de la production}
 
