@@ -2,25 +2,37 @@
 % droit de tenter des expériences pour l'organisation de la production (auto-critique)
 % Annexes
 
+\documentclass[a4paper]{article}
+
+\usepackage[utf8]{inputenc}   
+\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+\usepackage{ucs}
+% Reconnaitre les caratères accentués dans le source.
+\usepackage[T1]{fontenc} 
+\usepackage{lmodern}
+\usepackage[francais]{babel}
+% Insertion d'images
+\usepackage{graphicx}
+
+
 \begin{document}
 
 \part{Introduction}
 
 \section{Rappel}
 
-\paragraph{Documentation}
-Documentation: Ensemble de documents relatifs à un projet - notice - mode d’emploi - action de sélectionner, classer, utiliser ou diffuser des documents.
+\paragraph{Documentation} Ensemble de documents relatifs à un projet - notice - mode d’emploi - action de sélectionner, classer, utiliser ou diffuser des documents.
 
 La documentation d’un projet a une importance primordiale : c’est l’outil de communication et de dialogue entre les membres de l’équipe projet et les intervenants extérieurs (membre des comités de pilotage et utilisateurs, chef de projet, coordination des projets, utilisateurs, etc...). Elle assure aussi la pérennité des informations au sein du projet.
 
 Afin d’organiser la gestion de la documentation produite par projet, il convient au préalable d’identifier tous les types de documents relatifs aux diverses étapes d’un projet, de les référencer de manière homogène pour ensuite définir un mode de gestion commun à tous les projets.
 
-\section{Object du document}
+\section{Objet du document}
 
-Le dossier de gestion et organisation de la documentation du projet a pour objectif de définir l’ensemble des règles
+Le dossier de gestion et d'organisation de la documentation du projet a pour objectif de définir l’ensemble des règles
 communes concernant la gestion de la documentation (structuration, page de garde, cycle de vie d’un
 document, gestion de version, structuration du système documentaire, sauvegardes et diffusion, ...) et
-l’organisation de la documentation en définissant des plans types pour les documents relatifs à la gestion de
+l’organisation de la documentation en définissant des plans types (voir en annexe) pour les documents relatifs à la gestion de
 projet, les documents relatifs à la qualité et les annexes relatives aux études.
 
 Nous proposerons des règles de gestion de la documentation pour ce projet qui permettront de mettre en oeuvre des moyens
@@ -72,14 +84,16 @@ Avant de faire passer un document en l'état ``terminé'', l'auteur peut le soum
 \subsection{Vérification / validation du document}
 
 L'auteur diffuse alors le document aux vérificateurs puis aux validateurs, ou directement aux validateurs (la vérification est optionnelle selon le type de document). La diffusion se fait sous format papier ou électronique (choisir le plus pratique).
-Il joint à son document une fiche de relecture où les remarques éventuelles des vérificateurs ou validateurs sont formalisées (modifications souhaitées).
-Toutes les remarques de fond sur le contenu du document (imprécision, ambiguïtés, incohérences...) doivent être consignées dans cette fiche sauf les remarques relatives à la forme du document (fautes de frappe, d'orthographe, problèmes de mise en page...) qui peuvent être signalées directement sur la copie papier du document.
- Si les modifications du texte sont importantes, elles sont juste référencées dans la fiche de relecture puis décrites directement sur une copie papier du document.
 
+Il joint à son document une fiche de relecture où les remarques éventuelles des vérificateurs ou validateurs sont formalisées (modifications souhaitées).
+
+Toutes les remarques de fond sur le contenu du document (imprécision, ambiguïtés, incohérences...) doivent être consignées dans cette fiche sauf les remarques relatives à la forme du document (fautes de frappe, d'orthographe, problèmes de mise en page...) qui peuvent être signalées directement sur la copie papier du document.
+
+Si les modifications du texte sont importantes, elles sont juste référencées dans la fiche de relecture puis décrites directement sur une copie papier du document.
 
 La fiche de relecture comporte les éléments suivants : 
 
-\paragraph{Une partie renseignée par l'auteur (avant transmission au vérificateur/validateur)}
+\paragraph{Une partie renseignée par l'auteur (avant transmission au vérificateur / validateur)}
 
 \begin{itemize}
 \item nom du demandeur
@@ -87,6 +101,7 @@ La fiche de relecture comporte les éléments suivants :
 \item nom et référence du document
 \item date de retour pour les remarques
 \item aspects à examiner (contenu, forme, totalité, partie...)
+\end{itemize}
 
 \paragraph{Une partie renseignée par le vérificateur/validateur}
 
@@ -104,8 +119,8 @@ Cette fiche (ainsi qu'éventuellement le document annoté joint) est transmise �
 L'auteur répond aux remarques émises par les relecteurs dans la colonne ``justification réponses'' de la fiche prévue à cet effet.
 L'auteur conserve une copie papier de la fiche.
 
-Si la vérification/validation est acceptée, le document passe à l'état ``vérifié''/``validé'', sinon il revient en état de ``travail''.
-L'auteur du document est chargé d'indiquer en page de garde du document l'état dans lequel le document se trouve, ainsi que les noms des vérificateurs/validateurs et les dates de vérification/validation.
+Si la vérification / validation est acceptée, le document passe à l'état ``vérifié'' / ``validé'', sinon il revient en état de ``travail''.
+L'auteur du document est chargé d'indiquer en page de garde du document l'état dans lequel le document se trouve, ainsi que les noms des vérificateurs / validateurs et les dates de vérification / validation.
 
 \paragraph{NB}
 
@@ -125,6 +140,7 @@ Pour chaque document à valider, une date de retour des remarques est convenue. 
 \section{Classement}
 
 \section{Gestion physique des fichiers contenant les documents}
+
 \subsection{Répertoires}
 \subsection{Noms des fichiers}
 \subsection{Procédures de sauvegarde et archivage}
@@ -137,6 +153,8 @@ Pour chaque document à valider, une date de retour des remarques est convenue. 
 \section{Documents relatifs à la qualité}
 
 \part{Annexes}
+
+\paragraph{Plans types} Voir document joint en annexe.
 
 % plans types
 
