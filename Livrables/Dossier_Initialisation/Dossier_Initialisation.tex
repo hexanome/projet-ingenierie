@@ -2,21 +2,21 @@
 %Corps du document :
 %\setlength{\parindent}{1cm}    
 
-\part{Introduction}
+\section{Introduction}
 
 Le but de ce dossier d'initialisation est de poser les bases nécessaires au bon déroulement du projet d'ingénierie. Nous répondons dans l'ensemble des documents produits par l'hexanôme H4111 à l'appel d'offre lancé par le COPEVUE visant à concevoir un Système de monitoring à distance de sites isolés. Dans ce document sont détaillés les constituants même du projet. Nous insisterons donc sur les points de vue organisationnels liés à la conception de notre solution technique.Après avoir resitué le contexte du problème, il s'agira de définir les objectifs ainsi que les contraintes liés à ce type de projet. Sont détaillées aussi dans ce document, les méthodes de travail,la répartition des rôles au sein du groupe d'ingénierie ainsi que le planning de répartition des tâches et des charges de travail. Une description précise des livrables sera effectuée et nous donnerons un aperçu des risques que nous sommes susceptible de rencontrer.
 
-\part{Contexte du document}
+\section{Contexte du document}
 Dans le cadre d'un projet d'ingénierie, l'utilité d'un dossier d'initialisation est double. Tout d'abord, celui-ci permet de préciser au client quelle seront les modalités formelles des documents et des livrables qui lui seront fournis. Ce dossier permet de lancer le projet en ce qu'il pose les bases et détaille le contenu de ce que le groupe d'ingénierie va produire tout au long des phases de vie d'un projet (spécification, conception, réalisation, tests, intégration, recette…).D'autre part, ce dossier d'initialisation sert de référentiel commun au groupe de travail. Il permet de clarifier les procédures de travail au sein du groupe humain. Ainsi s'il arrive qu'un acteur s'éloigne de ses objectifs principaux, il suffira de se référer au dossier d'initialisation pour recadrer son travail. Le Macro-Phasage permet de même de prévoir l'évolution du travail et de constater les éventuels écarts de entre ce qui avait été prévu et ce qui a été réellement fait, c'est donc un outil de gestion de risque.
-\part{Documents de référence}
+\section{Documents de référence}
 %que mettre dans cette partie->voir avec Jan.
     
-\part{Rappel du problème}
+\section{Rappel du problème}
 Le COPEVUE a lancé un appel d'offre dans le cadre de la réalisation d'un système de monitoring de sites isolés. Il s'agit donc de concevoir en premier lieu une solution technique permettant de répondre aux mieux aux exigences fonctionnelles et non fonctionnelles que le COPEVUE formule. De façon synthétique notre équipe va proposer une solution permettant de surveiller des sites naturels difficiles d'accès (souvent à cause des conditions environnementales) et peu peuplés. Dans ces sites isolés sont souvent regroupés des postes de travail et ces zones doivent pouvoir être surveillées en dépit de la distance qui les sépare du bureau de contröle.
-\section{Le contexte}
+\subsection{Le contexte}
 Notre cas d'étude se limite pour l'instant à considérer une situation simple : comment pouvoir maintenir de manière rentable des réserves de tel ou tel composé à un niveau correct bien que le site de stockage soit situer dans des zones difficiles d'accès ? L'idéal serait donc de pouvoir suivre a distance l'évolution d'un niveau d'un composé en fonction du temps.Le ravitaillement serait ainsi plus raisonnable car on saurait alors la quantité de composant à acheminer sur place. Trouver une solution fonctionnelle à cette problématique permettrait ainsi d'économiser en frais de maintenance mais aussi et surtout d'éviter certaines catastrophe écologique comme par exemple un manque d'eau dans un réservoir lors d'un feu de forêt ou encore une fuite de carburant d'un réservoir de forêt.
 
-\section{Les objectifs}
+\subsection{Les objectifs}
 Il s'agit donc d'étudier et de concevoir un système autonome et qui pourra être adapté à de nombreux sites autour du monde (autant dans les zones chaudes que dans les zones froides) de mesure et de monitoring à distance de zones de travail isolées. Il devra être possible de même d'éffectuer des actions de pilotage, de configuration et de maintenance des zones. Il est intéressant de rester assez général dans les différentes actions qu'il sera possible de mener à distance afin d'avoir une solution évolutive qui saura s'adapter à d'autres cas de figure.
 Voici quelques éléments permettant d'esquisser un système qui pourrait convenir :
 
@@ -29,13 +29,13 @@ Voici quelques éléments permettant d'esquisser un système qui pourrait conven
 \item Pouvoir faire évoluer le système vers des surveillances de zones plus complexes.
 \end{itemize}
     
-\part{Les contraintes générales}
+\section{Les contraintes générales}
 Dans ce projet, il sera important de bien calculer les surcoûts éventuels liés au développement du système. Nous veillerons à garde notre solution compétitive vis à vis des autres solutions disponibles sur le marché. Il faudra de même prendre en compte le coût de maintenance et d'exploitation d'un tel système.
 
-\section{Etude de l'existant}
-\subsection{Solution existante interne à COPEVUE}
+\subsection{Etude de l'existant}
+\subsubsection{Solution existante interne à COPEVUE}
 Il n’existe actuellement aucun système de monitoring de site isolés en sein du COPEVUE. A ce jour, les sites isolés sont non automatisés, ils sont surveillés manuellement. Il n’existe aucune communication entre les sites et un quelconque serveur, ce qui necessite un déplacement constant pour maintenir les installations. Ce déplacement entraine un coup important.Il n’existe actuellement aucune entreprise ou projet qui permet de répondre à notre cahier des charges. Cependant, certains d’entre eux ce rapproche suffisament de notre cas, nous allons lister ici les informations utiles à leur sujet.
-	\subsection{Solution existante concurrente}
+	\subsubsection{Solution existante concurrente}
 \begin{itemize}
 \item One Touch Automation :
 C’est l’entreprise qui se rapproche le plus de notre futur système. Cette entreprise permet un système de monitoring abouti grâce à une très basse consommation de leurs outils. Ils surveillent des sites isolés grâce à des caméras de surveillance CCTV alimentés par un système hybride solaire/éolien. Le système est portable ou fixe.
@@ -45,7 +45,7 @@ Système de surveillance automatisé de bâtiment grâce à des caméras basse c
 Les boitiers ELOcom équipent un réseau de camion. Ce système permet la localisation et la télécommunication avec un serveur distant (liaison CANbus entre l’antenne GSM et le GPS).
 \end{itemize}
 
-    \section{Exigences fonctionnelles}
+    \subsection{Exigences fonctionnelles}
 \begin{itemize}
 \item Le système doit pouvoir récupérer des données de capteurs tout autours du monde.
 \item Les informations récoltées par le sytème doivent être accessible à l'aide de plusieurs plateformes.
@@ -57,7 +57,7 @@ Les boitiers ELOcom équipent un réseau de camion. Ce système permet la locali
 \item Le système doit pouvoir signaler un problème technique au sein même de son fonctionnement.
 \end{itemize}
 
-    \section{Exigences non fonctionnelles}
+    \subsection{Exigences non fonctionnelles}
 \begin{itemize}
 \item INTEGRATION DE L EXISTANT : réaliser un système en adéquation avec les personnes qui travaillent déjà à la surveillance des sites sensibles, à savoir les camionneurs.
 \item ROBUSTESSE : le système doit toujours redémarré dans un état stable suite à des éventuels pannes ou redémarrage.
@@ -70,7 +70,7 @@ Les boitiers ELOcom équipent un réseau de camion. Ce système permet la locali
 \item TRACABILITE : Il est nécessaire de garder un journal d'activité du système, ce journal devra être gardé au minimum 2 ans.
 \end{itemize}
    
-\part{Organisation du travail}
+\section{Organisation du travail}
 Le groupe de travail est divisé en 3 entités qui sont :
 \begin{itemize}
 \item \textbf{Le Chef de Projet} représenté par Mr Alexandre LEFOULON chargé de piloter le projet de réponse à l'appel d'offre lancé par COPEVUE concernant la conception d'un système de monitoring isolé.
@@ -79,11 +79,11 @@ Le groupe de travail est divisé en 3 entités qui sont :
 \end{itemize}
 
     
-    \section{Chef de projet (CdP)}
+    \subsection{Chef de projet (CdP)}
 Le chef de projet sera chargé de la rédaction de certains documents de lancements et organisationnels (ceux-ci sont détaillés plus loin).Il sera de même chargé de répartir le travail au sein de son groupe d'ingénierie. Il doit connaître l'avancement du projet et animer les séances de travail. A l'issue de chacune d'elle il devra dégager un bilan de séance et juger de l'avancement des différentes tâches. Avec l'aide du responsable qualité il veillera à valider chaque document selon les best practices et les modalités de validation définies lors de la phase d'initialisation. Dans le cas ou le projet viendrait à prendre du retard, le chef du projet veillera à redéfinir les axes de travail dont le groupe s'est peut-être trop écarté.Le chef de projet aura de même un rôle fédérateur afin d'emmener le groupe de travail vers la séléction de leur appel d'offre.
-    \section{Responsable Qualité, Méthode et Documentation}
+    \subsection{Responsable Qualité, Méthode et Documentation}
 Le responsable qualité, méthode et documentation sera chargé d'insufler les bonnes pratiques au sein du groupe de travail. Celles-ci permettront ainsi de produire un travail précis et répondant le mieux aux exigences de l'appel d'offre. Ces bonnes pratiques seront symbolisées par des méthodes de travail et par l'utilisation de logiciels et de langage de modélisation précis. Tout comme pour le chef de projet, le RQ sera chargé de la rédaction de certains documents détaillés ci-après. Cet acteur indispensable à la survie d'un projet sera en constante communication avec le GEI afin de veiller à ce que l'application des bonnes pratiques soit effective et n'induise pas un surcoût en temps.
-    \section{Groupe d'études informatique}
+    \subsection{Groupe d'études informatique}
 Le groupe d'étude informatique composé de 5 personnes est le noyau dur du groupe de travail. Dans le cadre de la réponse à l'appel d'offre pour la première phase du projet (étude de l'existant, étude de faisabilité et spécification des besoins) les rôles ont été répartis ainsi  :
 \begin{itemize}
 \item \textbf{Tuuli TYRVAINEN} : est chargée d'étudier les possibilités de production d'énergie dans les pays froids et dont les contraintes d'ensoleillement sont importantes, il s'agit donc des pays proches du cercle polaire (Norvège, Finlande, Suède…).
@@ -92,9 +92,9 @@ Le groupe d'étude informatique composé de 5 personnes est le noyau dur du grou
 \end{itemize}
 
     
-    \part{Listes des livrables attendus}
+    \section{Listes des livrables attendus}
 Voici une description des livrables qui seront rendus à l'issue de la phase 1. Ce dossier d'initialisation sera donc recomplété lors du commencement des phases 2 et 3.
-    \section{Chef de projet}
+    \subsection{Chef de projet}
 Livrables du chef de projet :
 \begin{itemize}
 \item \textbf{Le Dossier d'Initialisation} : Ce document sert de référentiel commun entre le COPEVUE et notre équipe qui proposera une solution. Celui-ci permet de répertorier et de décrire chaque livrable. Pour la plupart des livrables, on définit leurs plan généraux. Ce livrable informera le COPEVUE des étapes d’élaboration de la solution la plus adaptée à la gestion des sites isolés. Le contenu de ce dossier est donc défini selon les parties précisées dans le sommaire (Livrables, Macro-Phasage, Répartition des rôles, Gestion des risques).
@@ -103,7 +103,7 @@ Livrables du chef de projet :
 \item \textbf{La Rédaction d'une procédure} : Le chef de projet devra rédiger la procédure de son choix à savoir : soit la \og décomposition d'un sytème et choix de sous projets \fg ou \og gestion de configuration \fg.
 \end{itemize}
 
-    \section{Responsable Qualité}
+    \subsection{Responsable Qualité}
 Livrables du responsable qualité :   
 \begin{itemize}
 \item \textbf{Le Glossaire Commun} : Ce document doit être rempli par tout à chacun au sein du groupe et servira notamment pour la compréhension des termes complexes rencontrés tout au long de la rédaction des dossiers (pour le CdP, le RQ, le GEI).
@@ -113,41 +113,41 @@ Livrables du responsable qualité :
 \item \textbf{Rédaction du dossier de synthèse} :
 \end{itemize}
 
-    \section{Groupe d'études informatique}
+    \subsection{Groupe d'études informatique}
     Voici un peu de texte de section.
     
-    \part{Organigramme des tâches}
+    \section{Organigramme des tâches}
 %inséerer le diagramme de redmine
-    \section{Macro-Phasage}
+    \subsection{Macro-Phasage}
 %insérer le diagramme de redmine
     Voici un peu de texte de section.
-    \section{Diagramme de Gantt}
+    \subsection{Diagramme de Gantt}
     Voici un peu de texte de section.
     
-    \part{Modalités de suivi}
+    \section{Modalités de suivi}
     Voici un peu de texte.
-    \section{Les règles de suivi}
+    \subsection{Les règles de suivi}
     Voici un peu de texte de section.
-    \section{Les outils utilisés}
+    \subsection{Les outils utilisés}
     Voici un peu de texte de section.
-    \section{Procédures de révisions du planning}
+    \subsection{Procédures de révisions du planning}
     Voici un peu de texte de section.
     
-    \part{Gestion des risques}
+    \section{Gestion des risques}
     Voici un peu de texte.
-    \section{Risques concernant l'application du projet}
+    \subsection{Risques concernant l'application du projet}
     Voici un peu de texte de section.
-    \section{Risques propres au projet}
+    \subsection{Risques propres au projet}
     Voici un peu de texte de section.
     
-    \part{Conclusion}
+    \section{Conclusion}
     Voici un peu de texte.
     
-    \part{Annexes}
+    \section{Annexes}
     Voici un peu de texte.
-    \section{Les fiches de tâche}
+    \subsection{Les fiches de tâche}
     Voici un peu de texte de section.
-    \section{Exemple de fiche de revue}
+    \subsection{Exemple de fiche de revue}
     Voici un peu de texte de section.
-    \section{Exemple de fiche de séance}
+    \subsection{Exemple de fiche de séance}
     Voici un peu de texte de section.
