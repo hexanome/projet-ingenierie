@@ -1,0 +1,44 @@
+\documentclass[a4paper]{article}
+
+\usepackage[utf8]{inputenc}   
+\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+\usepackage{ucs}
+% Reconnaitre les caratères accentués dans le source.
+\usepackage[T1]{fontenc} 
+\usepackage{lmodern}
+\usepackage[francais]{babel}
+% Insertion d'images
+\usepackage{graphicx}
+
+\begin{document}
+
+\title{Critique formelle des documents de la première partie}
+\maketitle
+
+\section{Introduction}
+
+L'objectif de ce document est de faire un point sur les documents produits lors de cette première phase du projet d'ingénierie, en se focalisant sur l'aspect Qualité. Nous parlerons donc en général de ce qui nous a amené aux livrables tels qu'ils ont été produits, et notre critique portera sur l'homogénéité des documents, tant sur la forme que sur le fond. Ce premier point permettra de conclure la première partie de ce projet, et de marquer le coup pour démarrer la deuxième partie dans de bonnes conditions. L'expérience accumulée lors de la première phase nous permettra de placer la barre de la qualité encore plus haut pour la suite des travaux.
+
+\section{Communication et mise en place des process qualité}
+
+Ce projet d'ingénierie est le premier à mettre autant l'accent sur l'aspect qualité dans la création et dans la production des documents. Il nous a donc permis de nous organiser en tant qu'héxanôme pour instaurer une communication efficace, et de nous souder autour d'un fonctionnement de processus qualité robustes et parés à toute éventualité. L'expérience que nous avons acquise nous permettra d'avancer plus efficacement dans la production des documents de la seconde étape, et nous pourrons ainsi nous concentrer plus sur le fond des documents que sur la forme.
+
+\section{Latex, un nouvel outil pour la rédaction des livrables}
+
+Notre choix en tant qu'héxanome de rédiger nos livrables au format Latex étant récent, la plupart des membres de l'équipe ne sont pas encore formés à ce format. Anciennement, nous produisions tous nos documents sur Google Docs, et c'est sur cet outil que la plupart des documents ont été rédigés pour ce projet, bien que nous nous soyons mis d'accord pour utiliser Latex. Ceci s'explique par les habitudes ancrées chez les membres de l'héxanome, et bien qu'étant plus rapide pour la rédaction des documents, Google Docs ne permet pas de mettre facilement en forme un document pour une livraison. La rapidité d'écriture est donc compensée par le temps nécessaire à convertir du format Google Docs vers le format Latex, qui lui, permet une génération instantannée de documents PDF de grande qualité.
+
+Dans nos futur projets, nous ferons attention à ne plus utiliser Google Docs que pour les drafts, et non plus pour le réel travail de rédaction et de mise en forme des livrables.
+
+Cette nouveauté d'usage a démontré la puissance et les qualités apportées par la technologie de rédaction de documents Latex. La nouveauté de cette solution au sein de notre trousse à outils informatique a occasionné quelques petites incohérences dans la présentation des documents, le temps de trouver une organisation homogène de la production des documents, mais nous sommes maintenant prêts à entammer la deuxième phase de ce projet avec une structure de collaboration et des processus de production de documents efficaces.
+
+\section{Git, un outil de gestion de version nouveau pour les documents}
+
+Git est un gestionnaire de révisions open source largement utilisé dans le monde du développement logiciel. Au sein de notre héxanôme, son utilisation pour produire des documents et non plus du code est nouveau. Ceci apporte quelques changements dans les usages, et présente également quelques petits problèmes. En effet, certaines personnes de notre héxanôme travaillent sur Windows, d'autre sur Mac, et d'autre sur Linux. Les différents OS n'encodent pas de la même manière les caractères de fin de ligne, et du coup lors chaque petite modification d'un fichier sur Windows, tous les caractères de fin le ligne Unix (Line Feed) sont remplacés par des caractères de fin de ligne windows (Carret Return + Line Feed), et Git - dont l'unité de modification est la ligne - considère que toutes les lignes et donc l'intégralité du document a été modifiée. Ceci pose quelques légers problèmes lors de la synchronisation des documents, et il peut arriver que certaines parties des documents se retrouvent perdues, et il faut alors aller chercher ces parties dans l'historique des modifications pour les restaurer. Ceci implique donc une vigilance accrue et une validation systématique des modifications apportées aux documents.
+
+Cependant, les problèmes rencontrés sont mineurs, et s'effacent devant les avantages du gestionnaire de révisions Git couplé aux services offerts par la plateforme gratuite GitHub. Il est en effet possible de naviguer confortablement dans l'historique depuis le site, de communiquer efficacement avec les autres membres de l'équipe en référençant facilement les numéros de révisions et les changements effectués. Ce nouvel outil s'est donc incorporé avec succès dans notre trousse à outils informatique toujours grandissante.
+
+\section{Conclusion}
+
+Ceci clos la première étape du projet d'ingénirie. Les livrables ont été produits à temps, et en bonne et due forme. Leur qualité sur le fond et sur la forme est bonne, et bien qu'il peut subsister quelques problèmes d'homogénéités témoignant de notre réorganisation autour de nouveaux processus qualité, leur production a été un succès. Le travail d'équipe a été satisfaisant, et les membres de l'équipe se sont dans l'ensemble bien adaptés à l'utilisation de nos nouveaux outils de production de livrables, Latex et Git. Notre fonctionnement en tant qu'héxanôme étant maintenant mieux défini, nous pouvons commencer la phase numéro 2 de ce projet avec un objectif qualité encore plus ambitieux.
+
+\end{document}
