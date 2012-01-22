@@ -150,62 +150,48 @@ L’auteur de la modification est responsable :
 \item de la révision des modifications.
 \end{itemize}
 
-Le numéro de version qui apparaît sur un document correspond à la version de l'application logicielle concernée.
-
 L'indice de révision est propre à une modification :
 
 \begin{itemize}
 \item il est incrémenté à chaque modification de contenu ou de forme sur un ou plusieurs documents.
 \end{itemize}
 
-Pour certains documents, il est important de faire apparaître clairement les évolutions d'une révision à l'autre du document. A cet effet, l'option révision de Word est utilisée de la façon suivante :
+Pour certains documents, il est important de faire apparaître clairement les évolutions d'une révision à l'autre du document. A cet effet, la procédure de ``commit'' du gestionnaire de révisions est utilisée de la façon suivante :
 
 \begin{itemize}
-
-\item sauvegarder le document avec son indice de révision en dernier caractère (exemple : EDASTTO2.doc  contient la révision 2 du document EDASTTO)
-
-\item dupliquer le document à modifier et le sauvegarder avec l'indice de révision incrémenté (exemple : EDASTTO3.doc)
-
-\item supprimer toute trace des évolutions antérieures s'il y en avait (exemple : dans EDASTTO3.doc), pour cela :
-
-\begin{itemize}
-\item choisir Outils Révisions
-\item choisir "Accepter tout"
-\end{itemize}
-
+\item sauvegarder et fermer le document
+\item entammer la procédure de ``commit'' du gestionnaire de versions ``Git''
+\item dans la partie ``Message de commit'', indiquer sous forme de liste à puces les changements incrémentaux qui ont été apportés sur le document
+\item valider le commit
 \item puis deux possibilités :
 
 \begin{itemize}
-
-\item effectuer les modifications en une ou plusieurs séances de travail (exemple : dans EDASTTO3.doc) puis faire apparaître les modifications par rapport à l'ancienne version :
+\item effectuer les modifications en une ou plusieurs séances de travail, puis faire apparaître les modifications par rapport à l'ancienne version :
 
 \begin{itemize}
-\item choisir Outils Révisions
-\item choisir "Comparer versions"
-\item sélectionner le nom du document original (exemple : EDASTTO2.DOC), puis "Ouvrir"
+\item valider le dernier commit
+\item synchroniser le répertoire de travail avec le serveur centralisé sur GitHub
 \end{itemize}
 
 \item faire apparaître directement les modifications :
 
 \begin{itemize}
-\item choisir Outils Révisions
-\item cocher la case "Marquer les corrections en cours de frappe"
+\item synchroniser directement avec le répertoire de travail central après votre premier commit
 \end{itemize}
 
 \end{itemize}
 \end{itemize}
 
-Word affiche la version modifiée du document (exemple : dans EDASTTO3.doc) avec des marques de révision indiquant le texte corrigé (trait à gauche). Ces marques de révision resteront actives dans le document jusqu'à la prochaine évolution.
+GitHub affiche la version modifiée du document (exemple : dans dossier-documentation.tex) avec des marques de révision indiquant le texte corrigé (en rouge le texte qui a été supprimé, en vert celui qui a été ajouté). Ces marques de révision resteront actives dans le document et consultables à tout moment.
 
 \paragraph{Remarques}
 
 \begin{itemize}
-\item pour que seules des marques de révision apparaissent dans les marges, choisir Outils Révisions Options, positionner la marque du Texte inséré à (Aucune) , la marque du Texte supprimé à Masqué et la marque des Lignes revues à Barre à gauche
-\item si une image est modifiée, aucune marque de révision n'apparaît dans la marge
-\item les corrections de fautes d'orthographe, de frappe ou de mise en page ne doivent pas apparaître avec des marques de révision. Pour cela, effectuer ce type de modifications sur le document initial (exemple : dans EDASTTO2.doc) avant de le dupliquer.
+\item si une image est modifiée, une marque de révision simplifiée apparaît dans la vue de consultation de l'historique sur GitHub
+\item les corrections de fautes d'orthographe, de frappe ou de mise en page ne doivent pas apparaître avec des marques de révision. Pour cela, effectuer ce type de modifications sur le document initial (exemple : dossier-documentation.tex).
 \end{itemize}
 
-\paragraph{Attention} Le document original choisi pour effectuer la révision (dans notre exemple EDASTTO2.DOC), est fonction du destinataire auquel s'adresse cette révision :
+\paragraph{Attention} Le document original choisi pour effectuer la révision (dans notre exemple dossier-documentation.tex), est fonction du destinataire auquel s'adresse cette révision :
 
 \begin{itemize}
 \item soit le destinataire aura en main toutes les révisions successives du document ;
@@ -217,12 +203,20 @@ Word affiche la version modifiée du document (exemple : dans EDASTTO3.doc) avec
 
 Tout nouveau document est produit sur PC ou Macintosh, en utilisant un logiciel d'édition de document compatible avec la technologie Latex, permettant de générer des documents homogènes et de grande qualité.
 
-\section{Classement}
-
 \section{Gestion physique des fichiers contenant les documents}
 
 \subsection{Répertoires}
+
+Les documents du projet sont accessibles en consultation à tous les membres de l'équipe projet sur le serveur ou sur leur propre copie du répertoire de travail, dans le dossier ``Livrables''. Un sous-répertoire est créé par nature de document à gérer, comme par exemple : ``Qualité'', ``Dossier\_Initialisation'', etc.
+
 \subsection{Noms des fichiers}
+
+Le nom de chaque fichier représentant un livrable est unique, et s'écrit avec les mots du nom du livrable, ou un sous-ensemble de mots-clefs représentatifs, séparés par des tirets.
+
+L'extension ``.tex'' est rajoutée systématiquement afin de pouvoir facilement accéder au document depuis un PC ou un MAC.
+
+\paragraph{Exemples} ``dossier-documentation.tex'', ``glossaire-commun.tex'', etc.
+
 \subsection{Procédures de sauvegarde et archivage}
 
 Le répertoire du projet est sauvegardé en continu par la procédure automatique des serveurs de GitHub. Les différentes versions des documents sont archivées par le gestionnaire de révision Git, qui référence les sources Latex de tous les documents et enregistre leurs modifications au cours du temps, au sein du répertoire de travail Git.
@@ -233,15 +227,37 @@ Lorsque l'accès immédiat à un document n'est plus indispensable, le document 
 
 \part{Organisation de la production}
 
+\paragraph{Rappel : organisation d'un projet} L'équipe projet, dirigée par le Chef de Projet (CdP) est composée de plusieurs GEI ainsi que d'un Responsable Qualité (RQ).
+
+% ICI %
+
 \section{Documents de gestion de projet}
+
+\begin{itemize}
+\item Best practise 1 : Rédaction d'une procédure
+\item Best practise 2 : Rédaction d'un cahier des charges logiciel
+\end{itemize}
+
 \section{Documents d’étude et développement}
-\section{Documents relatifs à la mise en oeuvre}
+
+\begin{itemize}
+\item Glossaire commun
+\item Dossier de synthèse
+\end{itemize}
+
 \section{Documents relatifs à la qualité}
+
+\begin{itemize}
+\item Dossier de structuration de la documentation et organisation de la production
+\item Plan d'Assurance Qualité Projet simplifié (niveau MOA)
+\item Plan d'Assurance Qualité Projet simplifié sous-projet logiciel ``station centrale'' (Draft)
+\item Critique formelle sur les documents de la première partie
+\item Critique formelle du point de vue du projet
+\item Dossier bilan personnel du Responsable Qualité
+\end{itemize}
 
 \part{Annexes}
 
-\paragraph{Plans types} Voir document joint en annexe.
-
-% plans types
+\paragraph{Plans types} Voir document ``dossier-documentation-annexe-1.pdf''.
 
 \end{document}
