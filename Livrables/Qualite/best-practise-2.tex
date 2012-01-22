@@ -1,0 +1,131 @@
+
+\documentclass[a4paper]{article}
+
+\usepackage[utf8]{inputenc}   
+\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+\usepackage{ucs}
+% Reconnaitre les caratères accentués dans le source.
+\usepackage[T1]{fontenc} 
+\usepackage{lmodern}
+\usepackage[francais]{babel}
+% Insertion d'images
+\usepackage{graphicx}
+
+\begin{document}
+
+\title{Bonne Pratique 2 : Rédaction d'un Cahier des Charges logiciel}
+\maketitle
+
+\section{Présentation du document}
+
+\paragraph{Contexte d'application de ce document} Rédaction d'un CdC pour un/ou des sous-ensembles logiciels.
+
+\paragraph{Objectif du document} Synthétiser les bonnes pratiques à appliquer lors de la rédaction d'un CdC.
+
+\subsection{Définition générale d'un CdC}
+
+Le Cdc pose un problème et appelle à une proposition de solution.
+
+Le cahier des charges est un document qui est l'expression des besoins néccessaires, essentiels, fonctionnels et techniques de la solution souhaitée.
+
+Ce document doit décrire de manière simple et claire les besoins auxquels MoE doit répondre. Il doit être suffisamment précis pour assurer la satisfaction des besoins.
+
+Le CdC est un outil de dialogue entre la MoE et la MoA qui permet d'affiner la correspondance entre l'offre et la demande.
+
+Un Cdc n'est pas forcément statique. Son contenu peut-être modifié au cours du projet. Cependant, l'idéal est que la première version de ce document soit la plus proche possible de la version finale, et qu'il soit modifié le moins souvent possible.
+
+
+\subsection{Définition Cdc pour un produit logiciel}
+
+Le CdC doit répondre à la question "Que doit faire le logiciel ?".
+
+\paragraph{Remarque} Pour réaliser le CdC d'un sous-ensemble logiciel, il est important de connaître le système dans sa globalité pour savoir et comprendre dans quel contexte le logiciel va s'inscrire. Il est important d'être cohérent avec les autres sous systèmes du projet, et pour cela il faudra être particulièrement attentif aux interactions et aux échanges impliqués.
+
+\subsection{Objectifs du CdC}
+
+Le Cdc doit traiter les points suivants:
+
+\begin{itemize}
+\item poser le problème à résoudre
+\item définir les objectifs et les besoins à satisfaire
+\item définir les exigences fonctionnelles
+\item identifier les contraintes imposées
+\item définir la configuration cible
+\item proposer un guide de réponse au problème posé
+\end{itemize}
+
+\section{Plan type pour un  CdC}
+
+\paragraph{Remarque} Ce qui suit est une suggestion. Il ne s'agit pas d'un plan à appliquer automatiquement. Certaines modifications et ajustements peuvent être adoptés en fonction du contexte du projet concerné.
+
+réf: (Rappeler la référence de l'appel d'offre concernée)
+
+\begin{itemize}
+\item Introduction
+  \begin{itemize}
+  \item Présentation du projet
+  \item Présentation du document
+  \item Terminologie et abréviations
+    (lister les termes utilisés dans ce document qui nécessitent d'être explicités)
+  \end{itemize}
+\item Présentation du problème
+  \begin{itemize}
+  \item Objectifs, principe du logiciel
+  \item Formulation des besoins (généraux)
+  \item Portée, développement, mise en œuvre, organisation de la maintenance
+  \item Limites
+  \end{itemize}
+\item Exigences fonctionnelles
+  \begin{itemize}
+  \item Fonctions de base, performances et aptitudes
+  \item Contraintes d'utilisation
+  \item Critères d'appréciation de la réalisation effective de la fonction
+  \item Flexibilité, variation de coût associé
+  \end{itemize}
+\item Contraintes imposées et faisabilité technologique
+  \begin{itemize}
+  \item Sûreté, planning, organisation, communications
+  \item Complexité
+  \item Compétences, moyens et règles
+  \item Normes de documentation
+  \end{itemize}
+\item Configuration cible
+  \begin{itemize}
+  \item Matériel et logiciel
+  \item Stabilité de la configuration
+  \item Interfaces (description des API, si nécessaire)
+  \end{itemize}
+\item Guide de réponse au cahier des charges
+  \begin{itemize}
+  \item Grille d'évaluation (poser la question de l'apport de chaque fonction)
+  \end{itemize}
+\item Annexes (*liste non exhaustive, et à titre d'exemple*)
+  \begin{itemize}
+  \item Observations de l'existant
+  \item Propositions d'orientation
+  \item Image(s) d'écran(s) principaux du logiciel
+  \item Résultat de l'analyse de la valeur
+  \item Descriptions des API avec le reste du système
+  \item Choix d'une solution et justifications
+  \item Appréciation de la solution retenue
+  \item Rapport d'analyse du besoin
+  \end{itemize}
+\end{itemize}
+
+\section{Ressources utiles pour la rédaction du CdC}
+
+\begin{itemize}
+\item Critères d'appréciation de la réalisation effective de la fonction: approche "Analyse de la valeur" dans chapitre II du cours 4IF (QL).
+\item Grille d'évaluation: "Processus d'acquisition: cas de la sous-traitance" dans chapitre VIII du cours 3IF (GL).
+\end{itemize}
+
+
+\section{Règles sur la forme pour un CdC}
+
+\begin{itemize}
+\item On utilisera de préférence un langage impersonnel: le "dispositif", le "système" ou "l'application".
+\item Le temps verbal "idéal": le futur. Cela permet de décrire une exigence à venir pour le futur système non encore réalisé. Cela permet de bien décrire le contrat à remplir pour la future implémentation.
+\item Emploi du conditionnel possible en plus du futur (ex: devra/devrait, pourra/pourrait), c'est même recommandé: cela permet d'introduire des différences entre ce à quoi on s'oblige et ce qu'on envisage souhaitable/possible.
+\end{itemize}
+
+\end{document}
