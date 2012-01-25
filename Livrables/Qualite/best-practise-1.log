@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.1.5)  22 JAN 2012 15:02
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.1.5)  25 JAN 2012 08:38
 entering extended mode
  %&-line parsing enabled.
 **best-practise-1.tex
@@ -481,13 +481,13 @@ Here is how much of TeX's memory you used:
  5645 multiletter control sequences out of 15000+50000
  30429 words of font info for 30 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 25i,6n,24p,432b,200s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 25i,6n,24p,398b,200s stack positions out of 5000i,500n,10000p,200000b,50000s
 {
 /usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}</usr/share/texmf/fonts/type1/pub
 lic/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share
 /texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/
 lmr17.pfb>
-Output written on best-practise-1.pdf (1 page, 108508 bytes).
+Output written on best-practise-1.pdf (1 page, 108887 bytes).
 PDF statistics:
  23 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
