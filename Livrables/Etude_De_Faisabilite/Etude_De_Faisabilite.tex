@@ -1,36 +1,40 @@
 \section{Introduction}
 
-Ce dossier présente les différentes technologies qui sont succeptible d’être utilisées dans nos systèmes. Nous expliquerons les problèmes généraux que l’on peut rencontrés sur les sites isolés. Puis nous listerons toutes les solutions envisageables et analyserons si elles peuvent être implémentées selon nos problématiques.
+% A refaire / compléter : Cela ne correspond pas du tout au plan réel.
+
+Ce dossier présente les différentes technologies et solutions techniques qui sont succeptible d’être utilisées dans notre solution. Nous expliquerons les problèmes généraux que l’on peut rencontrer en condition de site isolé, puis nous dresserons un état des solutions envisageables et tout en gardant à l'esprit les problématiques spécifiques qui nous concernent.
 
 \section{Analyse de l'existant}
 
 \subsection{Solution existante interne à COPEVUE}
 
-Il n’existe actuellement aucun système de monitoring de site isolés en sein du COPEVUE. A ce jour, les sites isolés sont non automatisé, ils sont surveillé manuellement. Il n’existe aucune communication entre les sites et un quelconque serveur, ce qui nécessite un déplacement constant pour maintenir les installations. Ce déplacement entraîne un coup important.
+Il n’existe actuellement aucun système de monitoring de site isolés en sein du COPEVUE. A ce jour, les sites isolés ne sont pas automatisés, et sont surveillés manuellement. Il n’existe aucune communication entre les sites et une quelconque contrale, ce qui nécessite des interventions régulières de relévement et maintenance des installations, entrainant par là-même un coup important.
 
 \subsection{Solution existante concurrente}
 
-Il n’existe actuellement aucune entreprise ou projet qui permet de répondre à notre cahier des charges. Cependant, certains d’entre eux ce rapproche suffisamment de notre cas, les informations utiles à leur sujet serons listées dans cette partie.
+Il n’existe actuellement aucune entreprise proposant de solution clé-en-main permettant de répondre à l'ensemble des exigences de notre cahier des charges. Cependant, certaines solutions concurrentes peuvent se rapprocher de ce que l'on chercher à atteindre, voici une liste succinte de plus convaincantes que nous ayons trouvés :
 
 \subsubsection{One Touch Automation}
 
-C’est l’entreprise qui se rapproche le plus de notre futur système.
-Cette entreprise permet un système de monitoring abouti grâce à une très basse consommation de leurs outils. Ils surveillent des sites isolés grâce à des caméras de surveillance CCTV alimenté par un système hybride solaire/éolien. Le système est portable ou fixe.
+C’est l’entreprise proposant une solution qui se rapproche le plus de notre futur système.
+Elle propose un système de monitoring abouti et réputé pour à une très basse consommation des composants proposés. Ils surveillent des sites isolés grâce à des caméras de surveillance CCTV alimentées par un système hybride solaire/éolien. Le système est disponible en version portable, ou fixe.
 
 \subsubsection{MeerCam}
 
-Système de surveillance automatisé de bâtiment grâce à des caméras basse consommation. Ces caméras sont équipés de trois batteries permettant une durée de vie de quatre ans.
+Système de surveillance automatisée de bâtiment grâce à des caméras basse consommation. Ces caméras sont équipés de trois batteries qui assurent une durée de vie de quatre ans sans changement de celles-ci.
 
 \subsubsection{ELOcom}
 
-Les boîtier ELOcom équipent un réseau de camion. Il permet la localisation et la télécommunication avec le serveur (liaison CANbus entre l’antenne GSM et le GPS)
+Les boîtier ELOcom équipent un réseau de camion. Ils permettent la localisation de ceux-ci et la télécommunication avec un serveur central (liaison CANbus entre l’antenne GSM et le GPS).
 
 \section{Étude de faisabilité}
 
 Les conditions climatiques extrêmes sont à prendre en compte dans cette partie. Nous nous intéresserons principalement aux pays nordiques. Cependant nous serons attentifs à l’évolutivité du système pour qu’il puisse être installé dans les pays méditerranéens.
-Dans les pays nordique, on rencontre des problèmes de froid (chute de neige et glace), de pollen au printemps. Le soleil est totalement absent certaine période de l’année. Les température peuvent aller de -55 à 40°.
-Dans les pays méditerranéens, les température peuvent aller de -25 à 50°.
-Nous verrons dans cette partie à quel point nos solutions peuvent s’adapter à ces conditions.
+Dans les pays nordiques, on rencontre des problèmes de froid en hiver (avec pour conséquence des chutes de neige et la formation de glace), et de pollen au printemps. Le soleil est par ailleurs totalement absent durant certaine périodes de l’année. Les température osciller entre -55 et 40°C.
+Dans les pays méditerranéens, les température vont de -25 à 50°C.
+Nous allons insister dans cette partie sur l'adaptabilité de nos solutions à ces différentes conditions.
+
+% Changement à effectuer : Remplacer cette partie par la board de manière générale, et diminiuer l'aspect OS (qui n'est pas le plus capital).
 
 \subsection{Choix de l’OS ou du RTOS}
 
@@ -41,9 +45,9 @@ L’usage de Linux semble particulièrement probante, tant par sa simplicité qu
 
 Lors des Rencontres IF, nous avons eu l’occasion de discuter avec un chef de projet de Orange Business Service, section Fleet Performance, qui nous a assuré que les boîtiers installés sur les véhicules tournent sous Linux.
 
-\subsection{Production énergie}
+\subsection{Production d'énergie}
 
-La continuité de fonctionnement de capteurs autonomes sur des sites isolés est évidemment soumise à la condition de pouvoir les alimenter électriquement, et ce en permanence. Nous avons ici regroupés les différentes solution envisageables qui s’offrent à nous pour assurer ce rôle dans le cadre de notre problématique :
+La continuité de fonctionnement de capteurs autonomes sur des sites isolés est évidemment soumise à la condition de pouvoir les alimenter électriquement, et ce en permanence. Nous avons ici regroupé les différentes solution envisageables qui s’offrent à nous pour assurer ce rôle dans le cadre de notre problématique :
 
 \subsubsection{Batteries longue durée}
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=pdflatex 2011.4.27)  25 JAN 2012 01:52
+This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=pdflatex 2011.4.27)  25 JAN 2012 02:39
 entering extended mode
 **Etude_De_Faisabilite_Final.tex
 
@@ -531,10 +531,10 @@ File: uni-32.def 2004/10/17 UCS: Unicode data U+2000..U+20FF
 
 Package frenchb.ldf Warning: Degrees would look better in TS1-encoding: 
 (frenchb.ldf)                add \usepackage{textcomp} to the preamble. 
-(frenchb.ldf)                Degrees used on input line 31.
+(frenchb.ldf)                Degrees used on input line 33.
 
 [2] [3]
-Underfull \hbox (badness 10000) in paragraph at lines 96--99
+Underfull \hbox (badness 10000) in paragraph at lines 100--103
 
  []
 
@@ -561,7 +561,7 @@ iKTeX_2.9/fonts/type1/public/lm/lmr12.pfb><D:/Soft2/Latex/USBTeX-1.6/programs/M
 iKTeX_2.9/fonts/type1/public/lm/lmr17.pfb><D:/Soft2/Latex/USBTeX-1.6/programs/M
 iKTeX_2.9/fonts/type1/public/lm/lmr7.pfb><D:/Soft2/Latex/USBTeX-1.6/programs/Mi
 KTeX_2.9/fonts/type1/public/lm/lmr8.pfb>
-Output written on Etude_De_Faisabilite_Final.pdf (8 pages, 244556 bytes).
+Output written on Etude_De_Faisabilite_Final.pdf (8 pages, 245082 bytes).
 PDF statistics:
  67 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
