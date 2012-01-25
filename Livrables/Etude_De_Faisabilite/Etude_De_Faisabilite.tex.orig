@@ -33,6 +33,12 @@ Les conditions climatiques extrêmes sont à prendre en compte dans cette étude
 Dans les pays nordiques, on rencontre des problèmes de froid en hiver (avec pour conséquence des chutes de neige et la formation de glace), et de pollen au printemps. Le soleil est par ailleurs totalement absent durant certaine périodes de l’année. 
 Les température oscillent entre -55 et 40°C, et dans le cas des pays méditerranéens, de -25 à 50°C.
 
+<<<<<<< HEAD
+=======
+Les conditions climatiques extrêmes sont à prendre en compte dans cette partie. Nous nous intéresserons principalement aux pays nordiques. Cependant nous serons attentifs à l’évolutivité du système pour qu’il puisse être installé dans les pays méditerranéens, aux conditions climatiques opposées.
+Dans les pays nordiques, on rencontre des problèmes de froid très intense en hiver (avec pour conséquence des chutes de neige et la formation de glace), et de pollen au printemps. Le soleil est par ailleurs totalement absent durant certaines périodes de l’année. Les températures oscillent entre -55 et 40°C, 
+Dans les pays méditerranéens, les températures vont de -25 à 50°C et l'ensoleillement est beaucoup plus long et important sur l'année.
+>>>>>>> c2c428d57c0d574d3a92c6f3a77bef7b38d40975
 Nous allons insister dans cette partie sur l'adaptabilité de nos solutions à ces différentes conditions.
 
 % Changement à effectuer : Remplacer cette partie par la board de manière générale, et diminiuer l'aspect OS (qui n'est pas le plus capital).
@@ -41,10 +47,7 @@ Nous allons insister dans cette partie sur l'adaptabilité de nos solutions à c
 
 \subsubsection{Matériel}
 
-De nombreux fournisseurs proposent des cartes de systèmes embarqués complêts conçus autour de procésseur ARM (plus économes en énergie que leurs homologues de chez Intel). Ces cartes présentent l'avantage d'être compactes, abordables\footnotemark (inférieurs à 300\euro ), et de proposer de nombreuses interfaces, permettant leur utilisation en combinaison avec la plupart des périphériques informatiques existants.
-
-% Lien : http://www.armadeus.com/francais/produits-cartes_microprocesseur-apf51.html
-\footnotetext{Exemple : Système embarqué Armadeus - http://j.mp/armadeus}
+De nombreux fournisseurs proposent des cartes de systèmes embarqués complêts conçus autour de procésseur ARM (plus économes en énergie que leurs homologues de chez Intel). Ces cartes présentent l'avantage d'être compactes, abordables (inférieurs à 300\euro ), et de proposer de nombreuses interfaces, permettant leur utilisation en combinaison avec la plupart des périphériques informatiques existants.
 
 \subsubsection{Système d'exploitation}
 
@@ -60,10 +63,7 @@ La continuité de fonctionnement de capteurs autonomes sur des sites isolés est
 
 \subsubsection{Batteries longue durée}
 
-Les récentes avancées en matière de technologies de batterie permettent, sur des systèmes à très basses consommation comme les capteurs qui nous intéressent ici, d’obtenir de très grandes durée de fonctionnement en autonomie, pouvant aller jusqu’à plusieurs dizaines d’année\footnotemark.
-
-% Lien : http://www.powercastsensors.com/
-\footnotemark{Source : Site internet PowerCast - http://j.mp/powercast}
+Les récentes avancées en matière de technologies de batterie permettent, sur des systèmes à très basses consommation comme les capteurs qui nous intéressent ici, d’obtenir de très grandes durée de fonctionnement en autonomie, pouvant aller jusqu’à plusieurs dizaines d’année.
 
 Cette solution est très dépendante du type de capteur choisi (la consommation de ceux-ci pouvant grandement varier selon leur procédé de fonctionnement), mais permet dans certains cas d’assurer un fonctionnement autonome sans aucun entretien sur de très longues périodes.
 
@@ -137,9 +137,14 @@ Cette solution a par ailleurs l’avantage de ne présenter aucun surcoût, un p
 
 \subsection{Localisation}
 
+<<<<<<< HEAD
 La localisation des sites par puce GPS ne sera nécéssaire que dans le cas où la station risquerait de ce déplacer (e.g. banquise). Dans la plupart des cas, les coordonnées GPS notées lors de l’installation du système seront utilisées pour guider les opérations de maintenance.
 
 Les camions de maintenance n'ont pas de besoin particulier d'être connectés en permanence au serveur central.
+=======
+La localisation des sites par puce GPS sera très rare. Elle sera utile dans les cas où la station risque de ce déplacer (glacier ou autre). Dans la plupart des cas, les coordonnées GPS notées pendant l’installation du système seront utilisées pour guider les opérations de maintenance.
+Les camions ne seront pas connecté en permanence avec le serveur central.
+>>>>>>> c2c428d57c0d574d3a92c6f3a77bef7b38d40975
 
 % //Partie utile???->
 % Puce GPS: cf. documentation Orange Business Service. 
@@ -211,30 +216,32 @@ Comme l’appareil est hermétiquement fermé, il est difficile de procéder à 
 La plupart des batteries ne sont pas capables d’émettre autant d'énergie lorsque la température a décliné en dessous d'un certain seuil. La puissance de la batterie diminuent également avec le froid.
 De plus, certaines ondes hertziennes traversent différemment l’air froid que l’air chaud\footnotemark.
 
+\footnotetext{Source : Document de LXE sur l'informatique mobile et les basses températures - http://j.mp/wRTA9x}
 % Lien : http://www.lxe.com/uploadedFiles/pdf/White_Papers/WhitePaper-ColdStorageComputers.pdf
-\footnotetext{Source : Document de LXE sur l'informatique mobile et les basses températures - http://j.mp/cold-storage-computers}
-
-\paragraph{Utilisation}
-
-La station doit pouvoir être utilisée avec des gants, il faudra donc apporter une attention particulière à son ergonomie.
 
 \subsubsection{Solutions envisagables}
 
 \paragraph{Radiateurs}
 
-L'usage de radiateurs peut prévenir la condensation et le gel. Cependant, ceux-ci consomment énormément et ne peuvent donc pas être envisagés ici.
+Des radiateurs intégrés et internes, peuvent prévenir la condensation et le gel. Cependant, ceci consomme énormément et les radiateurs ne peuvent pas être envisagés ici.
+Encapsulation
+Grâce à un matériel durable, un équipement bien construist composé d’un joint fort. On peut limiter la condensation,l’humidité et la saleté.
 
-\paragraph{Encapsulation}
+\paragraph{Composants avec revêtement}
 
-A l'aide de joints, et d'une bonne qualité de fabrication, on peut grandement limiter la condensation, ainsi que l'humidité et la saleté.
-
-\paragraph{Revêtement}
-
-L'utilisation de revêtements protecteurs sur les composants electroniques peut prévenir la condensation et diminuer ainsi les risques de court-circuits. Cela peut permettre de facilement augmenter la durée de vie du système.
+Remplacer des composants internes est très cher. Il est possible d’utiliser des revêtements protecteurs qui préviennent la condensation et les court-circuits. Les appareils ont une meilleur utilisation à long terme.
 
 \paragraph{Connecteurs}
 
+<<<<<<< HEAD
 Les connecteurs (e.g. connexion de la base à sa source d'enérgie) doivent avoir des contacts solides qui empêche l’humidité dans les prises.
+=======
+Les connecteurs (lien pour la source d’énergie par exemple) doivent avoir des contacts solides qui empêche l’humidité dans les prises.
+>>>>>>> c2c428d57c0d574d3a92c6f3a77bef7b38d40975
+
+\paragraph{Ergonomie}
+
+La station doit pouvoir être utilisé avec des gants.
 
 \section{Conclusion}
 
