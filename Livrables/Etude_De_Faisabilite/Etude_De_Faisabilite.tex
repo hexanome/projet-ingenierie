@@ -2,36 +2,36 @@
 
 % A refaire / compléter : Cela ne correspond pas du tout au plan réel.
 
-Ce dossier présente les différentes technologies et solutions techniques qui sont succeptible d’être utilisées dans notre solution. Nous expliquerons les problèmes généraux que l’on peut rencontrer en condition de site isolé, puis nous dresserons un état des solutions envisageables et tout en gardant à l'esprit les problématiques spécifiques qui nous concernent.
+Ce dossier présente les différentes technologies et solutions techniques qui sont suceptibles d’être utilisées dans notre solution. Nous expliquerons les problèmes généraux que l’on peut rencontrer en condition de site isolé, puis nous dresserons un état des solutions envisageables tout en gardant à l'esprit les problématiques spécifiques qui nous concernent.
 
 \section{Analyse de l'existant}
 
 \subsection{Solution existante interne à COPEVUE}
 
-Il n’existe actuellement aucun système de monitoring de site isolés en sein du COPEVUE. A ce jour, les sites isolés ne sont pas automatisés, et sont surveillés manuellement. Il n’existe aucune communication entre les sites et une quelconque contrale, ce qui nécessite des interventions régulières de relévement et maintenance des installations, entrainant par là-même un coup important.
+Il n’existe actuellement aucun système de monitoring de sites isolés au sein du COPEVUE. A ce jour, les sites isolés ne sont pas automatisés, et sont surveillés manuellement. Il n’existe aucune communication entre les sites et une quelconque centrale, ce qui nécessite des interventions régulières de relèvement et maintenance des installations, entrainant par là-même un coup important.
 
 \subsection{Solution existante concurrente}
 
-Il n’existe actuellement aucune entreprise proposant de solution clé-en-main permettant de répondre à l'ensemble des exigences de notre cahier des charges. Cependant, certaines solutions concurrentes peuvent se rapprocher de ce que l'on chercher à atteindre, voici une liste succinte de plus convaincantes que nous ayons trouvés :
+Il n’existe actuellement aucune entreprise proposant de solution clé-en-main permettant de répondre à l'ensemble des exigences de notre cahier des charges. Cependant, certaines solutions concurrentes peuvent se rapprocher de ce que l'on chercher à atteindre, voici une liste succinte des plus convaincantes que nous avons trouvés :
 
 \subsubsection{One Touch Automation}
 
 C’est l’entreprise proposant une solution qui se rapproche le plus de notre futur système.
-Elle propose un système de monitoring abouti et réputé pour à une très basse consommation des composants proposés. Ils surveillent des sites isolés grâce à des caméras de surveillance CCTV alimentées par un système hybride solaire/éolien. Le système est disponible en version portable, ou fixe.
+Elle propose un système de monitoring abouti et réputé à très basse consommation. Ils surveillent des sites isolés grâce à des caméras de surveillance CCTV alimentées par un système hybride solaire/éolien. Le système est disponible en version portable, ou fixe.
 
 \subsubsection{MeerCam}
 
-Système de surveillance automatisée de bâtiment grâce à des caméras basse consommation. Ces caméras sont équipés de trois batteries qui assurent une durée de vie de quatre ans sans changement de celles-ci.
+Système de surveillance automatisée de bâtiments grâce à des caméras basse-consommation. Ces caméras sont équipées de trois batteries qui assurent une durée de vie de quatre ans en fonctionnement, ce qui permet de limiter les opérations de remplacement.
 
 \subsubsection{ELOcom}
 
-Les boîtier ELOcom équipent un réseau de camion. Ils permettent la localisation de ceux-ci et la télécommunication avec un serveur central (liaison CANbus entre l’antenne GSM et le GPS).
+Les boîtiers ELOcom équipent un réseau de camions. Ils permettent la localisation de ceux-ci et la télécommunication avec un serveur central (liaison CANbus entre l’antenne GSM et le GPS).
 
 \section{Étude de faisabilité}
 
-Les conditions climatiques extrêmes sont à prendre en compte dans cette partie. Nous nous intéresserons principalement aux pays nordiques. Cependant nous serons attentifs à l’évolutivité du système pour qu’il puisse être installé dans les pays méditerranéens.
-Dans les pays nordiques, on rencontre des problèmes de froid en hiver (avec pour conséquence des chutes de neige et la formation de glace), et de pollen au printemps. Le soleil est par ailleurs totalement absent durant certaine périodes de l’année. Les température osciller entre -55 et 40°C.
-Dans les pays méditerranéens, les température vont de -25 à 50°C.
+Les conditions climatiques extrêmes sont à prendre en compte dans cette partie. Nous nous intéresserons principalement aux pays nordiques. Cependant nous serons attentifs à l’évolutivité du système pour qu’il puisse être installé dans les pays méditerranéens, aux conditions climatiques opposées.
+Dans les pays nordiques, on rencontre des problèmes de froid très intense en hiver (avec pour conséquence des chutes de neige et la formation de glace), et de pollen au printemps. Le soleil est par ailleurs totalement absent durant certaines périodes de l’année. Les températures oscillent entre -55 et 40°C, 
+Dans les pays méditerranéens, les températures vont de -25 à 50°C et l'ensoleillement est beaucoup plus long et important sur l'année.
 Nous allons insister dans cette partie sur l'adaptabilité de nos solutions à ces différentes conditions.
 
 % Changement à effectuer : Remplacer cette partie par la board de manière générale, et diminiuer l'aspect OS (qui n'est pas le plus capital).
@@ -58,16 +58,16 @@ Cette solution est très dépendante du type de capteur choisi (la consommation 
 \subsubsection{Énergie solaire}
 
 Bien que théoriquement très adaptée à notre problème (de par sa capacité à fonctionner sur une gamme de températures très larges), les principaux inconvénients de l’utilisation de l’énergie solaire vont être :
-Une nécessité d’entretien régulier dans certaines conditions climatiques (e.g. neige ou pollen empêchant les rayons lumineux d’atteindre les panneaux).
+Une nécessité d’entretien régulier dans certaines conditions climatiques (e.g. neige ou pollen empêchant les rayons lumineux d’atteindre les panneaux, par extension le sable dans les pays méditerranéen).
 La contrainte du stockage de l’énergie puisque sa production n’est pas continue requiert l’utilisation d’accumulateurs pour permettre aux appareils de fonctionner en permanence (la nuit par exemple). Selon le type de batteries utilisées, cela peut poser des problèmes d’entretien (réhydratation des batteries) et de durée de vie (certaines batteries ne supportant qu’un certain nombre de cycles).
 
-Un problème supplémentaire se pose dans le cas de notre site isolé type, puisque se situant dans un pays du cercle polaire, l’éclairement est très irrégulier sur l’année et peut même devenir à peu près nul pendant certaines périodes.
+Un problème supplémentaire se pose dans le cas de notre site isolé type, puisque se situant dans un pays du cercle polaire, l’éclairement est faible sur l'année, avec une nuit pouvant durée près de 6 mois. De plus, le jour, du fait de la proximité acec le cercle polaire, les rayons lumineux arrivent avec un angle d'incidence très faible, il faut que les panneaux solaires sont sur un dispositif permettant de régler la perpendicularité avec les rayons.
 
 Une solution envisagée serait d’utiliser l’énergie solaire en combinaison avec une pile à combustible afin de stocker l’énergie produite sur de longue période. En combinaison avec une source d’eau, les panneaux solaires serviraient à produire de l’hydrogène qui pourrait alors être stocké indéfiniment avant de servir à alimenter les différents appareils (cf. le paragraphe “pile à combustible”).
 
 \subsubsection{Énergie éolienne}
 
-Très similaire à la solution précédente de par ses contraintes (principalement la nécéssite d’accumulateurs), cette solution pourrait être utilisé sur les sites présentant des irrégularité d’éclairement trop importantes et une activité venteuse suffisante. De plus, les éoliennes demandent moins d’entretien que les panneaux solaires, et peuvent aussi fonctionner en conditions extrêmes (ce sont les basses températures qui nous intéressent principalement ici).
+Très similaire à la solution précédente de par ses contraintes (principalement la nécéssite d’accumulateurs), cette solution pourrait être utilisé sur les sites présentant des irrégularités d’éclairement trop importantes et une activité venteuse suffisante. De plus, les éoliennes demandent moins d’entretien que les panneaux solaires, et peuvent aussi fonctionner en conditions extrêmes (ce sont les basses températures qui nous intéressent principalement ici).
 
 \subsubsection{Pile à combustible}
 
@@ -75,7 +75,7 @@ Une autre solution qu’il nous serait possible d’utiliser est la production d
 
 Il est aussi envisageable d’utiliser cette technique en combinaison avec une autre source d’énergie qui elle servirait à produire le combustible (à partir d’eau dans le cas de l’hydrogène). Cela permettrait aux sites de rester autonomes encore plus longtemps. Il est dans ce cas important d’en évaluer le coût pour voir s’il est intéressant de mettre en place une solution de ce type plutôt que de simplement venir assurer l’entretient du site plus souvent.
 
-Nous avons brièvement étudié la possibilité d’utiliser de l’énergie hydrolique, mais la faisabilité d’un tel système dépendant tellement des spécificités du site, nous avons préférés ne pas nous attarder sur cette solution, pas assez générique à notre goût.
+Nous avons brièvement étudié la possibilité d’utiliser de l’énergie hydraulique, mais la faisabilité d’un tel système dépendant tellement des spécificités du site, nous avons préférés ne pas nous attarder sur cette solution, pas assez générique à notre goût.
 
 \subsection{Communication}
 
@@ -89,7 +89,7 @@ Si le site concerné dispose d’une couverture de réseau téléphonique terres
 
 \paragraph{Réseau satellite}
 
-Dans le cas où la première solution n’est pas envisageable, il nous reste la possibilité de transmettre nos données par satellite sur un des deux réseaux internationaux que sont Iridium et GlobalStar. C’est évidement à envisager en dernier recours car le coût des équipements et des communication sont beaucoup plus élevés. Bien que moins performants (débit réduit, latence élevés), ces réseaux seraient suffisant pour l’usage que nous voulons en faire.
+Dans le cas où la première solution n’est pas envisageable, il nous reste la possibilité de transmettre nos données par satellite sur un des deux réseaux internationaux que sont Iridium et GlobalStar. C’est évidement à envisager en dernier recours car le coût des équipements et des communications sont beaucoup plus élevés. Bien que moins performants (débit réduit, latence élevés), ces réseaux seraient suffisants pour l’usage que nous voulons en faire.
 
 Bien que d’autre technologies de communication longue portée existent (e.g le Wimax), leur faible niveau de déploiement à l’heure actuel nous ont fait préférer des solutions peut-être moins performantes, mais universellement présentes.
 
@@ -115,18 +115,18 @@ Consommation du ZigBee :
 
 \paragraph{Capteur avec communication intégrée}
 
-Dans le cas où les capteurs utilisés sont équipé en natif d’une technologie de communication sans-fil (radio fréquence ou autre), nous utiliserons cette tecnologie en priorité. Dans les autres cas, nous ajouterons un module ZigBee au capteur. Notre station devra s’adapter à ces capteurs pour recevoir les informations utiles.
+Dans le cas où les capteurs utilisés sont équipé en natif d’une technologie de communication sans-fil (radio fréquence ou autre), nous utiliserons cette technologie en priorité. Dans les autres cas, nous ajouterons un module ZigBee au capteur. Notre station devra s’adapter à ces capteurs pour recevoir les informations utiles.
 
-\subsubsection{Communication entre les équipes d’entretien et les station}
+\subsubsection{Communication entre les équipes d’entretien et les stations}
 
-Pour garantir la fiabilité de cette communication quelle que soit la situation, nous jugeons plus prudent de faire appel à une connexion cablée USB, permettant ainsi à un technicien d’avoir accès à l’ensemble des informations de la station, mais aussi de pouvoir la configurer (configuration initiale, ou simple maintenance) à partir de n’importe quel ordinateur.
+Pour garantir la fiabilité de cette communication quelque soit la situation, nous jugeons plus prudent de faire appel à une connexion cablée USB, permettant ainsi à un technicien d’avoir accès à l’ensemble des informations de la station, mais aussi de pouvoir la configurer (configuration initiale, ou simple maintenance) à partir de n’importe quel ordinateur.
 
-Cette solution a, par ailleurs, l’avantage de ne présenter aucun surcoût, un port USB faisant partie des composants les plus courants présents sur les cartes de systèmes embarqués.
+Cette solution a par ailleurs l’avantage de ne présenter aucun surcoût, un port USB faisant partie des composants les plus courants présents sur les cartes de systèmes embarqués.
 
 \subsection{Localisation}
 
 La localisation des sites par puce GPS sera très rare. Elle sera utile dans les cas où la station risque de ce déplacer (glacier ou autre). Dans la plupart des cas, les coordonnées GPS notées pendant l’installation du système seront utilisées pour guider les opérations de maintenance.
-Les camions ne seront pas connecté en permanence avec le serveur centrale.
+Les camions ne seront pas connecté en permanence avec le serveur central.
 
 % //Partie utile???->
 % Puce GPS: cf. documentation Orange Business Service. 
@@ -149,7 +149,7 @@ Les camions ne seront pas connecté en permanence avec le serveur centrale.
 
 \subsection{Capteurs}
 
-Suivant qu’il s’agisse du niveau de remplissage d’un réservoir contenant un liquide (eau, hydrocarbure, etc.) ou d’un container contenant des déchets solides, un grand nombre de technologies différentes de capteurs existent, certaines étant soumises à des contraintes de conditions de fonctionnement pour pouvoir opérer correctement.
+Suivant qu’il s’agisse du niveau de remplissage d’un réservoir contenant un liquide (eau, hydrocarbure, etc.) ou d’un container contenant des déchets solides, un grand nombre de technologies différentes de capteurs existent, certaines étant soumises à des contraintes de fonctionnement pour pouvoir opérer correctement.
 
 \subsubsection{Capteurs de niveau pour liquides}
 
@@ -166,7 +166,7 @@ C'est un cylindre immergé dont la hauteur est au moins égale à la hauteur max
 
 \paragraph{Le capteur de pression}
 
-Un capteur mesure la pression dans la cuve et fait un différentiel par rapport à un référentiel (cuve vide) pour donner la hauteur de liquide. Les caractéristiques techniques convient aussi à notre problème.
+Un capteur mesure la pression dans la cuve et fait un différentiel par rapport à un référentiel (cuve vide) pour donner la hauteur de liquide. Les caractéristiques techniques conviennent aussi à notre problème.
 
 \subsubsection{Capteurs de niveau pour solides}
 
@@ -193,11 +193,11 @@ Des données plus exhaustives sur les consommations électriques pour les mesure
 \paragraph{Condensation \&  Gel}
 
 Par grands froids, les écrans peuvent devenir illisibles et les capteurs inutilisables. Dans notre cas, seul les capteurs posent réellement problème, les écrans n'étant utilisés que lors de la maintenance.
-Comme l’appareil est hermétiquement fermé, il est difficile de procéder à un nettoyage rapide. L’appareil peut devenir HS à cause de composant corrodé, de court-circuits. On doit réparer ou remplacer l’appareil
+Comme l’appareil est hermétiquement fermé, il est difficile de procéder à un nettoyage rapide. L’appareil peut devenir HS à cause de composant corrodé, de court-circuits. On doit réparer ou remplacer l’appareil.
 
 \paragraph{Air froid}
 
-La plupart des batteries ne sont pas capables d’émettre autant d'énergie lorsque la température est décliné à certaine niveau. La puissance de la batterie diminuent
+La plupart des batteries ne sont pas capables d’émettre autant d'énergie lorsque la température a décliné en dessous d'un certain seuil. La puissance de la batterie diminuent également avec le froid.
 De plus, certaines ondes hertziennes traversent différemment l’air froid que l’air chaud\footnotemark.
 
 \footnotetext{Source : Document de LXE sur l'informatique mobile et les basses températures - http://j.mp/wRTA9x}
@@ -209,19 +209,20 @@ De plus, certaines ondes hertziennes traversent différemment l’air froid que 
 
 Des radiateurs intégrés et internes, peuvent prévenir la condensation et le gel. Cependant, ceci consomme énormément et les radiateurs ne peuvent pas être envisagés ici.
 Encapsulation
-Grâce à un matériel durable, un équipement bien construis, composé d’un joint fort. On peut limiter la condensation,l’humidité et la saleté.
+Grâce à un matériel durable, un équipement bien construist composé d’un joint fort. On peut limiter la condensation,l’humidité et la saleté.
 
 \paragraph{Composants avec revêtement}
 
-Remplacer des composants internes est très cher. Il est possible d’utiliser des revêtements protecteur qui préviennent la condensation et les court-circuits. Les appareils ont une meilleur utilisation à long terme.
+Remplacer des composants internes est très cher. Il est possible d’utiliser des revêtements protecteurs qui préviennent la condensation et les court-circuits. Les appareils ont une meilleur utilisation à long terme.
 
 \paragraph{Connecteurs}
 
 Les connecteurs (lien pour la source d’énergie par exemple) doivent avoir des contacts solides qui empêche l’humidité dans les prises.
-Ergonomique
+
+\paragraph{Ergonomie}
 
 Il est important de penser à l’ergonomie. La station doit pouvoir être utilisé avec des gants.
 
 \section{Conclusion}
 
-Ce dossier reprend les technologies envisageables pour notre système. Nous avons détaillé toutes les solutions et montrons les problèmes qu’il est possible de rencontré, en fonction des caractéristique du lieu. Certaines technologies montrent plus d’avantages que d’autre. Nous nous concentrerons sur celle-la.
+Ce dossier reprend les technologies envisageables pour notre système. Nous avons détaillé toutes les solutions et montrons les problèmes envisageables, en fonction des caractéristiques du lieu. Certaines technologies sont plus avantageuses que d'autres et nous nous concentrerons sur celles-ci.
