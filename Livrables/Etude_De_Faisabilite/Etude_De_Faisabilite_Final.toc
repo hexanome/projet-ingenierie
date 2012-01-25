@@ -6,12 +6,14 @@
 \contentsline {subsubsection}{\numberline {2.2.1}One Touch Automation}{2}
 \contentsline {subsubsection}{\numberline {2.2.2}MeerCam}{2}
 \contentsline {subsubsection}{\numberline {2.2.3}ELOcom}{2}
-\contentsline {section}{\numberline {3}\IeC {\'E}tude de faisabilit\IeC {\'e}}{2}
-\contentsline {subsection}{\numberline {3.1}Choix de l\IeC {\textquoteright }OS ou du RTOS}{3}
+\contentsline {section}{\numberline {3}Etude de faisabilit\IeC {\'e}}{2}
+\contentsline {subsection}{\numberline {3.1}Syst\IeC {\`e}me embarqu\IeC {\'e}}{3}
+\contentsline {subsubsection}{\numberline {3.1.1}Mat\IeC {\'e}riel}{3}
+\contentsline {subsubsection}{\numberline {3.1.2}Syst\IeC {\`e}me d'exploitation}{3}
 \contentsline {subsection}{\numberline {3.2}Production d'\IeC {\'e}nergie}{3}
 \contentsline {subsubsection}{\numberline {3.2.1}Batteries longue dur\IeC {\'e}e}{3}
 \contentsline {subsubsection}{\numberline {3.2.2}\IeC {\'E}nergie solaire}{3}
-\contentsline {subsubsection}{\numberline {3.2.3}\IeC {\'E}nergie \IeC {\'e}olienne}{3}
+\contentsline {subsubsection}{\numberline {3.2.3}\IeC {\'E}nergie \IeC {\'e}olienne}{4}
 \contentsline {subsubsection}{\numberline {3.2.4}Pile \IeC {\`a} combustible}{4}
 \contentsline {subsection}{\numberline {3.3}Communication}{4}
 \contentsline {subsubsection}{\numberline {3.3.1}Communication entre la station et le site central}{4}
@@ -25,8 +27,8 @@
 \contentsline {subsection}{\numberline {3.5}Capteurs}{5}
 \contentsline {subsubsection}{\numberline {3.5.1}Capteurs de niveau pour liquides}{5}
 \contentsline {paragraph}{Le flotteur}{5}
-\contentsline {paragraph}{Le plongeur}{5}
-\contentsline {paragraph}{Le capteur de pression}{5}
+\contentsline {paragraph}{Le plongeur}{6}
+\contentsline {paragraph}{Le capteur de pression}{6}
 \contentsline {subsubsection}{\numberline {3.5.2}Capteurs de niveau pour solides}{6}
 \contentsline {paragraph}{D\IeC {\'e}tecteur \IeC {\`a} pales vibrantes}{6}
 \contentsline {subsubsection}{\numberline {3.5.3}Capteurs hybrides (liquides \& solides)}{6}
@@ -37,5 +39,6 @@
 \contentsline {subsubsection}{\numberline {3.6.2}Solutions envisagables}{6}
 \contentsline {paragraph}{Radiateurs}{6}
 \contentsline {paragraph}{Composants avec rev\IeC {\^e}tement}{6}
-\contentsline {paragraph}{Connecteurs}{6}
+\contentsline {paragraph}{Connecteurs}{7}
+\contentsline {paragraph}{Ergonomie}{7}
 \contentsline {section}{\numberline {4}Conclusion}{7}
