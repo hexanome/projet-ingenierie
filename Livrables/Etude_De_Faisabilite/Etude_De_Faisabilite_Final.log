@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=pdflatex 2011.4.27)  25 JAN 2012 09:33
+This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=pdflatex 2011.4.27)  25 JAN 2012 11:49
 entering extended mode
 **Etude_De_Faisabilite_Final.tex
 
@@ -533,18 +533,30 @@ Package frenchb.ldf Warning: Degrees would look better in TS1-encoding:
 (frenchb.ldf)                add \usepackage{textcomp} to the preamble. 
 (frenchb.ldf)                Degrees used on input line 34.
 
-[2] [3]
-Underfull \hbox (badness 10000) in paragraph at lines 112--115
+[2] [3] [4]
+Underfull \hbox (badness 10000) in paragraph at lines 116--118
 
  []
 
-[4] [5] [6]) [7]
+
+Underfull \hbox (badness 10000) in paragraph at lines 121--124
+
+ []
+
+[5] [6]
+Overfull \hbox (3.52649pt too wide) in paragraph at lines 242--243
+ \T1/lmr/bx/n/10 Re-vê-te-ment[] \T1/lmr/m/n/10 L'uti-li-sa-tion de re-vê-te-me
+nts pro-tec-teurs sur les com-po-sants elec-tro-niques peut pré-ve-nir la conde
+n-
+ []
+
+) [7]
 ("D:\Visual Studio 2010\Insa\H4111\Ingenierie\Livrables\Etude_De_Faisabilite\Et
 ude_De_Faisabilite_Final.aux") ) 
 Here is how much of TeX's memory you used:
  3724 strings out of 494019
  51336 string characters out of 3128541
- 111283 words of memory out of 3000000
+ 112283 words of memory out of 3000000
  6946 multiletter control sequences out of 15000+200000
  45303 words of font info for 36 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
@@ -562,7 +574,7 @@ iKTeX_2.9/fonts/type1/public/lm/lmr12.pfb><D:/Soft2/Latex/USBTeX-1.6/programs/M
 iKTeX_2.9/fonts/type1/public/lm/lmr17.pfb><D:/Soft2/Latex/USBTeX-1.6/programs/M
 iKTeX_2.9/fonts/type1/public/lm/lmr7.pfb><D:/Soft2/Latex/USBTeX-1.6/programs/Mi
 KTeX_2.9/fonts/type1/public/lm/lmr8.pfb>
-Output written on Etude_De_Faisabilite_Final.pdf (8 pages, 254541 bytes).
+Output written on Etude_De_Faisabilite_Final.pdf (8 pages, 258256 bytes).
 PDF statistics:
  71 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
