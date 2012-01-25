@@ -1,5 +1,4 @@
 \section{Introduction}
-
 % A refaire / compléter : Cela ne correspond pas du tout au plan réel.
 
 Ce dossier présente les différentes technologies et solutions techniques qui sont suceptibles d’être utilisées dans notre solution. Nous expliquerons les problèmes généraux que l’on peut rencontrer en condition de site isolé, puis nous dresserons un état des solutions envisageables tout en gardant à l'esprit les problématiques spécifiques qui nous concernent.
@@ -23,7 +22,7 @@ Voici quelques éléments permettant d'esquisser un système qui pourrait conven
 \end{itemize}
     
 \section{Les contraintes générales}
-Dans ce projet, il sera important de bien calculer les surcoûts éventuels liés au développement du système. Nous veillerons à garde notre solution compétitive vis à vis des autres solutions disponibles sur le marché. Il faudra de même prendre en compte le coût de maintenance et d'exploitation d'un tel système.
+Dans ce projet, il sera important de bien calculer les surcoûts éventuels liés au développement du système. Nous veillerons à garder notre solution compétitive vis à vis des autres solutions disponibles sur le marché. Il faudra de même prendre en compte le coût de maintenance et d'exploitation d'un tel système.
 
 \section{Analyse de l'existant}
 
@@ -54,15 +53,59 @@ Les conditions climatiques extrêmes sont à prendre en compte dans cette étude
 Dans les pays nordiques, on rencontre des problèmes de froid en hiver (avec pour conséquence des chutes de neige et la formation de glace), et de pollen au printemps. Le soleil est par ailleurs totalement absent durant certaine périodes de l’année. 
 Les température oscillent entre -55 et 40°C, et dans le cas des pays méditerranéens, de -25 à 50°C.
 
+Voici quelques contraintes liées au climat :
+
+\subsection{Problèmes spécifiques au climat et solutions}
+
+\subsubsection{Problèmes rencontrés à cause du froid}
+
+\paragraph{Condensation \&  Gel}
+
+Par grands froids, les écrans peuvent devenir illisibles et les capteurs inutilisables. Dans notre cas, seul les capteurs posent réellement problème, les écrans n'étant utilisés que lors de la maintenance.
+Comme l’appareil est hermétiquement fermé, il est difficile de procéder à un nettoyage rapide. L’appareil peut devenir HS à cause de composant corrodé, de court-circuits. On doit réparer ou remplacer l’appareil.
+
+\paragraph{Air froid}
+
+La plupart des batteries ne sont pas capables d’émettre autant d'énergie lorsque la température a décliné en dessous d'un certain seuil. La puissance de la batterie diminuent également avec le froid.
+De plus, certaines ondes hertziennes traversent différemment l’air froid que l’air chaud\footnotemark.
+
+% Lien : http://www.lxe.com/uploadedFiles/pdf/White_Papers/WhitePaper-ColdStorageComputers.pdf
+\footnotetext{Source : Document de LXE sur l'informatique mobile et les basses températures - http://j.mp/cold-storage-computers}
+
 Nous allons insister dans cette partie sur l'adaptabilité de nos solutions à ces différentes conditions.
 
 % Changement à effectuer : Remplacer cette partie par la board de manière générale, et diminiuer l'aspect OS (qui n'est pas le plus capital).
+
+\paragraph{Utilisation}
+
+La station doit pouvoir être utilisée avec des gants, il faudra donc apporter une attention particulière à son ergonomie.
+
+\subsubsection{Solutions envisagables}
+
+\paragraph{Radiateurs}
+
+L'usage de radiateurs peut prévenir la condensation et le gel. Cependant, ceux-ci consomment énormément et ne peuvent donc pas être envisagés ici.
+
+\paragraph{Encapsulation}
+
+A l'aide de joints, et d'une bonne qualité de fabrication, on peut grandement limiter la condensation, ainsi que l'humidité et la saleté.
+
+\paragraph{Revêtement}
+
+L'utilisation de revêtements protecteurs sur les composants electroniques peut prévenir la condensation et diminuer ainsi les risques de court-circuits. Cela peut permettre de facilement augmenter la durée de vie du système.
+
+\paragraph{Connecteurs}
+
+Les connecteurs (e.g. connexion de la base à sa source d'enérgie) doivent avoir des contacts solides qui empêche l’humidité dans les prises.
+
+
+
 
 \subsection{Système embarqué}
 
 \subsubsection{Matériel}
 
-De nombreux fournisseurs proposent des cartes de systèmes embarqués complêts conçus autour de procésseur ARM (plus économes en énergie que leurs homologues de chez Intel). Ces cartes présentent l'avantage d'être compactes, abordables\footnotemark (inférieurs à 300\euro ), et de proposer de nombreuses interfaces, permettant leur utilisation en combinaison avec la plupart des périphériques informatiques existants.
+De nombreux fournisseurs proposent des cartes de systèmes embarqués complets conçus autours de processeurs ARM (plus économes en énergie que leurs homologues de chez Intel). Ces cartes présentent l'avantage d'être compactes, abordables\footnotemark (inférieurs à 300\euro ), et de proposer de nombreuses interfaces, permettant leur utilisation en combinaison avec la plupart des périphériques informatiques existants.
 
 % Lien : http://www.armadeus.com/francais/produits-cartes_microprocesseur-apf51.html
 \footnotetext{Exemple : Système embarqué Armadeus - http://j.mp/armadeus}
@@ -70,10 +113,9 @@ De nombreux fournisseurs proposent des cartes de systèmes embarqués complêts 
 \subsubsection{Système d'exploitation}
 
 Nous avons constaté dans les différents systèmes embarqués de solutions similaires une utilisation indifférenciée de Linux, Solaris et Windows\footnotemark. Le monitoring s'effectuant en deux étapes disctinctes (la collecte de données auprès des capteurs, puis leur transmission périodique à la centrale), un système temps réel ne nous semble pas présenter d'avantages significatifs dans ce cadre d'utilisation. L'usage de Linux semble particulièrement probant, du fait de sa simplicité mais aussi de son utilisation abondante dans le domaine de l'embarqué.
-
 \footnotetext{Entreprises étudiées : ENI, Asentria et GuardMagic.}
 
-% A voir si on le place : Lors des Rencontres IF, nous avons eu l’occasion de discuter avec un chef de projet de Orange Business Service, section Fleet Performance, qui nous a assuré que les boîtiers installés sur leurs véhicules tournaient sous Linux.
+Nous avons eu l’occasion de discuter avec un chef de projet de Orange Business Service, section Fleet Performance, qui nous a assuré que les boîtiers d'acquisition de données installés sur leurs véhicules tournaient sous Linux. Cet entretien appuie un peu plus notre volonté d'utiliser Linux en tant que système d'exploitation.
 
 \subsection{Production d'énergie}
 
@@ -222,44 +264,6 @@ Ces trois technologies utilisent le même principe qui permet de mesurer le nive
 
 Des données plus exhaustives sur les consommations électriques pour les mesures nous permettrait d’orienter notre choix, ainsi qu’un prix par capteur, voir si une solution générique (infrarouge ou ultrason) suffirait ou s’il peut être intéressant financièrement de bien différencier les solutions pour les liquides des solides.
 
-\subsection{Problèmes spécifiques au climat et solutions}
-
-\subsubsection{Problèmes rencontrés à cause du froid}
-
-\paragraph{Condensation \&  Gel}
-
-Par grands froids, les écrans peuvent devenir illisibles et les capteurs inutilisables. Dans notre cas, seul les capteurs posent réellement problème, les écrans n'étant utilisés que lors de la maintenance.
-Comme l’appareil est hermétiquement fermé, il est difficile de procéder à un nettoyage rapide. L’appareil peut devenir HS à cause de composant corrodé, de court-circuits. On doit réparer ou remplacer l’appareil.
-
-\paragraph{Air froid}
-
-La plupart des batteries ne sont pas capables d’émettre autant d'énergie lorsque la température a décliné en dessous d'un certain seuil. La puissance de la batterie diminuent également avec le froid.
-De plus, certaines ondes hertziennes traversent différemment l’air froid que l’air chaud\footnotemark.
-
-% Lien : http://www.lxe.com/uploadedFiles/pdf/White_Papers/WhitePaper-ColdStorageComputers.pdf
-\footnotetext{Source : Document de LXE sur l'informatique mobile et les basses températures - http://j.mp/cold-storage-computers}
-
-\paragraph{Utilisation}
-
-La station doit pouvoir être utilisée avec des gants, il faudra donc apporter une attention particulière à son ergonomie.
-
-\subsubsection{Solutions envisagables}
-
-\paragraph{Radiateurs}
-
-L'usage de radiateurs peut prévenir la condensation et le gel. Cependant, ceux-ci consomment énormément et ne peuvent donc pas être envisagés ici.
-
-\paragraph{Encapsulation}
-
-A l'aide de joints, et d'une bonne qualité de fabrication, on peut grandement limiter la condensation, ainsi que l'humidité et la saleté.
-
-\paragraph{Revêtement}
-
-L'utilisation de revêtements protecteurs sur les composants electroniques peut prévenir la condensation et diminuer ainsi les risques de court-circuits. Cela peut permettre de facilement augmenter la durée de vie du système.
-
-\paragraph{Connecteurs}
-
-Les connecteurs (e.g. connexion de la base à sa source d'enérgie) doivent avoir des contacts solides qui empêche l’humidité dans les prises.
 
 \section{Conclusion}
 
