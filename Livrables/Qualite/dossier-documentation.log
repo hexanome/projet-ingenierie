@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.1.5)  22 JAN 2012 13:43
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.1.5)  25 JAN 2012 09:04
 entering extended mode
  %&-line parsing enabled.
 **dossier-documentation.tex
@@ -453,7 +453,7 @@ Overfull \hbox (11.46216pt too wide) in paragraph at lines 194--195
 our ef-fectuer la révi-sion (dans notre ex-em-ple dossier-documentation.tex),
  []
 
-[3] [4] (./dossier-documentation.aux) ) 
+[3] [4] [5] (./dossier-documentation.aux) ) 
 Here is how much of TeX's memory you used:
  2422 strings out of 495061
  30539 string characters out of 1182622
@@ -462,13 +462,13 @@ Here is how much of TeX's memory you used:
  25380 words of font info for 22 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
  25i,5n,24p,490b,172s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-
-ec.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fon
-ts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb
->
-Output written on dossier-documentation.pdf (4 pages, 106636 bytes).
+{/usr/share/texmf/fonts/enc/dvips/lm
+/lm-ec.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf
+/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10
+.pfb>
+Output written on dossier-documentation.pdf (5 pages, 109814 bytes).
 PDF statistics:
- 28 PDF objects out of 1000 (max. 8388607)
+ 31 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
