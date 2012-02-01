@@ -1,0 +1,63 @@
+%-------------------------------------------
+% En-tête type de document pour le projet PLD
+% Il suffit de remplir le input ligne 45
+%-------------------------------------------
+
+\documentclass[a4paper]{article}
+
+\usepackage[utf8]{inputenc}   
+\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+\usepackage{ucs}
+% Reconnaitre les caratères accentués dans le source.
+\usepackage[T1]{fontenc} 
+\usepackage{lmodern}
+\usepackage[francais]{babel}
+% Insertion d'images
+\usepackage{graphicx}
+% Utilisation du symbole EURO
+\usepackage{eurosym}
+
+\setlength{\parskip}{10pt plus 1pt minus 1pt}
+
+\begin{document}
+
+%------------------------------------- Page de titre
+\begin{titlepage}
+~ 
+\vfill
+	\begin{center}
+		\begin{Huge}
+		Cahier des charges :\\ Logiciel de communication base - centrale
+		\end{Huge} 
+\vfill
+		\textbf{Hexanome 4111 :} 
+		\\Quentin \bsc{Calvez}, Matthieu \bsc{Coquet}, 
+		\\Jan \bsc{Keromnes}, Alexandre \bsc{Lefoulon}, 
+		\\Thaddée \bsc{Tyl}, Xavier \bsc{Sauvagnat}\\
+\vfill		
+		\begin{Large}
+		Janvier 2012
+		\end{Large}
+\vfill
+	\begin{tabular}{|c|c|c|c|}
+ 	 \hline
+	\end{tabular}
+	\end{center}
+\vfill
+\end{titlepage}
+%----------------------------------------------------
+%--------------------------------- Table des matières
+\newpage
+\tableofcontents
+\newpage
+%----------------------------------------------------
+
+%------------------- Insertion du contenu du document
+\input{./Transmission_Satellite.tex}
+%----------------------------------------------------
+
+%------------------- 
+
+%----------------------------------------------------
+
+\end{document}
