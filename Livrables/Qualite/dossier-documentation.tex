@@ -17,9 +17,37 @@
 
 \begin{document}
 
-\part{Introduction}
+\begin{titlepage}
+~ 
+\vfill
+	\begin{center}
+		\begin{Huge}
+		Projet d'Ingéniérie : Dossier de Gestion et d'Organisation de la Documentation\\
+		\end{Huge} 
+\vfill
+		Jan \bsc{Keromnes}, Responsable Qualité, H4111
+\vfill		
+		\begin{Large}
+		Janvier 2012
+		\end{Large}
+\vfill
+	\begin{tabular}{|c|c|c|c|}
+ 	 \hline
+	\end{tabular}
+	\end{center}
+\vfill
+\end{titlepage}
+%----------------------------------------------------
+%--------------------------------- Table des matières
+\newpage
+\tableofcontents
+\newpage
+%----------------------------------------------------
 
-\section{Rappel}
+
+\section{Introduction}
+
+\subsection{Rappel}
 
 \paragraph{Documentation} Ensemble de documents relatifs à un projet - notice - mode d’emploi - action de sélectionner, classer, utiliser ou diffuser des documents.
 
@@ -27,7 +55,7 @@ La documentation d’un projet a une importance primordiale : c’est l’outil 
 
 Afin d’organiser la gestion de la documentation produite par projet, il convient au préalable d’identifier tous les types de documents relatifs aux diverses étapes d’un projet, de les référencer de manière homogène pour ensuite définir un mode de gestion commun à tous les projets.
 
-\section{Objet du document}
+\subsection{Objet du document}
 
 Le dossier de gestion et d'organisation de la documentation du projet a pour objectif de définir l’ensemble des règles
 communes concernant la gestion de la documentation (structuration, page de garde, cycle de vie d’un
@@ -39,13 +67,13 @@ Nous proposerons des règles de gestion de la documentation pour ce projet qui p
 de référenciation homogènes de l'ensemble de la documentation relative au projet, d'en organiser la production, le classement
 et l'accès.
 
-\part{Gestion de la documentation}
+\section{Gestion de la documentation}
 
 Ce chapitre précise les règles de gestion de la documentation à mettre en oeuvre dans tout projet.
 
 Pour mieux comprendre la nécessité d’une gestion rigoureuse de la documentation, il convient en premier lieu de détailler les états par lesquels passe un document avant d’être diffusé ainsi que le rôle des différents acteurs.
 
-\section{Les acteurs et leurs responsabilités}
+\subsection{Les acteurs et leurs responsabilités}
 
 Les différents acteurs sont :
 
@@ -58,7 +86,7 @@ Les différents acteurs sont :
 
 % tableau
 
-\section{Cycle de vie d'un document}
+\subsection{Cycle de vie d'un document}
 
 Un document passe ou peut passer par un certain nombre d'états :
 
@@ -74,14 +102,14 @@ Un document passe ou peut passer par un certain nombre d'états :
 
 % schema
 
-\subsection{Production du document}
+\subsubsection{Production du document}
 
 Un document en cours de production est dans l'état ``travail''.
 
 Lorsque l'auteur obtient une rédaction qui le satisfait et ne souhaite plus apporter de modifications, il l'indique en le faisant passer à l'état ``terminé''.
 Avant de faire passer un document en l'état ``terminé'', l'auteur peut le soumettre à des lectures croisées au sein de son équipe.
 
-\subsection{Vérification / validation du document}
+\subsubsection{Vérification / validation du document}
 
 L'auteur diffuse alors le document aux vérificateurs puis aux validateurs, ou directement aux validateurs (la vérification est optionnelle selon le type de document). La diffusion se fait sous format papier ou électronique (choisir le plus pratique).
 
@@ -124,21 +152,21 @@ L'auteur du document est chargé d'indiquer en page de garde du document l'état
 
 \paragraph{NB} Pour chaque document à valider, une date de retour des remarques est convenue. Si aucun retour n'est parvenu à l'auteur à la date prévue, le document est considéré comme validé.
 
-\subsection{Archivage du document}
+\subsubsection{Archivage du document}
 
 Lorsqu'un document est périmé, le responsable chargé de la gestion de la documentation l'archive et veille à informer tous les détenteurs du document de sa cessation d'applicabilité.
 
-\section{Identification et structure de la documentation}
+\subsection{Identification et structure de la documentation}
 
-\subsection{Identification}
+\subsubsection{Identification}
 
 Afin d’assurer l’efficacité de la gestion de la documentation, il faut prévoir un mécanisme normalisé d’identification des documents (homogénéité).
 
 Ainsi, chaque document reçoit une référence unique au sein du projet.
 
-\subsection{Structure}
+\subsubsection{Structure}
 
-\section{Gestion des versions - révisions}
+\subsection{Gestion des versions - révisions}
 
 Chaque modification d’un document doit être faite en accord avec les dispositions d’approbation des documents (voir chapitre : "cycle de vie d’un document"). 
 
@@ -199,17 +227,17 @@ GitHub affiche la version modifiée du document (exemple : dans dossier-document
 \end{itemize}
 
 
-\section{Outils de production de la documentation}
+\subsection{Outils de production de la documentation}
 
 Tout nouveau document est produit sur PC ou Macintosh, en utilisant un logiciel d'édition de document compatible avec la technologie Latex, permettant de générer des documents homogènes et de grande qualité.
 
-\section{Gestion physique des fichiers contenant les documents}
+\subsection{Gestion physique des fichiers contenant les documents}
 
-\subsection{Répertoires}
+\subsubsection{Répertoires}
 
 Les documents du projet sont accessibles en consultation à tous les membres de l'équipe projet sur le serveur ou sur leur propre copie du répertoire de travail, dans le dossier ``Livrables''. Un sous-répertoire est créé par nature de document à gérer, comme par exemple : ``Qualité'', ``Dossier\_Initialisation'', etc.
 
-\subsection{Noms des fichiers}
+\subsubsection{Noms des fichiers}
 
 Le nom de chaque fichier représentant un livrable est unique, et s'écrit avec les mots du nom du livrable, ou un sous-ensemble de mots-clefs représentatifs, séparés par des tirets.
 
@@ -217,7 +245,7 @@ L'extension ``.tex'' est rajoutée systématiquement afin de pouvoir facilement 
 
 \paragraph{Exemples} ``dossier-documentation.tex'', ``glossaire-commun.tex'', etc.
 
-\subsection{Procédures de sauvegarde et archivage}
+\subsubsection{Procédures de sauvegarde et archivage}
 
 Le répertoire du projet est sauvegardé en continu par la procédure automatique des serveurs de GitHub. Les différentes versions des documents sont archivées par le gestionnaire de révision Git, qui référence les sources Latex de tous les documents et enregistre leurs modifications au cours du temps, au sein du répertoire de travail Git.
 
@@ -225,14 +253,14 @@ La copie centrale de ce répertoire de travail se trouve sur les serveurs de Git
 
 Lorsque l'accès immédiat à un document n'est plus indispensable, le document est archivé par sécurité. Si le document est périmé, le responsable de la documentation veille à informer tous les détenteurs du document de sa cessation d'applicabilité.
 
-\part{Organisation de la production}
+\section{Organisation de la production}
 
 \paragraph{Rappel : organisation d'un projet} L'équipe projet, dirigée par le Chef de Projet (CdP) est composée de plusieurs GEI ainsi que d'un Responsable Qualité (RQ).
 
 Voici une liste rapide des documents à rendre pour chaque groupe de travail (livrables de la phase 1 pour le CdP et le GEI). 
 Pour plus de détails concernant ces documents, vous pouvez vous référer aux informations contenues dans le dossier d'initialisation.
 
-\section{Documents de gestion de projet}
+\subsection{Documents de gestion de projet}
 
 \begin{itemize}
 \item Dossier d'Initialisation
@@ -244,7 +272,7 @@ Pour plus de détails concernant ces documents, vous pouvez vous référer aux i
 \end{itemize}
 
 
-\section{Documents d’étude et développement}
+\subsection{Documents d’étude et développement}
 
 \begin{itemize}
 \item Dossier de faisabilité
@@ -254,7 +282,7 @@ Pour plus de détails concernant ces documents, vous pouvez vous référer aux i
 \item Dossier de synthèse
 \end{itemize}
 
-\section{Documents relatifs à la qualité}
+\subsection{Documents relatifs à la qualité}
 
 \begin{itemize}
 \item Dossier de structuration de la documentation et organisation de la production
@@ -265,7 +293,7 @@ Pour plus de détails concernant ces documents, vous pouvez vous référer aux i
 \item Dossier bilan personnel du Responsable Qualité
 \end{itemize}
 
-\part{Annexes}
+\section{Annexes}
 
 \paragraph{Plans types} Pour consulter une série de plans types utiles pour la réalisation de documents, voir l'annexe ``dossier-documentation-annexe-1-plan-type.pdf''.
 \paragraph{Manuel Git} Pour s'initier à l'utilisation du gestionnaire de révisions distribué Git, voir l'annexe ``dossier-documentation-annexe-2-tutoriel-git.pdf''.

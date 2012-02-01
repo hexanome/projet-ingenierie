@@ -1,0 +1,35 @@
+\select@language {french}
+\contentsline {section}{\numberline {1}Introduction}{2}
+\contentsline {subsection}{\numberline {1.1}Rappel}{2}
+\contentsline {paragraph}{Documentation}{2}
+\contentsline {subsection}{\numberline {1.2}Objet du document}{2}
+\contentsline {section}{\numberline {2}Gestion de la documentation}{2}
+\contentsline {subsection}{\numberline {2.1}Les acteurs et leurs responsabilit\IeC {\'e}s}{2}
+\contentsline {subsection}{\numberline {2.2}Cycle de vie d'un document}{2}
+\contentsline {subsubsection}{\numberline {2.2.1}Production du document}{2}
+\contentsline {subsubsection}{\numberline {2.2.2}V\IeC {\'e}rification / validation du document}{3}
+\contentsline {paragraph}{Une partie renseign\IeC {\'e}e par l'auteur (avant transmission au v\IeC {\'e}rificateur / validateur)}{3}
+\contentsline {paragraph}{Une partie renseign\IeC {\'e}e par le v\IeC {\'e}rificateur/validateur}{3}
+\contentsline {paragraph}{NB}{3}
+\contentsline {subsubsection}{\numberline {2.2.3}Archivage du document}{3}
+\contentsline {subsection}{\numberline {2.3}Identification et structure de la documentation}{3}
+\contentsline {subsubsection}{\numberline {2.3.1}Identification}{3}
+\contentsline {subsubsection}{\numberline {2.3.2}Structure}{3}
+\contentsline {subsection}{\numberline {2.4}Gestion des versions - r\IeC {\'e}visions}{3}
+\contentsline {paragraph}{Remarques}{4}
+\contentsline {paragraph}{Attention}{4}
+\contentsline {subsection}{\numberline {2.5}Outils de production de la documentation}{4}
+\contentsline {subsection}{\numberline {2.6}Gestion physique des fichiers contenant les documents}{4}
+\contentsline {subsubsection}{\numberline {2.6.1}R\IeC {\'e}pertoires}{4}
+\contentsline {subsubsection}{\numberline {2.6.2}Noms des fichiers}{4}
+\contentsline {paragraph}{Exemples}{4}
+\contentsline {subsubsection}{\numberline {2.6.3}Proc\IeC {\'e}dures de sauvegarde et archivage}{5}
+\contentsline {section}{\numberline {3}Organisation de la production}{5}
+\contentsline {paragraph}{Rappel : organisation d'un projet}{5}
+\contentsline {subsection}{\numberline {3.1}Documents de gestion de projet}{5}
+\contentsline {subsection}{\numberline {3.2}Documents d\IeC {\textquoteright }\IeC {\'e}tude et d\IeC {\'e}veloppement}{5}
+\contentsline {subsection}{\numberline {3.3}Documents relatifs \IeC {\`a} la qualit\IeC {\'e}}{5}
+\contentsline {section}{\numberline {4}Annexes}{5}
+\contentsline {paragraph}{Plans types}{5}
+\contentsline {paragraph}{Manuel Git}{5}
+\contentsline {paragraph}{Introduction Latex}{5}

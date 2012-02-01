@@ -1,15 +1,13 @@
 \section{Introduction}
-% A refaire / compléter : Cela ne correspond pas du tout au plan réel.
-
 Ce dossier présente les différentes technologies et solutions techniques qui sont suceptibles d’être utilisées dans notre solution. Nous expliquerons les problèmes généraux que l’on peut rencontrer en condition de site isolé, puis nous dresserons un état des solutions envisageables tout en gardant à l'esprit les problématiques spécifiques qui nous concernent.
 
 \section{Rappel du problème}
-Le COPEVUE a lancé un appel d'offre dans le cadre de la réalisation d'un système de monitoring de sites isolés. Il s'agit donc de concevoir en premier lieu une solution technique permettant de répondre aux mieux aux exigences fonctionnelles et non fonctionnelles que le COPEVUE formule. De façon synthétique notre équipe va proposer une solution permettant de surveiller des sites naturels difficiles d'accès (souvent à cause des conditions environnementales) et peu peuplés. Dans ces sites isolés sont souvent regroupés des postes de travail et ces zones doivent pouvoir être surveillées en dépit de la distance qui les sépare du bureau de contröle.
+Le COPEVUE a lancé un appel d'offre dans le cadre de la réalisation d'un système de monitoring de sites isolés. Il s'agit donc de concevoir en premier lieu une solution technique permettant de répondre au mieux aux exigences fonctionnelles et non fonctionnelles que le COPEVUE formule. De façon synthétique notre équipe va proposer une solution permettant de surveiller des sites naturels difficiles d'accès (souvent à cause des conditions environnementales) et peu peuplés. Dans ces sites isolés sont souvent regroupés des postes de travail et ces zones doivent pouvoir être surveillées en dépit de la distance qui les sépare du bureau de contröle.
 \subsection{Le contexte}
 Notre cas d'étude se limite pour l'instant à considérer une situation simple : comment pouvoir maintenir de manière rentable des réserves de tel ou tel composé à un niveau correct bien que le site de stockage soit situer dans des zones difficiles d'accès ? L'idéal serait donc de pouvoir suivre a distance l'évolution d'un niveau d'un composé en fonction du temps.Le ravitaillement serait ainsi plus raisonnable car on saurait alors la quantité de composant à acheminer sur place. Trouver une solution fonctionnelle à cette problématique permettrait ainsi d'économiser en frais de maintenance mais aussi et surtout d'éviter certaines catastrophe écologique comme par exemple un manque d'eau dans un réservoir lors d'un feu de forêt ou encore une fuite de carburant d'un réservoir de forêt.
 
 \subsection{Les objectifs}
-Il s'agit donc d'étudier et de concevoir un système autonome et qui pourra être adapté à de nombreux sites autour du monde (autant dans les zones chaudes que dans les zones froides) de mesure et de monitoring à distance de zones de travail isolées. Il devra être possible de même d'éffectuer des actions de pilotage, de configuration et de maintenance des zones. Il est intéressant de rester assez général dans les différentes actions qu'il sera possible de mener à distance afin d'avoir une solution évolutive qui saura s'adapter à d'autres cas de figure.
+Il s'agit donc d'étudier et de concevoir un système autonome qui pourra être adapté à de nombreux sites autour du monde (autant dans les zones chaudes que dans les zones froides) de mesure et de monitoring à distance de zones de travail isolées. Il devra être également possible d'effectuer des actions de pilotage, de configuration et de maintenance des zones. Il est intéressant de rester assez général dans les différentes actions qu'il sera possible de mener à distance afin d'avoir une solution évolutive qui saura s'adapter à d'autres cas de figure.
 Voici quelques éléments permettant d'esquisser un système qui pourrait convenir :
 
 \begin{itemize}
@@ -28,7 +26,7 @@ Dans ce projet, il sera important de bien calculer les surcoûts éventuels lié
 
 \subsection{Solution existante interne à COPEVUE}
 
-Il n’existe actuellement aucun système de monitoring de sites isolés au sein du COPEVUE. A ce jour, les sites isolés ne sont pas automatisés, et sont surveillés manuellement. Il n’existe aucune communication entre les sites et une quelconque centrale, ce qui nécessite des interventions régulières de relèvement et maintenance des installations, entrainant par là-même un coup important.
+Il n’existe actuellement aucun système de monitoring de sites isolés au sein du COPEVUE. A ce jour, les sites isolés ne sont pas automatisés et sont surveillés manuellement. Il n’existe aucune communication entre les sites et une quelconque centrale, ce qui nécessite des interventions régulières de relèvement et maintenance des installations, entrainant par là-même un coup important.
 
 \subsection{Solution existante concurrente}
 
@@ -50,8 +48,9 @@ Les boîtiers ELOcom équipent un réseau de camions. Ils permettent la localisa
 \section{Etude de faisabilité}
 
 Les conditions climatiques extrêmes sont à prendre en compte dans cette étude. Bien que nous nous intéressions principalement aux pays nordiques, nous serons attentifs à l’évolutivité du système pour qu’il puisse être installé dans d'autres types de climats, comme ceux des pays méditerranéens.
-Dans les pays nordiques, on rencontre des problèmes de froid en hiver (avec pour conséquence des chutes de neige et la formation de glace), et de pollen au printemps. Le soleil est par ailleurs totalement absent durant certaine périodes de l’année. 
-Les température oscillent entre -55 et 40°C, et dans le cas des pays méditerranéens, de -25 à 50°C.
+Dans les pays nordiques, on rencontre des problèmes de froid intense en hiver (avec pour conséquence des chutes de neige et la formation de glace), et de pollen au printemps. Au delà du cercle polaire, le soleil est totalement absent durant l'hiver. En dessous, les durées d'ensoleillement sont très courtes (moins de 2h par jour). Sur le pourtour méditérannée, les durées d'ensoleillement sont de l'ordre de 7h par jour.
+Les température oscillent entre -55 et 40°C, et dans le cas des pays méditerranéens, de -5 à 50°C.
+Le vent est également un paramètre très important, dans les pays du nord, les vents sont plutôt violents, avec un recrudescence du nombre de tempêtes.
 
 Voici quelques contraintes liées au climat :
 
@@ -61,8 +60,8 @@ Voici quelques contraintes liées au climat :
 
 \paragraph{Condensation \&  Gel}
 
-Par grands froids, les écrans peuvent devenir illisibles et les capteurs inutilisables. Dans notre cas, seul les capteurs posent réellement problème, les écrans n'étant utilisés que lors de la maintenance.
-Comme l’appareil est hermétiquement fermé, il est difficile de procéder à un nettoyage rapide. L’appareil peut devenir HS à cause de composant corrodé, de court-circuits. On doit réparer ou remplacer l’appareil.
+Par grands froids, les écrans peuvent devenir illisibles et les capteurs inutilisables. Dans notre cas, seul les capteurs posent réellement problème, les écrans n'étant utilisés que lors de la maintenance. On veillera donc aux plages de températures d'utilisation des capteurs.
+Comme l’appareil est hermétiquement fermé, il est difficile de procéder à un nettoyage rapide. L’appareil peut devenir hors-service à cause de composant corrodé, de court-circuits. On doit réparer ou remplacer l’appareil.
 
 \paragraph{Air froid}
 
@@ -230,9 +229,12 @@ Les camions de maintenance n'ont pas de besoin particulier d'être connectés en
 % http://fr.wikipedia.org/wiki/Corrosion
 % //fin question
 
-\subsection{Capteurs}
+
+
+\subsection{Capteurs de niveau}
 
 Suivant qu’il s’agisse du niveau de remplissage d’un réservoir contenant un liquide (eau, hydrocarbure, etc.) ou d’un container contenant des déchets solides, un grand nombre de technologies différentes de capteurs existent, certaines étant soumises à des contraintes de fonctionnement pour pouvoir opérer correctement.
+Les capteurs présentés ne représentent pas toutes les technologies existantes mais les principales. Certaines ont des domaines d'applications très différentes de la notre.
 
 \subsubsection{Capteurs de niveau pour liquides}
 
@@ -240,8 +242,6 @@ Suivant qu’il s’agisse du niveau de remplissage d’un réservoir contenant 
 
 Il se maintient à la surface du liquide, il est rendu solidaire d'un capteur de position qui délivre le signal électrique correspondant au niveau. La mesure s'apparente ensuite à la mesure d'un déplacement ou la détection d'une position.
 Cette technologie conviendrait dans notre cas, car les liquides contenus dans nos cuves (carburant, eau) se sont pas très visqueux donc cela ne risque pas de fausser les mesures. Et cela permet de connaître le niveau à tout instant.
-gamme de mesure : 10 mm à plusieurs mètres (30 m)
-précision : 0,5 à 5\% de l'étendue de mesure
 
 \paragraph{Le plongeur}
 
@@ -251,11 +251,14 @@ C'est un cylindre immergé dont la hauteur est au moins égale à la hauteur max
 
 Un capteur mesure la pression dans la cuve et fait un différentiel par rapport à un référentiel (cuve vide) pour donner la hauteur de liquide. Les caractéristiques techniques conviennent aussi à notre problème.
 
-\subsubsection{Capteurs de niveau pour solides}
+\paragraph{Sonde capacitive}
+La capacité électrique d'un liquide change avec son volume, la sonde donne un signal de sortie proportionnel au niveau mesuré, mais si la cuve est profonde, il faut une sonde de la bonne longueur sinon la mesure ne sera pas continu.
 
-\paragraph{Détecteur à pales vibrantes}
+\subsubsection{Capteurs de niveau pour solides} 
 
-Lorsque le solide est en contact avec les pales, la fréquence de vibration est modifiée permettant de savoir ainsi le niveau des solides, mais cette solution ne convient que pour des solides de faible granulométrie, ce qui peut s’avérer problématique si les déchets sont assez hétérogènes et volumineux.
+\paragraph{Détecteur à lames vibrantes}
+
+Lorsque le solide est en contact avec les pales, la fréquence de vibration est modifiée permettant de savoir ainsi le niveau des solides, mais cette solution ne convient que pour des solides de faible granulométrie, ce qui peut s’avérer problématique pour des déchets, du fait de leur hétérogénéité.
 
 \subsubsection{Capteurs hybrides (liquides \&  solides)}
 
@@ -266,10 +269,21 @@ Lorsque le solide est en contact avec les pales, la fréquence de vibration est 
 \end{itemize}
 
 Ces trois technologies utilisent le même principe qui permet de mesurer le niveau en mesurant la distance par rapport au capteur grâce à la durée mise par l’onde réfléchie pour revenir au capteur. Ces méthodes de mesure sans contact conviennent pour notre problème.
-
-Des données plus exhaustives sur les consommations électriques pour les mesures nous permettrait d’orienter notre choix, ainsi qu’un prix par capteur, voir si une solution générique (infrarouge ou ultrason) suffirait ou s’il peut être intéressant financièrement de bien différencier les solutions pour les liquides des solides.
+Au vue de la différence d'ordre de grandeur des prix entre les capteurs de niveau utilisant un flotteur ou un plongeur et les capteurs utilisant des rayonnements, de l'ordre de 5 à 10, il peut être pertinent d'envisager de bien faire la différence entre les réservoirs de liquides et les containers de solides. Il faut également prendre en considération si une connaissance exacte du niveau à tout instant est nécessaire ou pas. Car la mise en oeuvre de certaines technologies ne permet que de savoir si un seuil a été atteint ou non.
 
 
 \section{Conclusion}
 
 Ce dossier reprend les technologies envisageables pour notre système. Nous avons détaillé toutes les solutions et montrons les problèmes envisageables, en fonction des caractéristiques du lieu. Certaines technologies sont plus avantageuses que d'autres et nous nous concentrerons sur celles-ci.
+
+%Flotteur
+%https://portal.endress.com/wa001/dla/50000003183/000/01/KA00180FA3_1311.pdf
+%Lame vibrante
+%https://portal.endress.com/wa001/dla/50000007211/000/09/TI392Ffr.pdf
+%Ultrasonic Level Transmitters for solid and liquid
+%https://portal.endress.com/wa001/dla/50003054388/000/00/TI440FFR_1209.pdf
+%Radar Level Transmitters for solid and liquid
+%https://portal.endress.com/wa001/dla/50000004179/000/07/TI345FFR_0310.pdf
+%Sonde capacitive
+%https://portal.endress.com/wa001/dla/50004035492/000/04/TI00401FFR_1310.pdf
+
