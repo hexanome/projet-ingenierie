@@ -1,13 +1,62 @@
 \section{Introduction}
+
 \subsection{Présentation du projet}
+
+% On reprend ce qui a déjà été fait dans les autres documents.
+
 \subsection{Présentation du document}
+
+Nous allons dans ce cahier des charges présenter en détails les besoins que nous avons vis-à-vis de la solution de communication par satellite des sites isolés avec le centrale de gestion, ainsi que la reconfiguration à distance des ceux-ci. Nous essayerons tout d'abord de voir quelles sont les objectifs de cette solution technique, les utilisateurs concernés et les problèmes pouvant se présenter, autant dans son développement, sa mise en oeuvre, et finalement sa maintenance. Ce document est accompagné d'annexes permettant d'appronfondir certains sujets plus techniques sur lesquels nous n'avons pas voulu nous attarder dans un but de clarté.
+
 \subsection{Documents applicables / Documents de référence}
+
+% Décider ensemble de ce que l'on met dans ce genre de sections.
+
 \subsection{Terminologie et abréviations}
 
+% A complêter au fur et à mesure.
+% Définir le "Système de gestion du site isolé".
+% Définir le "Système central".
+
 \section{Présentation du problème}
+
 \subsection{Buts, nature du logiciel, utilisateurs concernés}
+
+Cette étude porte tout d'abord sur un logiciel qui va avoir une fonction, la communication par satellite avec le système central du système, et par-là même deux rôles : Le premier va être de transmettre les données relevées par les capteurs au système central, et l'autre de pouvoir recevoir de celui-ci de nouvelles données de configuration.
+
+Ce composant logiciel devra donc intéragir d'un côté avec le système de gestion du site isolé, présent sur le même système physique que lui, et de l'autre avec le système central par le biais d'une communication satellite puis, à un niveau plus élevé, par le biais de services web.
+
+D'un point de vue plus technique, ce logiciel devra s'exécuter sur un OS Linux embarqué prévu pour n'être actif que pendant de courtes périodes de temps.
+
+Le composant décrit ici n'aura pas directment d'``utilisateurs'' à proprement parler. Il devra par fournir une API aux développeurs du système de gestion du site isolé, et se conformer à au protocole utilisé par le système central. La configuration du composant (e.g. les fréquences satellites à utiliser pour la communication) se fera par le système de gestion du site, et non pas direcement par un utilisateur externe.
+
+Ce document va aussi porter sur le matériel exploité par le logiciel précédement cité, à savoir le module de communication par satellite. Les attentes par rapport à celui-ci seront décrite plus loins.
+
 \subsection{Formulation des besoins, exploitation et ergonomie, expérience}
+
+Le système présentement présenté doit répondre à deux besoins bien distincts, et ce quelque soit la localisation géographique du système dans le monde :
+
+\parapraph{Transmission} Le système doit pouvoir envoyer au système central les informations suivantes :
+
+\begin{itemize}
+\item La valeur des mesures de effectuées depuis la dernière transmission par chacun des capteurs. La quantité de valeurs dépend de la granularité avec laquelle est configurée le site. Chaque valeur sera bien évidement datée.
+\item L'état physique et logique de la station et du site. Cela peut comprendre la température ambiante, l'autonomie estimée des différentes batteries, les logs systèmes engrangés par le système informatique, etc.
+\item L'indentification du site et des différents capteurs. % A voir.
+\end{itemize}
+
+\paragraph{Reconfiguration} Après envoi des données, le système peut éventuellement recevoir comme réponse une demande de reconfiguration permettant aux opérateurs de modifier à distances les paramètres suivants :
+
+\begin{itemize}
+\item Les différents quantum de temps définissant la granularité avec laquelle le système effectue ses mesures et en transmet les résultats au système central.
+\item Les fréquences de transmission satellite utilisées par le présent sous-système.
+\item Des paramètres systèmes tels que le niveau de logs à engranger et à transmettre, les politiques de reprise sur échec (dans le contexte de la communication avec les capteurs par exemple).
+\item Des données de configuration spécifiques à certains capteurs, qui leur seront transmis à leur prochaine connéxion (les intervalles de relevés comme mentionné plus haut, mais aussi des paramètres spécifiques à un type de capteur telles que les fréquences d'ultrasons à utiliser pour effectuer un relevé de remplissage d'une cuve).
+\end{itemize}
+
 \subsection{Portée, développement, mise en oeuvre, organisation de la maintenance}
+
+
+
 \subsection{Limites}
 
 \section{Exigences fonctionnelles}
