@@ -69,7 +69,7 @@ La plupart des batteries ne sont pas capables d’émettre autant d'énergie lor
 De plus, certaines ondes hertziennes traversent différemment l’air froid que l’air chaud\footnotemark.
 
 % Lien : http://www.lxe.com/uploadedFiles/pdf/White_Papers/WhitePaper-ColdStorageComputers.pdf
-\footnotetext{Source : Document de LXE sur l'informatique mobile et les basses températures - http://j.mp/cold-storage-computers}
+\footnotetext{Document de LXE sur l'informatique mobile et les basses températures - http://j.mp/cold-storage-computers}
 
 Nous allons insister dans cette partie sur l'adaptabilité de nos solutions à ces différentes conditions.
 
@@ -104,10 +104,14 @@ Les connecteurs (e.g. connexion de la base à sa source d'enérgie) doivent avoi
 
 \subsubsection{Matériel}
 
-De nombreux fournisseurs proposent des cartes de systèmes embarqués complets conçus autours de processeurs ARM (plus économes en énergie que leurs homologues de chez Intel). Ces cartes présentent l'avantage d'être compactes, abordables\footnotemark (inférieurs à 300\euro ), et de proposer de nombreuses interfaces, permettant leur utilisation en combinaison avec la plupart des périphériques informatiques existants.
+Des fabricants tels qu'Armadeus\footnotemark proposent des cartes de systèmes embarqués bien adaptées à notre problématique. Equipées de processeurs x86 (Intel) ou Arm (on préférera le second pour des raisons de consomation d'économie d'enérgie), elles permettent l'exécution de systèmes d'exploitation modernes. Elles présentent par ailleurs l'avantage d'être compactes, abordables\footnotemark (prix généralement inférieur à 300\euro ), et proposent toutes les interfaces dont nous pourrions avoir besoin pour les interfacer avec les périphériques utilisés (i.e. USB, série, ethernet, etc.).
+
 
 % Lien : http://www.armadeus.com/francais/produits-cartes_microprocesseur-apf51.html
-\footnotetext{Exemple : Système embarqué Armadeus - http://j.mp/armadeus}
+\footnotetext{Site internet Armadeus - http://j.mp/armadeus}
+
+% Lien : http://www.embeddedarm.com/products/board-detail.php?product=TS-7260
+\footnotetext{Exemple de carte Technologic Systems - http://j.mp/technologic-systems}
 
 \subsubsection{Système d'exploitation}
 
@@ -125,7 +129,7 @@ La continuité de fonctionnement de capteurs autonomes sur des sites isolés est
 Les récentes avancées en matière de technologies de batterie permettent, sur des systèmes à très basses consommation comme les capteurs qui nous intéressent ici, d’obtenir de très grandes durée de fonctionnement en autonomie, pouvant aller jusqu’à plusieurs dizaines d’année\footnotemark.
 
 % Lien : http://www.powercastsensors.com/
-\footnotemark{Source : Site internet PowerCast - http://j.mp/powercast}
+\footnotetext{Site internet PowerCast - http://j.mp/powercast}
 
 Cette solution est très dépendante du type de capteur choisi (la consommation de ceux-ci pouvant grandement varier selon leur procédé de fonctionnement), mais permet dans certains cas d’assurer un fonctionnement autonome sans aucun entretien sur de très longues périodes.
 
@@ -235,16 +239,18 @@ Les capteurs présentés ne représentent pas toutes les technologies existantes
 
 \paragraph{Le flotteur}
 
-Il se maintient à la surface du liquide, il est rendu solidaire d'un capteur de position qui délivre le signal électrique correspondant au niveau. La mesure s'apparente ensuite à la mesure d'un déplacement ou la détection d'une position.
-Cette technologie conviendrait dans notre cas, car les liquides contenus dans nos cuves (carburant, eau) se sont pas très visqueux donc cela ne risque pas de fausser les mesures. Et cela permet de connaître le niveau à tout instant.
+Il se maintient à la surface du liquide, il est attaché à un interrupteur qui sera en position fermé ou ouverte suivant la hauteur de liquide, le fonctionnement mécanique en fait une méthode de mesure robuste et simple. Mais cella ne permet que de savoir si le niveau est inférieur ou supérieur à un seuil donné par la position physique de l'interrupteur dans la cuve. Il faut multiplier les flotteurs pour avoir une approximation plus précise. Cette technologie peut convenir, dans le mesure où une connaissance exacte du niveau n'est pas cruciale et c'est une solution très abordable, avec des prix commençant à 25\euro\footnotemark.
+
+\footnotetext{ Prix de base d'un détecteur de niveau à flotteur - http://tiny.cc/flotteur }
+
 
 \paragraph{Le plongeur}
 
-C'est un cylindre immergé dont la hauteur est au moins égale à la hauteur maximale du liquide dans le réservoir. Le plongeur est suspendu à un capteur dynamométrique qui se trouve soumis à une force proportionnel à la hauteur de liquide. C’est une technologie équivalente au flotteur.
+Les mouvements du niveau de liquide modifient la force de flottabilité (poussée d'Archimède ) qui s'exerce sur un plongeur suspendu à un ressort de mesure. Le ressort se détend ou se contracte sous l'action de la force qu'exerce le liquide et entraîne ainsi le manchon magnétique dans ou hors du champ d'attraction de l'aimant permettant d'actionner le détecteur. Cette technologie s'apparente à celle du flotteur, avec uniquement une mesure par seuil. Il est possible d'avoir différents seuils en ayant plus qu'un plongeur sur la tige.
 
 \paragraph{Le capteur de pression}
 
-Un capteur mesure la pression dans la cuve et fait un différentiel par rapport à un référentiel (cuve vide) pour donner la hauteur de liquide. Les caractéristiques techniques conviennent aussi à notre problème.
+La mesure de niveau est réalisée par mesure de pression différentielle entre la surface du liquide et la position du transmetteur immergé. La pression estconvertie en signal électrique par technologie piézo résistive. Cela permet d'avoir la hauteur de liquide à tout instant, malheureusement, les modèles trouvés ne conviennent pas à notre domaine d'application, les capteurs ne supportant que des températures de 2°C à 50°C.
 
 \paragraph{Sonde capacitive}
 La capacité électrique d'un liquide change avec son volume, la sonde donne un signal de sortie proportionnel au niveau mesuré, mais si la cuve est profonde, il faut une sonde de la bonne longueur sinon la mesure ne sera pas continu.
@@ -253,7 +259,7 @@ La capacité électrique d'un liquide change avec son volume, la sonde donne un 
 
 \paragraph{Détecteur à lames vibrantes}
 
-Lorsque le solide est en contact avec les pales, la fréquence de vibration est modifiée permettant de savoir ainsi le niveau des solides, mais cette solution ne convient que pour des solides de faible granulométrie, ce qui peut s’avérer problématique pour des déchets, du fait de leur hétérogénéité.
+Lorsque le solide est en contact avec les pales, la fréquence de vibration est modifiée permettant de savoir ainsi le niveau des solides, mais cette solution ne convient que pour des solides de faible granulométrie, ce qui peut s’avérer problématique pour des déchets, du fait de leur hétérogénéité. On ne retiendra pas cette solution.
 
 \subsubsection{Capteurs hybrides (liquides \&  solides)}
 
@@ -264,21 +270,29 @@ Lorsque le solide est en contact avec les pales, la fréquence de vibration est 
 \end{itemize}
 
 Ces trois technologies utilisent le même principe qui permet de mesurer le niveau en mesurant la distance par rapport au capteur grâce à la durée mise par l’onde réfléchie pour revenir au capteur. Ces méthodes de mesure sans contact conviennent pour notre problème.
-Au vue de la différence d'ordre de grandeur des prix entre les capteurs de niveau utilisant un flotteur ou un plongeur et les capteurs utilisant des rayonnements, de l'ordre de 5 à 10, il peut être pertinent d'envisager de bien faire la différence entre les réservoirs de liquides et les containers de solides. Il faut également prendre en considération si une connaissance exacte du niveau à tout instant est nécessaire ou pas. Car la mise en oeuvre de certaines technologies ne permet que de savoir si un seuil a été atteint ou non.
+Au vue de la différence d'ordre de grandeur des prix entre les capteurs de niveau utilisant un flotteur ou un plongeur et les capteurs utilisant des rayonnements, de l'ordre de 5 à 10\footnotemark, il peut être pertinent d'envisager de bien faire la différence entre les réservoirs de liquides et les containers de solides. Il faut également prendre en considération si une connaissance exacte du niveau à tout instant est nécessaire ou pas. Car la mise en oeuvre de certaines technologies ne permet que de savoir si un seuil a été atteint ou non.
 
+\footnotetext{Prix de base d'un détecteur radar - http://tiny.cc/radar\_prix }
 
 \section{Conclusion}
 
 Ce dossier reprend les technologies envisageables pour notre système. Nous avons détaillé toutes les solutions et montrons les problèmes envisageables, en fonction des caractéristiques du lieu. Certaines technologies sont plus avantageuses que d'autres et nous nous concentrerons sur celles-ci.
 
+
+%%%%%%%ANNEXES%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Flotteur
+%http://tiny.cc/flotteur_doc
 %https://portal.endress.com/wa001/dla/50000003183/000/01/KA00180FA3_1311.pdf
+%Plongeur
+%http://tiny.cc/plongeur_doc
+%Pression
+%http://tiny.cc/pression_doc
 %Lame vibrante
-%https://portal.endress.com/wa001/dla/50000007211/000/09/TI392Ffr.pdf
+%http://tiny.cc/lamevibrante_doc
 %Ultrasonic Level Transmitters for solid and liquid
-%https://portal.endress.com/wa001/dla/50003054388/000/00/TI440FFR_1209.pdf
+%http://tiny.cc/ultrason_doc
 %Radar Level Transmitters for solid and liquid
-%https://portal.endress.com/wa001/dla/50000004179/000/07/TI345FFR_0310.pdf
+%http://tiny.cc/radar_doc
 %Sonde capacitive
-%https://portal.endress.com/wa001/dla/50004035492/000/04/TI00401FFR_1310.pdf
+%http://tiny.cc/capacitif_doc
 
