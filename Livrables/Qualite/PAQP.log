@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.1.5)  8 FEB 2012 11:52
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.1.5)  8 FEB 2012 11:59
 entering extended mode
  %&-line parsing enabled.
 **PAQP.tex
@@ -473,28 +473,27 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 41.
  [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-No file PAQP.toc.
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./PAQP.toc [1])
 \tf@toc=\write3
 \openout3 = `PAQP.toc'.
 
-[1] [2] [3] [4] [5] (./PAQP.aux) ) 
+ [2] [3] [4] [5] [6] (./PAQP.aux) ) 
 Here is how much of TeX's memory you used:
- 2558 strings out of 495061
- 32825 string characters out of 1182622
- 91128 words of memory out of 3000000
+ 2560 strings out of 495061
+ 32843 string characters out of 1182622
+ 95128 words of memory out of 3000000
  5706 multiletter control sequences out of 15000+50000
  39202 words of font info for 33 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 25i,6n,24p,449b,161s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.en
-c}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/ty
-pe1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb></
-usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/p
-ublic/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr17.pfb>
-Output written on PAQP.pdf (6 pages, 182463 bytes).
+ 25i,6n,24p,449b,231s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.e
+nc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/t
+ype1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb><
+/usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/
+public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr17.pfb>
+Output written on PAQP.pdf (7 pages, 189100 bytes).
 PDF statistics:
- 46 PDF objects out of 1000 (max. 8388607)
+ 51 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
