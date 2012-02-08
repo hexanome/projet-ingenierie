@@ -1,0 +1,93 @@
+\section{Introduction}
+Dans le cadre notre système de monitoring de sites isolés, nous avons retenu des solutions adaptées aux objectifs du COPEVUE, et qui permettront de gérer automatiquement les sites isolés. Ce document décrit ces choix et leur justification, et présente le système que l’on propose.
+
+\section{Axes d’amélioration retenus}
+\subsection{Axes de progrès retenus}
+Pour l’heure, le COPEVUE ne possède aucun système de monitoring. En particulier, la gestion non globalisée des camions pour amener des ressources aux sites et pour les vider /  nettoyer est loin de l’optimal.
+
+De plus, les propriétaires des sites isolés doivent actuellement passer des appels manuels afin de contacter les entreprises de ravitaillement et d’évacuation. Alors qu’un système automatisé pourrait rendre la tâche plus simple et éviter toute erreur humaine, afin de prévenir que des incidents que l’on pouvait empêcher, incendies et autres, ne se produisent.
+
+Une automatisation du contrôle du niveau des réservoirs ou containers par capteurs permettra d’éviter des oublis humains et transmettra à tout instant le niveau de remplissage au système global, qui répondra si besoin par un envoi de camions.
+\subsection{Axes de progrès marginaux}
+Pour améliorer la surveillance des sites, on pourrait envisager de proposer dans le futur une surveillance vidéo, pour pouvoir analyser l’environnement alentour, et ainsi agir au plus vite contre les accidents humains ou environnementaux.
+\subsection{Faux axes de progrès éventuels}
+La suppression de  toute intervention humaine pour la surveillance des sites n’est certainement pas un but. En effet, il s’agit avant tout d’aider les personnes qui travaillent sur place. Toutefois, les technologies d’automatisation utilisées nécessitent l’intervention humaine, ne serait-ce que pour s’assurer du bon fonctionnement des capteurs et des systèmes mis en place.
+
+\section{Description des exigences non fonctionnelles}
+Parmi les exigences non fonctionnelles les plus simples, nous promettons un système résilient qui gère les cas de perte de connexion au réseau, de blackout de satellites, et de déconnexion du réseau GSM par le stockage des données en local, dans le système embarqué. Le système tente alors une connexion toutes les dix minutes. Dès qu’il se reconnecte, il envoie les informations qu’il a retenues, avant de passer dans le mode de fonctionnement normal.
+
+Chef parmi nos exigences non fonctionnelles, se trouve l’autonomie de nos systèmes embarqués. Les boîtiers présents sur les sites isolés sont alimentés par des batteries longue-durée (de l’ordre de la dizaine d’année) pour tous les capteurs, excepté GPS (qui requiert trop d’énergie). Si nous optons pour cette solution sur le site, chaque capteur sera également couplé avec une batterie longue durée.
+
+De plus, pour les zones méditerranéennes, dont le climat est principalement chaud, nous pouvons installer des panneaux solaires reliés à une batterie pour stocker l’énergie quand il ne fait pas soleil. Une solution envisagée serait d’utiliser l’énergie solaire en combinaison avec une pile à combustible afin de stocker l’énergie produite sur de longue période.
+
+Nous pouvons également faire usage de piles à combustible que l’on peut ravitailler en hydrogène. Cette méthode présente l’avantage de fournir une puissance constante, de pouvoir fonctionner dans des conditions extrêmes et de demander très peu d’entretien. Il suffit de prévoir une quantité suffisante de combustible au départ pour que le système puisse fonctionner sur une période donnée, puis de venir réapprovisionner le site une fois celui-ci consommé. Il sera même possible de détecter le niveau en hydrogène, afin d’automatiser également le processus de ravitaillement. Pour donner un exemple, une bonbonne d’hydrogène permettrai de faire fonctionner notre système pour une durée d’environ un an. 
+
+Enfin, il sera également possible d’utiliser des éoliennes. Leur production en énergie électrique, quoique modeste, est amplement suffisante pour nos usages, ce qui est d’autant plus vrai en mer (où elles produisent davantage).
+
+Listons à présent les exigences non-opérationnelles que nous supportons :
+
+\begin{itemize}
+\item Nous nous intégrons avec l’existant en offrant un système qui vient automatiser les tests que les exploitants doivent aujourd’hui faire manuellement
+\item Nous garantissons la robustesse du système en utilisant un OS mondialement utilisé et donc solide, Linux
+\item Nous promettons une grande fiabilité en terme d’autonomie avec une pile à hydrogène dans le cas général, et dans certains cas des sources supplémentaires d’énergie comme des panneaux solaires et des éoliennes en mer
+\item Dans les cas de sites isolés mobiles, la puce GPS est gérée spécialement par le système et son usage entraîne une manière de consommer l’énergie plus dépensière, en tirant sur la pile hydrogène 
+\item Nous offrons un système modulaire et évolutif qui peut accepter de nombreux capteurs, et envoie les informations de tous les capteurs connectés ; notre système peut également se configurer par des commandes envoyées via le GSM
+\item Cette solution est générique et réutilisable avec peu de modifications sur différents sites isolés
+\item C’est une solution ergonomique, du fait de l’accès Web des données
+\item Les communications GSM et les actions utilisateurs sont logguées sur les serveurs, ce qui garantie une bonne traçabilité
+\end{itemize}
+
+
+\section{Description des exigences fonctionnelles}
+Le système devra être accessible 24h/24, 7j/7. Cela requiert une autonomie importante
+
+Le système embarqué récupère les données en étant couplé à chaque capteur du site. Dans le cas de sites isolés mobiles, le système possède une puce GPS qui envoie la localisation du site sur la planète. Ces puces GPS requièrent alors des conditions d’autonomie particulières, qui répondent aux besoins en ressources énergétiques plus importantes.
+
+La transmission des informations entre le site isolé et les serveurs centralisés se fait par un réseau GSM du pays dans lequel on implémente notre solution. Il s’agit alors de faire un accord commercial avec les entreprises de télécommunication des pays dans lesquels on implémente notre système. Les communications sont alors aussi fiables et sans perte que le réseau qui les supporte.
+
+Il est également nécessaire d’avoir un accès aux données. Les informations du serveur sont alors mises à disposition sur Internet, où une protection par mot de passe sera appliquée et un système de login permettra l’accès aux données pour tous les utilisateurs autorisés, sur le Web, et par une API programmable.
+
+Le système embarqué doit être reconfigurable à distance. Pour ce faire, il pourra aussi recevoir des commandes par la connexion GSM, ce que notre solution pile hydrogène peut encaisser à toute heure du jour. Ces commandes comprennent la possibilité de reconfigurer les systèmes embarqués (la liste des commandes se compile au cas par cas, en fonction des besoins). Nos systèmes sont donc configurables à distance, sans nécessiter de déplacement.
+
+Les conditions critiques, qui risquent de mettre la communication hors-service (graves problèmes environnementaux détectés, perte d’un capteur, diminution importante du niveau d’hydrogène dans la pile hydrogène) n’attendent pas l’une des deux transmissions quotidiennes, et sont envoyés directement. La gestion des risques prend ces cas en compte, et prévoit les stocks d’hydrogène, etc. en fonction de la possibilité de ces communications supplémentaires.
+
+Nous respectons ainsi les contraintes suivantes :
+
+\begin{itemize}
+\item Le système embarqué est capable de récupérer les données en provenance de différents capteurs
+\item Le système embarqué est entièrement localisable sur la surface de la planète
+\item Toutes les informations sont à disposition de l’utilisateur, sur le serveur, de manière simple et portable
+\item Le système embarqué communique avec le serveur central de manière fiable et sans perte
+\item La configuration des systèmes embarqués est modifiable à distance sans nécessiter de déplacement vers ces systèmes
+\item Le système embarqué fonctionne de manière autonome sans intervention humaine et cela même en cas de problème environnemental
+\item De manière générale, le système embarqué est conçu pour être maintenu à distance
+\item Le système embarqué peut détecter les problèmes majeurs et pouvoir avertir l’utilisateur rapidement le cas échéant
+\item La consommation électrique est minimale et l’autonomie est garantie
+\end{itemize}
+
+\section{Esquisse du futur système et impacts}
+Le système envisagé comporte un serveur de stockage de données centralisé, accessible par le Web, depuis lequel il est possible d’avoir un accès consultatif par mot de passe / login des données, ainsi qu’un accès algorithmique pour que des programmes qui automatisent la synchronisation des mouvements des camions puissent interagir avec les données. Les données sont enregistrées sur un disque dur, via une base de donnée, dans ces serveurs. Ils logguent à l’occasion les activités effectuées sur le système.
+
+Les serveurs recueillent leurs informations des flux de données partant du réseau GSM utilisé dans le pays, ou par satellite si le réseau GSM fait défaut. Ces données proviennent des capteurs installés sur les sites isolés.
+
+À leur tour, ces capteurs communiquent par des technologies sans fil à un système Linux embarqué, qui s’occupe d’aggréger les données, et à les transmettre aux serveurs par GSM. Ce système enregistre en cache local les informations en cas de déconnexion, et envoie les informations lors de la re-connexion. L’envoi des informations respecte un protocole qui sera à définir.
+
+Le système embarqué se reconfigure à distance via un protocole qui passe par le GSM. La connexion passe dans les deux sens, et les informations de reconfiguration reçues sont exécutées.
+
+Les informations reçues par les capteurs sont stockées dans le système et transmis aux serveurs centralisés par GSM deux fois par jour, ce qui évite au système de requérir de trop grandes quantités d’énergie. Comme nous l’avons vu, tandis que la batterie ne profitera pas parfaitement de la faible fréquence de transmission, puisqu’elle s’épuisera même si elle ne fonctionne pas, la pile hydrogène à laquelle elle est couplée ne perdra pas d’énergie entre deux transmissions GSM.
+
+Ces systèmes, ainsi que les capteurs, sont alimentés par des piles hydrogènes, et / ou, selon le climat et les requis énergétiques, des panneaux solaires, des éoliennes.
+
+L’architecture choisie est simple, mais flexible. Elle respecte les exigences de manière cohérente et gère les cas limites.
+
+\section{Bilan des améliorations}
+Notre solution garantie une gestion automatisée de la détection des niveaux de ressources, dans le but d’automatiser l’acheminement des ressources par camions.
+
+La constante autonomie des capteurs et du système de communication avec les serveurs est assurée par des solutions énergétiques standards.
+
+L’utilisation de composants connus et robustes comme le couplage batterie - pile hydrogène et le choix d’un système d’exploitation fortement utilisé promet un système qui ne faillira pas.
+
+\section{Conclusion}
+Notre système cherche la robustesse, tout en étant générique.
+
+Il permet la conception d’un système à prix raisonnable, qui s’implémente facilement avec des composants standards, et qui respecte des exigences plus drastiques que celles requises.

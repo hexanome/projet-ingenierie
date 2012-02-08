@@ -1,3 +1,7 @@
+%-------------------------------------------
+% En-tête type de document pour le projet PLD
+% Il suffit de remplir le input ligne 45
+%-------------------------------------------
 
 \documentclass[a4paper]{article}
 
@@ -10,20 +14,59 @@
 \usepackage[francais]{babel}
 % Insertion d'images
 \usepackage{graphicx}
+% Utilisation du symbole EURO
+\usepackage{eurosym}
 
 \begin{document}
 
-\part{Introduction}
+%------------------------------------- Page de titre
+\begin{titlepage}
+~ 
+\vfill
+	\begin{center}
+		\begin{Huge}
+		Projet d'Ingénierie : Dossier de Synthèse\\
+		\end{Huge} 
+\vfill
+		\textbf{Hexanome 4111 :} 
+		\\Quentin \bsc{Calvez}, Matthieu \bsc{Coquet}, 
+		\\Jan \bsc{Keromnes}, Alexandre \bsc{Lefoulon}, 
+		\\Thaddée \bsc{Tyl}, Xavier \bsc{Sauvagnat},
+		\\Tuuli \bsc{Tyrväinen}
+\vfill		
+		\begin{Large}
+		Février 2012
+		\end{Large}
+\vfill
+	\begin{tabular}{|c|c|c|c|c|}
+ 	 \hline
+   Destinataire & Version & Etat & Dernière révision & Equipe \\
+   \hline
+   Client & 1 & Validé & \today & H4111 \\
+   \hline
+	\end{tabular}
+	\end{center}
+\vfill
+\end{titlepage}
+%----------------------------------------------------
+%--------------------------------- Table des matières
+\newpage
+\tableofcontents
+\newpage
+%----------------------------------------------------
+
+
+\section{Introduction}
 
 Ce document présente de manière synthétique la solution retenue pour répondre à l'appel d'offre de la COPEVUE: "Système de monitoring à distance de sites isolés".
 
 Dans ce document seront présentés les différents aspects du futur système ainsi que les fonctionnalités qui lui seront associées.
 
-\section{Terminologies et Abréviations}
+\subsection{Terminologies et Abréviations}
 
 Voir document ``glossaire-commun.tex''.
 
-\section{Cadre de l’étude et objectif}
+\subsection{Cadre de l’étude et objectif}
 
 Le COPEVUE (Comité Pour la Protection de l'EnVironnement de l'Union Européenne) souhaite étudier un système de monitoring à distance de sites isolés. L'objectif est d'étudier et de concevoir un système complet, autonome et générique de mesure et de monitoring ainsi que le pilotage, la configuration et la maintenance à distance de ces stations. Le résultat doit constituer une solution évolutive, autonome, fiable et déployable à l'échelle européenne. Ce système se veut être un parfait palliatif aux dysfonctionnements actuels en apportant une réponse aux problématiques détaillées ci-dessous.
 
@@ -37,7 +80,7 @@ A l'échelle européenne il n'existe aucun organisme centralisé et donc aucun s
 
 Pour cet appel d'offre, seront visées uniquement les stations réservoirs utilisées pour stocker des liquides (eau, carburant et autres substances) ou bien des déchets.
 
-\section{Rappel synthétique des critiques de l’existant}
+\subsection{Rappel synthétique des critiques de l’existant}
 
 La décentralisation de la surveillance des sites isolés est source de nombreux dysfonctionnements qui peuvent être déclinés en deux grandes catégories : - un gaspillage financier (argent provenant pour la majorité des cas des contribuables) - un risque environnemental important, non contrôlé.
 
@@ -52,7 +95,7 @@ Oublis. Le système reposant uniquement sur des ressources humaines, de nombreux
 Fuites. En plus d'être une perte financière, les fuites, suivant le contenant de la cuve, peuvent s'avérer très dangereuses d'un point de vue écologique. Le problème est que ces fuites sont constatées bien souvent trop tard du fait d'une surveillance manuelle, souvent fortement espacée dans le temps.
 D'une manière générale, il manque une traçabilité des opérations effectuées par les divers acteurs et ne permet donc pas un monitoring global.
 
-\section{Description des axes de progrès}
+\subsection{Description des axes de progrès}
 
 Deux axes de progrès ont été retenus:
 
@@ -73,7 +116,7 @@ Deux axes de progrès ont été retenus:
 \item Une meilleure traçabilité des opérations
 \end{itemize}
 
-\section{Descriptions des exigences non fonctionnelles}
+\subsection{Descriptions des exigences non fonctionnelles}
 
 Les exigences non fonctionnelles que doit respecter et qui seront respectées par le futur système sont les suivantes :
 
@@ -88,7 +131,7 @@ Les exigences non fonctionnelles que doit respecter et qui seront respectées pa
 \item Traçabilité
 \end{itemize}
 
-\section{Description des besoins et des exigences fonctionnelles}
+\subsection{Description des besoins et des exigences fonctionnelles}
 
 Ci-dessous la liste des besoins et des exigences fonctionnelles qui sont prises en compte :
 
@@ -100,13 +143,13 @@ Ci-dessous la liste des besoins et des exigences fonctionnelles qui sont prises 
 \item Traitements sur station - Relevé des capteurs - Uniformisation des données - Circulation de l'information sur le réseau interne - Communication de l'information vers le site central - Optimiser la gestion de l'énergie
 \end{itemize}
 
-\part{Présentation de la solution proposée}
+\section{Présentation de la solution proposée}
 
-\section{Architecture globale}
+\subsection{Architecture globale}
 
-\section{Architecture matérielle
+\subsection{Architecture matérielle}
 
-\subsection{Site central}
+\subsubsection{Site central}
 
 \paragraph{Postes de travail} Il convient de mettre en place un réseau local regroupant ces postes afin d'une part de partager la connexion internet et d'autre part d'utiliser ce réseau à des fins de partage de documents.
 

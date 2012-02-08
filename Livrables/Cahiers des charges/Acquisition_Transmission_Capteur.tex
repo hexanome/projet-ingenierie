@@ -6,7 +6,7 @@
 
 \subsection{Présentation du document}
 
-Nous allons dans ce cahier des charges présenter en détails les besoins que nous avons vis-à-vis de la solution de communication par satellite des sites isolés avec le centrale de gestion, ainsi que la reconfiguration à distance des ceux-ci. Nous essayerons tout d'abord de voir quelles sont les objectifs de cette solution technique, les utilisateurs concernés et les problèmes pouvant se présenter, autant dans son développement, sa mise en oeuvre, et finalement sa maintenance. Ce document est accompagné d'annexes permettant d'appronfondir certains sujets plus techniques sur lesquels nous n'avons pas voulu nous attarder dans un but de clarté.
+Ce dossier présentent les besoins que nous avons par rapport à la solution d'acquisition des données des capteurs, et de la transmission de celles-ci avec la base de la station. Nous essayerons tout d'abord de voir quelles sont les objectifs de cette solution technique, les utilisateurs concernés et les problèmes pouvant se présenter, autant dans son développement, sa mise en oeuvre, et finalement sa maintenance. Ce document est accompagné d'annexes permettant d'appronfondir certains sujets plus techniques sur lesquels nous n'avons pas voulu nous attarder dans un but de clarté.
 
 \subsection{Documents applicables / Documents de référence}
 
@@ -15,46 +15,50 @@ Nous allons dans ce cahier des charges présenter en détails les besoins que no
 \subsection{Terminologie et abréviations}
 
 % A complêter au fur et à mesure.
-% Définir le "Système de gestion du site isolé".
-% Définir le "Système central".
+\begin(itemize)
+\item Base (de la station) : système informatique équipé d'un OS linux permettant de communiquer avec les capteurs et le serveur central. La base peut aussi enregistrer quelques données et permet de configurer la plupart des éléments de la station.
+\item Mode sommeil : mode dans lequel le microcontroleur et le capteur ne consomme que très peu d'énergie. Aucune acquisition et aucun calcul ne doivent être fait pendant cette periode. Le micro-controleur attend d'être réveillé par un évenement materiel ou logiciel.
+\end(itemize)
 
 \section{Présentation du problème}
 
 \subsection{Buts, nature du logiciel, utilisateurs concernés}
 
-Cette étude porte tout d'abord sur un logiciel qui va avoir une fonction, la communication par satellite avec le système central du système, et par-là même deux rôles : Le premier va être de transmettre les données relevées par les capteurs au système central, et l'autre de pouvoir recevoir de celui-ci de nouvelles données de configuration.
+Le logicel qui doit être implementé a trois fonctions:
+\begin{itemize}
+\item L'acquisition des données des capteurs à un intervalle de temps définie préalablement,
+\item L'envoi de ses données à la base de la station à un intervalle de temps régulier,
+\item La configuration des capteurs par la base. Ainsi, l'equart entre chaque acquisition ou transismion devra être parametrable. Cette configuration sera faite pendant la transmission avec la base.
+\end{itemize}
 
-Ce composant logiciel devra donc intéragir d'un côté avec le système de gestion du site isolé, présent sur le même système physique que lui, et de l'autre avec le système central par le biais d'une communication satellite puis, à un niveau plus élevé, par le biais de services web.
+Ce composant logiciel devra ainsi intéragir avec la base de la station, lui envoyé les données et vérifier si une reconfiguration est necessaire. Il devra également se charger de récuperer la valeur du capteur auquel il est attaché. Ce composant logiciel devra impérativement être économes et devra passer la grande majorité du temps en mode "sommeil".
 
-D'un point de vue plus technique, ce logiciel devra s'exécuter sur un OS Linux embarqué prévu pour n'être actif que pendant de courtes périodes de temps.
+D'un point de vue plus technique, ce logiciel devra s'exécuter sur un micro-controleur attaché à une puce ZigBee et au capteur.
 
-Le composant décrit ici n'aura pas directment d'``utilisateurs'' à proprement parler. Il devra par fournir une API aux développeurs du système de gestion du site isolé, et se conformer à au protocole utilisé par le système central. La configuration du composant (e.g. les fréquences satellites à utiliser pour la communication) se fera par le système de gestion du site, et non pas direcement par un utilisateur externe.
+Le protocole de communication utilisé par les modules de transmission avec la base sera décrit dans ce document.
 
-Ce document va aussi porter sur le matériel exploité par le logiciel précédement cité, à savoir le module de communication par satellite. Les attentes par rapport à celui-ci seront décrite plus loins.
+Ce document va aussi porter sur le matériel exploité par le logiciel précédement cité, à savoir le module de communication ZigBee. Les attentes par rapport à celui-ci seront décrite plus loins.
 
 \subsection{Formulation des besoins, exploitation et ergonomie, expérience}
 
 Le système présentement présenté doit répondre à deux besoins bien distincts, et ce quelque soit la localisation géographique du système dans le monde :
 
-\parapraph{Transmission} Le système doit pouvoir envoyer au système central les informations suivantes :
+\parapraph{Acquisition} Le système doit pouvoir recuperer la valeur des capteurs de la façon suivante :
 
 \begin{itemize}
-\item La valeur des mesures de effectuées depuis la dernière transmission par chacun des capteurs. La quantité de valeurs dépend de la granularité avec laquelle est configurée le site. Chaque valeur sera bien évidement datée.
-\item L'état physique et logique de la station et du site. Cela peut comprendre la température ambiante, l'autonomie estimée des différentes batteries, les logs systèmes engrangés par le système informatique, etc.
-\item L'indentification du site et des différents capteurs. % A voir.
+\item Le micro-controlleur sera reveillé selon la periode d'acquisition, il relevera la valeur du capteur 
+\item Selon la configuration de la periode de transmission, soit la donnée du capteur est en enregistré temporairement, soit directement envoyé à la base
+\item Le micro-controlleur devra s'adapter au capteur pour pouvoir gerer les differents types d'acquisitions
 \end{itemize}
 
-\paragraph{Reconfiguration} Après envoi des données, le système peut éventuellement recevoir comme réponse une demande de reconfiguration permettant aux opérateurs de modifier à distances les paramètres suivants :
+\paragraph{Transmission} Après avoir relevé les données, le système doit pouvoir envoyé les informations à la base :
 
 \begin{itemize}
-\item Les différents quantum de temps définissant la granularité avec laquelle le système effectue ses mesures et en transmet les résultats au système central.
-\item Les fréquences de transmission satellite utilisées par le présent sous-système.
-\item Des paramètres systèmes tels que le niveau de logs à engranger et à transmettre, les politiques de reprise sur échec (dans le contexte de la communication avec les capteurs par exemple).
-\item Des données de configuration spécifiques à certains capteurs, qui leur seront transmis à leur prochaine connéxion (les intervalles de relevés comme mentionné plus haut, mais aussi des paramètres spécifiques à un type de capteur telles que les fréquences d'ultrasons à utiliser pour effectuer un relevé de remplissage d'une cuve).
+\item Les différents quantum de temps définissant la granularité avec laquelle le système transmet les résultats a la base, en analysant les données des capteurs.
+\item Le protocole d'envoi des données décrit plus loin devra être respecté. 
 \end{itemize}
 
 \subsection{Portée, développement, mise en oeuvre, organisation de la maintenance}
-
 
 
 \subsection{Limites}
@@ -62,6 +66,9 @@ Le système présentement présenté doit répondre à deux besoins bien distinc
 \section{Exigences fonctionnelles}
 \subsection{Fonctions de base, performances et aptitudes}
 \subsection{Contraintes d'utilisation}
+
+Le système ne doit pas pouvoir être utilisé par un utilisateur humain. La sécurisation des données envoyées est à prévoir, il ne faut pas qu'un utilisateur externe puissent interagir avec le systeme. Cette interaction pourrait mener à des disfonctionnements du système. Un système de cryptage, tel qu'un certificat, ou une autre méthode de sécurisation doit être mis en place.
+
 \subsection{Critères d'appréciation de la réalisation effective de la fonction}
 \subsection{Flexibilité dans la façon de mettre en oeuvre la fonction convernée, variation de coûts associée en fonciton de cette flexibilité}
 
@@ -70,7 +77,7 @@ Le système présentement présenté doit répondre à deux besoins bien distinc
 \section{Contraintes imposées, faisabilité technologique, moyens}
 \subsection{Sûreté, planning, organinsation, communication}
 \subsection{Complexité}
-\subsection{Compétenes, moyens et règkes}
+\subsection{Compétenes, moyens et règles}
 \subsection{Normes de documentation}
 
 \section{Configuration cible}

@@ -1,8 +1,8 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.1.5)  8 FEB 2012 11:33
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.1.5)  8 FEB 2012 11:58
 entering extended mode
  %&-line parsing enabled.
-**Dossier_Initialisation_Final.tex
-(./Dossier_Initialisation_Final.tex
+**dossier-synthese.tex
+(./dossier-synthese.tex
 LaTeX2e <2009/09/24>
 Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
 yphenation, loaded.
@@ -368,8 +368,8 @@ File: pdftex.def 2010/03/12 v0.04p Graphics/color for pdfTeX
 Package: eurosym 1998/08/06 v1.1 European currency symbol ``Euro''
 \@eurobox=\box26
 )
-(./Dossier_Initialisation_Final.aux)
-\openout1 = `Dossier_Initialisation_Final.aux'.
+(./dossier-synthese.aux)
+\openout1 = `dossier-synthese.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
 LaTeX Font Info:    ... okay on input line 20.
@@ -473,36 +473,33 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 41.
  [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./Dossier_Initialisation_
-Final.toc)
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./dossier-synthese.toc)
 \tf@toc=\write3
-\openout3 = `Dossier_Initialisation_Final.toc'.
+\openout3 = `dossier-synthese.toc'.
 
  [1]
-(./Dossier_Initialisation.tex
-Overfull \hbox (3.05336pt too wide) in paragraph at lines 7--8
-[]\T1/lmr/m/n/10 Le but de ce dossier d'ini-tial-i-sa-tion est de poser les bas
-es néces-saires au bon déroule-ment du pro-jet d'ingénierie.
+Overfull \hbox (2.30342pt too wide) in paragraph at lines 89--93
+[]\T1/lmr/m/n/10 La lo-gis-tique. Il n'ex-iste pas de plan-i-fi-ca-tion glob-al
+e et donc pas d'op-ti-mi-sa-tion dans les livraisons/enlèvements
  []
 
-[2] [3] [4] [5] [6]) [7] (./Dossier_Initialisation_Final.aux) ) 
+[2] [3] (./dossier-synthese.aux) ) 
 Here is how much of TeX's memory you used:
- 2566 strings out of 495061
- 33223 string characters out of 1182622
- 92128 words of memory out of 3000000
- 5709 multiletter control sequences out of 15000+50000
+ 2562 strings out of 495061
+ 32998 string characters out of 1182622
+ 91128 words of memory out of 3000000
+ 5708 multiletter control sequences out of 15000+50000
  39202 words of font info for 33 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 25i,6n,24p,1125b,187s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/share/texm
-f/fonts/enc/dvips/lm/lm-ec.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.p
-fb></usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/t
-ype1/public/lm/lmcsc10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></
-usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/p
-ublic/lm/lmr17.pfb>
-Output written on Dossier_Initialisation_Final.pdf (8 pages, 199753 bytes).
+ 25i,6n,24p,649b,189s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.en
+c}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/ty
+pe1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb></
+usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/p
+ublic/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr17.pfb>
+Output written on dossier-synthese.pdf (4 pages, 176367 bytes).
 PDF statistics:
- 54 PDF objects out of 1000 (max. 8388607)
+ 40 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
