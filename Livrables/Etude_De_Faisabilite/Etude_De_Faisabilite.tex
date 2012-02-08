@@ -1,8 +1,8 @@
 \section{Introduction}
-Ce dossier présente les différentes technologies et solutions techniques qui sont suceptibles d’être utilisées dans notre solution. Nous expliquerons les problèmes généraux que l’on peut rencontrer en condition de site isolé, puis nous dresserons un état des solutions envisageables tout en gardant à l'esprit les problématiques spécifiques qui nous concernent.
+Ce dossier présente les différentes technologies et solutions techniques qui sont susceptibles d’être utilisées dans notre solution. Nous expliquerons les problèmes généraux que l’on peut rencontrer en condition de site isolé, puis nous dresserons un état des solutions envisageables tout en gardant à l'esprit les problématiques spécifiques qui nous concernent.
 
 \section{Rappel du problème}
-Le COPEVUE a lancé un appel d'offre dans le cadre de la réalisation d'un système de monitoring de sites isolés. Il s'agit donc de concevoir en premier lieu une solution technique permettant de répondre au mieux aux exigences fonctionnelles et non fonctionnelles que le COPEVUE formule. De façon synthétique notre équipe va proposer une solution permettant de surveiller des sites naturels difficiles d'accès (souvent à cause des conditions environnementales) et peu peuplés. Dans ces sites isolés sont souvent regroupés des postes de travail et ces zones doivent pouvoir être surveillées en dépit de la distance qui les sépare du bureau de contröle.
+Le COPEVUE a lancé un appel d'offre dans le cadre de la réalisation d'un système de monitoring de sites isolés. Il s'agit donc de concevoir en premier lieu une solution technique permettant de répondre au mieux aux exigences fonctionnelles et non fonctionnelles que le COPEVUE formule. De façon synthétique notre équipe va proposer une solution permettant de surveiller des sites naturels difficiles d'accès (souvent à cause des conditions environnementales) et peu peuplés. Dans ces sites isolés sont souvent regroupés des postes de travail et ces zones doivent pouvoir être surveillées en dépit de la distance qui les sépare du bureau de contrôle.
 \subsection{Le contexte}
 Notre cas d'étude se limite pour l'instant à considérer une situation simple : comment pouvoir maintenir de manière rentable des réserves de tel ou tel composé à un niveau correct bien que le site de stockage soit situer dans des zones difficiles d'accès ? L'idéal serait donc de pouvoir suivre a distance l'évolution d'un niveau d'un composé en fonction du temps.Le ravitaillement serait ainsi plus raisonnable car on saurait alors la quantité de composant à acheminer sur place. Trouver une solution fonctionnelle à cette problématique permettrait ainsi d'économiser en frais de maintenance mais aussi et surtout d'éviter certaines catastrophe écologique comme par exemple un manque d'eau dans un réservoir lors d'un feu de forêt ou encore une fuite de carburant d'un réservoir de forêt.
 
@@ -11,7 +11,7 @@ Il s'agit donc d'étudier et de concevoir un système autonome qui pourra être 
 Voici quelques éléments permettant d'esquisser un système qui pourrait convenir :
 
 \begin{itemize}
-\item Choisir une batterie de capteurs adpatés aux différents sites à couvrir.
+\item Choisir une batterie de capteurs adaptés aux différents sites à couvrir.
 \item Concevoir l'architecture d'un système collectant les données.
 \item Stocker les données récupérées dans toutes les zones sur un serveur distant.
 \item Traiter ces données pour les restituer à un utilisateur.
@@ -47,8 +47,8 @@ Les boîtiers ELOcom équipent un réseau de camions. Ils permettent la localisa
 
 \section{Etude de faisabilité}
 
-Les conditions climatiques extrêmes sont à prendre en compte dans cette étude. Bien que nous nous intéressions principalement aux pays nordiques, nous serons attentifs à l’évolutivité du système pour qu’il puisse être installé dans d'autres types de climats, comme ceux des pays méditerranéens.
-Dans les pays nordiques, on rencontre des problèmes de froid intense en hiver (avec pour conséquence des chutes de neige et la formation de glace), et de pollen au printemps. Au delà du cercle polaire, le soleil est totalement absent durant l'hiver. En dessous, les durées d'ensoleillement sont très courtes (moins de 2h par jour). Sur le pourtour méditérannée, les durées d'ensoleillement sont de l'ordre de 7h par jour.
+Les conditions climatiques extrêmes sont à prendre en compte dans cette étude. Bien que nous nous intéressions principalement aux pays nordiques, nous serons attentifs à l’évolution du système pour qu’il puisse être installé dans d'autres types de climats, comme ceux des pays méditerranéens.
+Dans les pays nordiques, on rencontre des problèmes de froid intense en hiver (avec pour conséquence des chutes de neige et la formation de glace), et de pollen au printemps. Au delà du cercle polaire, le soleil est totalement absent durant l'hiver. En dessous, les durées d'ensoleillement sont très courtes (moins de 2h par jour). Sur le pourtour méditerrannée, les durées d'ensoleillement sont de l'ordre de 7h par jour.
 Les température oscillent entre -55 et 40°C, et dans le cas des pays méditerranéens, de -5 à 50°C.
 Le vent est également un paramètre très important, dans les pays du nord, les vents sont plutôt violents, avec un recrudescence du nombre de tempêtes.
 
@@ -79,7 +79,7 @@ Nous allons insister dans cette partie sur l'adaptabilité de nos solutions à c
 
 La station doit pouvoir être utilisée avec des gants, il faudra donc apporter une attention particulière à son ergonomie.
 
-\subsubsection{Solutions envisagables}
+\subsubsection{Solutions envisageables}
 
 \paragraph{Radiateurs}
 
@@ -91,11 +91,11 @@ A l'aide de joints, et d'une bonne qualité de fabrication, on peut grandement l
 
 \paragraph{Revêtement}
 
-L'utilisation de revêtements protecteurs sur les composants electroniques peut prévenir la condensation et diminuer ainsi les risques de court-circuits. Cela peut permettre de facilement augmenter la durée de vie du système.
+L'utilisation de revêtements protecteurs sur les composants électroniques peut prévenir la condensation et diminuer ainsi les risques de court-circuits. Cela peut permettre de facilement augmenter la durée de vie du système.
 
 \paragraph{Connecteurs}
 
-Les connecteurs (e.g. connexion de la base à sa source d'enérgie) doivent avoir des contacts solides qui empêche l’humidité dans les prises.
+Les connecteurs (e.g. connexion de la base à sa source d'énergie) doivent avoir des contacts solides qui empêche l’humidité dans les prises.
 
 
 
@@ -104,7 +104,7 @@ Les connecteurs (e.g. connexion de la base à sa source d'enérgie) doivent avoi
 
 \subsubsection{Matériel}
 
-Des fabricants tels qu'Armadeus\footnotemark proposent des cartes de systèmes embarqués bien adaptées à notre problématique. Equipées de processeurs x86 (Intel) ou Arm (on préférera le second pour des raisons de consomation d'économie d'enérgie), elles permettent l'exécution de systèmes d'exploitation modernes. Elles présentent par ailleurs l'avantage d'être compactes, abordables\footnotemark (prix généralement inférieur à 300\euro ), et proposent toutes les interfaces dont nous pourrions avoir besoin pour les interfacer avec les périphériques utilisés (i.e. USB, série, ethernet, etc.).
+Des fabricants tels qu'Armadeus\footnotemark proposent des cartes de systèmes embarqués bien adaptées à notre problématique. Equipées de processeurs x86 (Intel) ou ARM (on préférera le second pour des raisons de consommation d'économie d'énergie), elles permettent l'exécution de systèmes d'exploitation modernes. Elles présentent par ailleurs l'avantage d'être compactes, abordables\footnotemark (prix généralement inférieur à 300\euro ), et proposent toutes les interfaces dont nous pourrions avoir besoin pour les faire correspondre avec les périphériques utilisés (i.e. USB, série, ethernet, etc.).
 
 
 % Lien : http://www.armadeus.com/francais/produits-cartes_microprocesseur-apf51.html
@@ -115,7 +115,7 @@ Des fabricants tels qu'Armadeus\footnotemark proposent des cartes de systèmes e
 
 \subsubsection{Système d'exploitation}
 
-Nous avons constaté dans les différents systèmes embarqués de solutions similaires une utilisation indifférenciée de Linux, Solaris et Windows\footnotemark. Le monitoring s'effectuant en deux étapes disctinctes (la collecte de données auprès des capteurs, puis leur transmission périodique à la centrale), un système temps réel ne nous semble pas présenter d'avantages significatifs dans ce cadre d'utilisation. L'usage de Linux semble particulièrement probant, du fait de sa simplicité mais aussi de son utilisation abondante dans le domaine de l'embarqué.
+Nous avons constaté dans les différents systèmes embarqués de solutions similaires une utilisation indifférenciée de Linux, Solaris et Windows\footnotemark. Le monitoring s'effectuant en deux étapes distinctes (la collecte de données auprès des capteurs, puis leur transmission périodique à la centrale), un système temps réel ne nous semble pas présenter d'avantages significatifs dans ce cadre d'utilisation. L'usage de Linux semble particulièrement probant, du fait de sa simplicité mais aussi de son utilisation abondante dans le domaine de l'embarqué.
 \footnotetext{Entreprises étudiées : ENI, Asentria et GuardMagic.}
 
 Nous avons eu l’occasion de discuter avec un chef de projet de Orange Business Service, section Fleet Performance, qui nous a assuré que les boîtiers d'acquisition de données installés sur leurs véhicules tournaient sous Linux. Cet entretien appuie un peu plus notre volonté d'utiliser Linux en tant que système d'exploitation.
@@ -137,15 +137,15 @@ Cette solution est très dépendante du type de capteur choisi (la consommation 
 
 Bien que théoriquement très adaptée à notre problème (de par sa capacité à fonctionner sur une gamme de températures très larges), les principaux inconvénients de l’utilisation de l’énergie solaire vont être :
 Une nécessité d’entretien régulier dans certaines conditions climatiques (e.g. neige ou pollen empêchant les rayons lumineux d’atteindre les panneaux, par extension le sable dans les pays méditerranéen).
-La contrainte du stockage de l’énergie puisque sa production n’est pas continue requiert l’utilisation d’accumulateurs pour permettre aux appareils de fonctionner en permanence (la nuit par exemple). Selon le type de batteries utilisées, cela peut poser des problèmes d’entretien (réhydratation des batteries) et de durée de vie (certaines batteries ne supportant qu’un certain nombre de cycles).
+La contrainte du stockage de l’énergie puisque sa production n’est pas continue requiert l’utilisation d’accumulateurs pour permettre aux appareils de fonctionner en permanence (la nuit par exemple). Selon le type de batteries utilisées, cela peut poser des problèmes d’entretien (ré-hydratation des batteries) et de durée de vie (certaines batteries ne supportant qu’un certain nombre de cycles).
 
-Un problème supplémentaire se pose dans le cas de notre site isolé type, puisque se situant dans un pays du cercle polaire, l’éclairement est faible sur l'année, avec une nuit pouvant durée près de 6 mois. De plus, le jour, du fait de la proximité acec le cercle polaire, les rayons lumineux arrivent avec un angle d'incidence très faible, il faut que les panneaux solaires sont sur un dispositif permettant de régler la perpendicularité avec les rayons.
+Un problème supplémentaire se pose dans le cas de notre site isolé type, puisque se situant dans un pays du cercle polaire, l’éclairement est faible sur l'année, avec une nuit pouvant durée près de 6 mois. De plus, le jour, du fait de la proximité acec le cercle polaire, les rayons lumineux arrivent avec un angle d'incidence très faible, il faut que les panneaux solaires sont sur un dispositif permettant de régler leur caractère perpendiculaire grâce aux rayons.
 
 Une solution envisagée serait d’utiliser l’énergie solaire en combinaison avec une pile à combustible afin de stocker l’énergie produite sur de longue période. En combinaison avec une source d’eau, les panneaux solaires serviraient à produire de l’hydrogène qui pourrait alors être stocké indéfiniment avant de servir à alimenter les différents appareils (cf. le paragraphe “pile à combustible”).
 
 \subsubsection{Énergie éolienne}
 
-Très similaire à la solution précédente de par ses contraintes (principalement la nécéssite d’accumulateurs), cette solution pourrait être utilisé sur les sites présentant des irrégularités d’éclairement trop importantes et une activité venteuse suffisante. De plus, les éoliennes demandent moins d’entretien que les panneaux solaires, et peuvent aussi fonctionner en conditions extrêmes (ce sont les basses températures qui nous intéressent principalement ici).
+Très similaire à la solution précédente de par ses contraintes (principalement la nécessité d’accumulateurs), cette solution pourrait être utilisé sur les sites présentant des irrégularités d’éclairement trop importantes et une activité venteuse suffisante. De plus, les éoliennes demandent moins d’entretien que les panneaux solaires, et peuvent aussi fonctionner en conditions extrêmes (ce sont les basses températures qui nous intéressent principalement ici).
 
 \subsubsection{Pile à combustible}
 
