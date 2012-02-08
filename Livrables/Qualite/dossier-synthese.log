@@ -1,8 +1,8 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.1.5)  8 FEB 2012 11:52
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.1.5)  8 FEB 2012 11:55
 entering extended mode
  %&-line parsing enabled.
-**PAQP.tex
-(./PAQP.tex
+**dossier-synthese.tex
+(./dossier-synthese.tex
 LaTeX2e <2009/09/24>
 Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
 yphenation, loaded.
@@ -367,8 +367,9 @@ File: pdftex.def 2010/03/12 v0.04p Graphics/color for pdfTeX
 (/usr/share/texmf-texlive/tex/latex/eurosym/eurosym.sty
 Package: eurosym 1998/08/06 v1.1 European currency symbol ``Euro''
 \@eurobox=\box26
-) (./PAQP.aux)
-\openout1 = `PAQP.aux'.
+)
+(./dossier-synthese.aux)
+\openout1 = `dossier-synthese.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
 LaTeX Font Info:    ... okay on input line 20.
@@ -383,8 +384,7 @@ LaTeX Font Info:    ... okay on input line 20.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 20.
 LaTeX Font Info:    ... okay on input line 20.
 LaTeX Font Info:    Try loading font information for T1+lmr on input line 20.
-
-(/usr/share/texmf/tex/latex/lm/t1lmr.fd
+ (/usr/share/texmf/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 *geometry auto-detecting driver*
@@ -473,28 +473,33 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 41.
  [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-No file PAQP.toc.
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./dossier-synthese.toc)
 \tf@toc=\write3
-\openout3 = `PAQP.toc'.
+\openout3 = `dossier-synthese.toc'.
 
-[1] [2] [3] [4] [5] (./PAQP.aux) ) 
+ [1]
+Overfull \hbox (2.30342pt too wide) in paragraph at lines 89--93
+[]\T1/lmr/m/n/10 La lo-gis-tique. Il n'ex-iste pas de plan-i-fi-ca-tion glob-al
+e et donc pas d'op-ti-mi-sa-tion dans les livraisons/enlèvements
+ []
+
+[2] [3] (./dossier-synthese.aux) ) 
 Here is how much of TeX's memory you used:
- 2558 strings out of 495061
- 32825 string characters out of 1182622
+ 2562 strings out of 495061
+ 32998 string characters out of 1182622
  91128 words of memory out of 3000000
- 5706 multiletter control sequences out of 15000+50000
+ 5708 multiletter control sequences out of 15000+50000
  39202 words of font info for 33 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 25i,6n,24p,449b,161s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 25i,6n,24p,649b,189s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.en
 c}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/ty
 pe1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb></
 usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/p
 ublic/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr17.pfb>
-Output written on PAQP.pdf (6 pages, 182463 bytes).
+Output written on dossier-synthese.pdf (4 pages, 175044 bytes).
 PDF statistics:
- 46 PDF objects out of 1000 (max. 8388607)
+ 40 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

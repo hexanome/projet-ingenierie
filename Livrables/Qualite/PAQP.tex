@@ -1,3 +1,8 @@
+%-------------------------------------------
+% En-tête type de document pour le projet PLD
+% Il suffit de remplir le input ligne 45
+%-------------------------------------------
+
 \documentclass[a4paper]{article}
 
 \usepackage[utf8]{inputenc}   
@@ -9,12 +14,46 @@
 \usepackage[francais]{babel}
 % Insertion d'images
 \usepackage{graphicx}
-
+% Utilisation du symbole EURO
+\usepackage{eurosym}
 
 \begin{document}
 
-\title{PAQP [Draft]}
-\maketitle
+%------------------------------------- Page de titre
+\begin{titlepage}
+~ 
+\vfill
+	\begin{center}
+		\begin{Huge}
+		Projet d'Ingénierie : Draft de PAQP\\
+		\end{Huge} 
+\vfill
+		\textbf{Hexanome 4111 :} 
+		\\Quentin \bsc{Calvez}, Matthieu \bsc{Coquet}, 
+		\\Jan \bsc{Keromnes}, Alexandre \bsc{Lefoulon}, 
+		\\Thaddée \bsc{Tyl}, Xavier \bsc{Sauvagnat},
+		\\Tuuli \bsc{Tyrväinen}
+\vfill		
+		\begin{Large}
+		Février 2012
+		\end{Large}
+\vfill
+	\begin{tabular}{|c|c|c|c|c|}
+ 	 \hline
+   Destinataire & Version & Etat & Dernière révision & Equipe \\
+   \hline
+   Client & 0.1 & Draft & \today & H4111 \\
+   \hline
+	\end{tabular}
+	\end{center}
+\vfill
+\end{titlepage}
+%----------------------------------------------------
+%--------------------------------- Table des matières
+\newpage
+\tableofcontents
+\newpage
+%----------------------------------------------------
 
 % TODO s'adresse à des non techniciens pour leur présenter la solution
 % TODO schéma de la solution expliqué
