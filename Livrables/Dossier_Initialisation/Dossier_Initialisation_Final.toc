@@ -16,21 +16,20 @@
 \contentsline {subsection}{\numberline {6.2}Responsable Qualit\IeC {\'e}, M\IeC {\'e}thode et Documentation}{4}
 \contentsline {subsection}{\numberline {6.3}Groupe d'\IeC {\'e}tudes informatique}{4}
 \contentsline {section}{\numberline {7}Listes des livrables attendus}{4}
-\contentsline {subsection}{\numberline {7.1}Chef de projet}{4}
+\contentsline {subsection}{\numberline {7.1}Chef de projet}{5}
 \contentsline {subsection}{\numberline {7.2}Responsable Qualit\IeC {\'e}}{5}
 \contentsline {subsection}{\numberline {7.3}Groupe d'\IeC {\'e}tudes informatique}{5}
 \contentsline {section}{\numberline {8}Organigramme des t\IeC {\^a}ches}{5}
 \contentsline {subsection}{\numberline {8.1}Macro-Phasage}{5}
-\contentsline {subsection}{\numberline {8.2}Diagramme de Gantt}{5}
-\contentsline {section}{\numberline {9}Modalit\IeC {\'e}s de suivi}{5}
-\contentsline {subsection}{\numberline {9.1}Les r\IeC {\`e}gles de suivi}{5}
-\contentsline {subsection}{\numberline {9.2}Les outils utilis\IeC {\'e}s}{5}
-\contentsline {subsection}{\numberline {9.3}Proc\IeC {\'e}dures de r\IeC {\'e}visions du planning}{5}
-\contentsline {section}{\numberline {10}Gestion des risques}{5}
-\contentsline {subsection}{\numberline {10.1}Risques concernant l'application du projet}{5}
-\contentsline {subsection}{\numberline {10.2}Risques propres au projet}{6}
-\contentsline {section}{\numberline {11}Conclusion}{6}
-\contentsline {section}{\numberline {12}Annexes}{6}
-\contentsline {subsection}{\numberline {12.1}Les fiches de t\IeC {\^a}che}{6}
-\contentsline {subsection}{\numberline {12.2}Exemple de fiche de revue}{6}
-\contentsline {subsection}{\numberline {12.3}Exemple de fiche de s\IeC {\'e}ance}{6}
+\contentsline {subsection}{\numberline {8.2}Diagramme de Gantt}{6}
+\contentsline {section}{\numberline {9}Modalit\IeC {\'e}s de validation}{6}
+\contentsline {subsection}{\numberline {9.1}Les r\IeC {\`e}gles de suivi}{6}
+\contentsline {subsection}{\numberline {9.2}Les outils utilis\IeC {\'e}s}{6}
+\contentsline {subsection}{\numberline {9.3}Proc\IeC {\'e}dures de r\IeC {\'e}visions du planning}{6}
+\contentsline {section}{\numberline {10}Gestion des risques}{6}
+\contentsline {subsection}{\numberline {10.1}Plans d'actions pour g\IeC {\'e}rer ces risques}{7}
+\contentsline {section}{\numberline {11}Conclusion}{7}
+\contentsline {section}{\numberline {12}Annexes}{7}
+\contentsline {subsection}{\numberline {12.1}Les fiches de t\IeC {\^a}che}{7}
+\contentsline {subsection}{\numberline {12.2}Exemple de fiche de revue}{7}
+\contentsline {subsection}{\numberline {12.3}Exemple de fiche de s\IeC {\'e}ance}{7}
