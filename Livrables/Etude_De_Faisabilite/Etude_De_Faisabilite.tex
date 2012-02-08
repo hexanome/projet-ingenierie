@@ -102,23 +102,45 @@ Les connecteurs (e.g. connexion de la base à sa source d'énergie) doivent avoi
 
 \subsection{Système embarqué}
 
-\subsubsection{Matériel}
-
-Des fabricants tels qu'Armadeus\footnotemark proposent des cartes de systèmes embarqués bien adaptées à notre problématique. Equipées de processeurs x86 (Intel) ou ARM (on préférera le second pour des raisons de consommation d'économie d'énergie), elles permettent l'exécution de systèmes d'exploitation modernes. Elles présentent par ailleurs l'avantage d'être compactes, abordables\footnotemark (prix généralement inférieur à 300\euro ), et proposent toutes les interfaces dont nous pourrions avoir besoin pour les faire correspondre avec les périphériques utilisés (i.e. USB, série, ethernet, etc.).
-
-
-% Lien : http://www.armadeus.com/francais/produits-cartes_microprocesseur-apf51.html
-\footnotetext{Site internet Armadeus - http://j.mp/armadeus}
-
-% Lien : http://www.embeddedarm.com/products/board-detail.php?product=TS-7260
-\footnotetext{Exemple de carte Technologic Systems - http://j.mp/technologic-systems}
 
 \subsubsection{Système d'exploitation}
 
 Nous avons constaté dans les différents systèmes embarqués de solutions similaires une utilisation indifférenciée de Linux, Solaris et Windows\footnotemark. Le monitoring s'effectuant en deux étapes distinctes (la collecte de données auprès des capteurs, puis leur transmission périodique à la centrale), un système temps réel ne nous semble pas présenter d'avantages significatifs dans ce cadre d'utilisation. L'usage de Linux semble particulièrement probant, du fait de sa simplicité mais aussi de son utilisation abondante dans le domaine de l'embarqué.
+
 \footnotetext{Entreprises étudiées : ENI, Asentria et GuardMagic.}
 
-Nous avons eu l’occasion de discuter avec un chef de projet de Orange Business Service, section Fleet Performance, qui nous a assuré que les boîtiers d'acquisition de données installés sur leurs véhicules tournaient sous Linux. Cet entretien appuie un peu plus notre volonté d'utiliser Linux en tant que système d'exploitation.
+Le système Linux aura une empreinte mémoire avoisinant cinq méga-octets sur la mémoire flash. Nous demanderons donc 32 méga-octets de DSRAM, et 32 méga-octets de NAND flash, ce qui est parfaitement acceptable à un prix raisonnable, comme nous le verrons dans la partie "Matériel". Le système se lance depuis la flash, pour permettre une re-programmation.
+
+% Plus d'information: http://computingtech.blogspot.com/2008/10/size-of-embedded-linux-system.html
+
+L'ABI utilisée demeure entièrement POSIX\footnotemark. Toutes les fonctions IPC, etc. définies dans le standard peuvent être utilisées\footnotemark.
+
+\footnotetext{\url{https://raw.github.com/torvalds/linux/master/Documentation/ABI/stable/syscalls}}
+\footnotetext{\url{https://www2.opengroup.org/ogsys/jsp/publications/PublicationDetails.jsp?catalogno=t101}}
+
+Dans la mesure où les données peuvent être stockées sur le système, il est recommandé d'utiliser un système de fichier UBIFS\footnotemark, particulièrement adapté pour la mémoire flash, et qui optimise l'usage de l'espace mémoire.
+
+\footnotetext{\url{http://elinux.org/File_Systems\#UBIFS}}
+
+Nous avons eu l’occasion de discuter avec un chef de projet de Orange Business Service, section Fleet Performance, qui nous a assuré que les boîtiers d'acquisition de données installés sur les véhicules de leurs clients tournaient sous Linux. Cet entretien appuie un peu plus notre volonté d'utiliser Linux en tant que système d'exploitation.
+
+\subsubsection{Matériel}
+
+Des fabricants tels qu'Armadeus\footnotemark proposent des cartes de systèmes embarqués bien adaptées à notre problématique. Equipées de processeurs adaptés à la faible consommation énergétique requise, elles permettent l'exécution de systèmes d'exploitation modernes. Elles présentent par ailleurs l'avantage d'être compactes, abordables\footnotemark (prix généralement inférieur à 300\euro ), et proposent toutes les interfaces dont nous pourrions avoir besoin pour les faire correspondre avec les périphériques utilisés (i.e. USB, série, ethernet, etc.).
+
+% Lien : http://www.armadeus.com/francais/produits-cartes_microprocesseur-apf51.html
+\footnotetext{Site internet Armadeus - \url{http://j.mp/armadeus}}
+
+% Lien : http://www.embeddedarm.com/products/board-detail.php?product=TS-7260
+\footnotetext{Exemple de carte Technologic Systems - \url{http://j.mp/technologic-systems}}
+
+Le processeur pourrait être un MIPS\footnotemark, son architecture est plus stable et plus ancienne, mais il s'agit davantage d'un ``one size fits all'', de plus en plus orienté vers la haute performance nécessaire pour les tablettes graphiques\footnotemark. ARM, en revanche, offre un processeur vraiment tourné vers une faible consommation énergétique, le Cortex M0\footnotemark (78 µW/MHz), avec des performances toujours acceptables pour nos besoins à 0.9 DMIPS/MHz en 32 bit. En outre, la technologie ARM est très reconnue, et l'implémentation de son mode de repos est bien intégré avec Linux (sans doute grâce à son utilisation extensive dans le domaine des smartphones). C'est ce processeur que nous choisirons.
+
+\footnotetext{\url{http://www.linux-mips.org/wiki/Main_Page}}
+\footnotetext{\url{http://mips.com/products/architectures/mips32/}}
+\footnotetext{\url{http://www.arm.com/products/processors/cortex-m/cortex-m0.php}}
+
+
 
 \subsection{Production d'énergie}
 
