@@ -1,0 +1,104 @@
+\section{Introduction}
+\subsection{Présentation du projet}
+Le COPEVUE a lancé un appel d'offre dans le cadre de la réalisation d'un système de monitoring de sites isolés. Il s'agit donc de concevoir en premier lieu une solution technique permettant de répondre au mieux aux exigences fonctionnelles et non fonctionnelles que le COPEVUE formule. De façon synthétique notre équipe va proposer une solution permettant de surveiller des sites naturels difficiles d'accès (souvent à cause des conditions environnementales) et peu peuplés. Dans ces sites isolés sont souvent regroupés des postes de travail et ces zones doivent pouvoir être surveillées en dépit de la distance qui les sépare du bureau de contrôle.
+
+\subsection{Présentation du document}
+Ce document présente le cahier des charges du logiciel permettant la supervision centralisée de tous les site isolés surveillés,c'est à dire la définition des spécifités du logiciel qui sera développé. C'est une formalisation des besoins exprimés par la MOA et permet de s'assurer que les différents partis se comprennent sur le "quoi". Ce document servira de référence à la MOE et la MOA pour les phases suivantes du projet.
+
+\subsection{Documents applicables / Documents de référence}
+\begin{itemize}
+	\item Cours de Génie Logiciel
+	\item Cours de Qualité Logiciel
+	\item Manuel Qualité 
+	\item Etude de faisabilité
+	\item Spécification technique des besoins
+\end{itemize}
+
+\subsection{Terminologie et abréviations}
+\begin{itemize}
+	\item CdC : cahier des charges
+	\item MOA : maîtrise d'ouvrage
+	\item MOE : maîtrise d'ouvrage
+\end{itemize}
+
+\section{Présentation du problème}
+\subsection{Buts, nature du logiciel, utilisateurs concernés}
+L'objectif est de fournir une interface qui permette de suivre les informations dont on dispose sur les différents sites actuellement surveillés par notre système comme le niveau de liquide dans une cuve ou le niveau de remplissage des containers, de manière efficace et simple. Il offrira également la possibilité de reconfigurer certains paramètres du système pour faire de la maintenance à distance.
+Ce cahier des charges ne concerne que de la partie "présentation" des données, un autre module  qui expose une interface pour récupérer facilement les informations, est chargé de récupérer les données issues des sites isolés, de les stocker et de les traiter.
+Comme il s'agit du logiciel de supervision, le logiciel permet aussi d'envoyer des demandes d'interventions aux personnes qualifiées, qui les recevront sur leurs PDA.
+
+\subsection{Formulation des besoins, exploitation et ergonomie, expérience}
+Les besoins pour ce logiciel consisteront en :
+\begin{itemize}
+	\item un affichage des données physiques ( niveau de liquide, état des batteries,...),
+	\item un affichage de l'historique des données,
+	\item un formulaire permettant de transmettre un ordre d'intervention sur un site,
+	\item un affichage des paramètres de configuration actuelle,
+	\item un affichage de l'historique de paramétrage,
+	\item un panneau de configuration de la base.
+\end{itemize}
+
+Pour que le logiciel soit installable sur tout type d'ordinateurs facilement, il n'utilisera que des composants standards. La seule contrainte sera une connection internet afin de pouvoir récuperer les informations. Une connexion en continu n'est pas nécessaire pour le bon fonctionnement du logiciel, mais pour avoir les mises à jour sur les informations, un minimum de une connection toutes les 4 heures est obligatoires.
+On attachera également une grande importance à la facilité d'apprentissage et d'utilisation, car l'utilisateur finale n'a pas forcément une grande connaissance dans le maniement des outils informatiques. Il n'est pas souhaitable qu'une formation soit nécessaire pour l'utilisation de ce nouvel outil.
+
+\subsection{Portée, développement, mise en oeuvre, organisation de la maintenance}
+%?????
+\subsection{Limites}
+%?????
+
+\section{Exigences fonctionnelles}
+\subsection{Fonctions de base, performances et aptitudes}
+On distinguera les fonctions principales suivantes:
+\begin{itemize}
+	\item authentification pour accéder aux serveurs,
+	\item consultation des données courantes sur les réservoirs et containers,
+	\item affichage de l'état des capteurs et de la base, avec une possibilité de configuration,
+	\item envoie d'un ordre d'intervention,
+	\item affichage de l'historique des données,
+	\item affichage de l'historique de paramétrages,
+\end{itemize}
+
+Au niveau des performances, vu que le logiciel est prévu pour fonctionner sur des ordinateurs et au vue de leur puissance actuelle, elles ne seront pas impactées par le matériel, car aucun traitement lourd n'est effectué par le logiciel, qui ne fait que de la présentation.
+
+\subsection{Contraintes d'utilisation}
+La seule contrainte est d'avoir un accès internet toutes les 4 heures.
+
+\subsection{Critères d'appréciation de la réalisation effective de la fonction}
+
+\subsection{Flexibilité dans la façon de mettre en oeuvre la fonction convercée, variation de coûts associée en fonction de cette flexibilité}
+
+\section{Exigences non fonctionnelles}
+\subsection{Sécurité}
+Il faut que l'accès aux paramétrages des stations soient sécurisés pour éviter toute mauvaise configuration qui pourrait nuire à la pérennité du sytème.
+
+\subsection{Fiabilité}
+La fiabilité de l'application installé doit être bonne, avec une résistance aux erreurs, pour éviter de paralyser la prise de décision.
+
+\subsection{Portabilité}
+Pour que le logiciel soit installable sur différents configurations matérielles ou logicielles (systèmes d'exploitation différents), il faudra utiliser des composants standards et fournir en un seul paquet tous les extensions nécessaires.
+
+\section{Contraintes imposées, faisabilité technologique, moyens}
+\subsection{Sûreté, planning, organisation, communication}
+\subsection{Complexité}
+\subsection{Compétences, moyens et règles}
+\subsection{Normes de documentation}
+
+\section{Configuration cible}
+\subsection{Matériels et logiciels}
+Le logiciel ne requiera qu'un ordinateur tournant sous Windows XP sp1, avec une connexion internet, aucun autre prérequis ne sera nécessaire, tout le reste étant fournis avec le logiciel, pour permettre un déploiement facile.
+\subsection{Stabilité de la configuration}
+\subsection{Description des API}
+
+\section{Guide de réponse au cahier des charges}
+\subsection{Grille d'évaluation des exigencesfonctionnelles}
+\begin{tabular}{|c|c|c|}
+	\hline Fonction & Nécessité & Difficulté d'implémentation
+	\hline 
+\end{tabular}
+\subsection{Grille d'évaluation des exigences non fonctionnelles}
+
+\section{Annexes}
+\subsection{Observations de l'existant}
+\subsection{Propositions d'orientation}
+\subsection{Images d'écrans principaux du logiciel}
+\subsection{Résultat de l'analyse de la valeur}
