@@ -118,6 +118,14 @@ Les contraintes vont venir des choix effectuées sur les autres composants de la
 
 \section{Contraintes imposées, faisabilité technologique, moyens}
 
+Pour des faciliter l'évolutivité future du système, nous avons les contraintes non fonctionnelles suivantes :
+
+\begin{itemize}
+\item Modularité extrème du logiciel.
+\item Indépendance maximum par rapport au composant matériel.
+\item Respect des conventions d'architecture et de stule décidées au préalable, et production continue de documentation.
+\end{itemize}
+
 \subsection{Sûreté, planning, organisation, communication}
 
 
@@ -158,6 +166,7 @@ Cette API est destinée au système de gestion du site, et va permettre à celui
 
 \begin{itemize}
 \item GetStatus : Permet de connaitre l'état actuel du système de transmission. S'il est actuellement en cours de transmission de données, ou si données sont en attente d'envoi pour plus tard. Permet aussi de savoir quand le transfert est terminé.
+\item GetFullStatus : Permet d'obtenir un diagnostique complet de l'état du système. Ce aussi bien au niveau logiciel que matériel. Cette méthode sera utile pour les techniciens qui seront amenés à effectuer des maintenances sur le système.
 \item SendData : Prend en paramètre le fichier à transmettre, sous forme binaire. Le système essayera de transmettre ces données dès qu'il le pourra, et peut mettre en attente plusieurs fichiers qu'il enverra plus tard.
 \item GetData : Dans le cas où des données de configuration ont été recues, elles seront disponibles par le biais de cette méthode.
 \end{itemize}
@@ -178,6 +187,6 @@ La communication avec le serveur central s'effectue à l'aide d'un protocole HTT
 
 \subsection{Propositions d'orientation}
 
-\subsection{Images d'écrans principaux du logiciel}
+% \subsection{Images d'écrans principaux du logiciel} <-- Pas d'IHM à priori, donc pas besoin de captures d'écran.
 
 \subsection{Résultat de l'analyse de la valeur}
