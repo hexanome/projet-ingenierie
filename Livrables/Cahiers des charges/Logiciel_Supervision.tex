@@ -3,7 +3,7 @@
 Le COPEVUE a lancé un appel d'offre dans le cadre de la réalisation d'un système de monitoring de sites isolés. Il s'agit donc de concevoir en premier lieu une solution technique permettant de répondre au mieux aux exigences fonctionnelles et non fonctionnelles que le COPEVUE formule. De façon synthétique notre équipe va proposer une solution permettant de surveiller des sites naturels difficiles d'accès (souvent à cause des conditions environnementales) et peu peuplés. Dans ces sites isolés sont souvent regroupés des postes de travail et ces zones doivent pouvoir être surveillées en dépit de la distance qui les sépare du bureau de contrôle.
 
 \subsection{Présentation du document}
-Ce document présente le cahier des charges du logiciel permettant la supervision centralisée de tous les site isolés surveillés,c'est à dire la définition des spécifités du logiciel qui sera développé. C'est une formalisation des besoins exprimés par la MOA et permet de s'assurer que les différents partis se comprennent sur le "quoi". Ce document servira de référence à la MOE et la MOA pour les phases suivantes du projet.
+Ce document présente le cahier des charges du logiciel permettant la supervision centralisée de tous les site isolés surveillés,c'est à dire la définition des spécifités du logiciel qui sera développé. C'est une formalisation des besoins exprimés par la MOA et permet de s'assurer que les différents parties se comprennent sur le "quoi". Ce document servira de référence à la MOE et la MOA pour les phases suivantes du projet.
 
 \subsection{Documents applicables / Documents de référence}
 \begin{itemize}
@@ -24,12 +24,14 @@ Ce document présente le cahier des charges du logiciel permettant la supervisio
 \section{Présentation du problème}
 \subsection{Buts, nature du logiciel, utilisateurs concernés}
 L'objectif est de fournir une interface qui permette de suivre les informations dont on dispose sur les différents sites actuellement surveillés par notre système comme le niveau de liquide dans une cuve ou le niveau de remplissage des containers, de manière efficace et simple. Il offrira également la possibilité de reconfigurer certains paramètres du système pour faire de la maintenance à distance.
-Ce cahier des charges ne concerne que de la partie "présentation" des données, un autre module  qui expose une interface pour récupérer facilement les informations, est chargé de récupérer les données issues des sites isolés, de les stocker et de les traiter.
-Comme il s'agit du logiciel de supervision, le logiciel permet aussi d'envoyer des demandes d'interventions aux personnes qualifiées, qui les recevront sur leurs PDA.
+Lorsque la situation est critique sur un site, l'utilisateur doit en être avertis pour prendre les décisions qui s'imposent.
+Ce cahier des charges ne concerne que de la partie "présentation" des données, en accord avec notre découpage en sous-système du système global de surveillance, un autre module  qui expose une interface pour récupérer facilement les informations, est chargé de récupérer les données issues des sites isolés, de les stocker et de les traiter.
+Comme il s'agit du logiciel de supervision, le logiciel permet aussi d'envoyer des demandes d'interventions aux personnes qualifiées, qui les recevront sur leurs PDA (il s'agit également d'un sous-système auquel on se reportera pour plus d'informations).
 
 \subsection{Formulation des besoins, exploitation et ergonomie, expérience}
 Les besoins pour ce logiciel consisteront en :
 \begin{itemize}
+	\item un affichage général sur l'ensemble des sites dans le monde, avec mise en évidence des sites dans un état critique,
 	\item un affichage des données physiques ( niveau de liquide, état des batteries,...),
 	\item un affichage de l'historique des données,
 	\item un formulaire permettant de transmettre un ordre d'intervention sur un site,
@@ -38,7 +40,8 @@ Les besoins pour ce logiciel consisteront en :
 	\item un panneau de configuration de la base.
 \end{itemize}
 
-Pour que le logiciel soit installable sur tout type d'ordinateurs facilement, il n'utilisera que des composants standards. La seule contrainte sera une connection internet afin de pouvoir récuperer les informations. Une connexion en continu n'est pas nécessaire pour le bon fonctionnement du logiciel, mais pour avoir les mises à jour sur les informations, un minimum de une connection toutes les 4 heures est obligatoires.
+Pour que le logiciel soit installable sur quasiment tout type d'ordinateurs facilement, il n'utilisera que des composants standards. La seule contrainte sera une connection internet afin de pouvoir récuperer les informations distantes. Une connexion en continue n'est pas nécessaire pour le bon fonctionnement du logiciel, mais pour avoir les mises à jour sur les informations, un minimum de une connection à Internet toutes les 4 heures est obligatoire.
+
 On attachera également une grande importance à la facilité d'apprentissage et d'utilisation, car l'utilisateur finale n'a pas forcément une grande connaissance dans le maniement des outils informatiques. Il n'est pas souhaitable qu'une formation soit nécessaire pour l'utilisation de ce nouvel outil.
 
 \subsection{Portée, développement, mise en oeuvre, organisation de la maintenance}
@@ -75,7 +78,13 @@ Il faut que l'accès aux paramétrages des stations soient sécurisés pour évi
 La fiabilité de l'application installé doit être bonne, avec une résistance aux erreurs, pour éviter de paralyser la prise de décision.
 
 \subsection{Portabilité}
-Pour que le logiciel soit installable sur différents configurations matérielles ou logicielles (systèmes d'exploitation différents), il faudra utiliser des composants standards et fournir en un seul paquet tous les extensions nécessaires.
+Pour que le logiciel soit installable sur différents configurations matérielles ou logicielles (systèmes d'exploitation différents), le logiciel sera développé dans un langage de haut niveau qui sera executé sur la machine virtuelle de l'ordinateur cible. On a choisit Java car c'est un langage très largement utilisé.
+
+\subsection{Ergonoomie}
+Le logiciel doit être le plus ergonomique possible pour faciliter la prise en main et avoir un haut niveau d'acceptation auprès des utilisateurs finaux. L'objectif est de fournir un logiciel dont la prise en main ne nécessitera aucune formation, mais juste le temps de parcourir les différentes fenêtres.
+
+\subsection{Modularité}
+En séparant distinctement les différents couches d'acquisition de données (auprès d'un autre module) de l'affichage, pour permettre une maintenance plus facile et évolutive en cas d'évolution future.
 
 \section{Contraintes imposées, faisabilité technologique, moyens}
 \subsection{Sûreté, planning, organisation, communication}
@@ -85,15 +94,27 @@ Pour que le logiciel soit installable sur différents configurations matérielle
 
 \section{Configuration cible}
 \subsection{Matériels et logiciels}
-Le logiciel ne requiera qu'un ordinateur tournant sous Windows XP sp1, avec une connexion internet, aucun autre prérequis ne sera nécessaire, tout le reste étant fournis avec le logiciel, pour permettre un déploiement facile.
+La configuration minimale pour le bon fonctionnement du logiciel : 
+\begin{itemize}
+	\item un PC avec un processeur de 233 MHz minimum ou de capacité supérieure (recommandé), de la famille Intel Pentium/Celeron ou famille AMD K6/Athlon/Duron,
+	\item 128 Mo de RAM ou plus recommandé,
+	\item 150 Mo d'espace disque disponible ;
+	\item une carte vidéo (graphique) et un moniteur Super VGA (800x600) ou de résolution supérieure,
+	\item un clavier et une souris,
+	\item Windows XP sp1 ou Ubuntu 6.0 ou Mac OS 10.0 installé,
+	\item Java 1.5 installé.
+\end{itemize}
+
 \subsection{Stabilité de la configuration}
+
+
 \subsection{Description des API}
 
 \section{Guide de réponse au cahier des charges}
 \subsection{Grille d'évaluation des exigencesfonctionnelles}
 \begin{tabular}{|c|c|c|}
 	\hline Fonction & Nécessité & Difficulté d'implémentation
-	\hline 
+	%\hline Affichage d'une carte avec les sites & 9 & 5
 \end{tabular}
 \subsection{Grille d'évaluation des exigences non fonctionnelles}
 
