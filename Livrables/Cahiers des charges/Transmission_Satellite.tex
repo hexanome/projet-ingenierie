@@ -30,13 +30,13 @@ D'un point de vue plus technique, ce logiciel devra s'exécuter sur un OS Linux 
 
 Le composant décrit ici n'aura pas directment d'``utilisateurs'' à proprement parler. Il devra par fournir une API aux développeurs du système de gestion du site isolé, et se conformer à au protocole utilisé par le système central. La configuration du composant (e.g. les fréquences satellites à utiliser pour la communication) se fera par le système de gestion du site, et non pas direcement par un utilisateur externe.
 
-Ce document va aussi porter sur le matériel exploité par le logiciel précédement cité, à savoir le module de communication par satellite. Les attentes par rapport à celui-ci seront décrite plus loins.
+Ce document va aussi porter sur le matériel exploité par le logiciel précédement cité, à savoir le module de communication par satellite. Les attentes par rapport à celui-ci seront décrites plus loins.
 
 \subsection{Formulation des besoins, exploitation et ergonomie, expérience}
 
 Le système présentement présenté doit répondre à deux besoins bien distincts, et ce quelque soit la localisation géographique du système dans le monde :
 
-\parapraph{Transmission} Le système doit pouvoir envoyer au système central les informations suivantes :
+\paragraph{Transmission} Le système doit pouvoir envoyer au système central les informations suivantes :
 
 \begin{itemize}
 \item La valeur des mesures de effectuées depuis la dernière transmission par chacun des capteurs. La quantité de valeurs dépend de la granularité avec laquelle est configurée le site. Chaque valeur sera bien évidement datée.
@@ -53,36 +53,131 @@ Le système présentement présenté doit répondre à deux besoins bien distinc
 \item Des données de configuration spécifiques à certains capteurs, qui leur seront transmis à leur prochaine connéxion (les intervalles de relevés comme mentionné plus haut, mais aussi des paramètres spécifiques à un type de capteur telles que les fréquences d'ultrasons à utiliser pour effectuer un relevé de remplissage d'une cuve).
 \end{itemize}
 
+Le composant matériel de communication par satellite doit quant-à-lui pouvoir venir se connecter facilement sur le système de gestion du site. Une interface standard de type USB sera utilisée.
+
 \subsection{Portée, développement, mise en oeuvre, organisation de la maintenance}
 
+Il est indispensable que ce système puisse être maintenu de manière efficace, puisque qu'il est vital au bon fonctionnement de l'intégralité du système de monitoring d'un site isolé. La maintenance portera sur les aspect suivants du système :
 
+\begin{itemize}
+\item La remise à zéro du logiciel, et la mise-à-jour de celui-ci.
+\item Le remplacement du materiel de communication satellite en cas de panne. Il faut aussi prévoir une évolution vers un composant plus perfectionné.\footnotemark
+\item La reconfiguration du système, pour fonctionner avec des paramètres différents (e.g. les canaux de communication satellite).
+\end{itemize}
+
+\footnotetext{Ceci laisse entrevoir la contrainte d'évolutivité du système, que nous verrons plus en détails par la suite.}
+
+La maintenance à proprement parler pourra se faire de deux manière. La première c'est tout simplement par une reconfiguration à distance du système en utilisation la communication par satellite. Ce type de maintenance peut suffire lorsqu'il ne s'agit que d'une modification des paramètres du système.
+
+Pour des problèmes plus sérieux, la maintenance sera effectuée sur site, par un technicien qui viendra se connecter directement au système de gestion du site à l'aide d'un ordinateur portable. C'est ce même technicien qui aura pour rôle d'effectuer des modifications materielles en remplacant des composants enfichables (dans le cas présent, le module de communication par satellite) si le besoin venait à se présenter.
+
+Il est aussi nécéssaire de prévoir une technique permettant aux techniciens de vérifier le bon fonctionnement du module de communication par satellite indépendament du reste de la station, cela pour pouvoir confirmer le diagnostique qu'aura fournit le logiciel à ce sujet.
 
 \subsection{Limites}
 
+Ce système ne comprend pas l'autre partie de la transmission de données, à savoir la partie serveur de collecte de celles-ci. On se limite donc ici au composant logiciel/matériel présent sur le système de gestion d'un site isolé. Un protocole est défini dans le dossier des APIs et Interfaces décrivant la manière dont communiquent ces deux systèmes distincts.
+
+Ce système n'a pas non plus pour rôle de stocker la configuration du système de gestion du site. Il se contente de transmettre de nouvelles valeurs de configuration à celui-ci lorsqu'il en recoit, à l'aide de l'interface décrite encore une fois dans les dossier des APIs et Interfaces.
+
 \section{Exigences fonctionnelles}
-\subsection{Fonctions de base, performances et aptitudes}
+
+\subsection{Fonctions de base et performances}
+
+Ce système est divisé en deux parties. Une logicielle, l'autre matérielle. La première va avoir les fonctions de base suivantes :
+
+\begin{itemize}
+\item Réception des données à transmettre de la part du système de gestion du site.
+\item Gestion du périphérique de transmission (l'autre partie du système), à savoir installation et configuration des pilotes, etc.
+\item Utilisation du périphérique de transmission pour communiquer avec le serveur central. Envoi des données de capteurs dans un sens, réception des informations de configuration dans l'autre.
+\item Transmission au système de gestion du site des données de configuration recues du serveur central.
+\end{itemize}
+
+Quand à la partie matérielle, elle n'a ici qu'un rôle de canal de communication avec le serveur central. Elle doit permettre la connexion à internet depuis n'importe quel point du globe, permettant au site de transmettre les informations collectées.
+
+Bien évidément, la transmission se fait de manière périodique, et non pas en continue.
+
+Il n'y a pas de contrainte forte par rapport aux performances de transmission, le volume des données à transmettre étant relativement faible par rapport aux capacité des connexion par satellite modernes. Une vitesse de 128kpbs en émission/réception sera donc largement suffisante.
+
 \subsection{Contraintes d'utilisation}
-\subsection{Critères d'appréciation de la réalisation effective de la fonction}
-\subsection{Flexibilité dans la façon de mettre en oeuvre la fonction convernée, variation de coûts associée en fonciton de cette flexibilité}
+
+Les contraintes viennent principalement de la nature autonome du système. Cela implique d'avoir :
+
+\begin{itemize}
+\item Une faible consomation energétique (et si possible, de ne rien consomer la plupart du temps).
+\item La capacité à reprendre une transmission sans aucune perte de données en cas de coupure de la connexion ou de redémarage du système.
+\item Un mode de secours essayant de se connecter à des réseaux satellite secondaires en cas de perte totale des capacités de connexion.
+\end{itemize}
+
+Les contraintes vont venir des choix effectuées sur les autres composants de la solution technique dans son ensemble. Il faudra donc que le système de communication du site isolé puisse s'exécuter sur un OS Linux.
+
+% \subsection{Critères d'appréciation de la réalisation effective de la fonction} <-- Moi pas comprendre ce que ça vouloir dire.
+
+\subsection{Flexibilité dans la façon de mettre en oeuvre la fonction convernée, variation de coûts associée en fonction de cette flexibilité}
 
 \section{Exigences non fonctionnelles}
 
 \section{Contraintes imposées, faisabilité technologique, moyens}
-\subsection{Sûreté, planning, organinsation, communication}
+
+\subsection{Sûreté, planning, organisation, communication}
+
+
+
 \subsection{Complexité}
-\subsection{Compétenes, moyens et règkes}
+
+
+
+\subsection{Compétences, moyens et règles}
+
+
+
 \subsection{Normes de documentation}
 
+Les normes de documentation à adopter sont décrite dans le plan d'assurance qualité commun aux différents éléments de ce projets.
+
 \section{Configuration cible}
+
 \subsection{Matériels et logiciels}
+
+Le composant matériel de notre système est un modem satellite duplex GSP-1720. Se connectant sur le réseau GlobalStar, ce modem est interfacable en USB pour une connection aisée au système de gestion de site.
+
+Au niveau du logiciel, il devra pouvoir s'exécuter sur le même OS embarqué Linux que le système de gestion de site.
+
 \subsection{Stabilité de la configuration}
+
+Pour des raisons d'évolutivité, le système devra pouvoir s'adapter facilement à un remplacement du composant matériel, et éventuellement à un remplacement de celui-ci par un autre modèle (dans le cas où le besoin se présenterait d'utiliser un autre opérateur de télécommunications par exemple).
+
+L'accent devra donc être mis lors de la phase de développement logiciel sur la modularité afin que de limiter l'effort de maintenance dans le cas où il faudrait adapter le logiciel à un nouveau matériel, mais aussi à de nouveaux protocoles de communication avec les autres briques de la solution.
+
 \subsection{Description des API}
 
+Le système va communiquer avec les autres composants de la solution de monitoring de sites isolés de deux manières différentes :
+
+\paragraph{API d'envoi et de réception de données}
+
+Cette API est destinée au système de gestion du site, et va permettre à celui-ci de transmettre à notre logiciel les données relevées par les capteurs. Elle expose les méthodes suivantes :
+
+\begin{itemize}
+\item GetStatus : Permet de connaitre l'état actuel du système de transmission. S'il est actuellement en cours de transmission de données, ou si données sont en attente d'envoi pour plus tard. Permet aussi de savoir quand le transfert est terminé.
+\item SendData : Prend en paramètre le fichier à transmettre, sous forme binaire. Le système essayera de transmettre ces données dès qu'il le pourra, et peut mettre en attente plusieurs fichiers qu'il enverra plus tard.
+\item GetData : Dans le cas où des données de configuration ont été recues, elles seront disponibles par le biais de cette méthode.
+\end{itemize}
+
+\paragraph{Protocole de communication avec le serveur central}
+
+La communication avec le serveur central s'effectue à l'aide d'un protocole HTTP Restful\footnotemark. Les détails de l'API serveur et du protocole utilisé seront disponibles dans le dossier des APIs et Interfaces.
+
+\footnotetext{``Representational State Transfer'' : Principes définissant une organisation standard pour une API web.}
+
 \section{Guide de réponse au cahier des charges}
+
 \subsection{Grille d'évaluation}
 
 \section{Annexes}
+
 \subsection{Observations de l'existant}
+
 \subsection{Propositions d'orientation}
+
 \subsection{Images d'écrans principaux du logiciel}
+
 \subsection{Résultat de l'analyse de la valeur}

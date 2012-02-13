@@ -1,19 +1,27 @@
 \section{Introduction}
+
 Dans le cadre notre système de monitoring de sites isolés, nous avons retenu des solutions adaptées aux objectifs du COPEVUE, et qui permettront de gérer automatiquement les sites isolés. Ce document décrit ces choix et leur justification, et présente le système que l’on propose.
 
 \section{Axes d’amélioration retenus}
+
 \subsection{Axes de progrès retenus}
+
 Pour l’heure, le COPEVUE ne possède aucun système de monitoring. En particulier, la gestion non globalisée des camions pour amener des ressources aux sites et pour les vider /  nettoyer est loin de l’optimal.
 
 De plus, les propriétaires des sites isolés doivent actuellement passer des appels manuels afin de contacter les entreprises de ravitaillement et d’évacuation. Alors qu’un système automatisé pourrait rendre la tâche plus simple et éviter toute erreur humaine, afin de prévenir que des incidents que l’on pouvait empêcher, incendies et autres, ne se produisent.
 
 Une automatisation du contrôle du niveau des réservoirs ou containers par capteurs permettra d’éviter des oublis humains et transmettra à tout instant le niveau de remplissage au système global, qui répondra si besoin par un envoi de camions.
+
 \subsection{Axes de progrès marginaux}
+
 Pour améliorer la surveillance des sites, on pourrait envisager de proposer dans le futur une surveillance vidéo, pour pouvoir analyser l’environnement alentour, et ainsi agir au plus vite contre les accidents humains ou environnementaux.
+
 \subsection{Faux axes de progrès éventuels}
+
 La suppression de  toute intervention humaine pour la surveillance des sites n’est certainement pas un but. En effet, il s’agit avant tout d’aider les personnes qui travaillent sur place. Toutefois, les technologies d’automatisation utilisées nécessitent l’intervention humaine, ne serait-ce que pour s’assurer du bon fonctionnement des capteurs et des systèmes mis en place.
 
 \section{Description des exigences non fonctionnelles}
+
 Parmi les exigences non fonctionnelles les plus simples, nous promettons un système résilient qui gère les cas de perte de connexion au réseau, de blackout de satellites, et de déconnexion du réseau GSM par le stockage des données en local, dans le système embarqué. Le système tente alors une connexion toutes les dix minutes. Dès qu’il se reconnecte, il envoie les informations qu’il a retenues, avant de passer dans le mode de fonctionnement normal.
 
 Chef parmi nos exigences non fonctionnelles, se trouve l’autonomie de nos systèmes embarqués. Les boîtiers présents sur les sites isolés sont alimentés par des batteries longue-durée (de l’ordre de la dizaine d’année) pour tous les capteurs, excepté GPS (qui requiert trop d’énergie). Si nous optons pour cette solution sur le site, chaque capteur sera également couplé avec une batterie longue durée.
@@ -39,6 +47,7 @@ Listons à présent les exigences non-opérationnelles que nous supportons :
 
 
 \section{Description des exigences fonctionnelles}
+
 Le système devra être accessible 24h/24, 7j/7. Cela requiert une autonomie importante
 
 Le système embarqué récupère les données en étant couplé à chaque capteur du site. Dans le cas de sites isolés mobiles, le système possède une puce GPS qui envoie la localisation du site sur la planète. Ces puces GPS requièrent alors des conditions d’autonomie particulières, qui répondent aux besoins en ressources énergétiques plus importantes.
@@ -66,6 +75,7 @@ Nous respectons ainsi les contraintes suivantes :
 \end{itemize}
 
 \section{Esquisse du futur système et impacts}
+
 Le système envisagé comporte un serveur de stockage de données centralisé, accessible par le Web, depuis lequel il est possible d’avoir un accès consultatif par mot de passe / login des données, ainsi qu’un accès algorithmique pour que des programmes qui automatisent la synchronisation des mouvements des camions puissent interagir avec les données. Les données sont enregistrées sur un disque dur, via une base de donnée, dans ces serveurs. Ils logguent à l’occasion les activités effectuées sur le système.
 
 Les serveurs recueillent leurs informations des flux de données partant du réseau GSM utilisé dans le pays, ou par satellite si le réseau GSM fait défaut. Ces données proviennent des capteurs installés sur les sites isolés.
@@ -81,6 +91,7 @@ Ces systèmes, ainsi que les capteurs, sont alimentés par des piles hydrogènes
 L’architecture choisie est simple, mais flexible. Elle respecte les exigences de manière cohérente et gère les cas limites.
 
 \section{Bilan des améliorations}
+
 Notre solution garantie une gestion automatisée de la détection des niveaux de ressources, dans le but d’automatiser l’acheminement des ressources par camions.
 
 La constante autonomie des capteurs et du système de communication avec les serveurs est assurée par des solutions énergétiques standards.
@@ -88,6 +99,7 @@ La constante autonomie des capteurs et du système de communication avec les ser
 L’utilisation de composants connus et robustes comme le couplage batterie - pile hydrogène et le choix d’un système d’exploitation fortement utilisé promet un système qui ne faillira pas.
 
 \section{Conclusion}
+
 Notre système cherche la robustesse, tout en étant générique.
 
 Il permet la conception d’un système à prix raisonnable, qui s’implémente facilement avec des composants standards, et qui respecte des exigences plus drastiques que celles requises.
