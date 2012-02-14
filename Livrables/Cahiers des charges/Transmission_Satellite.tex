@@ -2,35 +2,50 @@
 
 \subsection{Présentation du projet}
 
-% On reprend ce qui a déjà été fait dans les autres documents.
+Le projet consiste en une solution complête permettant le monitoring à distance de sites géographiquement isolés. L'attention est ici plus particulièrement portée sur le monitoring de niveau de remplissage de cuves. Le but étant de pouvoir à tout moment avoir une vision d'ensemble sur un territoire complet des sites nécéssitant une intervention. Une des contraintes de cette solution technique est de pouvoir fonctionner par de très basses températures, et dans des régions où l'éclairement n'est pas garanti (cercle polaire).
 
 \subsection{Présentation du document}
 
-Nous allons dans ce cahier des charges présenter en détails les besoins que nous avons vis-à-vis de la solution de communication par satellite des sites isolés avec le centrale de gestion, ainsi que la reconfiguration à distance des ceux-ci. Nous essayerons tout d'abord de voir quelles sont les objectifs de cette solution technique, les utilisateurs concernés et les problèmes pouvant se présenter, autant dans son développement, sa mise en oeuvre, et finalement sa maintenance. Ce document est accompagné d'annexes permettant d'appronfondir certains sujets plus techniques sur lesquels nous n'avons pas voulu nous attarder dans un but de clarté.
+Ce cahier des charges va présenter en détails les exigences relatives à la solution de communication par satellite des sites isolés avec le centrale de gestion, ainsi que la reconfiguration à distance des ceux-ci. Seront d'abord présentés les objectifs de la ce sous-système, les utilisateurs concernés, et les problèmes pouvant se présenter lors de son utilisation, autant dans son développement, que dans sa mise en oeuvre et sa maintenance. Ce document est accompagné d'annexes permettant d'approfondir certains sujets plus techniques sur lesquels s'attarder aurait coûté en clarté.
 
 \subsection{Documents applicables / Documents de référence}
 
-% Décider ensemble de ce que l'on met dans ce genre de sections.
+Il peut être intéressant d'avoir pris connaissance de ces documents au préalable pour être mieux à même d'appréhender le contenu de ce cahier des charges.
+
+\begin{itemize}
+\item Dossier d'étude de faisabilité.
+\item Dossier de spécification technique des besoins.
+\item Dossier de conception.
+\end{itemize}
+
+En complément de ce document, il peut être utile de consulter le dossier des APIs et Interfaces.
 
 \subsection{Terminologie et abréviations}
 
-% A complêter au fur et à mesure.
-% Définir le "Système de gestion du site isolé".
-% Définir le "Système central".
+\begin{itemize}
+\item Système central : Serveur principal de la solution technique. Récupère les données depuis l'ensemble des sites isolés, et permet leur consultation ainsi que de la prise de décisions depuis un portail en ligne.
+\item Système de gestion du site isolé : Logiciel ``maître'' de la station. C'est lui qui coordone la récuperation des données depuis les capteurs, leur traitement local, et qui va utiliser le système de transmission (que décrit ce document) pour envoyer ces données au système central.
+\item Station du site isolé : Point central d'un site, est composée d'un système embarqué, de batteries, et de moyens de communications avec les capteurs, et avec le système central.
+\end{itemize}
+
+\begin{itemize}
+\item GSM (Global System for Mobile communications) : Technologie dominante de communication sans-fil utilisée par les téléphones portables. 
+\item GPRS (General Packet Radio Service) : Service de transfert de données utilisant le GSM. Il permet l'accès au réseau Internet depuis n'importe quel terminal compatible, si l'opérateur le permet.
+\item GlobalStar : Opérateur de télécommunications par satellites. Propose une couverture mondiale d'un service de communication voix/données accéssible depuis des terminaux spécialisés.
+\item TCP (Transmission Control Protocol) : Protocole de communication sur IP garantissant l'intégrité des données transferées.
+\end{itemize}
 
 \section{Présentation du problème}
 
 \subsection{Buts, nature du logiciel, utilisateurs concernés}
 
-Cette étude porte tout d'abord sur un logiciel qui va avoir une fonction, la communication par satellite avec le système central du système, et par-là même deux rôles : Le premier va être de transmettre les données relevées par les capteurs au système central, et l'autre de pouvoir recevoir de celui-ci de nouvelles données de configuration.
+Cette étude porte sur un composant logiciel qui va s'exécuter aux côtés du système de gestion de site sur le système embarqué de la station du site isolé.
 
-Ce composant logiciel devra donc intéragir d'un côté avec le système de gestion du site isolé, présent sur le même système physique que lui, et de l'autre avec le système central par le biais d'une communication satellite puis, à un niveau plus élevé, par le biais de services web.
+Ce rôle de ce logiciel va être de communiquer avec le système central à l'aide d'une connexion satellite ou GSM. Il aura donc une responsabilité double : d'un côté il assurera la transmission des données que les capteurs auront relevés, de l'autre il pourra recevoir en retour des informations de configuration, qui pourront s'appliquer à ce système, mais aussi à l'ensemble de la station et des capteurs.
 
-D'un point de vue plus technique, ce logiciel devra s'exécuter sur un OS Linux embarqué prévu pour n'être actif que pendant de courtes périodes de temps.
+En clair, ce système va être le seul moyen de communication du site isolé vers l'extérieur. Il devra pour cela exploiter un module de communication matériel qui sera connecté au système embarqué de la station.
 
-Le composant décrit ici n'aura pas directment d'``utilisateurs'' à proprement parler. Il devra par fournir une API aux développeurs du système de gestion du site isolé, et se conformer à au protocole utilisé par le système central. La configuration du composant (e.g. les fréquences satellites à utiliser pour la communication) se fera par le système de gestion du site, et non pas direcement par un utilisateur externe.
-
-Ce document va aussi porter sur le matériel exploité par le logiciel précédement cité, à savoir le module de communication par satellite. Les attentes par rapport à celui-ci seront décrites plus loins.
+Le composant décrit ici n'aura pas directment d'``utilisateurs'' à proprement parler. Il devra par fournir une API aux développeurs du système de gestion du site isolé, et se conformer au protocole utilisé par le système central. La configuration du composant (e.g. les fréquences satellites à utiliser pour la communication) pourra se faire à l'aide d'un fichier de configuration, ou alors à distance, lors de la réception de nouvelles données de configuration.
 
 \subsection{Formulation des besoins, exploitation et ergonomie, expérience}
 
@@ -39,12 +54,12 @@ Le système présentement présenté doit répondre à deux besoins bien distinc
 \paragraph{Transmission} Le système doit pouvoir envoyer au système central les informations suivantes :
 
 \begin{itemize}
-\item La valeur des mesures de effectuées depuis la dernière transmission par chacun des capteurs. La quantité de valeurs dépend de la granularité avec laquelle est configurée le site. Chaque valeur sera bien évidement datée.
+\item La valeur des mesures effectuées depuis la dernière transmission par chacun des capteurs. La quantité de valeurs dépend de la granularité avec laquelle est configurée le site. Chaque valeur sera bien évidement horodatée.
 \item L'état physique et logique de la station et du site. Cela peut comprendre la température ambiante, l'autonomie estimée des différentes batteries, les logs systèmes engrangés par le système informatique, etc.
-\item L'indentification du site et des différents capteurs. % A voir.
+\item L'identification du site et des différents capteurs. % A voir.
 \end{itemize}
 
-\paragraph{Reconfiguration} Après envoi des données, le système peut éventuellement recevoir comme réponse une demande de reconfiguration permettant aux opérateurs de modifier à distances les paramètres suivants :
+\paragraph{Reconfiguration} Après envoi des données, le système peut éventuellement recevoir comme réponse une demande de reconfiguration permettant aux opérateurs de modifier à distance les paramètres suivants :
 
 \begin{itemize}
 \item Les différents quantum de temps définissant la granularité avec laquelle le système effectue ses mesures et en transmet les résultats au système central.
@@ -53,7 +68,7 @@ Le système présentement présenté doit répondre à deux besoins bien distinc
 \item Des données de configuration spécifiques à certains capteurs, qui leur seront transmis à leur prochaine connéxion (les intervalles de relevés comme mentionné plus haut, mais aussi des paramètres spécifiques à un type de capteur telles que les fréquences d'ultrasons à utiliser pour effectuer un relevé de remplissage d'une cuve).
 \end{itemize}
 
-Le composant matériel de communication par satellite doit quant-à-lui pouvoir venir se connecter facilement sur le système de gestion du site. Une interface standard de type USB sera utilisée.
+Pour permettre un remplacement simplifié, le composant matériel de transmission ne sera pas directement intégré au système embarqué. Il sera connecté à l'aide d'une interface USB standard.
 
 \subsection{Portée, développement, mise en oeuvre, organisation de la maintenance}
 
@@ -61,42 +76,42 @@ Il est indispensable que ce système puisse être maintenu de manière efficace,
 
 \begin{itemize}
 \item La remise à zéro du logiciel, et la mise-à-jour de celui-ci.
-\item Le remplacement du materiel de communication satellite en cas de panne. Il faut aussi prévoir une évolution vers un composant plus perfectionné.\footnotemark
+\item Le remplacement du materiel de communication (satellite ou GSM) en cas de panne. Il faut aussi prévoir une évolution vers un composant plus perfectionné.\footnotemark
 \item La reconfiguration du système, pour fonctionner avec des paramètres différents (e.g. les canaux de communication satellite).
 \end{itemize}
 
 \footnotetext{Ceci laisse entrevoir la contrainte d'évolutivité du système, que nous verrons plus en détails par la suite.}
 
-La maintenance à proprement parler pourra se faire de deux manière. La première c'est tout simplement par une reconfiguration à distance du système en utilisation la communication par satellite. Ce type de maintenance peut suffire lorsqu'il ne s'agit que d'une modification des paramètres du système.
+La maintenance à proprement parler pourra se faire de deux manière. La première étant une simple reconfiguration à distance du système en utilisation la capacité du système à récevoir de nouveau paramètres lors de sa communication avec le système central. Ce type de maintenance peut suffire lorsqu'il ne s'agit que d'une modification légére des options du système.
 
 Pour des problèmes plus sérieux, la maintenance sera effectuée sur site, par un technicien qui viendra se connecter directement au système de gestion du site à l'aide d'un ordinateur portable. C'est ce même technicien qui aura pour rôle d'effectuer des modifications materielles en remplacant des composants enfichables (dans le cas présent, le module de communication par satellite) si le besoin venait à se présenter.
 
-Il est aussi nécéssaire de prévoir une technique permettant aux techniciens de vérifier le bon fonctionnement du module de communication par satellite indépendament du reste de la station, cela pour pouvoir confirmer le diagnostique qu'aura fournit le logiciel à ce sujet.
+Il sera aussi indispensable que les techniciens puissent vérifier le bon fonctionnement du module de communication matériel indépendament du reste de la station. Cela pour confirmer le diagnostique qu'aura pu fournir le logiciel à ce sujet.
 
 \subsection{Limites}
 
-Ce système ne comprend pas l'autre partie de la transmission de données, à savoir la partie serveur de collecte de celles-ci. On se limite donc ici au composant logiciel/matériel présent sur le système de gestion d'un site isolé. Un protocole est défini dans le dossier des APIs et Interfaces décrivant la manière dont communiquent ces deux systèmes distincts.
+Ce système ne comprend pas l'autre partie de la transmission de données, à savoir le composant serveur de collecte de celles-ci. On se limite donc ici au composant logiciel présent sur le système de gestion d'un site isolé. Un protocole est défini dans le dossier des APIs et Interfaces décrivant la manière dont la communication avec le système central prendra place.
 
-Ce système n'a pas non plus pour rôle de stocker la configuration du système de gestion du site. Il se contente de transmettre de nouvelles valeurs de configuration à celui-ci lorsqu'il en recoit, à l'aide de l'interface décrite encore une fois dans les dossier des APIs et Interfaces.
+Ce système n'a pas non plus pour rôle de stocker la configuration du système de gestion du site. Il se contente de transmettre de nouvelles valeurs de configuration à celui-ci lorsqu'il en recoit, à l'aide encore une fois de l'interface décrite dans le dossier des APIs et Interfaces.
 
 \section{Exigences fonctionnelles}
 
 \subsection{Fonctions de base et performances}
 
-Ce système est divisé en deux parties. Une logicielle, l'autre matérielle. La première va avoir les fonctions de base suivantes :
+Voici les fonctions de base que va devoir assurer le composant logiciel de transmission :
 
 \begin{itemize}
 \item Réception des données à transmettre de la part du système de gestion du site.
-\item Gestion du périphérique de transmission (l'autre partie du système), à savoir installation et configuration des pilotes, etc.
+\item Gestion du périphérique de transmission, à savoir installation et configuration des pilotes, mais aussi son initialisation et sa configuration.
 \item Utilisation du périphérique de transmission pour communiquer avec le serveur central. Envoi des données de capteurs dans un sens, réception des informations de configuration dans l'autre.
 \item Transmission au système de gestion du site des données de configuration recues du serveur central.
 \end{itemize}
 
-Quand à la partie matérielle, elle n'a ici qu'un rôle de canal de communication avec le serveur central. Elle doit permettre la connexion à internet depuis n'importe quel point du globe, permettant au site de transmettre les informations collectées.
-
 Bien évidément, la transmission se fait de manière périodique, et non pas en continue.
 
-Il n'y a pas de contrainte forte par rapport aux performances de transmission, le volume des données à transmettre étant relativement faible par rapport aux capacité des connexion par satellite modernes. Une vitesse de 128kpbs en émission/réception sera donc largement suffisante.
+Il n'y a pas de contrainte forte par rapport aux performances de transmission, le volume des données à transmettre étant relativement faible par rapport aux capacité des connexion modernes de type satellite ou GSM. Une vitesse de 128kpbs en émission/réception sera donc suffisante.
+
+Afin de garantir la confidentialité des données transmises, une connexion sécurisée sera nécéssaire entre la station et le système central.
 
 \subsection{Contraintes d'utilisation}
 
@@ -105,14 +120,24 @@ Les contraintes viennent principalement de la nature autonome du système. Cela 
 \begin{itemize}
 \item Une faible consomation energétique (et si possible, de ne rien consomer la plupart du temps).
 \item La capacité à reprendre une transmission sans aucune perte de données en cas de coupure de la connexion ou de redémarage du système.
-\item Un mode de secours essayant de se connecter à des réseaux satellite secondaires en cas de perte totale des capacités de connexion.
+\item Un mode de secours essayant de se connecter à des réseaux secondaires en cas de perte totale des capacités de connexion (recherche de satellites différents, d'opérateurs différents).
 \end{itemize}
 
-Les contraintes vont venir des choix effectuées sur les autres composants de la solution technique dans son ensemble. Il faudra donc que le système de communication du site isolé puisse s'exécuter sur un OS Linux.
+Certaines contraintes vont venir des choix effectuées sur les autres composants de la solution technique dans son ensemble. Il faudra donc que le système de communication du site isolé puisse s'exécuter sur un OS Linux, cela a évidement aussi conditionné le choix du composant matériel.
 
-% \subsection{Critères d'appréciation de la réalisation effective de la fonction} <-- Moi pas comprendre ce que ça vouloir dire.
+\subsection{Critères d'appréciation de la réalisation effective de la fonction}
 
-\subsection{Flexibilité dans la façon de mettre en oeuvre la fonction convernée, variation de coûts associée en fonction de cette flexibilité}
+\begin{itemize}
+\item Capacité du système à répondre aux besoins spécifiés.
+\item Capacité du système à respecter les contraintes d'utilisation.
+\item Respect des standards de qualité en conformité avec la norme ISO 9001.
+\end{itemize}
+
+\subsection{Flexibilité dans la façon de mettre en oeuvre la fonction concernée, variation de coûts associée en fonction de cette flexibilité}
+
+Un premier aspect de fléxibilité de l'implémentation de ce système va venir de l'emplacement où sera situé le site isolé. Selon la localisation de celui-ci, il faudra en effet faire le choix de l'utilisation d'un module matériel de communication satellite, ou alors d'un module GSM. Bien évidement, le premier revient beaucoup plus cher que le second (autant à l'achat, qu'ensuite lors de son exploitation). On s'autorisera une marge de 50\% sur le coût du composant matériel de transmission en fonction de cette contrainte.
+
+Il est aussi possible d'être fléxible sur le paramètrage qu'autorisera ce système, car cela dépendra en grande partie du composant matériel choisi, et du réseau/opérateur de télécommunication qui sera utilisé. Selon les cas, on se retrouvera donc avec plus ou moins d'options de configurations.
 
 \section{Exigences non fonctionnelles}
 
@@ -121,22 +146,36 @@ Les contraintes vont venir des choix effectuées sur les autres composants de la
 Pour des faciliter l'évolutivité future du système, nous avons les contraintes non fonctionnelles suivantes :
 
 \begin{itemize}
-\item Modularité extrème du logiciel.
-\item Indépendance maximum par rapport au composant matériel.
-\item Respect des conventions d'architecture et de stule décidées au préalable, et production continue de documentation.
+\item Modularité extrème du logiciel (pour remplacer n'importe quel bloc sans avoir à toucher aux autres).
+\item Indépendance maximum par rapport au composant matériel. Il sera ainsi aisé de passer d'un type de communication (satellite) à l'autre (GSM).
+\item Respect des conventions d'architecture et de style décidées au préalable. La production continue de documentation sera aussi exigée.
 \end{itemize}
 
-\subsection{Sûreté, planning, organisation, communication}
+\subsection{Sûreté}
 
+Comme mentionné à plusieurs reprises dans ce document, il est capital que la transmission de données se fasse de manière sûre et fiable. Pour cela, nous proposons l'utilisation de la technologie HTTPS pour la communication entre la station et le système central, et ce pour les raisons suivantes :
 
+\begin{itemize}
+\item Basé sur le protocole TCP, cette technologie assure l'intégrité des données transmises.
+\item Le cryptage de la connexion, basé sur le RSA, n'a plus à faire ses preuves, et est simple à mettre en oeuvre.
+\item L'utilisation du protocole HTTP permet de grandement faciliter l'implémentation et le développement du système central.
+\end{itemize}
+
+Pour plus de précisions sur la manière dont communiqueront ce système et le système central, consulter le dossier des APIs et Interfaces.
 
 \subsection{Complexité}
 
+L'insistance sur l'utilisation de protocoles et techniques de communication standard assure que la compléxité à ce niveau reste dans des limites acceptables. En revanche, c'est au niveau de la communication avec le composant matériel qu'il faut s'adapter à l'API proposée en se basant sur la documentation constructeur, c'est donc là que résidera le gros de la compléxité de l'implémentation du système.
 
+\subsection{Compétences}
 
-\subsection{Compétences, moyens et règles}
+Compétences nécéssaires à la réalisation du projet :
 
-
+\begin{itemize}
+\item Expertise en modules électroniques.
+\item Programmation linux bas-niveau.
+\item Expertise en protocoles et sécurité réseau.
+\end{itemize}
 
 \subsection{Normes de documentation}
 
@@ -146,9 +185,19 @@ Les normes de documentation à adopter sont décrite dans le plan d'assurance qu
 
 \subsection{Matériels et logiciels}
 
-Le composant matériel de notre système est un modem satellite duplex GSP-1720. Se connectant sur le réseau GlobalStar, ce modem est interfacable en USB pour une connection aisée au système de gestion de site.
+Selon la configuration séléctionnée, le module matériel utilisé l'un des deux suivants :
 
-Au niveau du logiciel, il devra pouvoir s'exécuter sur le même OS embarqué Linux que le système de gestion de site.
+\paragraph{Module PCI Express GTM669WFS}
+
+Ce composant permet de se connecter à n'importe quel réseau GSM. Interfacé simplement en PCIe, ce modem permet de communiquer en utilisant le protocole GPRS en utilisant le réseau d'un opérateur de téléphonie local, il suffit pour cela de lui adjoindre la carte SIM adaptée.
+
+\paragraph{Modem Satellite GSP-1720}
+
+Ce modem permet de se connecter au réseau de satellite GlobalStar et assure ensuite une connexion de données en full-duplex. Bien plus coûteux que le module GSM, une connexion satellite peut s'avérer nécéssaire pour certains lieux très isolés.
+
+Pour plus d'information sur ces composants, se reporter aux annexes.
+
+Au niveau du logiciel, le système devra pouvoir s'exécuter sur le même OS embarqué Linux que le système de gestion de site.
 
 \subsection{Stabilité de la configuration}
 
@@ -179,14 +228,89 @@ La communication avec le serveur central s'effectue à l'aide d'un protocole HTT
 
 \section{Guide de réponse au cahier des charges}
 
-\subsection{Grille d'évaluation}
+Tests unitaires :
 
-\section{Annexes}
+\begin{itemize}
+\item Test de l'interface matérielle avec le module matériel de communication.
+\item Test de l'interface logicielle avec le système de gestion du site.
+\item Test du protocole de communication avec le système central.
+\item Test de communication GPRS/Satellite.
+\end{itemize}
 
-\subsection{Observations de l'existant}
+Tests d'intégration :
 
-\subsection{Propositions d'orientation}
+\begin{itemize}
+\item Test de reprise après arret spontanné du système.
+\item Test de reprise du transfert en cas de coupure de la connexion.
+\end{itemize}
 
-% \subsection{Images d'écrans principaux du logiciel} <-- Pas d'IHM à priori, donc pas besoin de captures d'écran.
+\newpage
+\appendix
+\appendixpage
 
-\subsection{Résultat de l'analyse de la valeur}
+\section{GTM669WFS}
+
+\begin{figure}[H]
+\subfloat{\includegraphics[width=1.5in]{Transmission/Modem3G_1.jpg}}
+\label{fig:3g}
+\end{figure}
+
+\subsection{Description}
+
+Carte PCI Express de petite taille permettant de se connecter à des réseaux GSM. Dispose en outre d'un récepteur GPS et d'un port MicroSD, et a l'avantage d'avoir un emplacement pour carte SIM, rendant sa configuration plus aisée.
+
+\subsection{Specifications physiques}
+
+\begin{tabular}{|c|c|}
+\hline Form factor & PCI Express Mini Card \\ 
+\hline Dimensions & 51 x 30 x 4.2 mm \\ 
+\hline Poids & 10g \\
+\hline Température d'utilisation & -10°C à +55°C \\
+\hline Humidité d'utilisation & 10 - 90\% RH \\
+\hline
+\end{tabular} 
+
+\subsection{Connectivité}
+
+Vitesses de connection maximum.
+
+\begin{tabular}{|c|c|c|}
+\hline Mode & Débit descendant & Débit montant \\
+\hline GSM & 14.4 Kbps & 14.4 Kbps \\
+\hline GPRS & 85.6 Kbps & 85.6 Kbps \\
+\hline EDGE & 236.8 Kbps & 236.8 Kbps \\
+\hline UMTS & 384 Kbps & 384 Kbps \\
+\hline HSDPA/HSUPA & 14.4 Mbps & 5.76 Mbps \\
+\hline
+\end{tabular}
+
+\newpage
+\section{GSP-1720}
+
+\setcounter{subfigure}{0}
+\begin{figure}[H]
+\subfloat[Carte]{\includegraphics[width=3in]{Transmission/ModemSatellite_1.jpg}}
+\subfloat[Antenne]{\includegraphics[width=2in]{Transmission/ModemSatellite_2.jpg}}
+\label{fig:satellite}
+\end{figure}
+
+\subsection{Description}
+
+Ce composant permet une connexion au réseau de télécommunications par satellite GlobalStar. Il supporte les échanges de données en mode duplex, et permet une connexion directe à internet. Son interfacage se faisant en USB, cela ne pose pas de problème pour l'intégration dans le système de transmission.
+
+\subsection{Spécifications physiques}
+
+\begin{tabular}{|c|c|}
+\hline Dimensions & 119 x 65 x 15 mm \\
+\hline Poids & 60g \\
+\hline Fréquences opérationnelles & 
+En transmission : 1610 MHz – 1626.5 MHz \\
+& En réception : 2483.5 MHz – 2500 MHz \\
+\hline Puissance maximum & +31dBm (antenne passive), +34 dBm (antenne active) \\
+\hline Consommation electrique à 5V DC & A l'arret : 0.65mW \\
+& En veille : 0.5 W \\
+& En transmission : 3.65 W \\ 
+\hline Températures d'utilisation & -30 à +60ºC \\
+\hline Humidité d'utilisation & 5 - 95\% RH \\
+\hline
+\end{tabular}

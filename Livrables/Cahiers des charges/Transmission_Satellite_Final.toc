@@ -1,0 +1,40 @@
+\select@language {french}
+\contentsline {section}{\numberline {1}Introduction}{3}
+\contentsline {subsection}{\numberline {1.1}Pr\IeC {\'e}sentation du projet}{3}
+\contentsline {subsection}{\numberline {1.2}Pr\IeC {\'e}sentation du document}{3}
+\contentsline {subsection}{\numberline {1.3}Documents applicables / Documents de r\IeC {\'e}f\IeC {\'e}rence}{3}
+\contentsline {subsection}{\numberline {1.4}Terminologie et abr\IeC {\'e}viations}{3}
+\contentsline {section}{\numberline {2}Pr\IeC {\'e}sentation du probl\IeC {\`e}me}{4}
+\contentsline {subsection}{\numberline {2.1}Buts, nature du logiciel, utilisateurs concern\IeC {\'e}s}{4}
+\contentsline {subsection}{\numberline {2.2}Formulation des besoins, exploitation et ergonomie, exp\IeC {\'e}rience}{4}
+\contentsline {paragraph}{Transmission}{4}
+\contentsline {paragraph}{Reconfiguration}{4}
+\contentsline {subsection}{\numberline {2.3}Port\IeC {\'e}e, d\IeC {\'e}veloppement, mise en oeuvre, organisation de la maintenance}{4}
+\contentsline {subsection}{\numberline {2.4}Limites}{5}
+\contentsline {section}{\numberline {3}Exigences fonctionnelles}{5}
+\contentsline {subsection}{\numberline {3.1}Fonctions de base et performances}{5}
+\contentsline {subsection}{\numberline {3.2}Contraintes d'utilisation}{5}
+\contentsline {subsection}{\numberline {3.3}Crit\IeC {\`e}res d'appr\IeC {\'e}ciation de la r\IeC {\'e}alisation effective de la fonction}{6}
+\contentsline {subsection}{\numberline {3.4}Flexibilit\IeC {\'e} dans la fa\IeC {\c c}on de mettre en oeuvre la fonction concern\IeC {\'e}e, variation de co\IeC {\^u}ts associ\IeC {\'e}e en fonction de cette flexibilit\IeC {\'e}}{6}
+\contentsline {section}{\numberline {4}Exigences non fonctionnelles}{6}
+\contentsline {section}{\numberline {5}Contraintes impos\IeC {\'e}es, faisabilit\IeC {\'e} technologique, moyens}{6}
+\contentsline {subsection}{\numberline {5.1}S\IeC {\^u}ret\IeC {\'e}}{6}
+\contentsline {subsection}{\numberline {5.2}Complexit\IeC {\'e}}{7}
+\contentsline {subsection}{\numberline {5.3}Comp\IeC {\'e}tences}{7}
+\contentsline {subsection}{\numberline {5.4}Normes de documentation}{7}
+\contentsline {section}{\numberline {6}Configuration cible}{7}
+\contentsline {subsection}{\numberline {6.1}Mat\IeC {\'e}riels et logiciels}{7}
+\contentsline {paragraph}{Module PCI Express GTM669WFS}{7}
+\contentsline {paragraph}{Modem Satellite GSP-1720}{7}
+\contentsline {subsection}{\numberline {6.2}Stabilit\IeC {\'e} de la configuration}{7}
+\contentsline {subsection}{\numberline {6.3}Description des API}{8}
+\contentsline {paragraph}{API d'envoi et de r\IeC {\'e}ception de donn\IeC {\'e}es}{8}
+\contentsline {paragraph}{Protocole de communication avec le serveur central}{8}
+\contentsline {section}{\numberline {7}Guide de r\IeC {\'e}ponse au cahier des charges}{8}
+\contentsline {section}{\numberline {A}GTM669WFS}{9}
+\contentsline {subsection}{\numberline {A.1}Description}{9}
+\contentsline {subsection}{\numberline {A.2}Specifications physiques}{9}
+\contentsline {subsection}{\numberline {A.3}Connectivit\IeC {\'e}}{9}
+\contentsline {section}{\numberline {B}GSP-1720}{10}
+\contentsline {subsection}{\numberline {B.1}Description}{10}
+\contentsline {subsection}{\numberline {B.2}Sp\IeC {\'e}cifications physiques}{10}
