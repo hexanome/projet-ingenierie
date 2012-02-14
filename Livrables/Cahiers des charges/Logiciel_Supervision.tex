@@ -24,51 +24,68 @@ Ce document présente le cahier des charges du logiciel permettant la supervisio
 \section{Présentation du problème}
 \subsection{Buts, nature du logiciel, utilisateurs concernés}
 L'objectif est de fournir une interface qui permette de suivre les informations dont on dispose sur les différents sites actuellement surveillés par notre système comme le niveau de liquide dans une cuve ou le niveau de remplissage des containers, de manière efficace et simple. Il offrira également la possibilité de reconfigurer certains paramètres du système pour faire de la maintenance à distance.
-Lorsque la situation est critique sur un site, l'utilisateur doit en être avertis pour prendre les décisions qui s'imposent.
+Lorsque la situation est critique sur un site, l'utilisateur doit en être avertis par un affichage approprié pour prendre les décisions qui s'imposent.
 Ce cahier des charges ne concerne que de la partie "présentation" des données, en accord avec notre découpage en sous-système du système global de surveillance, un autre module  qui expose une interface pour récupérer facilement les informations, est chargé de récupérer les données issues des sites isolés, de les stocker et de les traiter.
-Comme il s'agit du logiciel de supervision, le logiciel permet aussi d'envoyer des demandes d'interventions aux personnes qualifiées, qui les recevront sur leurs PDA (il s'agit également d'un sous-système auquel on se reportera pour plus d'informations).
+Comme il s'agit du logiciel de supervision, il permet aussi d'effectuer certaines opérations de maintenance sur les paramètres d'un site (niveau d'alerte, cycle de sommeil de la base,...).
 
 \subsection{Formulation des besoins, exploitation et ergonomie, expérience}
 Les besoins pour ce logiciel consisteront en :
 \begin{itemize}
+	\item une authenfication pour accéder au serveur central,
 	\item un affichage général sur l'ensemble des sites dans le monde, avec mise en évidence des sites dans un état critique,
 	\item un affichage des données physiques ( niveau de liquide, état des batteries,...),
 	\item un affichage de l'historique des données,
-	\item un formulaire permettant de transmettre un ordre d'intervention sur un site,
 	\item un affichage des paramètres de configuration actuelle,
 	\item un affichage de l'historique de paramétrage,
 	\item un panneau de configuration de la base.
 \end{itemize}
 
-Pour que le logiciel soit installable sur quasiment tout type d'ordinateurs facilement, il n'utilisera que des composants standards. La seule contrainte sera une connection internet afin de pouvoir récuperer les informations distantes. Une connexion en continue n'est pas nécessaire pour le bon fonctionnement du logiciel, mais pour avoir les mises à jour sur les informations, un minimum de une connection à Internet toutes les 4 heures est obligatoire.
-
 On attachera également une grande importance à la facilité d'apprentissage et d'utilisation, car l'utilisateur finale n'a pas forcément une grande connaissance dans le maniement des outils informatiques. Il n'est pas souhaitable qu'une formation soit nécessaire pour l'utilisation de ce nouvel outil.
 
 \subsection{Portée, développement, mise en oeuvre, organisation de la maintenance}
-%?????
+Le développement du logiciel se fera en Java, en utilisant les méthodes agiles, afin d'avoir un retour-utlisateur le plus tôt possible, pour minimiser le risque d'avoir un logiciel qui ne sera pas accepté. Ce type de développement offre également l'avantage de rassurer la MOA qui peut voir une réalisation concrète très rapidement avec la possibilité de réagir très rapidement et cette méthode semble particulièrement adapté vu la taille relativement faible en terme de développement de ce sous-système. 
+
 \subsection{Limites}
-%?????
+Si aucune connection avec le serveur central ne peut être établie, le logiciel n'est pas fonctionnel. 
 
 \section{Exigences fonctionnelles}
 \subsection{Fonctions de base, performances et aptitudes}
 On distinguera les fonctions principales suivantes:
 \begin{itemize}
 	\item authentification pour accéder aux serveurs,
-	\item consultation des données courantes sur les réservoirs et containers,
-	\item affichage de l'état des capteurs et de la base, avec une possibilité de configuration,
-	\item envoie d'un ordre d'intervention,
+	\item affichage d'une carte avec la localisation des différents sites sur une carte,
+	\item affichage de l'état d'un capteurs
+	\item affichage de l'état de la base,
+	\item affichage de la valeur d'un capteur,
+	\item configuration de la base,
+	\item configuration d'un capteur,
 	\item affichage de l'historique des données,
 	\item affichage de l'historique de paramétrages,
 \end{itemize}
 
-Au niveau des performances, vu que le logiciel est prévu pour fonctionner sur des ordinateurs et au vue de leur puissance actuelle, elles ne seront pas impactées par le matériel, car aucun traitement lourd n'est effectué par le logiciel, qui ne fait que de la présentation.
+Au niveau des performances, on offrira une application fluide, sans aucun processus bloquant pour l'interface, pour ne pas gêner l'utilisateur et surtout lui offrir une expérience de navigation rapide et fluide.
 
 \subsection{Contraintes d'utilisation}
-La seule contrainte est d'avoir un accès internet toutes les 4 heures.
+La seule contrainte est d'avoir un accès au serveur central par Internet.
 
 \subsection{Critères d'appréciation de la réalisation effective de la fonction}
 
-\subsection{Flexibilité dans la façon de mettre en oeuvre la fonction convercée, variation de coûts associée en fonction de cette flexibilité}
+\begin{tabular}{|c|c|c|}
+	\hline Fonction & Nécessité & Difficulté d'implémentation\\
+	\hline 
+	 Authentification & 9 & 5\\
+	 Affichage des sites sur une carte & 9 & 5\\
+	 Affichage de l'état d'un capteur & 9 & 5\\
+	 Affichage de l'état de la base & 9 & 5\\
+	 Affichage de la valeur d'un capteur & 9 & 5\\
+	 Configuration de la base & 9 & 5\\
+	 Configuration d'un capteur & 9 & 5\\
+	 Affichage de l'historique des données & 9 & 5\\
+	 Affichage de l'historique de paramétrage & 9 & 5\\
+	\hline
+\end{tabular}
+
+%\subsection{Flexibilité dans la façon de mettre en oeuvre la fonction convercée, variation de coûts associée en fonction de cette flexibilité}
 
 \section{Exigences non fonctionnelles}
 \subsection{Sécurité}
@@ -89,7 +106,9 @@ En séparant distinctement les différents couches d'acquisition de données (au
 \section{Contraintes imposées, faisabilité technologique, moyens}
 \subsection{Sûreté, planning, organisation, communication}
 \subsection{Complexité}
+Pour ce sous-système, il n'y a pas vraiment de complexité, aucun traitement n'étant fait et il existe des outils pour le développement d'interface.
 \subsection{Compétences, moyens et règles}
+Pour le développement, il faudra une connaissance du développement Java.
 \subsection{Normes de documentation}
 
 \section{Configuration cible}
@@ -106,17 +125,13 @@ La configuration minimale pour le bon fonctionnement du logiciel :
 \end{itemize}
 
 \subsection{Stabilité de la configuration}
-
+Lors de futur évolution, on veillera à ce que la configuration minimale n'évolue pas ou peu, sachant que la configuration minimale requise équivaut au matériel informatique disponible dans les années 2000.
 
 \subsection{Description des API}
+Ce sous-système n'expose aucune API, il y fait seulement appel.
 
 \section{Guide de réponse au cahier des charges}
-\subsection{Grille d'évaluation des exigencesfonctionnelles}
-\begin{tabular}{|c|c|c|}
-	\hline Fonction & Nécessité & Difficulté d'implémentation
-	%\hline Affichage d'une carte avec les sites & 9 & 5
-\end{tabular}
-\subsection{Grille d'évaluation des exigences non fonctionnelles}
+
 
 \section{Annexes}
 \subsection{Observations de l'existant}

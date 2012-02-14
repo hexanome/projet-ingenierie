@@ -1,0 +1,75 @@
+% Best Practice : Cahier des charges
+% Version 1.0
+
+% Historique des versions
+% 22/01/08 1.0 Création et remplissage (Mikado)
+
+\documentclass[a4paper, 11pt, draft]{article}
+
+\usepackage[utf8]{inputenc} % Texte en utf-8
+\usepackage{aeguill}
+\usepackage[francais]{babel} % Typographie française
+\usepackage[pdftex, hypertexnames=false, colorlinks=true, final]{hyperref}
+\usepackage[final]{graphicx}
+\usepackage{url} % Gestion des URLs
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage[Lenny]{fncychap}
+
+% Marges à gauche et à droite de 3cm
+\geometry{margin=3cm}
+
+% Utilisation des headers et footers personnalisés de fancyhdr
+\pagestyle{fancy}
+
+% Images dans le dossier ./images/
+\graphicspath{{./images/}}
+
+% Gestion des métadonnées étranges à rendre visibles au rendu
+\newcommand\docname{BPCDCv1.0}
+\newcommand\docauthor{Fabrice GABOLDE}
+\newcommand\docstatus{EN COURS} % EN COURS, ATTENTE, VALIDE ou LIVRABLE
+
+% Format de citation de références standard, marche avec quasiment tout
+\newcommand\fullref[1]{\ref{#1}, page \pageref{#1}}
+
+% En-têtes et pieds de page
+\lhead{\docname}
+\rhead{}
+\lfoot{Auteur : H4213}
+\cfoot{}
+\rfoot{\thepage}
+
+% Titre du document maître
+\title{\textbf{COPEVUE}\\
+\rule{\textwidth}{1pt}{}\\
+\Huge{\textsc{Best Practice --- Cahier des charges}}}
+\author{\docauthor{} (H4213)}
+\date{\docname{} --- \today{} (\docstatus{})}
+
+\begin{document}
+
+\maketitle
+
+\paragraph{But}
+Le but de ce document est de fournir des indications aux GEI pour la rédaction d'un cahier des charges d'un sous-ensemble logiciel. On décrira le contenu attendu, les moyens et la marche à suivre pour la production du document final.
+
+\paragraph{Définition}
+Dans le cadre d'un logiciel à développer, le cahier des charges sert de base à la rédaction des clauses contractuelles techniques, de qualité et de réception, à partir desquelles le réalisateur proposera les spécifications fonctionnelles du logiciel. ``Que doit faire le logiciel ?''
+
+\paragraph{}
+Expression en termes d'obligation de résultats, pas d'exigence de moyens. Clarifie les responsabilités, situe l'importance des fonctions des fonctions du produit, donne leurs critères d'appréciation. Doit être précis sur le service attendu et les conditions d'utilisation, mais laisse au réalisateur le choix de la solution dans les contraintes exprimées.
+
+\paragraph{Contenu}
+\begin{itemize}
+\item Besoins à satisfaire
+\item Exigences fonctionnelles
+\item Contraintes imposées
+\item Configuration cible
+\item Guide de réponse au problème posé
+\end{itemize}
+
+\paragraph{Voir :}
+Logigramme global de la production d'un cahier des charges, description des principales étapes de la procédure de rédaction. En annexe : plan type d'un cahier des charges. Documentation sur les CdC : \url{ftp://servif-baie.insa-lyon.fr/Documentation/Projet_ingenierie_4IF/DOC_RQ/Doc\%20sur\%20CdC/}, l'URL est à vérifier.
+
+\end{document}

@@ -1,0 +1,136 @@
+\documentclass[a4paper, 11pt, draft]{article}
+
+\usepackage[utf8]{inputenc} % Texte en utf-8
+\usepackage{aeguill}
+\usepackage[francais]{babel} % Typographie française
+\usepackage[pdftex, hypertexnames=false, colorlinks=true, final]{hyperref}
+\usepackage[final]{graphicx}
+\usepackage{url} % Gestion des URLs
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage[Lenny]{fncychap}
+
+% Marges à gauche et à droite de 3cm
+\geometry{margin=3cm}
+
+% Utilisation des headers et footers personnalisés de fancyhdr
+\pagestyle{fancy}
+
+% Images dans le dossier ./images/
+\graphicspath{{./images/}}
+
+% Gestion des métadonnées étranges à rendre visibles au rendu
+\newcommand\docname{PRDIv1.2}
+\newcommand\docauthor{Guillaume Bouchard}
+\newcommand\docstatus{LIVRABLE} % EN COURS, ATTENTE, VALIDE ou LIVRABLE
+
+% Format de citation de références standard, marche avec quasiment tout
+\newcommand\fullref[1]{\ref{#1}, page \pageref{#1}}
+
+% En-têtes et pieds de page
+\lhead{\docname}
+\rhead{}
+\lfoot{Auteur : H4213}
+\cfoot{}
+\rfoot{\thepage}
+
+% Titre du document maître
+\title{\textbf{COPEVUE}\\
+\rule{\textwidth}{1pt}{}\\
+\Huge{\textsc{Procédure d'aide à la réalisation d'un dossier d'initialisation}}}
+\author{\docauthor{} (H4213)}
+\date{\docname{} --- \today{} (\docstatus{})}
+
+\begin{document}
+
+\maketitle
+
+
+%\documentclass[a4paper]{article}
+%
+%\usepackage[utf8x]{inputenc}
+%\usepackage{rotating}
+%\usepackage{graphicx}
+%\usepackage{geometry}
+%
+%\newcommand{\ssdsi}{Système de surveillance à distance de sites isolés}
+%
+%\title{\textsc{Procedure pour la realisation d'un dossier d'initialisation}}
+%\author{Bouchard Guillaume\\H4313}
+%\begin{document}
+%
+%\maketitle
+%%\pagebreak
+%%\tableofcontents
+%%\pagebreak
+
+\section{Introduction}
+
+Ce document est destiné à guider tout chef de projet dans sa démarche de réalisation d'un dossier d'initialisation.
+
+Il contient un aperçu des différents points à aborder.
+
+
+\section{Présentation d'un dossier d'initialisation}
+
+Le dossier d'initialisation permet de démarrer un projet dans de bonnes conditions en présentant une vision d'ensemble sur le projet, aussi bien concernant ses objectifs que sur sa planification.
+
+
+Ce document peut être considéré comme indispensable à la bonne réalisation d'un projet car il permet au chef de projet de ne pas travailler en aveugle. De plus, la rédaction du dossier d'initialisation est un moment où le chef de projet peut vraiment assimiler le projet.
+
+\section{Contenu du dossier d'initialisation}
+
+Cette partie détaille de manière succincte les différents thèmes qui doivent être traités dans un dossier d'initialisation, mais ne fait en aucun cas lieu de plan à suivre. Il faut bien prendre en compte qu'un dossier d'initialisation est totalement différent de projet en projet, et même si l'on y retrouve, pour la plupart, le même contenu, celui-ci n'est pas forcément agencé de la même manière en fonction de l'importance qu'a voulu lui donner le chef de projet.
+
+
+\section{Appréhension du projet}
+
+Le chef de projet doit résumer le sujet de son projet, ses objectifs ainsi que le contexte dans lequel il se situe. Ceci lui permettant d'expliciter les contraintes de son projet -- temporelle, humaine, risques.
+
+Par principe, il est courant de rappeler dans le dossier d'initialisation les documents de références qui ont conduit au lancement de ce projet, tel que l'appel d'offre...
+
+\section{Organisation du groupe d'étude}
+
+Dans la réalisation du projet, le chef de projet s'entoure d'une équipe -- expert, techniciens, responsable qualité -- qu'il convient d'expliciter. Cette partie permet de faire le point sur les ressources humaines disponible et permettra donc de mieux les organiser.
+
+
+\section{Produit}
+
+Dans cette partie, le chef de projet devra identifier très précisément le travail à réaliser et quel seront les livrables à fournir. Il se devra d'être le plus précis possible à ce sujet en distinguant le type des livrables -- s'agit-il d'un document, d'une application,... -- ainsi que les contraintes de qualité attendue sur ce livrable en particulier -- s'agit-il d'un draft, d'une version finale destinée au client,... -- . De plus il essayera de donner le plus d'informations concernant le livrable dans le but de guider son groupe d'étude -- nom du livrable, nombre de pages, contenu,...
+
+\section{Tâches}
+
+Pour chaque livrable, le chef de projet se doit d'essayer d'évaluer la charge nécessaire à sa réalisation, le nombre de personnes qui devront être affectées ainsi que l'ordre de réalisation. Cette partie est une des plus critiques du dossier d'initialisation car c'est elle qui va expliciter le travail à réaliser et qui présuppose de l'organisation à venir.
+
+\section{Approche organisation}
+
+A partir du moment où le chef de projet a bien cerné les livrables à rendre ainsi que les contraintes temporelles qui y sont liées, il devient possible de faire un planning temporel présentant l'enchaînement des tâches qu'il confiera à son groupe d'étude, au responsable qualité ainsi qu'à lui même.
+
+Cette partie peut prendre tout d'abord la forme d'un macro-phasage, permettant de donner un ordre d'idée de cette organisation.
+
+Par la suite, s'il le désire et en fonction de la précision souhaité de l'organisation, il pourra réaliser une organisation du temps plus précise qui pourra prendre la forme de diagrammes de Gantt.
+
+\section{Modalités et outils pour le suivi}
+
+Le chef de projet doit aussi mettre en place une politique de suivi.
+
+Celle-ci lui permettra de suivre l'avancement du projet et l'état d'accomplissement des livrables. Cette partie est extrêmement important puisque c'est elle qui garantira une détection et une correction rapide des écarts à l'organisation.
+
+Le chef de projet peut s'aider de différents outils pour le suivi -- réunions, fiche d'avancement de livrables -- qu'il conviendra d'expliciter dans ce document.
+
+\section{Gestion des risques}
+
+Une fois que le chef de projet a une bonne vision de son projet, ses objectifs et ses contraintes, il peut cerner les risques de celui-ci.
+
+Ceux-ci peuvent être liés au projet en lui même, tels qu'une mauvaise planification ou un non respect des délais. C'est pour prévenir ces risques que le dossier d'initialisation doit être réalisé avec la plus grande attention.
+
+Les autres risques sont liés à une mauvaise appréhension des contraintes du projet pouvant avoir des conséquences graves aux niveaux environnementaux, économiques, sécuritaires...
+
+Il est primordial de bien cerner les risques et de les avoir toujours en tête lors de la réalisation du projet, ceci afin de pouvoir agir le plus efficacement possible dans le cas où ceux-ci se présenteraient.
+
+\section{Réalisation du dossier}
+
+    Une fois que le chef de projet a bien appréhendé son projet, et c'est un des buts de la réalisation du dossier d'initialisation, il peut commencer sa rédaction. Celle-ci se doit d'être simple et efficace, et il est préférable de privilégier le contenu sur la forme, ce dossier étant particulièrement important pour le déroulement du projet, mais n'étant pas un dossier à rendre au client.
+
+
+\end{document}

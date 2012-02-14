@@ -1,0 +1,65 @@
+% Bilan personnel
+
+\documentclass[a4paper, 11pt, final]{article}
+
+\usepackage[utf8]{inputenc} % Texte en utf-8
+\usepackage[cyr]{aeguill} % Coupure des mots accentués
+\usepackage[francais]{babel} % Typographie française
+\usepackage[pdftex, hypertexnames=false, colorlinks=true, final]{hyperref}
+\usepackage[final]{graphicx}
+\usepackage{url} % Gestion des URLs
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage[Lenny]{fncychap}
+
+% Marges à gauche et à droite de 3cm
+\geometry{margin=3cm}
+
+% Utilisation des headers et footers personnalisés de fancyhdr
+\pagestyle{fancy}
+
+% Images dans le dossier ./images/
+\graphicspath{{./images/}}
+
+% Gestion des métadonnées étranges à rendre visibles au rendu
+\newcommand\docname{DPGAv1.0}
+\newcommand\docauthor{Guillaume Ayoub}
+\newcommand\docstatus{LIVRABLE} % EN COURS, ATTENTE, VALIDE ou LIVRABLE
+
+% Numérotation mieux
+%\renewcommand\thechapter{\Alph{chapter}}
+%\renewcommand\thesection{\Roman{section}}
+%\renewcommand\thesubsection{\arabic{subsection}}
+%\renewcommand\thesubsubsection{\alph{subsubsection}}
+
+% Format de citation de références standard, marche avec quasiment tout
+\newcommand\fullref[1]{\ref{#1}, page \pageref{#1}}
+
+% En-têtes et pieds de page
+\lhead{\docname}
+\lfoot{Auteur : H4213}
+\cfoot{}
+\rfoot{\thepage}
+
+% Titre du document maître
+\title{\textbf{COPEVUE}\\
+\rule{\textwidth}{1pt}{}\\
+\Huge{\textsc{Bilan personnel}}}
+\author{\docauthor{} (H4213)}
+\date{\docname{} --- \today{} (\docstatus{})}
+
+\begin{document}
+
+\maketitle
+
+\section{Bilan personnel}
+Ce projet est à mon avis l'un des principaux projets de quatrième
+année. Il est en effet l'un des seuls à nous apporter la gestion d'un
+projet depuis l'appel d'offre jusqu'à la conception.
+
+Le principal point fort du projet ingéniérie est à mon avis la qualité
+de l'appel d'offre. Les attentes du client sont clairement exprimées,
+elles sont crédibles et donnent une première impression très
+favorable.
+
+\end{document}

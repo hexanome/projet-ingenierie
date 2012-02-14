@@ -1,0 +1,21 @@
+# PAQP
+# Relations entre les intervenants : MOE
+
+# Yup, bidon
+
+digraph relations_moe {
+
+    rankdir=LR;
+
+
+	comite[label="Comité de pilotage"];
+	etude[label="Groupe d'études"];
+	ssii[label="Sociétés externes"];
+	
+    comite -> etude [label="Cadre le projet"];
+    etude -> ssii [label="Fournit des cahiers des charges / Dirige"];    
+	ssii -> etude [label="Fournit un produit"];
+	
+    etude -> comite [label="Répond au besoin"];
+	
+}

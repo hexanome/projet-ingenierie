@@ -1,0 +1,44 @@
+\BOOKMARK [1][-]{section.2}{Introduction}{}
+\BOOKMARK [2][-]{subsection.3}{Rappel du contexte}{section.2}
+\BOOKMARK [2][-]{subsection.5}{Pr\351sentation du document}{section.2}
+\BOOKMARK [2][-]{subsection.6}{Documents applicables et de r\351f\351rence}{section.2}
+\BOOKMARK [1][-]{section.9}{Pr\351sentation des besoins du logiciel}{}
+\BOOKMARK [2][-]{subsection.10}{Objectifs du logiciel}{section.9}
+\BOOKMARK [3][-]{subsubsection.11}{Traitement des affaires courantes}{subsection.10}
+\BOOKMARK [3][-]{subsubsection.12}{Gestion des impr\351vus}{subsection.10}
+\BOOKMARK [3][-]{subsubsection.13}{Communication avec l'ext\351rieur}{subsection.10}
+\BOOKMARK [3][-]{subsubsection.14}{Action ext\351rieure}{subsection.10}
+\BOOKMARK [2][-]{subsection.15}{L\351g\350ret\351}{section.9}
+\BOOKMARK [2][-]{subsection.16}{Autonomie}{section.9}
+\BOOKMARK [1][-]{section.17}{Exigences fonctionnelles}{}
+\BOOKMARK [2][-]{subsection.18}{Lecture des capteurs sur r\351seau CAN}{section.17}
+\BOOKMARK [2][-]{subsection.19}{Contr\364le des actionneurs sur r\351seau CAN}{section.17}
+\BOOKMARK [2][-]{subsection.20}{Automatismes courants}{section.17}
+\BOOKMARK [2][-]{subsection.21}{Support de la veille}{section.17}
+\BOOKMARK [2][-]{subsection.22}{D\351tection des anomalies}{section.17}
+\BOOKMARK [2][-]{subsection.23}{Gestion des anomalies}{section.17}
+\BOOKMARK [2][-]{subsection.24}{Gestion d'une connexion GPRS}{section.17}
+\BOOKMARK [2][-]{subsection.25}{Gestion du positionnement GPS}{section.17}
+\BOOKMARK [2][-]{subsection.26}{Gestion d'une connexion USB}{section.17}
+\BOOKMARK [2][-]{subsection.27}{Transmission de donn\351es}{section.17}
+\BOOKMARK [2][-]{subsection.28}{Serveur SSH}{section.17}
+\BOOKMARK [2][-]{subsection.29}{Outils de configuration}{section.17}
+\BOOKMARK [2][-]{subsection.30}{Outils de consultation et contr\364le}{section.17}
+\BOOKMARK [1][-]{section.31}{Exigences non fonctionnelles}{}
+\BOOKMARK [2][-]{subsection.32}{L\351g\350ret\351}{section.31}
+\BOOKMARK [2][-]{subsection.33}{Fiabilit\351}{section.31}
+\BOOKMARK [3][-]{subsubsection.34}{Modularit\351}{subsection.33}
+\BOOKMARK [2][-]{subsection.35}{Performances}{section.31}
+\BOOKMARK [3][-]{subsubsection.36}{Portabilit\351}{subsection.35}
+\BOOKMARK [2][-]{subsection.37}{S\351curit\351}{section.31}
+\BOOKMARK [2][-]{subsection.38}{Normalisation}{section.31}
+\BOOKMARK [1][-]{section.39}{Analyse des exigences}{}
+\BOOKMARK [2][-]{subsection.40}{Crit\350res d'analyse}{section.39}
+\BOOKMARK [2][-]{subsection.41}{Analyse des exigences fonctionnelles}{section.39}
+\BOOKMARK [2][-]{subsection.44}{Analyse des exigences non fonctionnelles}{section.39}
+\BOOKMARK [1][-]{section.47}{Mise en \234uvre}{}
+\BOOKMARK [2][-]{subsection.48}{Faisabilit\351}{section.47}
+\BOOKMARK [2][-]{subsection.49}{Configuration cible}{section.47}
+\BOOKMARK [3][-]{subsubsection.50}{Mat\351riel}{subsection.49}
+\BOOKMARK [3][-]{subsubsection.51}{Connectique}{subsection.49}
+\BOOKMARK [2][-]{subsection.52}{Planning}{section.47}

@@ -1,0 +1,48 @@
+\select@language {french}
+\contentsline {section}{\numberline {1}Introduction}{3}{section.2}
+\contentsline {subsection}{\numberline {1.1}Rappel du contexte}{3}{subsection.3}
+\contentsline {paragraph}{\IeC {\'E}tude COPEVUE}{3}{section*.4}
+\contentsline {subsection}{\numberline {1.2}Pr\IeC {\'e}sentation du document}{3}{subsection.5}
+\contentsline {subsection}{\numberline {1.3}Documents applicables et de r\IeC {\'e}f\IeC {\'e}rence}{3}{subsection.6}
+\contentsline {paragraph}{Documents applicables}{3}{section*.7}
+\contentsline {paragraph}{Documents de r\IeC {\'e}f\IeC {\'e}rence}{3}{section*.8}
+\contentsline {section}{\numberline {2}Pr\IeC {\'e}sentation des besoins du logiciel}{3}{section.9}
+\contentsline {subsection}{\numberline {2.1}Objectifs du logiciel}{3}{subsection.10}
+\contentsline {subsubsection}{\numberline {2.1.1}G\IeC {\'e}opositionnement}{4}{subsubsection.11}
+\contentsline {subsubsection}{\numberline {2.1.2}Intervention sur site}{4}{subsubsection.12}
+\contentsline {subsubsection}{\numberline {2.1.3}Communication}{4}{subsubsection.13}
+\contentsline {subsection}{\numberline {2.2}Contraintes li\IeC {\'e}es au contexte}{4}{subsection.14}
+\contentsline {subsubsection}{\numberline {2.2.1}Exp\IeC {\'e}rience utilisateur}{4}{subsubsection.15}
+\contentsline {subsubsection}{\numberline {2.2.2}Ergonomie g\IeC {\'e}n\IeC {\'e}rale}{4}{subsubsection.16}
+\contentsline {subsection}{\numberline {2.3}D\IeC {\'e}coupage applicatif}{5}{subsection.17}
+\contentsline {section}{\numberline {3}Exigences fonctionnelles}{5}{section.19}
+\contentsline {subsection}{\numberline {3.1}Envoi position intervenant}{5}{subsection.20}
+\contentsline {subsection}{\numberline {3.2}Demande itin\IeC {\'e}raire}{6}{subsection.21}
+\contentsline {subsection}{\numberline {3.3}Affichage itin\IeC {\'e}raire}{6}{subsection.22}
+\contentsline {subsection}{\numberline {3.4}Identification}{6}{subsection.23}
+\contentsline {subsection}{\numberline {3.5}Connexion distante au site isol\IeC {\'e}}{6}{subsection.24}
+\contentsline {subsection}{\numberline {3.6}Connexion locale au site isol\IeC {\'e}}{6}{subsection.25}
+\contentsline {subsection}{\numberline {3.7}Envoi rapport d'intervention}{6}{subsection.26}
+\contentsline {subsection}{\numberline {3.8}Envoi message}{6}{subsection.27}
+\contentsline {subsection}{\numberline {3.9}R\IeC {\'e}ception message}{6}{subsection.28}
+\contentsline {section}{\numberline {4}Exigences non fonctionnelles}{7}{section.29}
+\contentsline {subsection}{\numberline {4.1}S\IeC {\'e}curit\IeC {\'e}}{7}{subsection.30}
+\contentsline {subsection}{\numberline {4.2}Fiabilit\IeC {\'e}}{7}{subsection.31}
+\contentsline {subsection}{\numberline {4.3}Ergonomie}{7}{subsection.32}
+\contentsline {subsection}{\numberline {4.4}Portabilit\IeC {\'e}}{7}{subsection.33}
+\contentsline {subsection}{\numberline {4.5}Modularit\IeC {\'e}}{7}{subsection.34}
+\contentsline {subsection}{\numberline {4.6}Configuration}{7}{subsection.35}
+\contentsline {subsection}{\numberline {4.7}Performances et facteurs de qualit\IeC {\'e}}{7}{subsection.36}
+\contentsline {section}{\numberline {5}Analyse des exigences}{8}{section.37}
+\contentsline {subsection}{\numberline {5.1}Crit\IeC {\`e}res d'analyse}{8}{subsection.38}
+\contentsline {subsection}{\numberline {5.2}Analyse des exigences fonctionnelles}{8}{subsection.39}
+\contentsline {paragraph}{}{8}{figure.41}
+\contentsline {subsection}{\numberline {5.3}Analyse des exigences non fonctionnelles}{8}{subsection.42}
+\contentsline {paragraph}{}{8}{figure.44}
+\contentsline {section}{\numberline {6}Mise en \IeC {\oe }uvre}{9}{section.45}
+\contentsline {subsection}{\numberline {6.1}Faisabilit\IeC {\'e}}{9}{subsection.46}
+\contentsline {subsection}{\numberline {6.2}Configuration cible}{9}{subsection.47}
+\contentsline {subsubsection}{\numberline {6.2.1}Mat\IeC {\'e}riel}{9}{subsubsection.48}
+\contentsline {subsubsection}{\numberline {6.2.2}Environnement op\IeC {\'e}rationnel}{9}{subsubsection.49}
+\contentsline {subsubsection}{\numberline {6.2.3}Connectique}{9}{subsubsection.50}
+\contentsline {subsection}{\numberline {6.3}Planning}{10}{subsection.51}

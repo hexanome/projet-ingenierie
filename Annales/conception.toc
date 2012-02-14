@@ -1,0 +1,43 @@
+\select@language {french}
+\contentsline {section}{\numberline {1}Introduction}{2}{section.2}
+\contentsline {subsection}{\numberline {1.1}Pr\IeC {\'e}sentation du projet}{2}{subsection.3}
+\contentsline {paragraph}{\IeC {\'E}tude COPEVUE}{2}{section*.4}
+\contentsline {subsection}{\numberline {1.2}Pr\IeC {\'e}sentation du document}{2}{subsection.5}
+\contentsline {subsubsection}{\numberline {1.2.1}Objectifs}{2}{subsubsection.6}
+\contentsline {subsection}{\numberline {1.3}Documents applicables et de r\IeC {\'e}f\IeC {\'e}rence}{2}{subsection.7}
+\contentsline {subsubsection}{\numberline {1.3.1}Documents applicables}{2}{subsubsection.8}
+\contentsline {subsubsection}{\numberline {1.3.2}Documents de r\IeC {\'e}f\IeC {\'e}rence}{2}{subsubsection.9}
+\contentsline {section}{\numberline {2}R\IeC {\`e}gles de conception}{2}{section.10}
+\contentsline {subsection}{\numberline {2.1}Architecture g\IeC {\'e}n\IeC {\'e}rale}{2}{subsection.11}
+\contentsline {subsection}{\numberline {2.2}R\IeC {\'e}partition des t\IeC {\^a}ches}{3}{subsection.13}
+\contentsline {paragraph}{}{4}{section*.14}
+\contentsline {section}{\numberline {3}R\IeC {\'e}seaux et connectiques}{4}{section.15}
+\contentsline {subsection}{\numberline {3.1}R\IeC {\'e}seau principal}{4}{subsection.16}
+\contentsline {paragraph}{}{5}{section*.17}
+\contentsline {paragraph}{}{5}{section*.18}
+\contentsline {subsection}{\numberline {3.2}Localisation}{5}{subsection.19}
+\contentsline {subsection}{\numberline {3.3}Connectique de secours}{5}{subsection.20}
+\contentsline {section}{\numberline {4}Donn\IeC {\'e}es et stockage}{6}{section.21}
+\contentsline {paragraph}{}{6}{section*.22}
+\contentsline {paragraph}{}{6}{section*.23}
+\contentsline {section}{\numberline {5}Architecture informatique}{7}{section.25}
+\contentsline {subsection}{\numberline {5.1}Architecture mat\IeC {\'e}rielle}{7}{subsection.26}
+\contentsline {paragraph}{}{7}{section*.27}
+\contentsline {paragraph}{}{7}{section*.28}
+\contentsline {paragraph}{}{7}{section*.29}
+\contentsline {paragraph}{}{7}{section*.30}
+\contentsline {subsection}{\numberline {5.2}Architecture logicielle}{8}{subsection.31}
+\contentsline {paragraph}{}{8}{section*.32}
+\contentsline {section}{\numberline {6}S\IeC {\'e}curit\IeC {\'e}}{8}{section.34}
+\contentsline {subsection}{\numberline {6.1}Sites}{8}{subsection.35}
+\contentsline {paragraph}{}{8}{section*.36}
+\contentsline {paragraph}{}{9}{section*.37}
+\contentsline {subsection}{\numberline {6.2}R\IeC {\'e}seaux}{9}{subsection.38}
+\contentsline {paragraph}{}{9}{section*.39}
+\contentsline {paragraph}{}{9}{section*.41}
+\contentsline {section}{\numberline {7}D\IeC {\'e}marrages et arr\IeC {\^e}ts, gestion des erreurs}{9}{section.43}
+\contentsline {subsection}{\numberline {7.1}D\IeC {\'e}marrages et arr\IeC {\^e}ts des diff\IeC {\'e}rentes parties du syst\IeC {\`e}me}{10}{subsection.44}
+\contentsline {subsection}{\numberline {7.2}Gestion des erreurs et des indisponibilit\IeC {\'e}s}{10}{subsection.45}
+\contentsline {paragraph}{}{10}{section*.46}
+\contentsline {paragraph}{}{10}{section*.47}
+\contentsline {paragraph}{}{11}{section*.48}
