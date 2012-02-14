@@ -1,0 +1,9 @@
+\beamer@endinputifotherversion {3.01pt}
+\select@language {french}
+\beamer@sectionintoc {1}{Architecture}{3}{0}{1}
+\beamer@sectionintoc {2}{Communication}{4}{0}{2}
+\beamer@sectionintoc {3}{Intervenant}{5}{0}{3}
+\beamer@sectionintoc {4}{Syst\IeC {\`e}me central}{6}{0}{4}
+\beamer@sectionintoc {5}{Syst\IeC {\`e}me distant}{7}{0}{5}
+\beamer@sectionintoc {6}{Qualit\IeC {\'e}}{8}{0}{6}
+\beamer@sectionintoc {7}{Conclusion}{9}{0}{7}

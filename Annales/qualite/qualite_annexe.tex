@@ -1,0 +1,112 @@
+% Annexes au dossier de qualité
+% Version 1.2
+
+% Historique des versions
+% 20/01/08 1.0 Création et remplissage (Mikado)
+% 21/01/08 1.1 Plans types : STB et DCNS (Mikado)
+% 23/01/08 1.2 Plan type : CDC (Mikado)
+
+% \renewcommand\thechapter{\alph{chapter}}
+\renewcommand\docname{ANNEXESv1.1}
+\appendix
+
+\chapter{Modèles de documents}
+
+\label{chapter:modeles_documents}
+
+L'uniformisation des documents est obtenue en utilisant des templates \LaTeX{} définis par le responsable qualité, en accord avec le reste du groupe.
+
+\section{Modèle de document livrable}
+
+\paragraph{}
+Un document livrable doit présenter les informations suivantes :
+\begin{itemize}
+\item En page de garde :
+\begin{itemize}
+\item Le titre du projet
+\item Le titre du document
+\item L'auteur principal du document
+\item L'auteur (hexanôme) du document
+\item L'identification du document
+\item La date de compilation telle qu'obtenue par la commande \verb|\today|
+\item L'état du document
+\end{itemize}
+\item En en-tête :
+\begin{itemize}
+\item L'identification du document courant
+\end{itemize}
+\item En bas de page :
+\begin{itemize}
+\item L'auteur (hexanôme) du document
+\item Le numéro de la page courante dans le document
+\end{itemize}
+\end{itemize}
+Certaines informations ne seront accessibles que via la lecture de la source du document, par exemple l'historique des versions (qui permet d'obtenir la dernière personne à avoir contribué au document, sa contribution, les dates de création et de modification\ldots).
+
+Il faut également noter que pour respecter au maximum les règles de la bonne typographie, certaines pages (nouveaux chapitres) ne présentent pas toutes les informations dans les en-têtes et pieds de page.
+
+\paragraph{}
+Un document livrable doit commencer par le chapitre d'introduction, qui comporte les sections suivantes : 
+
+(Dans le corps de l'introduction : identification, auteur et état du document)
+\begin{enumerate}
+\item Présentation du projet
+\item Présentation du document
+\begin{enumerate}
+\item Objectifs
+\end{enumerate}
+\item{Documents applicables et de référence}
+\begin{enumerate}
+\item Documents applicables
+\item Documents de référence
+\end{enumerate}
+\end{enumerate}
+
+\chapter{Plans types}
+
+\label{chapter:plans_types}
+
+\section[STB]{Dossier de spécification technique des besoins}
+
+\begin{enumerate}
+\item{Introduction}
+\item{Axes d'amélioration retenus}
+\begin{enumerate}
+\item{Axes de progrès retenus}
+\item{Axes de progrès marginaux}
+\item{Faux axes de progrès éventuels}
+\end{enumerate}
+\item{Description des exigences fonctionnelles du futur système}
+\item{Description des exigences non fonctionnelles du futur système}
+\item{Impacts de la nouvelle solution sur le système}
+\item{Bilan des améliorations}
+\item{Conclusion}
+\end{enumerate}
+
+\section[CNS]{Dossier de conception de nouveau système}
+
+\begin{enumerate}
+\item Introduction
+\item Organisation générale de l'atelier
+\item Règles de pilotage de l'atelier
+\item Architecture applicative
+\item Architecture informatique et matérielle
+\item Réflexions sur les données
+\item Gestion des anomalies et sécurité
+\item Conclusion
+\item[A]{Annexe : Représentation informatique des objets technologiques}
+\item[B]{Annexe : Réflexion sur le réseau}
+\item[C]{Annexe : Démarrage du système}
+\end{enumerate}
+
+\section[CDC]{Cahier des charges}
+
+\begin{enumerate}
+\item Introduction
+\item Objectif du logiciel
+\item Exigences fonctionnelles
+\item Contraintes imposées et faisabilité technologique
+\item Configuration cible
+\item[A]{Annexe : Etude préalable}
+\item[B]{Annexe : Etude de faisabilité}
+\end{enumerate}

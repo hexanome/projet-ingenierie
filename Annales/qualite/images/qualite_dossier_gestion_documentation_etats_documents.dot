@@ -1,0 +1,15 @@
+# Dossier de gestion de la documentation
+# Etats d'un document
+
+digraph etats_document {
+	etat_en_cours[label="En cours", shape=circle];
+	etat_attente[label="Attente", shape=circle];
+	etat_valide[label="Validé", shape=circle];
+	etat_livrable[label="Livrable", shape=circle];
+	
+	etat_en_cours -> etat_attente;
+	etat_attente -> etat_valide;
+	etat_attente -> etat_en_cours;
+	etat_valide -> etat_livrable;
+	etat_valide -> etat_en_cours;
+}

@@ -1,0 +1,32 @@
+This is pdfTeXk, Version 3.1415926-1.40.9 (Web2C 7.5.7) (format=pdflatex 2009.3.25)  26 APR 2009 17:36
+entering extended mode
+ %&-line parsing enabled.
+**cdc_embedded.
+(/usr/share/texmf-dist/tex/latex/tools/q.tex
+! Interruption.
+<to be read again> 
+                   \begingroup 
+l.1 
+    %%
+? q
+OK, entering \batchmode...
+LaTeX2e <2005/12/01>
+Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
+yphenation, basque, french, loaded.
+ File ignored
+)
+! Emergency stop.
+<*> cdc_embedded.
+                 
+*** (job aborted, no legal \end found)
+
+ 
+Here is how much of TeX's memory you used:
+ 8 strings out of 495036
+ 224 string characters out of 1181695
+ 45117 words of memory out of 3000000
+ 3291 multiletter control sequences out of 10000+50000
+ 3640 words of font info for 14 fonts, out of 3000000 for 5000
+ 28 hyphenation exceptions out of 8191
+ 5i,0n,1p,98b,8s stack positions out of 5000i,500n,10000p,200000b,50000s
+!  ==> Fatal error occurred, no output PDF file produced!

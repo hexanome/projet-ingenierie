@@ -1,15 +1,19 @@
 \section{Introduction}
 
-Dans le cadre notre système de monitoring de sites isolés, nous avons retenu des solutions adaptées aux objectifs du COPEVUE, et qui permettront de gérer automatiquement les sites isolés. Ce document décrit ces choix et leur justification, et présente le système que l’on propose.
+Dans le cadre notre système de monitoring de sites isolés, nous avons retenu des solutions adaptées aux objectifs du COPEVUE, et qui permettront de gérer automatiquement les sites isolés. Ce document décrit ces choix et leurs justifications, et présente le système que l’on propose.
 
 \section{Axes d’amélioration retenus}
 
 \subsection{Axes de progrès retenus}
 
+\subsubsection{Améliorer la disponibilité}
+Actuellement les propriétaires des sites isolés doivent actuellement passer des appels manuels afin de contacter les entreprises de ravitaillement et d’évacuation. Alors qu’un système automatisé pourrait rendre la tâche plus simple et éviter toute erreur humaine, afin de prévenir que des incidents que l’on pourrait empêcher, incendies et autres, ne se produisent.
+
+\subsubsection{Améliorer la logistique}
 Pour l’heure, le COPEVUE ne possède aucun système de monitoring. En particulier, la gestion non globalisée des camions pour amener des ressources aux sites et pour les vider /  nettoyer est loin de l’optimal.
 
-De plus, les propriétaires des sites isolés doivent actuellement passer des appels manuels afin de contacter les entreprises de ravitaillement et d’évacuation. Alors qu’un système automatisé pourrait rendre la tâche plus simple et éviter toute erreur humaine, afin de prévenir que des incidents que l’on pouvait empêcher, incendies et autres, ne se produisent.
 
+\subsubsection{Améliorer la maintenace}
 Une automatisation du contrôle du niveau des réservoirs ou containers par capteurs permettra d’éviter des oublis humains et transmettra à tout instant le niveau de remplissage au système global, qui répondra si besoin par un envoi de camions.
 
 \subsection{Axes de progrès marginaux}
@@ -28,7 +32,7 @@ Chef parmi nos exigences non fonctionnelles, se trouve l’autonomie de nos syst
 
 De plus, pour les zones méditerranéennes, dont le climat est principalement chaud, nous pouvons installer des panneaux solaires reliés à une batterie pour stocker l’énergie quand il ne fait pas soleil. Une solution envisagée serait d’utiliser l’énergie solaire en combinaison avec une pile à combustible afin de stocker l’énergie produite sur de longue période.
 
-Nous pouvons également faire usage de piles à combustible que l’on peut ravitailler en hydrogène. Cette méthode présente l’avantage de fournir une puissance constante, de pouvoir fonctionner dans des conditions extrêmes et de demander très peu d’entretien. Il suffit de prévoir une quantité suffisante de combustible au départ pour que le système puisse fonctionner sur une période donnée, puis de venir réapprovisionner le site une fois celui-ci consommé. Il sera même possible de détecter le niveau en hydrogène, afin d’automatiser également le processus de ravitaillement. Pour donner un exemple, une bonbonne d’hydrogène permettrai de faire fonctionner notre système pour une durée d’environ un an. 
+Nous pouvons également faire usage de piles à combustible que l’on peut ravitailler en hydrogène. Cette méthode présente l’avantage de fournir une puissance constante, de pouvoir fonctionner dans des conditions extrêmes et de demander très peu d’entretien. Il suffit de prévoir une quantité suffisante de combustible au départ pour que le système puisse fonctionner sur une période donnée, puis de venir réapprovisionner le site une fois celui-ci consommé. Il sera même possible de détecter le niveau en hydrogène, afin d’automatiser également le processus de ravitaillement. Pour donner un exemple, une bonbonne d’hydrogène permettrait de faire fonctionner notre système pour une durée d’environ un an. 
 
 Enfin, il sera également possible d’utiliser des éoliennes. Leur production en énergie électrique, quoique modeste, est amplement suffisante pour nos usages, ce qui est d’autant plus vrai en mer (où elles produisent davantage).
 
@@ -48,7 +52,7 @@ Listons à présent les exigences non-opérationnelles que nous supportons :
 
 \section{Description des exigences fonctionnelles}
 
-Le système devra être accessible 24h/24, 7j/7. Cela requiert une autonomie importante
+Le système devra être accessible 24h/24, 7j/7. Cela requiert une autonomie importante.
 
 Le système embarqué récupère les données en étant couplé à chaque capteur du site. Dans le cas de sites isolés mobiles, le système possède une puce GPS qui envoie la localisation du site sur la planète. Ces puces GPS requièrent alors des conditions d’autonomie particulières, qui répondent aux besoins en ressources énergétiques plus importantes.
 
@@ -63,15 +67,15 @@ Les conditions critiques, qui risquent de mettre la communication hors-service (
 Nous respectons ainsi les contraintes suivantes :
 
 \begin{itemize}
-\item Le système embarqué est capable de récupérer les données en provenance de différents capteurs
-\item Le système embarqué est entièrement localisable sur la surface de la planète
-\item Toutes les informations sont à disposition de l’utilisateur, sur le serveur, de manière simple et portable
-\item Le système embarqué communique avec le serveur central de manière fiable et sans perte
-\item La configuration des systèmes embarqués est modifiable à distance sans nécessiter de déplacement vers ces systèmes
-\item Le système embarqué fonctionne de manière autonome sans intervention humaine et cela même en cas de problème environnemental
-\item De manière générale, le système embarqué est conçu pour être maintenu à distance
-\item Le système embarqué peut détecter les problèmes majeurs et pouvoir avertir l’utilisateur rapidement le cas échéant
-\item La consommation électrique est minimale et l’autonomie est garantie
+\item Le système embarqué est capable de récupérer les données en provenance de différents capteurs.
+\item Le système embarqué est entièrement localisable sur la surface de la planète.
+\item Toutes les informations sont à disposition de l’utilisateur, sur le serveur, de manière simple et portable.
+\item Le système embarqué communique avec le serveur central de manière fiable et sans perte.
+\item La configuration des systèmes embarqués est modifiable à distance sans nécessiter de déplacement vers ces systèmes.
+\item Le système embarqué fonctionne de manière autonome sans intervention humaine et cela même en cas de problème environnemental.
+\item De manière générale, le système embarqué est conçu pour être maintenu à distance.
+\item Le système embarqué peut détecter les problèmes majeurs et pouvoir avertir l’utilisateur rapidement le cas échéant.
+\item La consommation électrique est minimale et l’autonomie est garantie.
 \end{itemize}
 
 \section{Esquisse du futur système et impacts}

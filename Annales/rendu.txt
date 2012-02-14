@@ -1,0 +1,40 @@
+===== Cahier des charges préliminaire =====
+ 
+ => Existant (1 à 2 page)
+
+ => Faisabilité
+
+ => Conclusion
+    - Axe d'amélioration
+    - Principe
+    - Tendance technologique
+
+===== STB =====
+
+ (1) Axes d'amélioration de *votre* future proposition
+ (2) Exigence non fonctionnelle de *notre* proposition
+ (3) Exigence Fonctionelle/Besoin
+	Il faut trouver en se posant des questions (sisi promis)
+	- besoin en communication
+	- besoin en veille
+ (4) On a une idée/esquisse de solution de *votre* système.
+
+====== Conception =====
+
+Pour un **appel d'offre**
+Pour **votre système**
+
+ (1) Fixe des règles =>
+     - Qui pilote
+     - Push / Pop
+     - Comment obtenir les données
+     - Qui est maître
+     - Et le traitement des alarmes
+     - etc
+ (2) Architecture applicative
+     - Architecture technique informatique
+ (3) Réseaux
+ (4) Réflexion sur les données
+     - Diagramme de classe du système
+     - Évaluation
+ (5) Sécurité démarrage système, etc.

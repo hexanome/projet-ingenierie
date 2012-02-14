@@ -1,0 +1,65 @@
+% Dossier de qualité
+% Version 1.2
+
+% Historique des versions
+% 19/01/08 1.0 Création et remplissage (Mikado)
+% 20/01/08 1.1 Mise en page un peu plus jolie (Mikado)
+% 31/01/08 1.2 Mise à jour pour évolution du contenu : ajout du PAQP
+
+\documentclass[a4paper, 11pt, draft]{report}
+
+\usepackage[frenchb]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{aeguill}
+\usepackage[final]{graphicx}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{url}
+\usepackage[pdftex, hypertexnames=false, colorlinks=true, final]{hyperref}
+\usepackage[Lenny]{fncychap}
+
+% Marges à gauche et à droite de 3cm
+\geometry{margin=3cm}
+
+% Utilisation des headers et footers personnalisés de fancyhdr
+\pagestyle{fancy}
+
+% Images dans le dossier ./images/
+\graphicspath{{./images/}}
+
+% Gestion des métadonnées étranges à rendre visibles au rendu
+\newcommand\docname{DQv1.2}
+\newcommand\docauthor{Fabrice GABOLDE}
+\newcommand\docstatus{LIVRABLE}
+
+% Format de citation de références standard, marche avec quasiment tout
+\newcommand\fullref[1]{\ref{#1}, page \pageref{#1}}
+
+% Numérotation : part remet à zéro les chapitres (parce que je veux)
+\makeatletter\@addtoreset{chapter}{part}\makeatother
+
+% En-têtes et pieds de page
+\lhead{\docname}
+\rhead{}
+\lfoot{Auteur : H4213}
+\cfoot{}
+\rfoot{\thepage}
+
+% Titre du document maître
+\title{\textbf{COPEVUE}\\
+\rule{\textwidth}{1pt}{}\\
+\Huge{\textsc{Dossier de qualité}}}
+\author{\docauthor{} (H4213)}
+\date{\docname{} --- \today{} (\docstatus{})}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\include{qualite_dossier_gestion_documentation}
+\include{qualite_paqp}
+\include{qualite_annexe}
+
+\end{document}
