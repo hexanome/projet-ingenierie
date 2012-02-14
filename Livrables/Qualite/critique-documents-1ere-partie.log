@@ -1,8 +1,8 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.1.5)  22 JAN 2012 15:38
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.1.5)  14 FEB 2012 22:49
 entering extended mode
  %&-line parsing enabled.
-**critique-documents.tex
-(./critique-documents.tex
+**critique-documents-1ere-partie.tex
+(./critique-documents-1ere-partie.tex
 LaTeX2e <2009/09/24>
 Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
 yphenation, loaded.
@@ -364,8 +364,8 @@ File: pdftex.def 2010/03/12 v0.04p Graphics/color for pdfTeX
 \Gin@req@height=\dimen110
 \Gin@req@width=\dimen111
 )
-(./critique-documents.aux)
-\openout1 = `critique-documents.aux'.
+No file critique-documents-1ere-partie.aux.
+\openout1 = `critique-documents-1ere-partie.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
 LaTeX Font Info:    ... okay on input line 13.
@@ -380,7 +380,7 @@ LaTeX Font Info:    ... okay on input line 13.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
 LaTeX Font Info:    ... okay on input line 13.
 LaTeX Font Info:    Try loading font information for T1+lmr on input line 13.
- (/usr/share/texmf/tex/latex/lm/t1lmr.fd
+(/usr/share/texmf/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 *geometry auto-detecting driver*
@@ -474,20 +474,20 @@ LaTeX Warning: No \author given.
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
-(./critique-documents.aux) ) 
+(./critique-documents-1ere-partie.aux) ) 
 Here is how much of TeX's memory you used:
- 2484 strings out of 495061
- 31947 string characters out of 1182622
+ 2482 strings out of 495061
+ 31985 string characters out of 1182622
  89980 words of memory out of 3000000
  5639 multiletter control sequences out of 15000+50000
  30429 words of font info for 30 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 25i,6n,24p,1282b,200s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}</us
-r/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/pu
-blic/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share
-/texmf/fonts/type1/public/lm/lmr17.pfb>
-Output written on critique-documents.pdf (2 pages, 113446 bytes).
+ 25i,6n,24p,1294b,200s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/usr/share/texmf/fonts/enc/dvips/lm/lm
+-ec.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fo
+nts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb
+></usr/share/texmf/fonts/type1/public/lm/lmr17.pfb>
+Output written on critique-documents-1ere-partie.pdf (2 pages, 114004 bytes).
 PDF statistics:
  26 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
