@@ -1,0 +1,27 @@
+# Dossier de gestion de la documentation
+# Etats d'un document
+
+digraph etats_document {
+    rankdir=LR;
+
+	preliminaire[label="Conception Préliminaire", shape=circle];
+	cahier_des_charges[label="Cahier des charges", shape=rectangle];
+	conception[label="Conception / Réalisation", shape=circle];
+	produit[label="Produit", shape=rectangle];
+	revues[label="Revues", shape=circle];
+	
+	recette_integration[label="Recette / Intégration", shape=circle];
+	fin[label="Produit finit", shape=circle];
+
+    preliminaire -> cahier_des_charges;
+    cahier_des_charges -> conception;
+    conception -> produit
+    conception -> revues;
+    revues -> conception;
+
+    produit -> recette_integration;
+    recette_integration -> conception;
+    recette_integration -> cahier_des_charges;
+
+    recette_integration -> fin;
+}

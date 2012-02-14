@@ -1,0 +1,40 @@
+\select@language {french}
+\contentsline {section}{\numberline {1}Introduction}{3}{section.2}
+\contentsline {section}{\numberline {2}Pr\IeC {\'e}sentation du projet}{3}{section.3}
+\contentsline {subsection}{\numberline {2.1}Rappel du contexte}{3}{subsection.4}
+\contentsline {paragraph}{\IeC {\'E}tude COPEVUE}{3}{section*.5}
+\contentsline {subsection}{\numberline {2.2}Pr\IeC {\'e}sentation du document}{3}{subsection.6}
+\contentsline {subsection}{\numberline {2.3}Documents applicables et de r\IeC {\'e}f\IeC {\'e}rence}{3}{subsection.7}
+\contentsline {paragraph}{Documents applicables}{3}{section*.8}
+\contentsline {paragraph}{Documents de r\IeC {\'e}f\IeC {\'e}rence}{3}{section*.9}
+\contentsline {section}{\numberline {3}Pr\IeC {\'e}sentation des besoins du logiciel}{3}{section.10}
+\contentsline {subsection}{\numberline {3.1}Objectifs du logiciel}{3}{subsection.11}
+\contentsline {subsubsection}{\numberline {3.1.1}Collecter les donn\IeC {\'e}es}{4}{subsubsection.12}
+\contentsline {subsubsection}{\numberline {3.1.2}G\IeC {\'e}rer l'authentification}{4}{subsubsection.13}
+\contentsline {subsubsection}{\numberline {3.1.3}Fournir les services}{4}{subsubsection.14}
+\contentsline {subsection}{\numberline {3.2}Contraintes li\IeC {\'e}es au contexte}{4}{subsection.15}
+\contentsline {subsubsection}{\numberline {3.2.1}Consultation des donn\IeC {\'e}es}{4}{subsubsection.16}
+\contentsline {subsubsection}{\numberline {3.2.2}S\IeC {\'e}curit\IeC {\'e} des \IeC {\'e}changes}{4}{subsubsection.17}
+\contentsline {section}{\numberline {4}Exigences fonctionnelles}{4}{section.18}
+\contentsline {subsection}{\numberline {4.1}\IeC {\'E}tablir une connexion SSH avec un site isol\IeC {\'e}}{4}{subsection.19}
+\contentsline {subsection}{\numberline {4.2}R\IeC {\'e}cup\IeC {\'e}ration automatique des donn\IeC {\'e}es}{4}{subsection.20}
+\contentsline {subsection}{\numberline {4.3}Stockage des donn\IeC {\'e}es}{5}{subsection.21}
+\contentsline {subsection}{\numberline {4.4}G\IeC {\'e}rer l'authentification des intervenants}{5}{subsection.22}
+\contentsline {subsection}{\numberline {4.5}Fournir les services d'interaction avec le site isol\IeC {\'e}}{5}{subsection.23}
+\contentsline {subsubsection}{\numberline {4.5.1}Service de lecture d'une donn\IeC {\'e}e d'un site isol\IeC {\'e}}{5}{subsubsection.24}
+\contentsline {subsubsection}{\numberline {4.5.2}Service d'utilisation d'un actionneur d'un site isol\IeC {\'e}}{5}{subsubsection.25}
+\contentsline {subsubsection}{\numberline {4.5.3}Service de configuration d'un site isol\IeC {\'e}}{5}{subsubsection.26}
+\contentsline {section}{\numberline {5}Exigences non fonctionnelles}{5}{section.27}
+\contentsline {subsection}{\numberline {5.1}Configurabilit\IeC {\'e}}{5}{subsection.28}
+\contentsline {subsection}{\numberline {5.2}Interop\IeC {\'e}rabilit\IeC {\'e} des donn\IeC {\'e}es}{5}{subsection.29}
+\contentsline {subsection}{\numberline {5.3}P\IeC {\'e}rennit\IeC {\'e} des donn\IeC {\'e}es}{5}{subsection.30}
+\contentsline {subsection}{\numberline {5.4}S\IeC {\'e}curit\IeC {\'e}}{6}{subsection.31}
+\contentsline {section}{\numberline {6}Analyse des exigences}{6}{section.32}
+\contentsline {subsection}{\numberline {6.1}Crit\IeC {\`e}res d'analyse}{6}{subsection.33}
+\contentsline {subsection}{\numberline {6.2}Analyse des exigences fonctionnelles}{6}{subsection.34}
+\contentsline {paragraph}{}{6}{figure.36}
+\contentsline {subsection}{\numberline {6.3}Analyse des exigences non fonctionnelles}{6}{subsection.37}
+\contentsline {paragraph}{}{6}{figure.39}
+\contentsline {section}{\numberline {7}Mise en \IeC {\oe }uvre}{6}{section.40}
+\contentsline {subsection}{\numberline {7.1}Configuration cible}{6}{subsection.41}
+\contentsline {subsection}{\numberline {7.2}Planning}{7}{subsection.42}

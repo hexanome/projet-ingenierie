@@ -1,0 +1,17 @@
+# PAQP
+# Relations entre les intervenants : MOE
+
+# Yup, bidon
+
+digraph relations_moe {
+	
+	rankdir=RL;
+	
+	moe_cdp[label="CdP"];
+	moe_rq[label="RQ"];
+	moe_gei[label="GEI"];
+	
+	moe_cdp -> moe_gei [label="dirige"];
+	moe_rq -> {moe_cdp moe_gei} [label="conseille"];
+	
+}

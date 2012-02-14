@@ -1,0 +1,106 @@
+\documentclass[a4paper, 11pt, final]{article}
+\usepackage[utf8]{inputenc} % Texte en utf-8
+\usepackage{aeguill} % Coupure des mots accentués
+\usepackage[francais]{babel} % Typographie française
+\usepackage[pdftex, hypertexnames=false, colorlinks=true, final]{hyperref}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+
+% Marges à gauche et à droite de 3cm
+\geometry{margin=3cm}
+
+% Utilisation des headers et footers personnalisés de fancyhdr
+\pagestyle{fancy}
+
+% Gestion des métadonnées étranges à rendre visibles au rendu
+\newcommand\docname{GLOv1.0}
+\newcommand\docauthor{H4213}
+\newcommand\docstatus{VALIDÉ} % EN COURS, ATTENTE, VALIDE ou LIVRABLE
+
+% Format de citation de références standard, marche avec quasiment tout
+\newcommand\fullref[1]{\ref{#1}, page \pageref{#1}}
+
+% En-têtes et pieds de page
+\lhead{\docname}
+\rhead{}
+\lfoot{Auteur : H4213}
+\cfoot{}
+\rfoot{\thepage}
+
+% Titre du document maître
+\title{\textbf{COPEVUE}\\
+\rule{\textwidth}{1pt}{}\\
+\Huge{\textsc{Glossaire}}}
+\author{H4213}
+
+
+\date{\docname{} --- \today{} (\docstatus{})}
+
+\begin{document}
+
+\maketitle
+
+\section{Découpage du système}
+
+\begin{description}
+\item[Alimentation énergétique des sites isolés]
+Batterie et systèmes d'alimentation facultative.
+\item[Intervention]
+Action d'un intervenant sur un site isolé. Peut être une action de
+maintenance préventive ou corrective, de maintenance de la
+fonctionnalité du site, etc.
+\item[Intervenant]
+Personne effectuant des opérations sur les sites isolés.
+\item[Poste de gestion]
+Poste permettant de gérer le système central.
+\item[Site isolé]
+Site où sont effectuées les mesures.
+\item[Système central]
+Site ou sont stockées toutes les données. L'archivage des
+planifications y est également effectué.
+\item[Système de l'intervenant]
+Système permettant à l'intervenant de recevoir et d'envoyer des informations pendant ces interventions.
+\item[Système de communication]
+Tout système utilisé permettant de faire communiquer les sites isolés,
+le système central et les systèmes des intervenants. Dans notre cas,
+ce sont diverses couches réseau telles que GSM/GPRS, IP, HTTP, etc.
+\end{description}
+
+\section{Abréviations}
+
+\begin{description}
+\item[API] \emph{Application Programming Interface}, définition des interfaces d'un logiciel ou d'une librairie.
+\item[ARM] \emph{Advanced RISC Machines}, architecture d'ordinateurs reconnue dans le domaine de l'embarqué.
+\item[BSD] \emph{Berkeley Software Distribution}, systèmes d'exploitation libres réputés pour leur sécurité, leur légèreté et leur robustesse.
+\item[CAN] \emph{Controller Area Network}, bus système série faisant communiquer différents organes sur un bus unique, principalement utilisé dans le secteur de l'automobile.
+\item[DTD] Définition de Type de Document, document permettant de décrire un modèle de document SGML ou XML.
+\item[GPRS] \emph{General Packet Radio Service}, norme pour la téléphonie mobile dérivée du GSM permettant un débit de données plus élevé ainsi qu'une connectivité IP.
+\item[GPS] \emph{Global Positioning System}, système de géolocalisation par satellite développé par le Département de la Défense des États-Unis.
+\item[GSM] \emph{Global System for Mobile Communications}, norme numérique de seconde génération pour la téléphonie mobile proposant un débit limité.
+\item[HTTP] \emph{HyperText Tranfert Protocol}, protocole de transfert de données massivement utilisé sur l'Internet.
+\item[HTTPS] Protocole HTTP sécurisé par le biais de SSL.
+\item[IM] Messagerie instantanée.
+\item[ISO] Organisation internationale de normalisation, institut désignant un ensemble de rèles à suivre, notamment dans le domaine de la conception logicielle.
+\item[OAIS] \emph{Open Archival Information System}, modèle conceptuel destiné à la gestion, à l'archivage et à la préservation à long terme de documents numériques.
+\item[OS] Système d'exploitation.
+\item[PDA] \emph{Personal Digital Assistant}, ordinateur de taille réduite souvent doté de fonctionnalités avancées de communication.
+\item[RAM] \emph{Random Acces Memory}, mémoire vive.
+\item[RFC] \emph{Request For Comments}, ensemble de documents établissant différents standards en informatique, notamment dans le domaine de l'Internet.
+\item[RSA] \emph{Rivest Shamir Adleman}, algorithme de chiffrement à clef publique utilisé par SSH.
+\item[SMS] \emph{Short Message Service}, service de messagerie permettant de transmettre de courts messages textuels à travers le réseau de téléphonie mobile.
+\item[SMTP] \emph{Simple Mail Transfert Protocol}, protocole d'envoi de courriels.
+\item[SSH] \emph{Secure SHell}, outil permettant d'ouvrir un terminal distant par le biais d'une connexion sécurisée.
+\item[SSL] \emph{Secure Socket Layer}, système de chiffrement utilisé par le protocole SSH.
+\item[SVN] SubVersioN, outil de gestion de version.
+\item[TCP] \emph{Transmission Control Protocol}, protocole de transport.
+\item[UE] Union Européene.
+\item[UML] \emph{Unified Modeling Language}, langage graphique de modélisation des données et des traitements utilisant un formalisme objet.
+\item[UNIX] Système d'exploitation multitâche et multiutilisateur créé en 1969 à usage principalement professionnel et conceptuellement ouvert.
+\item[URL] \emph{Uniform Resource Locator}, chaîne de caractères utilisée pour adresser les ressources, en particulier sur l'Internet.
+\item[USB] \emph{Universal Serial Bus}, bus informatique \emph{plug-and-play} à transmission série servant à brancher des périphériques informatiques à un ordinateur, présent sur la quasi totalité des ordinateurs actuels.
+\item[XML] \emph{Extensible Markup Language}, langage informatique de balisage générique promoteur de standards favorisant l'échange d'informations sur l'Internet.
+% It's up to u!
+\end{description}
+
+
+\end{document}

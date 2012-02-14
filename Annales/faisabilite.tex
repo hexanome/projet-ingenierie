@@ -1,0 +1,324 @@
+% Dossier de faisabilité
+% Version 1.3
+
+% Historique des versions
+% 22/01/08 1.3 Version finale
+
+\documentclass[a4paper, 11pt]{article}
+
+\usepackage[utf8]{inputenc} % Texte en utf-8
+\usepackage[cyr]{aeguill} % Coupure des mots accentués
+\usepackage[francais]{babel} % Typographie française
+\usepackage[pdftex, hypertexnames=false, colorlinks=true, final]{hyperref}
+\usepackage[final]{graphicx}
+\usepackage{url} % Gestion des URLs
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage[Lenny]{fncychap}
+
+% Marges à gauche et à droite de 3cm
+\geometry{margin=3cm}
+
+% Utilisation des headers et footers personnalisés de fancyhdr
+\pagestyle{fancy}
+
+% Images dans le dossier ./images/
+\graphicspath{{./images/}}
+
+% Gestion des métadonnées étranges à rendre visibles au rendu
+\newcommand\docname{FSBv1.1}
+\newcommand\docauthor{Guillaume Ayoub --- Nicolas Kandel}
+\newcommand\docstatus{LIVRABLE} % EN COURS, ATTENTE, VALIDE ou LIVRABLE
+
+% Numérotation mieux
+%\renewcommand\thechapter{\Alph{chapter}}
+%\renewcommand\thesection{\Roman{section}}
+%\renewcommand\thesubsection{\arabic{subsection}}
+%\renewcommand\thesubsubsection{\alph{subsubsection}}
+
+% Format de citation de références standard, marche avec quasiment tout
+\newcommand\fullref[1]{\ref{#1}, page \pageref{#1}}
+
+% En-têtes et pieds de page
+\lhead{\docname}
+\lfoot{Auteur : H4213}
+\cfoot{}
+\rfoot{\thepage}
+
+% Titre du document maître
+\title{\textbf{COPEVUE}\\
+\rule{\textwidth}{1pt}{}\\
+\Huge{\textsc{Dossier de faisabilité}}}
+\author{\docauthor{} (H4213)}
+\date{\docname{} --- \today{} (\docstatus{})}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\pagebreak
+
+% Dossier de faisabilité + Annexes : 15 pages maxi
+
+\section{Étude de l'existant}
+    Il existe aujourd'hui de nombreux sites isolés et/ou difficiles d'accès qui nécessitent une surveillance et parfois des actions à distance. Ces sites se situent dans des espaces très différents, par exemple les citernes placées dans les forêts escarpées du pourtour méditerrannéen, les réservoirs utilisés pour l'autonomie des chantiers dans le grand Nord mais aussi les personnes âgées qui se retrouvent souvent isolées.
+
+    Actuellement, tous les contrôles et actions sont réalisés par un opérateur qui doit se déplacer sur le site. Il n'y a donc que très peu de réactivité, on ne peut pas avoir un suivi fin des évolutions et des problèmes graves -- tels que la fuite d'un réservoir -- ne peuvent pas être traités rapidement.
+
+\section{Problématique}
+    L'objet de l'étude est la mise en place d'un système générique de surveillance et d'action à distance sur des sites isolés. Le système devra être évolutif, autonome et fiable.
+\section{Rappel des besoins}
+     Connaître de manière fiable et régulière l'état des dispositifs d'un site isolé.
+    \subsection{Consultation des données} %%%%%
+        Les opérateurs ont besoin de pouvoir accéder à tout moment au dernières valeurs transmises par les différents capteurs distants avec la garantie que ces données ne sont pas périmées.
+
+    \subsection{Détection des anomalies} %%%%%
+        Toute valeur ou variation anormale d'un capteur distant doit déclencher immédiatement une alarme et le plus souvent possible une réaction automatique du système.
+
+    \subsection{Planification} %%%%%
+         Un planning des opérations sur sites -- plein, purge, bilan de routine --
+doit être établi afin de minimiser les coûts liés aux transports.
+
+    \subsection{Autonomie} %%%%%
+        Les sites distants ont besoin d'être autonomes au maximum pour limiter les déplacements d'agents d'entretien. Il faut donc qu'ils soient capables de recharger leurs batteries, recycler leurs déchets et reconstituer leurs réserves par leur propres moyens.
+
+    \subsection{Fiabilité} %%%%%
+        Les systèmes installés sur les sites distants doivent pouvoir fonctionner dans des conditions extrêmes sans se dégrader. Au cas où les conditions empêcheraient le fonctionnement des systèmes, ils doivent se rallumer automatiquement dès que possible.
+
+    \subsection{Maintenance} %%%%%
+        Toutes les informations nécessaires à la planification des opérations de maintenance doivent être disponibles dans l'application. De plus, le maximum d'opérations peut être réalisé à distance sans nécessiter le déplacement d'un agent.
+
+    \subsection{Traçabilité} %%%%%
+        Toutes les données enregistrées par le système en fonctionnement ainsi que les actions des intervenants doivent être enregistrées afin de traiter \textit{a posteriori} des cas d'erreur ou de procéder à une analyse des données dans un but statistique.
+
+    \subsection{Ergonomie} %%%%%
+        Les interfaces doivent rester simples et facilement utilisables par des utilisateurs peu familiarisés avec l'informatique.
+
+\section{Étude de faisabilité des besoins}
+
+\subsection{Connaissance de l'état du site sur place}
+Il est indispensable, pour les personnes se rendant sur place, d'avoir
+accès aux informations sur l'état des dispositifs.
+
+Pour cela, les intervenants disposent d'un ordinateur portable
+ou d'un PDA à relier aux dispositifs de capture d'informations,
+soit par l'une des liaisons filaires dont les ports sont
+potentiellement disponibles sur un système informatique -- liaison
+série, USB, etc. -- soit par l'un des réseaux sans fil
+utilisés par ces dispositifs -- infra-rouge, bluetooth, GSM, Wi-Fi,
+etc. Pour assurer une connexion au système informatique en
+cas de défaillance, il faudra permettre son accès par le biais d'au
+moins deux moyens, l'un sans fil -- le même que celui utilisé pour
+l'accès distant -- et l'autre filaire -- plus simple et par conséquent
+plus fiable.
+
+Ces technologies ont déjà fait leur preuves, sont simples à mettre en
+œuvre et ne nécessitent pas ou peu de développement du fait du nombre
+croissant de matériels et de logiciels les utilisant. On veillera à
+utiliser une plateforme sur laquelle le support de ces techniques
+est disponible et éprouvé.
+
+\subsection{Connaissance de l'état du site à distance}
+L'une des attentes est la possibilité d'obtenir, de manière
+centralisée, toutes les informations sur les différents dispositifs
+disséminés sur le territoire.
+
+Le transfert d'informations se fait entre sites potentiellement non
+reliés aux différents réseaux de communication, il peut donc être
+nécessaire d'installer un réseau alternatif spécialement créé pour
+l'occasion. Les différents sites sont reculés et difficiles d'accès,
+il paraît donc coûteux et peu judicieux d'y étendre un réseau
+filaire. Nous nous reporterons donc aux différents réseaux de
+communication sans fil à grande portée -- la technologie GSM
+principalement -- pour transmettre les informations entre le serveur
+et les différents sites à vérifier.
+
+Cette solution entraînera la création d'un réseau alternatif de
+communication et mènera par conséquent à la pose de nouvelles
+antennes. Nous pourrons pour cela trouver des accords avec les
+opérateurs de téléphonie mobile implémentés dans le pays ainsi que des
+subventions de la part de l'Union Européenne. Cet accord permettra à
+l'opérateur d'étendre sa couverture ; en contrepartie il sera capable
+de nous fournir une communication avec le site distant.
+
+\subsection{Surveillance de l'état du site à distance}
+Toute anomalie importante sur le site doit être détectée sans qu'il
+n'y ait de personne sur place. Il doit donc y avoir un système de
+surveillance de l'état à distance.
+
+Sur site, la surveillance consiste à recueillir, à l'aide de capteurs,
+des informations susceptibles de déceler une anomalie. La variété des
+capteurs disponibles, leur fiabilité et la relative facilité de
+traitement des signaux obtenus permettent d'affirmer qu'il est
+possible de détecter automatiquement une grande majorité des
+évènements \textit{prévus} sur le site. Les anomalies les plus simples
+peuvent alors être traitées localement.
+
+La surveillance à distance consiste à récupérer les informations des
+capteurs sur le système centralisé et à assurer le traitement de ces
+informations, dans le but de déceler les anomalies plus complexes et
+d'en assurer si possible une résolution automatique. Le transfert des
+informations peut se faire sur le même réseau que celui utilisé pour
+la \textit{Connaissance de l'état du site à distance}.
+
+Toutes les anomalies détectées qui nécessitent une intervention
+humaine peuvent être signalées aux administrateurs par le sytème de
+communication -- courriels, SMS, etc.
+
+\subsection{Configuration du site à distance}
+Le système informatique des systèmes distants doit être configurable à
+distance, soit pour modifier certains paramètres de fonctionnement --
+récupération ou non de la valeur de certains capteurs, délai d'envoi
+des informations au serveur, etc. -- soit pour assurer une
+maintenance ou une mise-à-jour des logiciels installés.
+
+Indépendamment du réseau physique utilisé, il est possible de se
+reposer sur des protocoles d'accès à distance sécurisés et longuement
+éprouvés, tels que SSH. Installable sur la plupart des plateformes, en
+particulier sur les stations Linux et Unix, un serveur SSH permet
+d'accéder à un terminal à distance et donne par conséquent la
+possibilité d'effectuer toutes les opérations logicielles. De plus,
+les dernières versions de SSH s'appuient sur des outils de
+cryptographie sûrs assurant l'inviolabilité des
+données\footnote{Description des fonctionnalités offertes par SSH sur
+Wikipédia : \url{http://fr.wikipedia.org/wiki/Secure_shell}.}.
+
+Au-delà du protocole, il est nécessaire d'avoir à disposition tous les
+outils de configuration à partir d'un terminal. On veillera également
+à privilégier les matériels dont les fonctionnalités sont modifiables
+logiciellement plutôt que matériellement, afin de permettre une
+certaine flexibilité du système sans avoir à déplacer un technicien
+sur site.
+
+\subsection{Maintenance du site sur place}
+% il faudrait mettre en relief les différents type de maitenance sur site soit :
+%   - Le techos de base qui vide les poubelles et verifie 3 point note sur un post it (serrage des boulons, couleurs du chroubouille, sous nutrition de l'esquimeau)
+%   - L'ingenieur qui fait un gros diagnostique ou débarouille l'ustuline avec de l'octogramme de papanne
+% Yabz : ouais, ouais, c'est ça... en fait, je pense pas que ça joue
+% un rôle primordial dans la solution qu'on donne.
+
+Malgré tous les automatismes possibles, il reste un certain nombre
+d'opérations de maintenance à effectuer directement sur site. Les
+systèmes de surveillance installés sur site ne doivent donc pas
+empêcher l'accès manuel aux différentes parties du site.
+
+On à plus affaire ici à un problème de conception qu'à un problème de
+faisabilité pure. Une bonne conception de la pose des capteurs et des
+systèmes de surveillance doit pouvoir éviter tout blocage pour la
+maintenance ultérieure sur site.
+
+% il faut pouvoir la planifier comme il faut aussi.
+% Yabz : en effet, je m'en charge, mais comme y'a une partie qui
+% s'appelle "Planification efficace des opérations", euh... comment
+% dire... ben voilà quoi.
+
+\subsection{Fiabilité des données}
+La fiabilité des données en elles-mêmes repose en grande partie sur la
+fiabilité des capteurs.
+
+Dans tous les systèmes critiques, on procède à un triplement des
+capteurs de manière à pouvoir déceler avec une quasi certitude les
+défaillances des capteurs. Cette technique permet de s'assurer de la
+véracité des données et peut empêcher dans certains cas un déplacement
+de personnel inutile.
+
+La multiplicité des capteurs augmente mécaniquement le nombre
+d'interventions de maintenance. Cependant, les délais d'intervention
+sur les capteurs sont bien plus lâches que les délais de réparation du
+système lui-même. On gagne donc en flexibilité, ce qui peut être un
+facteur déterminant dans le cas d'un personnel réduit susceptible de
+parcourir de longues distance pour assurer la maintenance.
+
+\subsection{Fiabilité du transfert des données}
+Tout comme la fiabilité des données repose sur celle des capteurs, la
+fiabilité du transfert des données s'appuie en majorité sur la
+fiabilité des protocoles et matériels utilisés pour ces transferts.
+
+De nombreux systèmes de communication ont fait leurs preuves à longue
+distance : des systèmes hertziens de radio et de télévisions, on est
+aujourd'hui passé aux réseaux GSM et par satellite. Chacun de ces
+réseaux permet de faire passer des informations numériques avec une
+fiabilité presque parfaite, d'autant plus si l'on ajoute une couche
+logicielle de vérification d'intégrité des données -- hachage,
+etc. La souplesse des contraintes temporelles est également
+un avantage.
+
+\subsection{Planification efficace des opérations}
+Chacune des opérations -- récupération de la valeur des capteurs,
+traitement des informations, gestion de la traçabilité,
+etc. -- doit être effectuée selon une planification
+rigoureuse permettant de répondre aux exigeances temporelles. Si
+chacun des sites est autonome, le système de récupération et
+de traitement des informations est centralisé et joue le rôle
+d'ordonnanceur afin d'assurer un certain lissage de la charge du
+système.
+
+La planification des opérations de maintenance est également un
+élément clé du fonctionnement de l'ensemble du système. La relative
+flexibilité permise par la \textit{Fiabilité des données} donne des
+possibilités de planifications à moyen terme avec un effectif réduit,
+de manière à optimiser le déplacement des techniciens et des
+ingénieurs sur sites.
+
+Une surveillance de la charge des batteries et des dispositifs de
+création d'énergie est également à prévoir pour augmenter l'autonomie
+des sites, maximiser l'utilisation d'énergies renouvelables et
+optimiser les déplacements pour la recharge ou le remplacement des
+accumulateurs.
+
+% nico : et la planification du remplacement des batteries ?
+% yabz : on a encore gagné une ligne...
+
+\subsection{Localisation géographique}
+
+Le systeme central doit avoir accès, dès qu'il le souhaite, à la localisation géographique exacte et précise de chaque entité -- fixe ou mobile -- de notre système. Elle concerne l'ensemble des sites, les différents véhicules affrétés ainsi que les opérateurs en fonction.
+
+Cette localisation permet principalement deux tâches : l'optimisation de la planification, avec notamment l'intervention sur place d'un opérateur se situant à proximité en cas de problème grave, et la surveillance de sites spécifiques -- sites situés sur sol instable, personnes âgées, etc.
+
+Sa mise en place se fera à l'aide de la technologie GPS qui est éprouvée, fiable, de précision suffisante pour notre utilisation et qui couvre la totalité du globe -- en particulier les sites isolés et les éléments mobiles.
+
+\subsection{Traçabilité des opérations}
+
+Afin d'avoir une vision globale et sur le long terme du bon fonctionnement de chaque site, il est nécessaire de mettre en place un système de traçabilité des opérations effectuées -- manuelles ou automatiques -- ainsi que des éventuelles erreurs survenues.
+
+En phase de fonctionnement \textit{normal}, les informations envoyées par chaque site sont immédiatement stockées sur le serveur central avant leur traitement. On enregistre chaque donnée avec ses méta-informations -- site de provenance, date, etc. Ces données sont préservées pendant une durée de quatre ans, considérant des contraintes légales et un besoin d'analyse statistique. Elles seront dupliquées pour éviter les pertes involontaires. La durée de stockage est donnée à titre informatif, elle peut être modifiable en fonction des besoins mais doit être spécifiée avant la phase de conception de façon à dimensionner correctement l'espace de stockage.
+
+En plus des données des capteurs, en enregistrera l'historique des opérations de chaque contrôleur de capteur, pour chaque site. La fréquence des relevés sera fonction des capteurs, elle dépendra de la criticitée de l'élément à surveiller, mais restera configurable.
+
+Dans un souci de portabilité, le format de sauvegarde sera le texte brut. Cette solution n'est pas optimum en vitesse de traitement mais nous n'avons pas d'exigence sur ce point.
+
+On pourra à ce sujet s'intéresser au modèle conceptuel de stockage des données OAIS\footnote{Modèle de référence pour un système ouvert d'archivage d'information (OAIS)
+sur le site du CNES : \url{http://vds.cnes.fr/pin/documents/projet_norme_oais_version_francaise.pdf}}, normalisé par l'ISO.
+
+\subsection{Autonomie énergétique des sites}
+
+L'autonomie des sites est une contrainte générale, son application sera spécifique aux conditions -- topologie, géographie, climat, etc. -- de chaque site. La demande non fonctionnelle principale est le besoin d'autonomie énergétique. Si celle-ci est assurée, on pourra envisager une gestion autonome des ressources spécifiques telles que l'eau, les déchets ou autres.
+
+Les sites étant tous isolés, on ne peut compter sur aucun réseau électrique pour leur apport en énergie. L'idée principale pour résoudre cette contrainte est d'utiliser des accumulateurs à longue durée de vie. Considérant que l'on cherchera, lors de la phase de choix du matériel, à minimiser la consommation électrique des capteurs, actionneurs et autres équipement informatiques, la consomation globale de chaque site sera relativement faible. La plupart du temps, un accumulateur sera suffisant pour répondre aux besoins énergétiques. Nous précisons qu'il s'agit d'accumulateurs non rechargeables, le but étant de les remplacer lorsqu'ils arrivent en fin de vie. L'accumulateur sera relié à un capteur de charge qui permettra de vérifier à distance son bon fonctionnement ainsi que son état. Les cycles de maintenance et de remplacement des accumulateurs seront alors facilement planifiables.
+
+\paragraph{}
+Cependant, il sera préférable dans certains cas d'utiliser des batteries rechargeables. Ceci peut-être le cas pour des sites difficiles d'accès et proposant une source énergétique facilement exploitable, pour des sites particuliers nécessiteux d'un grand apport électrique, etc. Nous envisageons trois principales sources alternatives : photovoltaïque, éolienne et hydroélectrique. Toutes seront couplées au système de batterie capable d'emmagasiner et de restituer l'énergie voulue.
+
+L'énergie photovoltaïque et la technologie des panneaux solaires ont déjà fait leurs preuves dans de nombreuses circonstances, leur fiabilité est assurée et malgré un investissement financier non négligeable, cette technique est rentable. Cependant, il faut prendre en compte la nécessité d'une exposition solaire de longue durée pour assurer un approvisionnement constant en électricité. C'est pourquoi, dans des pays spécifiques comme la Norvège où les nuits polaires impliquent un faible taux d'exposition la moitié de l'année, il est obligatoire de coupler cette ressource à d'autres.
+
+Nous prévoyons dans les régions ventées la possible mise en place d'éoliennes, technologie efficace mais applicable uniquement à certains sites favorables.
+
+Le cas de la Norvège fait preuve de plusieurs spécificités. Celle-ci ayant hérité de nombreux lacs et cours d'eau, elle en tire un grand potentiel hydroélectrique. De plus, cette ressource est massivement utilisée dans le pays\footnote{La recherche en matière d'énergie hydraulique sur le site du gouvernement français : \url{http://www.industrie.gouv.fr/energie/recherche/energie-hydraulique.htm}}. Nous envisageons donc, dès que cela s'avère possible et rentable, de mettre en place de petites turbines hydroélectriques dédiées à l'alimentation du site.
+
+\paragraph{}
+Si la solution retenue indique de mettre en place des batteries rechargeables, la part de chaque source énergétique dans l'approvisionnement se fera au cas par cas, puisqu'elle dépend des caractéristiques du site. Il est tout à fait possible, si aucune combinaison de ces ressources ne peut garantir la fiabilité en terme d'autonomie énergétique, de coupler les batteries avec des accumulateurs non rechargeables. Dans le cas où plusieurs solutions sont possibles, on préférera la stabilité et la garantie d'une alimentation électrique fiable et continue. Dans un second temps, on privilègiera l'aspect économique.
+
+% Le reservoir d'essence ça à l'air un peu foireux vue que c'est quand meme pour allimenter un truc assez petit.
+% => Comme ta bite ?
+% Je suis d'accord que c'est un peu foireux, mais c'est un truc de secours, genre un moyen reservoir couplé à un groupe électrogène (j'aime beaucoup leur musique)
+
+\subsection{Fiabilité, stabilité et reprise sur panne}
+Nous nous assurerons d'un certain niveau de fiabilité pour l'ensemble du système. Pour cela nous nous reposerons sur du matériel électronique et mécanique fiable et éprouvé. La partie informatique, partie critique car elle gère le site et permet son pilotage à distance, devra être d'une stabilité irréprochable.
+
+Pour ce faire, nous choisirons des logiciels qui ont déjà fait preuve de stabilité dans des domaines comparables. Lorsque nous aurons à traiter des informations critiques, nous prévoirons de tripler les liaisons entre le système de pilotage informatique, les capteurs et les actionneurs. Ceci représente un investissement pécuniaire supplémentaire mais diminue les frais de maintenance et augmente le niveau de fiabilité global.
+
+On prendra en compte, lors de la conception de notre solution, une possible reprise sur panne du système. Celle-ci peut être automatique -- si le système informatique local le décide -- pilotée à distance ou planifiée. En cas de panne grave et d'arrêt du système sans possibilité physique de redémarrer, il sera nécessaire de dépêcher un technicien sur place. La reprise sur panne non critique sera une contrainte à prendre en compte dans la phase de conception de notre architecture, garantissant ainsi son implémentation.
+
+\end{document}

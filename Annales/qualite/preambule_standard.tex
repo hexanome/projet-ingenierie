@@ -1,0 +1,77 @@
+% Préambule standard
+% Version 1.3
+
+% Historique des versions
+% 19/01/08 1.0 Création et remplissage (Mikado)
+% 20/01/08 1.1 Mise en page un peu plus jolie (Mikado)
+% 22/01/08 1.2 Changement de l'ordre des usepackage (Gayoub)
+% 22/01/08 1.3 Définitif ? On a récupéré aeguill (Mikado)
+
+\documentclass[a4paper, 11pt, draft]{report}
+
+\usepackage[utf8]{inputenc} % Texte en utf-8
+\usepackage{aeguill}
+\usepackage[francais]{babel} % Typographie française
+\usepackage[pdftex, hypertexnames=false, colorlinks=true, final]{hyperref}
+\usepackage[final]{graphicx}
+\usepackage{url} % Gestion des URLs
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage[Lenny]{fncychap}
+
+% Marges à gauche et à droite de 3cm
+\geometry{margin=3cm}
+
+% Utilisation des headers et footers personnalisés de fancyhdr
+\pagestyle{fancy}
+
+% Images dans le dossier ./images/
+\graphicspath{{./images/}}
+
+% Gestion des métadonnées étranges à rendre visibles au rendu
+\newcommand\docname{ABREVIATIONvM.m}
+\newcommand\docauthor{auteur}
+\newcommand\docstatus{status} % EN COURS, ATTENTE, VALIDE ou LIVRABLE
+
+% Numérotation mieux ; pour l'instant, on garde le défaut
+% \renewcommand\thechapter{\Alph{chapter}}
+% \renewcommand\thesection{\Roman{section}}
+% \renewcommand\thesubsection{\arabic{subsection}}
+% \renewcommand\thesubsubsection{\alph{subsubsection}}
+
+% Format de citation de références standard, marche avec quasiment tout
+\newcommand\fullref[1]{\ref{#1}, page \pageref{#1}}
+
+% En-têtes et pieds de page
+\lhead{\docname}
+\rhead{}
+\lfoot{Auteur : H4213}
+\cfoot{}
+\rfoot{\thepage}
+
+% Titre du document maître
+\title{\textbf{COPEVUE}\\
+\rule{\textwidth}{1pt}{}\\
+\Huge{\textsc{Nom complet du document}}}
+\author{\docauthor{} (H4213)}
+\date{\docname{} --- \today{} (\docstatus{})}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\pagebreak
+
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nulla risus. Etiam vitae urna non lorem tincidunt imperdiet. Nam orci erat, volutpat volutpat, gravida et, iaculis id, odio. Nam neque. Sed et velit. Vestibulum et justo tempor sapien varius mollis. Vivamus ullamcorper nisi ut purus. Curabitur at turpis. Aliquam iaculis, orci quis dictum luctus, eros erat mollis elit, quis fermentum orci ipsum nec sem. Mauris porttitor risus sed magna. Mauris non mauris. Curabitur fermentum tincidunt eros. Praesent eleifend, purus vel bibendum rhoncus, est lorem lacinia pede, et ornare lacus quam non tortor. Vivamus gravida euismod purus.
+
+Vivamus tincidunt dui at est egestas posuere. Sed ipsum augue, fringilla sed, suscipit et, ultricies quis, nunc. Fusce at turpis eu tortor tempus laoreet. Integer dignissim malesuada sapien. Suspendisse cursus justo pretium turpis. Vestibulum blandit porta pede. Duis diam turpis, pretium viverra, interdum sed, porttitor et, elit. Donec faucibus tellus eu erat tincidunt sollicitudin. Pellentesque ac nisi ac libero consectetuer imperdiet. Nunc tempor, ligula in molestie scelerisque, enim lectus condimentum tellus, sit amet interdum metus justo vel tortor. Phasellus molestie porttitor libero. Phasellus molestie augue quis nibh. Phasellus mattis, dolor quis dictum tempus, massa arcu viverra massa, id scelerisque turpis orci tincidunt neque. Duis id augue. Pellentesque blandit, elit at laoreet euismod, odio leo consequat libero, sit amet gravida sem magna vel elit. Cras eros nunc, convallis vestibulum, consequat nec, mollis eu, justo.
+
+Quisque ultricies pharetra sem. Nullam elementum. Duis lacinia, quam nec imperdiet dictum, dolor quam tempus nunc, ut iaculis est enim id est. Praesent dapibus, nisi at luctus lobortis, sapien mauris volutpat nisl, ac aliquet turpis magna eu lorem. Sed justo quam, ullamcorper quis, iaculis a, tincidunt vel, nisi. Duis porta arcu in sem. Praesent lectus. Nunc non magna. Ut consequat enim id neque. Vestibulum rutrum est pharetra turpis. Nullam vulputate ligula a orci. Curabitur varius tincidunt erat. Phasellus consequat orci id sem. Maecenas nisi. Nunc ante ipsum, facilisis non, fermentum sed, luctus eget, risus. Nunc mi. Aenean consectetuer pharetra tellus. Proin quis risus. Duis congue lectus sit amet ipsum.
+
+Sed tempor tempor massa. Morbi ac ipsum. Proin commodo vestibulum ante. Duis in risus a elit tincidunt condimentum. Donec hendrerit purus eu lorem. Ut at ante. Donec consectetuer mi vitae tellus. Morbi nec quam. Nulla feugiat. Aliquam augue. Proin sem. Aliquam erat volutpat. Nullam id justo non ipsum rutrum rhoncus. Etiam vestibulum sagittis enim. Suspendisse potenti. Aenean hendrerit metus vel ipsum.
+
+Fusce consectetuer. Proin pede. Vestibulum vitae ligula vel leo pulvinar molestie. Etiam rutrum, odio eget lobortis mattis, dolor quam vestibulum neque, ac viverra mi ligula eu purus. Praesent eu libero. Aenean libero. Nulla at mi. Integer at sapien at ligula tristique ultrices. Phasellus augue nulla, volutpat in, pulvinar id, fringilla et, libero. Mauris eu enim et dui lobortis convallis. Donec semper varius leo. Cras id metus. Suspendisse volutpat, nunc a laoreet auctor, est urna pellentesque urna, quis euismod nunc dui at felis.
+
+\end{document}

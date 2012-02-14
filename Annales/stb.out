@@ -1,0 +1,54 @@
+\BOOKMARK [1][-]{section.2}{Axes d'am\351lioration}{}
+\BOOKMARK [2][-]{subsection.3}{Axes de progr\350s retenus}{section.2}
+\BOOKMARK [3][-]{subsubsection.4}{Am\351liorer la disponibilit\351 des sites isol\351s}{subsection.3}
+\BOOKMARK [3][-]{subsubsection.5}{Am\351liorer la maintenance}{subsection.3}
+\BOOKMARK [3][-]{subsubsection.6}{Am\351liorer la logistique}{subsection.3}
+\BOOKMARK [2][-]{subsection.7}{Axes de progr\350s marginaux}{section.2}
+\BOOKMARK [3][-]{subsubsection.8}{Mettre en place un suivi et un archivage}{subsection.7}
+\BOOKMARK [1][-]{section.9}{Architecture g\351n\351rale de la solution}{}
+\BOOKMARK [1][-]{section.11}{Description des exigences fonctionnelles}{}
+\BOOKMARK [2][-]{subsection.12}{Syst\350me central}{section.11}
+\BOOKMARK [2][-]{subsection.13}{Poste de gestion}{section.11}
+\BOOKMARK [2][-]{subsection.14}{Syst\350me de l'intervenant}{section.11}
+\BOOKMARK [2][-]{subsection.15}{Syst\350me de communication}{section.11}
+\BOOKMARK [2][-]{subsection.16}{Site isol\351}{section.11}
+\BOOKMARK [2][-]{subsection.18}{Alimentation \351nerg\351tique}{section.11}
+\BOOKMARK [1][-]{section.19}{Description des exigences non fonctionnelles du futur syst\350me}{}
+\BOOKMARK [2][-]{subsection.20}{Syst\350me central}{section.19}
+\BOOKMARK [3][-]{subsubsection.21}{P\351rennit\351}{subsection.20}
+\BOOKMARK [3][-]{subsubsection.22}{Fiabilit\351}{subsection.20}
+\BOOKMARK [3][-]{subsubsection.23}{Interop\351rabilit\351}{subsection.20}
+\BOOKMARK [3][-]{subsubsection.24}{Puissance}{subsection.20}
+\BOOKMARK [2][-]{subsection.25}{Poste de gestion}{section.19}
+\BOOKMARK [3][-]{subsubsection.26}{Simplicit\351}{subsection.25}
+\BOOKMARK [3][-]{subsubsection.27}{Compatibilit\351}{subsection.25}
+\BOOKMARK [2][-]{subsection.28}{Syst\350me de l'intervenant}{section.19}
+\BOOKMARK [3][-]{subsubsection.29}{Simplicit\351}{subsection.28}
+\BOOKMARK [3][-]{subsubsection.30}{Rapidit\351 de programmation}{subsection.28}
+\BOOKMARK [3][-]{subsubsection.31}{Compatibilit\351}{subsection.28}
+\BOOKMARK [2][-]{subsection.32}{Syst\350me de communication}{section.19}
+\BOOKMARK [3][-]{subsubsection.33}{Disponibilit\351}{subsection.32}
+\BOOKMARK [3][-]{subsubsection.34}{Fiabilit\351 du transfert}{subsection.32}
+\BOOKMARK [3][-]{subsubsection.35}{Autonomie}{subsection.32}
+\BOOKMARK [3][-]{subsubsection.36}{Robustesse}{subsection.32}
+\BOOKMARK [2][-]{subsection.37}{Site isol\351}{section.19}
+\BOOKMARK [3][-]{subsubsection.38}{Robustesse au milieu}{subsection.37}
+\BOOKMARK [3][-]{subsubsection.39}{Autonomie}{subsection.37}
+\BOOKMARK [3][-]{subsubsection.40}{\311conomie d'\351nergie}{subsection.37}
+\BOOKMARK [3][-]{subsubsection.41}{Fiabilit\351}{subsection.37}
+\BOOKMARK [3][-]{subsubsection.42}{Fiabilit\351 et pr\351cision des mesures}{subsection.37}
+\BOOKMARK [3][-]{subsubsection.43}{Flexibilit\351 du positionnement}{subsection.37}
+\BOOKMARK [3][-]{subsubsection.44}{Miniaturisation}{subsection.37}
+\BOOKMARK [3][-]{subsubsection.45}{Logiciels adapt\351s}{subsection.37}
+\BOOKMARK [2][-]{subsection.46}{Alimentation \351nerg\351tique}{section.19}
+\BOOKMARK [3][-]{subsubsection.47}{Autonome}{subsection.46}
+\BOOKMARK [3][-]{subsubsection.48}{Maintenabilit\351}{subsection.46}
+\BOOKMARK [3][-]{subsubsection.49}{Robuste}{subsection.46}
+\BOOKMARK [1][-]{section.50}{Impacts de la nouvelle solution sur le syst\350me}{}
+\BOOKMARK [2][-]{subsection.51}{Axes principaux}{section.50}
+\BOOKMARK [3][-]{subsubsection.52}{Am\351liorer la maintenance}{subsection.51}
+\BOOKMARK [3][-]{subsubsection.53}{Am\351liorer la disponibilit\351 des sites isol\351s}{subsection.51}
+\BOOKMARK [3][-]{subsubsection.54}{Am\351liorer la logistique}{subsection.51}
+\BOOKMARK [2][-]{subsection.55}{Axes secondaires}{section.50}
+\BOOKMARK [3][-]{subsubsection.56}{Mettre en place un suivi et un archivage}{subsection.55}
+\BOOKMARK [1][-]{section.57}{Bilan des am\351liorations}{}

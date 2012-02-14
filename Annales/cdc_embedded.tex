@@ -1,0 +1,309 @@
+\documentclass[a4paper, 11pt, final]{article}
+
+\usepackage[utf8]{inputenc} % Texte en utf-8
+\usepackage{aeguill}
+\usepackage[francais]{babel} % Typographie française
+\usepackage[pdftex, hypertexnames=false, colorlinks=true, final]{hyperref}
+\usepackage[final]{graphicx}
+\usepackage{url} % Gestion des URLs
+\usepackage{placeins} % Meilleur placement des images et tableaux
+\usepackage{geometry}
+\usepackage{fancyhdr}
+%\usepackage[Lenny]{fncychap}
+
+% Marges à gauche et à droite de 3cm
+\geometry{margin=3cm}
+
+% Utilisation des headers et footers personnalisés de fancyhdr
+\pagestyle{fancy}
+
+% Images dans le dossier ./images/
+\graphicspath{{./images/}}
+
+% Gestion des métadonnées étranges à rendre visibles au rendu
+\newcommand\docname{CDCSEv1.1}
+\newcommand\docauthor{Pierre-Yves David}
+\newcommand\docstatus{LIVRABLE} % EN COURS, ATTENTE, VALIDE ou LIVRABLE
+
+% Numérotation mieux ; pour l'instant, on garde le défaut
+% \renewcommand\thechapter{\Alph{chapter}}
+% \renewcommand\thesection{\Roman{section}}
+% \renewcommand\thesubsection{\arabic{subsection}}
+% \renewcommand\thesubsubsection{\alph{subsubsection}}
+
+% Format de citation de références standard, marche avec quasiment tout
+\newcommand\fullref[1]{\ref{#1}, page \pageref{#1}}
+
+% En-têtes et pieds de page
+\lhead{\docname}
+\rhead{}
+\lfoot{Auteur : H4213}
+\cfoot{}
+\rfoot{\thepage}
+
+% Titre du document maître
+\title{\textbf{COPEVUE}\\
+\rule{\textwidth}{1pt}{}\\
+\Huge{\textsc{Cahier des charges \\ Système embarqué}}}
+\author{\docauthor{} (H4213)}
+\date{\docname{} --- \today{} (\docstatus{})}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\section{Introduction}
+
+\subsection{Rappel du contexte}
+
+
+Il existe aujourd'hui de nombreux sites isolés et/ou difficiles d'accès qui nécessitent une surveillance et parfois des actions à distance. Ces sites se situent dans des espaces très différents tels que les citernes placées dans les forêts escarpées du pourtour méditerranéen, les réservoirs utilisés pour l'autonomie des chantiers dans le grand Nord mais aussi les personnes âgées qui se retrouvent souvent isolées.
+
+Actuellement tous les contrôles et actions sont réalisés par un opérateur qui doit se déplacer sur le site. Il n'y a donc que très peu de réactivité, on ne peut effectuer un suivi fin des évolutions et des problèmes graves -- par exemple la fuite d'un réservoir -- ne peuvent pas être traités rapidement.
+
+\paragraph{Étude COPEVUE}
+L'objet de l'étude est la mise en place d'un système générique de surveillance et d'action à distance sur des sites isolés. Le système devra être évolutif, autonome et fiable.
+
+
+\subsection{Présentation du document}
+Ce document présente le cahier des charges du système embarqué au niveau des sites distants. 
+
+Ce système va assurer la surveillance et la maintenance de base des sites distants. Il sera également en communication avec les autres acteurs du système~-- système central, poste de gestion, intervenant~-- pour leur transmettre la valeur de ses capteurs et leur permettre de déclencher des opérations de maintenance complexe.
+
+Dans le cadre du logiciel à développer, le cahier des charges sert de base à la rédaction des clauses contractuelles techniques, de qualité et de réception, à partir desquelles le réalisateur proposera les spécifications fonctionnelles et non fonctionnelles du futur logiciel. Ce sont les besoins logiciels.
+
+
+Nous exprimerons ces besoins en termes d'obligation de résultats, pas d'exigence de moyens. Ce document situe l'importance des fonctions du produit à développer pour l'application destinée au système de l'intervenant et donne leurs critères d'appréciation.
+
+
+\subsection{Documents applicables et de référence}
+\paragraph{Documents applicables}
+\begin{itemize}
+\item Dossier de gestion de la documentation
+\item Dossier de spécification technique des besoins
+\item Dossier de faisabilité
+\end{itemize}
+
+\paragraph{Documents de référence}
+\begin{itemize}
+\item Plan de référence d'un cahier des charges
+\end{itemize}
+
+
+\section{Présentation des besoins du logiciel}
+% Expression des besoins à satisfaire, but, principe du logiciel
+% besoins, exploitation et ergonomie, expérience
+% portée, développement, mise en oeuvre, organisation de la maintenance
+% limites
+
+
+
+\subsection{Objectifs du logiciel}
+Le logiciel que nous développons doit s'assurer de la gestion courante et gérer les pannes simples des site distants. Il permet aussi une manipulation directe du système par les autres acteurs du système.
+
+\subsubsection{Traitement des affaires courantes}
+La première fonction du système embarqué consiste à s'éveiller à intervalles réguliers pour récupérer les valeurs de son ou ses capteurs et mettre à jour les positions de son ou ses potentiels actionneurs. Toutes ces tâches simples permettront au site distant d'avoir un fonctionnement beaucoup plus autonome et adapté que lorsqu'un intervenant devait effectuer ces opérations lui-même.
+	
+	
+	
+\subsubsection{Gestion des imprévus}
+
+La détection des anomalies fait aussi partie du rôle du système embarqué. Les anomalies les moins graves devront être gérées automatiquement tandis que les plus problématiques seront simplement signalées à un intervenant humain \textit{via} le traitement du système central.
+
+\subsubsection{Communication avec l'extérieur}
+
+Le système embarqué a besoin d'interagir avec les autres acteurs du système. Pour cela, il doit être capable de gérer plusieurs connectiques et protocoles différents pour faire face au maximum de situations possibles.
+
+\subsubsection{Action extérieure}
+
+Les autres agents du système doivent pouvoir intervenir précisément sur le système afin de récupérer des valeurs de capteurs, contrôler les actionneurs ou modifier la configuration du système.
+
+\subsection{Légèreté}
+
+Le système embarqué doit être le plus léger possible, que ce soit en puissance de calcul ou en empreinte mémoire. Ainsi, on peut l'utiliser sur la configuration la plus modeste possible afin de limiter la consommation d'énergie.
+
+\subsection{Autonomie}
+
+Vu la difficulté d'accès des sites distants, il est primordial que le système embarqué soit le plus autonome possible et qu'il soit capable de gérer le maximum de situations sans intervention humaine. Les événements environnementaux et les erreurs logicielles devront avoir le moins de conséquences possibles sur le reste du système. Lorsqu'une intervention humaine est nécessaire, on s'efforcera de permettre sa réalisation à distance.
+
+
+
+\section{Exigences fonctionnelles}
+% fonctions, performances, facteurs de qualité
+
+\subsection{Lecture des capteurs sur réseau CAN}
+Le système doit pouvoir récupérer les valeurs des différents capteurs qui sont connectés.
+\subsection{Contrôle des actionneurs sur réseau CAN}
+Le système doit pouvoir modifier la position des différents actionneurs qui sont connectés.
+\subsection{Automatismes courants}
+Le système doit pouvoir décider des positions de certains actionneurs en fonction de la valeur de certains capteurs ou d'éléments temporels.
+\subsection{Support de la veille}
+Le système doit être capable de se mettre en veille à la fin de chaque phase de routine et de se réveiller dans un délai assez court de manière régulière où à la demande.
+
+
+\subsection{Détection des anomalies}
+Des variations anormales des valeurs de capteur doivent être définies et détectées par le système embarqué, lorsque la résolution est possible sans intervention humaine. L'arrêt imprévu de certains systèmes doit aussi être détecté et signalé.
+\subsection{Gestion des anomalies}
+Les protocoles de gestion des anomalies simples doivent être définis et appliqués.
+
+
+
+\subsection{Gestion d'une connexion GPRS}
+Le système doit être capable de piloter une carte GPRS afin de se connecter au réseau de communication global.
+\subsection{Gestion du positionnement GPS}
+Le système doit être capable de piloter une carte GPS afin d'acquérir sa position. Même si dans le cas de la Norvège ce module n'est pas nécessaire, il doit néanmoins être prévu dans le système embarqué.
+\subsection{Gestion d'une connexion USB}
+Le système doit être capable de piloter une carte USB afin de se connecter au système de l'intervenant en cas de problèmes avec la connexion principale.
+\subsection{Transmission de données}
+Le système doit être capable de gérer les protocoles utilisés pour la communication avec les autres acteurs \emph{via} les connectiques principales et de secours ~-- détaillées ci-dessus. Le système doit être capable d'initier une connexion TCP/IP et d'envoyer des messages au serveur \emph{via} le protocole SMTP.
+
+\subsection{Serveur SSH}
+Le système embarqué doit offrir la possibilité de se connecter \emph{via} le protocole SSH aux autres acteurs du système général.
+\subsection{Outils de configuration}
+Une fois cette connexion établie, les acteurs du système doivent disposer d'outils permettant de modifier la configuration du système et de définir les règles de gestion d'anomalies et d'automatismes courants.
+	
+\subsection{Outils de consultation et contrôle}
+Cette même connexion doit permettre de récupérer les valeurs des capteurs lues par le système et de contrôler les actionneurs du site distant.
+	
+	
+
+
+
+
+
+\section{Exigences non fonctionnelles}
+% sûreté, faisabilité, planning, organisation, interfaces
+% == contraintes non fonctionnelles
+
+\subsection{Légèreté}
+Le système embarqué doit être le plus léger possible, que ce soit en puissance de calcul ou en empreinte mémoire. Ainsi, on peut l'utiliser sur la configuration la plus modeste possible afin de limiter la consommation d'énergie.
+
+\subsection{Fiabilité}
+Les bibliothèques et logiciels utilisés devront être sélectionnés selon leur stabilité afin de garantir une grande fiabilité en fonctionnement. Les différentes sections du système devront être suffisamment isolées les unes des autres pour que la défaillance de l'une d'elles perturbe au minimum le fonctionnement des autres.
+		
+\subsubsection{Modularité}
+Afin de réaliser les deux points ci-dessus, le système devra être le plus modulaire possible afin de garantir :
+\begin{itemize}
+\item La possibilité de supprimer toute section de code inutile pour un site distant~-- localisation GPRS, contrôle d'actionneurs pour les sites uniquement munis de capteurs, etc.
+\item L'indépendance des différents modules et donc la limitation des conséquences d'une défaillance d'un module.
+\item L'ajout simple de nouvelles fonctionnalités.
+\end{itemize}
+
+\subsection{Performances}
+Le système n'a pas de contraintes de performances particulièrement rigides. La grande quantité d'entrées/sorties effectuée permet de se passer d'un ordonnancement préemptif.
+
+\subsubsection{Portabilité}
+Afin de pouvoir aisément choisir le matériel le plus économe en énergie par rapport au besoins de puissance réelle de l'application, on s'efforcera d'avoir une application portable sur le maximum d'architectures de microprocesseurs embarqués.
+	
+\subsection{Sécurité}
+Les données devront être cryptées pour garantir la confidentialité des données~-- ce point peut sembler peu utile pour la Norvège mais prend tout son sens pour les informations médicales concernant des personnes âgées. De plus, on veillera à fournir des systèmes d'authentification fiables lors de toute communication grâce à l'algorithme RSA.
+\subsection{Normalisation}
+
+Le choix de bibliothèques et de logiciels respectant scrupuleusement les spécifications des protocoles utilisés est un élément-clef de la fiabilité des communications. On se référera particulièrement à :
+\begin{description}
+\item[RFC 793] pour TCP
+\item[RFC 821] pour SMTP
+\item[RFC 4251] pour SSH
+\end{description}
+
+\section{Analyse des exigences}
+% tableaux avec la liste des exigences confrontées à l'importance et à la faisabilité
+
+\subsection{Critères d'analyse}
+Chacune des exigences fonctionnelles et non fonctionnelles est analysée et évaluée selon deux critères : sa nécessité et sa difficulté d'implémentation. Il lui est attribué deux notes sur 10, 0 signifiant par exemple la faisablité la plus basse et 10 l'importance la plus haute.
+
+\subsection{Analyse des exigences fonctionnelles}
+
+\paragraph{}
+\begin{figure}[h!]
+\begin{center}
+\begin{tabular}{|r|c|c|}
+\hline
+Fonction & Nécessité & Difficulté d'implémentation\\ \hline \hline
+Lecture des capteurs	& 9 & 3\\ \hline
+Contrôle des actionneurs & 9 & 3\\ \hline
+Automatismes courants & 6 & 8\\ \hline
+\hline
+Détection des anomalies & 9 & 5\\ \hline
+Gestion des anomalies & 6 & 8\\ \hline
+\hline
+Gestion d'une connexion GPRS & 7 & 6\\ \hline
+Gestion du positionnement GPS & 5 & 8\\ \hline
+Gestion d'une connexion USB & 7 & 7\\ \hline
+Transmission de données & 9 & 4\\ \hline
+\hline
+
+Serveur SSH & 8 & 5\\ \hline
+Outils de configuration & 6 & 7\\ \hline
+Outils de consultation et contrôle & 8 & 2\\ \hline
+\end{tabular}
+\end{center}
+\caption{Grille d'analyse des exigences fonctionnelles}
+\end{figure}
+\FloatBarrier
+
+\pagebreak
+
+\subsection{Analyse des exigences non fonctionnelles}
+
+\paragraph{}
+\begin{figure}[h!]
+\begin{center}
+\begin{tabular}{|r|c|c|}
+\hline
+Fonction & Nécessité & Difficulté d'implémentation\\ \hline \hline
+Légèreté & 8 & 6\\ \hline
+Fiabilité & 8 & 5\\ \hline
+Modularité & 6 & 4\\ \hline
+Performances & 3 & 6\\ \hline
+Portabilité & 5 & 8\\ \hline
+Sécurité & 8 & 6\\ \hline
+Normalisation & 7 & 6\\ \hline
+\end{tabular}
+\end{center}
+\caption{Grille d'analyse des exigences non fonctionnelles}
+\end{figure}
+\FloatBarrier
+
+
+\section{Mise en œuvre}
+
+\subsection{Faisabilité}
+À la vue des analyses des exigences fonctionnelles et non fonctionnelles, en prenant en compte l'existant logiciel satisfaisant ou se rapprochant de nos contraintes de contexte, la faisabilité du logiciel pilotant le système de l'intervenant est approuvée.
+
+\subsection{Configuration cible}
+
+\subsubsection{Matériel} % se passe sux un peu
+Le système embarqué est destiné à une configuration modeste composée idéalement d'un processeur ARM à faible fréquence monté sur une carte mère capable de gérer l'énergie de ses composants en veille et se réveiller régulièrement, sur demande ou après un coupure de courant. La mémoire morte sera assurée par une disque à mémoire \emph{flash} de faible capacité pour limiter les risques de défaillance. La mémoire vive ne devrait pas dépasser quelque dizaines de mégaoctets.
+
+\subsubsection{Connectique}
+Les sites distants disposeront des connectiques suivantes :
+\begin{description}
+\item[une connectique USB] pour une liaison filaire de secours avec les intervenants
+\item[une connectique GPS] pour suivre la position du système si celui-ci est mobile~-- ce module est absent du système norvégien
+\item[une connectique GSM/GPRS] pour la connectique sans fil directe avec le serveur central
+\end{description}
+
+\subsection{Planning}
+Le planning de développement de notre application est donné ci-après. Il est prévisionnel et ne prend pas en compte les phases de déploiement ni celles de formation des techniciens. Ce planning est donné à titre indicatif dans un souci d'intégration au système global, il n'est pas à prendre comme contrainte de développement~-- notamment dans le cas d'une réponse à une appel d'offre.
+
+\begin{figure}[h!]
+\begin{center}
+\begin{tabular}{|p{9cm}|c|}
+\hline
+Phase & Durée prévisionnelle\\ \hline \hline
+Développement des modules & 5 mois\\ \hline
+Intégration des modules et test en simulation & 5 mois\\ \hline
+Tests sur matériel réel et retour d'expériences & 4 mois\\ \hline
+Finalisation, éventuellement reprise de code posant des erreurs ou modification logiciel dans un souci d'améliorer l'ergonomie, le retour d'expérience nous indiquant les lacunes à combler & 2 mois\\ \hline
+Total & 16 mois\\ \hline
+\end{tabular}
+\end{center}
+\caption{Planning prévisionnel de livraison du logiciel à destination du système embarqué}
+\end{figure}
+
+
+
+\end{document}

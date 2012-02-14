@@ -1,0 +1,190 @@
+% PAQP
+% Version 1.1
+
+% Historique des versions
+% 27/01/08 1.0 Création et remplissage (Mikado)
+% 30/01/08 1.1 Fin du draft (Mikado)
+
+\renewcommand\docname{PAQPv1.1 (DRAFT)}
+\renewcommand\docauthor{Fabrice GABOLDE}
+\renewcommand\docstatus{EN COURS (DRAFT)}
+\part{Plan d'assurance qualité projet}
+
+\chapter{Introduction}
+
+\section*{Document \docname{}}
+
+Auteur : \docauthor{}
+
+Etat : \docstatus{}
+
+\section{Présentation du projet}
+
+Il existe aujourd'hui de nombreux sites isolés et/ou difficiles d'accès qui nécessitent une surveillance et parfois des actions à distance. Ces sites se situent dans des espaces très différents tels que les citernes placées dans les forêts escarpées du pourtour méditerranéen, les réservoirs utilisés pour l'autonomie des chantiers dans le grand Nord mais aussi les personnes âgées qui se retrouvent souvent isolées.
+
+Actuellement tous les contrôles et actions sont réalisés par un opérateur qui doit se déplacer sur le site. Il n'y a donc que très peu de réactivité, on ne peut pas avoir un suivi fin des évolutions et des problèmes graves (par exemple la fuite d'un réservoir) ne peuvent pas être traités rapidement.
+
+\paragraph{Etude COPEVUE}
+L'objet de l'étude est la mise en place d'un système générique de surveillance et d'action à distance sur des sites isolés. Le système devra être évolutif, autonome et fiable.
+
+\section{Présentation du document}
+
+Ce document (Plan d'assurance qualité projet) couvre toute la conception du système d'un point de vue qualité, jusqu'à la réception par le client.
+
+\subsection{Objectifs}
+
+Voici les objectifs de ce document :
+\begin{itemize}
+\item Présenter l'organisation humaine du comité de pilotage
+\item Présenter la démarche de qualité au niveau du processus
+\item Rappeler les règles de documentation
+\item Présenter la gestion de la configuration
+\item Présenter les outils et méthodes à utiliser
+\item Proposer une méthode de suivi de l'application du Plan Qualité
+\end{itemize}
+
+\section{Documents applicables et de référence}
+
+\subsection{Documents applicables}
+
+\begin{itemize}
+\item Dossier de gestion de la documentation (DGD)
+\end{itemize}
+
+\subsection{Documents de référence}
+
+Aucun.
+
+\chapter{Organisation humaine du comité de pilotage du projet}
+
+\section{Rôle des différents intervenants}
+
+\subsection{Maîtrise d'\oe uvre : Chef de projet}
+
+Le chef de projet anime l'équipe et les séances de travail. Il a une vue d'ensemble du projet et de ces objectifs et il planifie le déroulement de l'étude.
+
+\subsection{Maîtrise d'\oe uvre : Responsable Qualité}
+
+Le responsable qualité épaule le chef de projet dans son travail en définissant l'environnement de qualité dans lequel le projet doit se dérouler.
+
+\subsection{Maîtrise d'\oe uvre : Groupe d'Études en Informatique}
+
+Les experts du GEI sont chargés de l'étude technique du projet.
+
+\section{Relations entre les intervenants}
+
+\begin{figure}[!htp]
+\begin{center}
+\includegraphics[width=0.45\textwidth]{qualite_paqp_relations_intervenants_moe.png}
+\caption{Relations entre les intervenants}
+\label{figure:paqp_relations_intervenants}
+\end{center}
+\end{figure}
+
+\chapter{Qualité au niveau du processus}
+
+\section{Présentation de la démarche de développement au niveau Projet}
+
+Cycle de développement :
+\begin{itemize}
+\item Etude préalable
+\item Etude détaillée
+\item Etude technique
+\item Réalisation
+\item Mise en \oe uvre.
+\end{itemize}
+
+\section{Règles de qualité pour l'ingénierie concurrente}
+
+Utilisation des normes par ordre croissant de priorité :
+\label{list:normes}
+\begin{itemize}
+\item Langage (guides de style propres aux langages utilisés)
+\item Outils de développement (suivi des normes imposées ou admises pour le processus de développement usuel avec les outils utilisés)
+\item Formalismes utilisés par la méthode de développement suivie
+\item Normes générales COPEVUE
+\end{itemize}
+
+Utilisation des techniques habituelles de développement concurrent (éditeurs collaboratifs ou systèmes de suivi de versions, etc.).
+
+Respect des normes de la gestion de documentation : voir le chapitre \fullref{chapter:documentation} et le DGD en partie \fullref{part:dgd}.
+
+Respect des procédures de gestion des modifications (chapitre \fullref{chapter:mods}), et d'un point de vue général, des normes habituellement utilisées par COPEVUE.
+
+\chapter{Documentation}
+
+\label{chapter:documentation}
+
+Voir le DGD, partie \fullref{part:dgd}, pour le détail des règles utilisées pour la gestion de la documentation.
+
+\chapter{Gestion de configuration}
+
+\section{Découpage en éléments de configuration logicielle}
+
+On se réfèrera pour cette partie à l'ensemble des cahiers des charges (voir les documents correspondants). Utilisation de modules indépendants mais intercommunicants : API unifiée.
+
+\section{Conventions d'identification}
+
+\section{Procédures d'identification des éléments de configuration}
+
+\section{Gestion des ressources partagées}
+
+Adoption du même système que pour l'élaboration des dossiers précédents : système de gestion de versions (SVN), accès à distance au serveur commun (SSH), etc.
+
+\chapter{Gestion des modifications}
+
+\label{chapter:mods}
+
+\section{Origines des modifications}
+
+Traiter en particulier les modifications provenant du client, puis celles provenant des autres services de COPEVUE et les requêtes des éventuels sous-traitants.
+
+\section{Procédures et organisation des modifications}
+
+Pour les modifications émanant du client : étudier la faisabilité tant que le projet n'a pas dépassé un certain degré d'avancement, les mettre en place si possible, faire remonter l'information à tous les services concernés ; si trop tard ou modifie trop de volume de développement, refuser la modification (les dossiers techniques ayant déjà été validés).
+
+\chapter{Méthodes et outils}
+
+\section{Méthodes}
+
+Méthodes usuelles du développement concurrent en ingénierie. UML, etc.
+
+\section{Outils}
+
+\section{Normes}
+
+Voir la liste en section \fullref{list:normes}.
+
+\chapter{Contrôle des fournisseurs}
+
+\section{Exigences vis à vis des sous-traitants}
+
+Contrat qualité défini grâce à la charte qualité de COPEVUE et aux engagements des sous-traitants.
+
+\section{Logiciels achetés, loués ou imposés}
+
+\chapter{Copie, protection et livraison}
+
+\section{Précautions à prendre lors de la copie}
+
+Assurer une qualité maximale et une perte de données minimales lors de la copie. Ne fournir à l'extérieur que des copies zéro-défaut : calcul de hachages pour comparer à une copie maître.
+
+\section{Précautions relatives au stockage des logiciels}
+
+Attention au stockage sur médium externe (CD, etc.) : corruption des matériaux. Stockage sur serveurs : doublons (éviter pertes de données), mais protégés, avec si possible une copie offline (éviter fuites\ldots).
+
+\section{Modalités de livraison}
+
+\chapter{Suivi de l'application du Plan Qualité}
+
+\section{Responsabilités}
+
+\section{Techniques de vérification}
+
+\begin{itemize}
+\item Evidemment, auto-contrôle, relecture, etc.
+\item Lectures croisées
+\item Inspections
+\item Revues, audits ?
+\item Qualimétrie précise
+\end{itemize}

@@ -1,0 +1,24 @@
+\BOOKMARK [1][-]{section.2}{Introduction}{}
+\BOOKMARK [2][-]{subsection.3}{Pr\351sentation du projet}{section.2}
+\BOOKMARK [2][-]{subsection.5}{Pr\351sentation du document}{section.2}
+\BOOKMARK [3][-]{subsubsection.6}{Objectifs}{subsection.5}
+\BOOKMARK [2][-]{subsection.7}{Documents applicables et de r\351f\351rence}{section.2}
+\BOOKMARK [3][-]{subsubsection.8}{Documents applicables}{subsection.7}
+\BOOKMARK [3][-]{subsubsection.9}{Documents de r\351f\351rence}{subsection.7}
+\BOOKMARK [1][-]{section.10}{R\350gles de conception}{}
+\BOOKMARK [2][-]{subsection.11}{Architecture g\351n\351rale}{section.10}
+\BOOKMARK [2][-]{subsection.13}{R\351partition des t\342ches}{section.10}
+\BOOKMARK [1][-]{section.15}{R\351seaux et connectiques}{}
+\BOOKMARK [2][-]{subsection.16}{R\351seau principal}{section.15}
+\BOOKMARK [2][-]{subsection.19}{Localisation}{section.15}
+\BOOKMARK [2][-]{subsection.20}{Connectique de secours}{section.15}
+\BOOKMARK [1][-]{section.21}{Donn\351es et stockage}{}
+\BOOKMARK [1][-]{section.25}{Architecture informatique}{}
+\BOOKMARK [2][-]{subsection.26}{Architecture mat\351rielle}{section.25}
+\BOOKMARK [2][-]{subsection.31}{Architecture logicielle}{section.25}
+\BOOKMARK [1][-]{section.34}{S\351curit\351}{}
+\BOOKMARK [2][-]{subsection.35}{Sites}{section.34}
+\BOOKMARK [2][-]{subsection.38}{R\351seaux}{section.34}
+\BOOKMARK [1][-]{section.43}{D\351marrages et arr\352ts, gestion des erreurs}{}
+\BOOKMARK [2][-]{subsection.44}{D\351marrages et arr\352ts des diff\351rentes parties du syst\350me}{section.43}
+\BOOKMARK [2][-]{subsection.45}{Gestion des erreurs et des indisponibilit\351s}{section.43}

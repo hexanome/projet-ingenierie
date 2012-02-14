@@ -1,0 +1,318 @@
+% Cahier des charges - Système central
+% Version 1.1
+
+% Historique des versions
+% 27/01/08 1.0 Version initiale
+% 03/02/08 1.1 Version relue et corrigée
+
+\documentclass[a4paper, 11pt, final]{article}
+
+\usepackage[utf8]{inputenc} % Texte en utf-8
+\usepackage{aeguill} % Coupure des mots accentués
+\usepackage[francais]{babel} % Typographie française
+\usepackage[pdftex, hypertexnames=false, colorlinks=true, final]{hyperref}
+\usepackage[final]{graphicx}
+\usepackage{url} % Gestion des URLs
+\usepackage{placeins} % Meilleur placement des images et tableaux
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage[Lenny]{fncychap}
+\usepackage{nicefrac}% pour le caractère 1/2
+
+% Marges à gauche et à droite de 3cm
+\geometry{margin=3cm}
+
+% Utilisation des headers et footers personnalisés de fancyhdr
+\pagestyle{fancy}
+
+% Images dans le dossier ./images/
+\graphicspath{{./images/}}
+
+% Gestion des métadonnées étranges à rendre visibles au rendu
+\newcommand\docname{CDCSCv1.1}
+\newcommand\docauthor{Rémi Thévenoux}
+\newcommand\docstatus{LIVRABLE} % EN COURS, ATTENTE, VALIDE ou LIVRABLE
+
+% Format de citation de références standard, marche avec quasiment tout
+\newcommand\fullref[1]{\ref{#1}, page \pageref{#1}}
+
+% En-têtes et pieds de page
+\lhead{\docname}
+\rhead{}
+\lfoot{Auteur : H4213}
+\cfoot{}
+\rfoot{\thepage}
+
+% Titre du document maître
+\title{\textbf{COPEVUE}\\
+\rule{\textwidth}{1pt}{}\\
+\Huge{\textsc{Cahier des charges\\Logiciel du système central}}}
+\author{\docauthor{} (H4213)}
+
+
+\date{\docname{} --- \today{} (\docstatus{})}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\pagebreak
+
+\section{Introduction}
+
+\section{Présentation du projet}
+
+\subsection{Rappel du contexte}
+Il existe aujourd'hui de nombreux sites isolés et/ou difficiles d'accès qui nécessitent
+une surveillance et parfois des actions à distance. Ces sites se situent dans des espaces
+très différents tels que les citernes placées dans les forêts escarpées du pourtour
+méditerranéen, les réservoirs utilisés pour l'autonomie des chantiers dans le grand Nord
+mais aussi les personnes âgées qui se retrouvent souvent isolées.
+
+Actuellement tous les contrôles et actions sont réalisés par un opérateur qui doit
+se déplacer sur le site. Il n'y a donc que très peu de réactivité, on ne peut pas
+avoir un suivi fin des évolutions et des problèmes graves -- par exemple la fuite
+d'un réservoir -- ne peuvent pas être traités rapidement.
+
+\paragraph{Étude COPEVUE}
+L'objet de l'étude est la mise en place d'un système générique de surveillance
+et d'action à distance sur des sites isolés. Le système devra être évolutif, autonome et fiable.
+
+\subsection{Présentation du document}
+Ce document présente le cahier des charges du logiciel du système central.
+Le système central est décomposé en différentes couches, le logiciel présenté dans
+le document est la couche la plus basse qui permet d'envoyer et de se connecter aux
+sites pour récupérer les données, paramétrer le site et utiliser les actionneurs.
+
+Dans le cadre du logiciel à développer, le cahier des charges sert de base à la
+ rédaction des clauses contractuelles techniques, de qualité et de réception,
+à partir desquelles le réalisateur proposera les spécifications fonctionnelles
+et non fonctionnelles du futur logiciel. Ce sont les besoins logiciels.
+
+Nous exprimerons ces besoins en termes d'obligation de résultats, pas d'exigence de moyens.
+Ce document situe l'importance des fonctions du produit à développer pour l'application
+destinée au système central et donne leurs critères d'appréciation.
+
+\subsection{Documents applicables et de référence}
+\paragraph{Documents applicables}
+\begin{itemize}
+\item Dossier de gestion de la documentation
+\item Dossier de spécification technique des besoins
+\item Dossier de faisabilité
+\end{itemize}
+
+\paragraph{Documents de référence}
+\begin{itemize}
+\item Plan de référence d'un cahier des charges
+\end{itemize}
+
+\section{Présentation des besoins du logiciel}
+% Expression des besoins à satisfaire, but, principe du logiciel
+% besoins, exploitation et ergonomie, expérience
+% portée, développement, mise en oeuvre, organisation de la maintenance
+% limites
+
+\subsection{Objectifs du logiciel}
+% à quel niveau intervient notre logiciel
+% qui s'en sert et pour quel intérêt
+% principe du logiciel, pourquoi + ergonomie
+
+Ce logiciel sera installé sur le système central. Il est autonome et ne nécessite aucune
+intervention humaine pendant sa phase de fonctionnement normal.
+Son rôle principal est de récupérer les données issues des sites isolés et de les stocker.
+Ce logiciel fournit ainsi des services utilisables par d'autres applications pour qu'elles
+puissent lire des capteurs et utiliser des actionneurs automatiquement.
+Ces applications sont spécifiques au cas d'utilisation de l'ensemble du système.
+Ainsi, dans le cas des réservoirs en Norvège, on prévoira une application permettant
+de gérer des itinéraires pour les intervenants.
+
+\subsubsection{Collecter les données}
+Afin de récupérer les données sur les sites isolés, la première tâche du logiciel est de régulièrement
+réveiller les sites isolés pour qu'ils communiquent les valeurs de leurs capteurs, l'état du site,
+l'historique des opérations et toutes les autres informations nécessaires.
+Le logiciel stockera alors les données dans des fichiers XML en suivant la description de
+fichiers donnée par les DTD. Un fichier XML décrira quelles sont les données à récupérer sur chaque
+site et quel fichier DTD doit être utilisé pour les stocker.
+
+\subsubsection{Gérer l'authentification}
+Le logiciel devra fournir un service d'authentification afin de sécuriser l'ensemble du processus.
+
+
+\subsubsection{Fournir les services}
+Le logiciel devra fournir les services permettant aux applicatifs spécifiques d'interagir
+avec les sites distants.
+
+%Les services à fournir sont les suivants :
+%\begin{description}
+%\item [long lecture(siteId leSiteIsolé, capteurId leCapteur)] :
+%Service qui permet de lire la valeur d'un capteur situé sur un site isolé.
+%La valeur du capteur sera transféré avec un long (8 octets).
+%\item [int actionner(siteId leSiteIsolé, actionneurId lActionneur, long laConsigne)] : 
+%Ce service permet d'utiliser un actionneur, la consigne assigné à l'actionneur sera
+%codé sur un long (8 octets).Le service retourne un code d'erreur sur un entier (4 octets).
+%\item [int configurer(siteId leSiteIsolé, fichier leFichierdeConfig)] : 
+%Ce service permet la configuration d'un site isolé. Pour cela il prend en paramètre un fichier XML
+%de configuration qui décrit l'ensemble des valeurs et paramètre à configurer sur le site isolé.
+%Le service retourne un code d'erreur sur un entier (4 octets).
+%\end{description}
+
+\subsection{Contraintes liées au contexte}
+
+\subsubsection{Consultation des données}
+Les données récupérées des sites isolés devront être consultables dans le temps par les différents logiciels
+du serveur mais elles pourront aussi être analysées par d'autres processus. Il faut donc assurer la
+pérennité des données ainsi qu'un stockage sous un format brut facilement accessible à d'autres processus.
+
+\subsubsection{Sécurité des échanges}
+Le transit des données entre les différents systèmes doit être sécurisé afin d'éviter des intrusions extérieures
+sur le système. Les moyens de communication, et notamment les protocoles, devront être choisis afin de satisfaire
+ce besoin.
+
+\section{Exigences fonctionnelles}
+% fonctions, performances, facteurs de qualité
+
+\subsection{Établir une connexion SSH avec un site isolé}
+Le logiciel doit être capable de connecter le serveur central au site isolé \emph{via}
+une connexion SSH. Pour cela, il devra premièrement réveiller le site distant si nécessaire,
+puis établir un connexion avec celui-ci.
+
+\subsection{Récupération automatique des données}
+Le logiciel doit pouvoir récupérer automatiquement les données nécessaires sur
+les sites distants à intervalles réguliers.
+Les données à récupérer ainsi que la périodicité du téléchargement doivent être paramétrables.
+
+\subsection{Stockage des données}
+Un fois que le logiciel a récupéré les données d'un site distant, il doit pouvoir mettre
+à jour les fichiers XML de sauvegarde stockant les données. Le contenu de ces fichiers
+devra être paramétrable~-- nombre de sites stockés dans le même fichier, couverture temporelle
+d'un fichier, etc.~-- ainsi que la structure qui sera stockée dans un schéma au format DTD.
+
+\subsection{Gérer l'authentification des intervenants}
+Le logiciel devra fournir des services d'authentification aux intervenants et aux
+applications utilisant cette couche. Il inclura une gestion des identifiants et des
+mots de passe et sauvegardera les traces d'identifications. 
+
+\subsection{Fournir les services d'interaction avec le site isolé}
+\subsubsection{Service de lecture d'une donnée d'un site isolé}
+Ce service prendra en paramètres l'identifiant d'un site isolé ainsi que l'identifiant
+d'un capteur et retournera la valeur du capteur.
+\subsubsection{Service d'utilisation d'un actionneur d'un site isolé}
+Ce service prendra en paramètres les identifiants d'un site isolé et d'un actionneur,
+ainsi qu'une consigne et appliquera la consigne sur l'actionneur.
+\subsubsection{Service de configuration d'un site isolé}
+Ce service a pour objectif de permettre la configuration d'un site isolé en fonction des données
+présentes dans un fichier de configuration au format XML. Il prendra donc en paramètres l'identifiant
+d'un site isolé ainsi qu'un fichier XML de configuration et configurera le site isolé en utilisant une
+connexion \emph{via} SSH.
+
+\section{Exigences non fonctionnelles}
+% sûreté, faisabilité, planning, organisation, interfaces
+% == contraintes non fonctionnelles
+
+\subsection{Configurabilité}
+L'ensemble des opérations doivent pouvoir être configurables, notamment par un poste distant.
+Pour cela il faudra stocker les paramétrages dans des fichiers directement modifiables par un
+acteurs se connectant avec le protocole SSH.
+
+\subsection{Interopérabilité des données}%pouah j'achète du terrain là un peu.
+Les données stockées sur le serveur devront être stockées dans un format le
+plus universel possible, qui maximise les compatibilités et permet une interopérabilité.
+De plus, le format retenu devra permettre des extensions et des traitements
+potentiellement complexes des données.
+
+\subsection{Pérennité des données}
+Il faut s'assurer que des moyens soient mis en place afin de pouvoir garantir l'accès aux
+données pendant plusieurs années. Notamment, se prémunir contre les risques de défaillance
+du matériel de stockage, ou des catastrophes pouvant affecter le site de stockage.
+
+\subsection{Sécurité}
+Les risques d'interception des communications ou d'intrusion dans le système sont relativement faibles,
+cependant nous devons assurer une certaine robustesse afin d'éviter les attaques les plus courantes.
+Pour cela, le logiciel devra permettre un haut niveau de sécurité, notamment lors des communications
+avec les systèmes extérieurs grâce à l'utilisation de protocoles cryptés fiables et une authentification centralisé.
+
+\section{Analyse des exigences}
+% tableaux avec la liste des exigences confrontées à l'importance et à la faisabilité
+
+\subsection{Critères d'analyse}
+Chacune des exigences fonctionnelles et non fonctionnelles est analysée et évaluée selon deux critères : sa nécessité et sa difficulté d'implémentation. Il lui est attribué deux notes sur 10, 0 signifiant par exemple la faisabilité la plus basse et 10 l'importance la plus haute.
+
+\subsection{Analyse des exigences fonctionnelles}
+\paragraph{}
+\begin{figure}[h!]
+\begin{center}
+\begin{tabular}{|r|c|c|}
+\hline
+Fonction & Nécessité & Difficulté d'implémentation\\ \hline \hline
+Établir une connexion SSH avec un site isolé & 8 & 6\\ \hline
+Récupération automatique des données & 8 & 5\\ \hline
+Stockage des données & 8 & 7\\ \hline
+Gérer l'authentification des intervenants & 6 & 7\\ \hline
+Service de lecture d'une donnée d'un site isolé & 5 & 4\\ \hline
+Service d'utilisation d'un actionneur d'un site isolé & 5 & 4\\ \hline
+Service de configuration d'un site isolé & 6 & 6\\ \hline
+\end{tabular}
+\end{center}
+\caption{Grille d'analyse des exigences fonctionnelles}
+\end{figure}
+\FloatBarrier
+
+\subsection{Analyse des exigences non fonctionnelles}
+\paragraph{}
+\begin{figure}[h!]
+\begin{center}
+\begin{tabular}{|r|c|c|}
+\hline
+Exigence & Nécessité & Difficulté d'implémentation\\ \hline \hline
+Configuration & 8 & 6\\ \hline
+Interopérabilité des données & 5 & 3\\ \hline
+Pérennité des données & 7 & 4\\ \hline
+Sécurité & 6 & 8\\ \hline
+\end{tabular}
+\end{center}
+\caption{Grille d'analyse des exigences non fonctionnelles}
+\end{figure}
+\FloatBarrier
+
+
+\section{Mise en œuvre}
+
+\subsection{Configuration cible}
+Le logiciel fonctionnera sur un serveur avec un système d'exploitation de type UNIX, certainement FreeBSD.
+Il possédera un processeur d'au moins 1 Ghz ainsi que 1Go de mémoire RAM.
+
+\subsection{Planning}
+
+Le planning de développement de notre application est donné ci-après. Il est prévisionnel et ne prend pas en compte les phases de déploiement et de formation des intervenants.
+
+\begin{figure}[h!]
+\begin{center}
+\begin{tabular}{|p{9cm}|c|}
+\hline
+Phase & Durée prévisionnelle\\ \hline \hline
+Développement et tests unitaires & 3 \nicefrac{1}{2} mois\\ \hline
+Tests en simulation et tests d'intégration & 2 mois \\ \hline
+Tests avec matériel et retour d'expériences & 1 \nicefrac{1}{2} mois\\ \hline
+Finalisation, éventuellement reprise de code posant des erreurs, le retour d'expérience nous indiquant les lacunes à combler & 1 mois\\ \hline
+Total & 8 mois\\ \hline
+\end{tabular}
+\end{center}
+\caption{Planning prévisionnel de livraison du logiciel à destination du système central}
+\end{figure}
+\FloatBarrier
+
+%\appendix
+
+% \section{Étude préalable}
+% étude de l'existant, contexte du logiciel dans la société du demandeur
+
+% rien
+
+%\section{Étude de faisabilité}
+%élaboration des solutions possibles
+% cf Étude de faisabilité}
+
+
+\end{document}
