@@ -1,12 +1,12 @@
 ﻿\section{Introduction}
 
-\subsection{Pr�sentation du projet}
-Le COPEVUE a lanc� un appel d'offre dans le cadre de la réalisation d'un système de monitoring de sites isolés. Il s'agit donc de concevoir en premier lieu une solution technique permettant de répondre au mieux aux exigences fonctionnelles et non fonctionnelles que le COPEVUE formule. De façon synthétique notre équipe va proposer une solution permettant de surveiller des sites naturels difficiles d'accès (souvent �  cause des conditions environnementales) et peu peuplés. Dans ces sites isolés sont souvent regroupés des postes de travail et ces zones doivent pouvoir être surveillées en dépit de la distance qui les sépare du bureau de contrôle.
-% On reprend ce qui a déj�  été fait dans les autres documents.
+\subsection{Présentation du projet}
+Le COPEVUE a lancé un appel d'offre dans le cadre de la réalisation d'un système de monitoring de sites isolés. Il s'agit donc de concevoir en premier lieu une solution technique permettant de répondre au mieux aux exigences fonctionnelles et non fonctionnelles que le COPEVUE formule. De façon synthétique notre équipe va proposer une solution permettant de surveiller des sites naturels difficiles d'accès (souvent à cause des conditions environnementales) et peu peuplés. Dans ces sites isolés sont souvent regroupés des postes de travail et ces zones doivent pouvoir être surveillées en dépit de la distance qui les sépare du bureau de contrôle.
+% On reprend ce qui a déjà été fait dans les autres documents.
 
 \subsection{Présentation du document}
 
-Ce dossier présentent les besoins nécessaires par rapport �  la solution d'acquisition des données des capteurs, et de la transmission de celles-ci avec la base de la station. Nous essayerons tout d'abord de voir quels sont les objectifs de cette solution technique, les utilisateurs concernés et les problèmes pouvant se présenter, autant dans son développement, sa mise en oeuvre, et enfin sa maintenance. Ce document est accompagné d'annexes permettant d'appronfondir certains sujets plus techniques sur lesquels nous n'avons pas voulu nous attarder dans un but de clarté.
+Ce dossier présentent les besoins nécessaires par rapport à la solution d'acquisition des données des capteurs, et de la transmission de celles-ci avec la base de la station. Nous essayerons tout d'abord de voir quels sont les objectifs de cette solution technique, les utilisateurs concernés et les problèmes pouvant se présenter, autant dans son développement, sa mise en oeuvre, et enfin sa maintenance. Ce document est accompagné d'annexes permettant d'appronfondir certains sujets plus techniques sur lesquels nous n'avons pas voulu nous attarder dans un but de clarté.
 
 \subsection{Documents applicables / Documents de référence}
 
@@ -14,7 +14,7 @@ Ce dossier présentent les besoins nécessaires par rapport �  la solution d'acq
 
 \subsection{Terminologie et abréviations}
 
-% A complêter au fur et �  mesure.
+% A complêter au fur et à mesure.
 \begin{itemize}
 \item Base (de la station) : système informatique équipé d'un OS linux permettant de communiquer avec les capteurs et le serveur central. La base peut aussi enregistrer quelques données et permet de configurer la plupart des éléments de la station.
 \item Mode sommeil : mode dans lequel le microcontroleur et le capteur ne consomme que très peu d'énergie. Aucune acquisition et aucun calcul ne doivent être fait pendant cette periode. Le micro-controleur attend d'être réveillé par un évenement materiel ou logiciel.
@@ -26,34 +26,34 @@ Ce dossier présentent les besoins nécessaires par rapport �  la solution d'acq
 
 Le logicel qui doit être implementé a deux fonctions:
 \begin{itemize}
-\item L'acquisition des données des capteurs �  un intervalle de temps définie préalablement,
-\item L'envoi de ses données �  la base de la station �  un intervalle de temps régulier. Pendant cette connexion, la configuration des capteurs par la base devra être possible. Ainsi, l'écart entre chaque acquisition ou transmission devra être parametrable. Cette configuration sera faite pendant la transmission avec la base.
+\item L'acquisition des données des capteurs à un intervalle de temps définie préalablement,
+\item L'envoi de ses données à la base de la station à un intervalle de temps régulier. Pendant cette connexion, la configuration des capteurs par la base devra être possible. Ainsi, l'écart entre chaque acquisition ou transmission devra être parametrable. Cette configuration sera faite pendant la transmission avec la base.
 \end{itemize}
 
 Ce composant logiciel devra ainsi intéragir avec la base de la station, lui envoyer les données et vérifier si une reconfiguration est necessaire. Il devra également se charger de récuperer la valeur du capteur auquel il est attaché. Ce composant logiciel devra impérativement être économes et devra passer la grande majorité du temps en mode "sommeil".
 
-D'un point de vue plus technique, ce logiciel devra s'exécuter sur un micro-controleur attaché �  une puce ZigBee et au capteur.
+D'un point de vue plus technique, ce logiciel devra s'exécuter sur un micro-controleur attaché à une puce ZigBee et au capteur.
 
 Le protocole de communication utilisé par les modules de transmission avec la base sera décrit plus loin dans ce document.
 
-Ce document va aussi porter sur le matériel exploité par le logiciel précédement cité, �  savoir le module de communication ZigBee. Les attentes par rapport �  celui-ci seront également décrite.
+Ce document va aussi porter sur le matériel exploité par le logiciel précédement cité, à savoir le module de communication ZigBee. Les attentes par rapport à celui-ci seront également décrite.
 
 \subsection{Formulation des besoins, exploitation et ergonomie, expérience}
 
-Le système présentement présenté doit répondre �  deux besoins bien distincts, et ce quelque soit la localisation géographique du système dans le monde :
+Le système présentement présenté doit répondre à deux besoins bien distincts, et ce quelque soit la localisation géographique du système dans le monde :
 
 \parapraph{Acquisition} Le système doit pouvoir recuperer la valeur des capteurs de la façon suivante :
 
 \begin{itemize}
 \item Le micro-controlleur sera reveillé selon la periode d'acquisition, il relevera la valeur du capteur 
-\item Selon la configuration de la periode de transmission, soit la donnée du capteur est en enregistré temporairement, soit directement envoyé �  la base
+\item Selon la configuration de la periode de transmission, soit la donnée du capteur est en enregistré temporairement, soit directement envoyé à la base
 \item Le micro-controlleur devra s'adapter au capteur pour pouvoir gerer les differents types d'acquisitions
 \item Si besoin, le niveau de la batterie doit également être verifié
-\item Le module doit être capable de se reconnecter �  la base en cas de déconnexion
-\item En cas de situation critique (batterie ou capteur), les données necessaire �  l'analyse de cette état devront être transmis �  la base le plus tôt possible
+\item Le module doit être capable de se reconnecter à la base en cas de déconnexion
+\item En cas de situation critique (batterie ou capteur), les données necessaire à l'analyse de cette état devront être transmis à la base le plus tôt possible
 \end{itemize}
 
-\paragraph{Transmission} Pendant la transmission, le système doit être capable d'analyser les données et d'envoyer les informations suivantes �  la base :
+\paragraph{Transmission} Pendant la transmission, le système doit être capable d'analyser les données et d'envoyer les informations suivantes à la base :
 
 \begin{itemize}
 \item Les informations nécessaire du capteur
@@ -61,7 +61,7 @@ Le système présentement présenté doit répondre �  deux besoins bien distinc
 \item La date du prochain reveil et eventuellement les informations utiles du micro-controlleur
 \end{itemize}
 
-Pendant la transmission, le système doit être capable de recevoir des données correspondant �  la reconfiguration du module :
+Pendant la transmission, le système doit être capable de recevoir des données correspondant à la reconfiguration du module :
 
 \begin{itemize}
 \item Les différents quantum de temps définissant la granularité avec laquelle le système transmet les résultats a la base, en analysant les données des capteurs.
@@ -85,10 +85,10 @@ Le logiciel devra se limiter aux fonctions décrites dans ce documents. L'autono
 \section{Exigences fonctionnelles}
 \subsection{Fonctions de base, performances et aptitudes}
 
-Le module d'acquisition doit sortir du mode "sommeil" �  un intervalle de temps régulier définie en configuration. Le système doit rester le moins de temps possible en mode "éveillé" pour respecter les contraintes d'autonomie.
+Le module d'acquisition doit sortir du mode "sommeil" à un intervalle de temps régulier définie en configuration. Le système doit rester le moins de temps possible en mode "éveillé" pour respecter les contraintes d'autonomie.
 L'acquisition du capteurs se fera via une interface. L'implémentation de cette interface ne doit pas être programmé et fera l'affaire d'une autre étude. Cette interface, réspecté par tous les types de capteurs, sera décrites plus loin.
 
-L'acquisition de la batterie devra être effectué régulierement �  un intervalle de temps définie par la configuration. Une interface similaire �  celle du capteur sera utilisé pour reperer le niveau de batterie.
+L'acquisition de la batterie devra être effectué régulierement à un intervalle de temps définie par la configuration. Une interface similaire à celle du capteur sera utilisé pour reperer le niveau de batterie.
 
 Après l'acquisition, une tentative de connexion devra être effecté avec la base de la station. Si celle-ci reussi, les données des capteurs et de la batterie sont transmises. Sinon, elles sont stockées temporairement. Ce stockage doit être étudié précisement et ne doit par être effectué si la consommation devient trop importante. Les données seront dans conservé dans les cas où la situation est critique.  
 
@@ -97,12 +97,12 @@ Pendant la transmission, la configuration doit être possible. Les points suivan
 \item La valeur du capteur en cas de mauvais reglage de celui ci,
 \item La periode d'acquisition des données du capteur,
 \item La periode d'acquisition des données de la batterie,
-\item La periode de transmission, dans la plupart des cas cette periode sera égal �  la periode d'acquisition des données du capteur. 
+\item La periode de transmission, dans la plupart des cas cette periode sera égal à la periode d'acquisition des données du capteur. 
 \end{itemize}
 
 \subsection{Contraintes d'utilisation}
 
-Le système ne doit pas pouvoir être utilisé par un utilisateur humain. La sécurisation des données envoyées est à prévoir, il ne faut pas qu'un utilisateur externe puissent interagir avec le systeme. Cette interaction pourrait mener �  des disfonctionnements du système. Un système de cryptage, tel qu'un certificat, ou une autre méthode de sécurisation doit être mis en place.
+Le système ne doit pas pouvoir être utilisé par un utilisateur humain. La sécurisation des données envoyées est à prévoir, il ne faut pas qu'un utilisateur externe puissent interagir avec le systeme. Cette interaction pourrait mener à des disfonctionnements du système. Un système de cryptage, tel qu'un certificat, ou une autre méthode de sécurisation doit être mis en place.
 
 \subsection{Critères d'appréciation de la réalisation effective de la fonction}
 Les différents critères seront pris en compte pour juger le système :
@@ -153,6 +153,11 @@ L'utilisation de plusieurs cartes rend l'implementation plus facile. Une attenti
 La maintenance du système étant naturellement très délicate, il sera nécessaire d'obtenir un version du logiciel très stable et ne présentant que peu de défauts. Comme précisé precedemment, une attention particulière sera donné aux phases de tests.
 
 \section{Guide de réponse au cahier des charges}
-
+La réponse au cahier des charges se fera particulièrement sur la documentation, notament au niveau des tests. Une première verification sera ainsi effectué pour confirmer l'état du projet. Une fois cette étape validé, une prise en main et vérification complète du système sera effectué.
 
 \section{Annexes}
+\subsection{Protocole ZigBee}
+
+\includegraphics[width=15cm]{fig3.png}
+
+\includepdf{FoxDescription_en.pdf}
