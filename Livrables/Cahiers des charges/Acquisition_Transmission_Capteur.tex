@@ -32,7 +32,7 @@ Le logicel qui doit être implementé a deux fonctions:
 
 Ce composant logiciel devra ainsi intéragir avec la base de la station, lui envoyer les données et vérifier si une reconfiguration est necessaire. Il devra également se charger de récuperer la valeur du capteur auquel il est attaché. Ce composant logiciel devra impérativement être économes et devra passer la grande majorité du temps en mode "sommeil".
 
-D'un point de vue plus technique, ce logiciel devra s'exécuter sur un micro-controleur attaché à une puce ZigBee et au capteur.
+D'un point de vue plus technique, ce logiciel devra s'exécuter sur un controleur attaché à une puce ZigBee, au capteur et à la batterie longue durée.
 
 Le protocole de communication utilisé par les modules de transmission avec la base sera décrit plus loin dans ce document.
 
@@ -102,26 +102,46 @@ Pendant la transmission, la configuration doit être possible. Les points suivan
 
 \subsection{Contraintes d'utilisation}
 
-Le système ne doit pas pouvoir être utilisé par un utilisateur humain. La sécurisation des données envoyées est à prévoir, il ne faut pas qu'un utilisateur externe puissent interagir avec le systeme. Cette interaction pourrait mener à des disfonctionnements du système. Un système de cryptage, tel qu'un certificat, ou une autre méthode de sécurisation doit être mis en place.
+Le système ne doit pas pouvoir être utilisé par un utilisateur humain. La sécurisation des données envoyées est à prévoir, il ne faut pas qu'un utilisateur externe puissent intercepter les données ou interagir avec le systeme. Cette interaction pourrait mener à des disfonctionnements du système. Un système de cryptage, tel qu'un certificat, ou une autre méthode de sécurisation doit être mis en place.
+Il faut prévoir qu'une opération de maintenance sur site a un coût élevé, le système doit être réflechit pour limiter au maximum les disfonctionnements necesitant un déplacement. 
 
 \subsection{Critères d'appréciation de la réalisation effective de la fonction}
-Les différents critères seront pris en compte pour juger le système :
-\begin{itemize}
-\item Sécurisation du protocole de transfert
-\item Dépense énergetique
-\item Facilité de la maintenance du code
-\item Clarté de la documentation
-\end{itemize}
+Les différents critères seront pris en compte pour juger le système. A ces critères sont ajoutés la nécessité et le taux de difficulté estimé. Ces valeurs vont de 0 à 10, 0 étant la valeur la plus basse :
+
+\begin{tabular}{|l|l|l|}
+  \hline
+  Critère & Nécessité & Difficulté \\
+  \hline
+  Sécurisation du protocole de transfert & 7 & 6 \\
+  Dépense énergetique & 9 & 5 \\
+  Stabilité & 9 & 7 \\
+  Facilité de la maintenance du code & 8 & 4 \\
+  Clarté de la documentation  & 8 & 4 \\
+  \hline
+\end{tabular}
 
 \section{Exigences non fonctionnelles}
 
 \section{Contraintes imposées, faisabilité technologique, moyens}
-
 \subsection{Sûreté, planning, organinsation, communication}
 Le protocole utilisé est le ZigBee, qui à l'avantage d'être simple d'utilisation. Cependant, il est necessaire de prévoir un temps d'apprentisage de cette technologie si necessaire. 
 
-La communication avec l'équipe rédactrice du présent documents peut être envisagé et sera organisé par la maitrise d'oeuvre. Le planning devra également prendre en compte la période de test.
+La communication avec la maitrise d'ouvrage peut être envisagé et sera si necessaire organisé par la maitrise d'oeuvre. Le planning devra également prendre en compte une période de test.
 
+Voici le planning prévisionnel du projet :
+
+\begin{tabular}{|l|l|}
+  \hline
+  Phase & Durée prévisionnelle \\
+  \hline
+  Spécification Code et Tests & 1 mois \\
+  Dévellopement Code et Tests & 3 mois \\
+  Tests intégration avec le système entier & 2 mois \\
+  Finalisation et reprise des élements  & 2 mois \\
+  \hline
+  Total  & 8 mois \\
+  \hline
+\end{tabular}
 
 \subsection{Complexité}
 Le système envisagé ne demande pas une complexité importante. Le protocole ZigBee étant largement documenté, le reste du système reste simple. Le fonctionnement de ce module avec le reste du sytème doit être pris en compte. 
@@ -135,17 +155,17 @@ Les compétences techniques suivantes sont exigées :
 \item Connaissance de protocole reseau
 \item Securisation reseau
 \end{itemize}
-L'équipe devra être équipé de technologie pour programmer et debuguer la carte micro-controlleur choisi. 
+Ce projet nécessite peu de ressource materiel, l'équipe devra être équipé de technologie pour programmer et debuguer la carte choisi. 
 
 \section{Configuration cible}
 
 \subsection{Matériels et logiciels}
 Le materiel utilisé pour dévelloper le module est le suivant:
 
-Pour le micro-controleur qui à la responsabilité de gérer le capteur, le ZigBee et le niveau de batterie, il a été decidé d'utiliser un carte FOX Board LX832.
+Pour le controleur qui à la responsabilité de gérer le capteur, le ZigBee et le niveau de batterie, il a été decidé d'utiliser un carte FOX Board LX832.
 
-Pour le ZigBee, un carte EB051 sera utilisé, la puce ZigBee est directement intégré au circuit de la carte. 
-Si le capteur n'en est pas doté, un micro-controleur sera couplé au capteur. Ce cahier des charges ne prends pas en compte cette partie.
+Pour le ZigBee, un carte de type EB051 sera utilisé, la puce ZigBee est directement intégré au circuit de la carte. Cette carte permet une utilisation simplifié des protocoles ZigBee.
+Si le capteur n'en est pas doté, un micro-controleur sera couplé au capteur. Ce cahier des charges ne prends pas en compte cette partie. Un pilote sera devellopé par une autre équipe afin de coupler la capteur à la carte.
 L'utilisation de plusieurs cartes rend l'implementation plus facile. Une attention au moment du devellopement permettera une integration simplifié entre les systèmes.
 
 \subsection{Stabilité de la configuration}
