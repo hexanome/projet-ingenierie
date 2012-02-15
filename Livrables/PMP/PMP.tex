@@ -57,26 +57,85 @@ D'après le cycle de vie du système décrit plus haut, il est nécessaire de se
 
 \begin {center}
 \includegraphics[width=\textwidth]{png/decoupageType.png}
-\caption{Découpage d'un système en sous-systèmes}
 \end {center}
 
 Le premier niveau de découpage d'un système en sous systèmes dissocie les différents domaines fonctionnels présent au sein du système à construire. Dans un deuxième temps, il s'agit de s'intéresser plus aux découpages logiciels/matériels qui peuvent être fait pour chaque sous-système représentant un domaine fonctionnel.
 Ensuite, chaque sous-système de 2ème niveau va donner lieu à l'établissement de cahiers des charges. Ces cahiers des charges seront les résultats (en termes de livrables) de la décomposition des sous-systèmes en sous projets. Lorsque l'on rédige les cahiers des charges touchant aux différents sous projets, l'équipe se fait une idée très précise de comment doit s'articuler le système.
 
 \subsection{Découpage du système monitoring de sites isolés}
-Nous avons découpé notre système en suivant la procédure rédigée auparavant.
+Nous avons découpé notre système en suivant le document de référence \og Décomposition d'un système en sous-systèmes et sous-projet".
 
 \subsubsection{Découpage du système en sous-systèmes}
 
 %TODO Mettre en landcape ce png.
 \begin {center}
 \includegraphics[width=\textwidth]{png/graphDecompoSousSystemes.png}
-\caption{Découpage du système de monitoring de sites isolés}
 \end {center}
 
 \subsubsection{Identification des projets et sous-projets}
+Pour chaque système, voici leurs décompositions en sous projets. Nous insistons beaucoup sur les projets logiciels et certains projets plus \og généraux \fg ne figurent donc pas sur ce documents.
+
+\begin {center}
+\includegraphics[width=\textwidth]{png/ss1ProdE.png}
+\caption{Découpage en sous-projets du sous-système production d'énergie}
+\end {center} 
+
+\begin {center}
+\includegraphics[width=\textwidth]{png/ss1Capteurs.png}
+\caption{Découpage en sous-projets du sous-système capteurs}
+\end {center}
+
+\begin {center}
+\includegraphics[width=\textwidth]{png/ss3Station.png}
+\caption{Découpage en sous-projets du sous-système station d'acquisition}
+\end {center}
+
+\begin {center}
+\includegraphics[width=\textwidth]{png/ss4Supervision.png}
+\caption{Découpage en sous-projets du sous-système supervision}
+\end {center}
+\begin {center}
+
+\includegraphics[width=\textwidth]{png/ss5IH.png}
+\caption{Découpage en sous-projets du sous-système intervention humaine}
+\end {center}
+
+
 \subsection{Description des sous-projet}
+
+\begin{itemize}
+\item Sous-projet 1.1.1 : Le déploiement de la pile à combustible consiste dans un premier temps en l'acquisition du matériel à installer sur place au niveau du site isolé à savoir le reservoir d'hydrogène ainsi que le générateur qui transforme de cette hydrogène préssurisé en éléctricité. Il est donc nécessaire de disposer du matériel nécessaire pour réaliser cette installation à savoir :  2 ou 3 techniciens selon la taille du site à monitorer, un camion équipé en outils mais aussi équipé d'un lieu à vivre pour pouvoir éventuellement loger les techniciens le temps de l'installation du système de production d'énergie. Le camion doit pouvoir être traçable par GPS et les techniciens doivent éffectué leur reporting quotidiennement.
+\item Sous-projet 1.1.2 : La maintenance de l'installation électrique doit pouvoir être faite à distance. Pour cela il est nécessaire d'avoir un bilan de l'état de marche de la station. Il est donc nécessaire que des capteurs soient installés au niveau des installations électriques pour guetter un éventuel problème de fonctionnement du système. Ce système de maintenance/supervision permet donc d'anticiper les pannes et le cas échéant, de faire intervenir un techicien sur zone. L'installation des outils de relevé de la santé du système électrique devront être fait en même temps que la mise en marche de la station d'acquisition des données capteurs car c'est elle qui va relayer l'information vers le poste de supervision.
+\item Sous-projet 1.1.3 : La maintenance de l'installation de production d'énergie devra être planifiée, il sera donc nécessaire d'envoyer des techniciens de manière très espacé dans le temps (tout les ans ou tout les deux ans) afin de vérifier l'état de la pile à hydrogène. Cette vérification est obligatoire et ne remet pas en cause le sous-projet précédent permettant de dresser le bilan de santé en temps réel de l'installation électrique. Ce type de travail peut être réalisé par un technicien seul. Le principe étant qu'un technicien puisse réviser toute les stations d'une zone en se déplaçant avec son camion. De même, ce technicien est tenu au reporting quotidien via l'interface smartphone de la plateforme de supervision.
+\item Sous-projet 1.2.1 : Le monitoring de l'installation électrique consistera en la restitution des informations renvoyées par les capteurs vers le centre de supervision. Lors d'un problème technique nécessitant de se déplacer, une fiche d'intervention sera formulée et adressée au technicien en charge du site. Cette fiche décrira le problème, rappelera les éventuelles étapes de réparation et prodiguera des conseils pratiques aidant le technicien. Tout ceci sera donc accessible au technicien par le biais de son interface smartphone.
+\medskip
+\item Sous-projet 2.1.1 : Le déploiement des capteurs sur site sera éffectué de la même façon que pour le déploiement de la pile a hydrogène. Après l'acquisition matérielle des capteurs et la préparation de ceux-ci pour l'installation sur site, un groupe de technicien sera chargé d'installer physiquement ces capteurs sur site suivant les plans fournis par la R\&D. En plus des techniciens, il peut être intéressant qu'un ingénieur puisse manager le projet au sein du site isolé afin de palier aux éventuels problèmes de dernière minute.
+\item Sous-projet 2.1.2 : La maintenance du réseau de capteurs sera en lien étroit avec la maintenance de l'installation électrique. Il s'agit donc d'anticiper les causes de pannes possibles et de les signaler au superviseur. De la même façon que précedemment, lors d'un grave problème technique, on enverra un technicien sur place. Le but final étant de limiter au maximum l'intervention humaine sur site car celle-ci est longue et très couteuse.
+\item Sous-projet 2.1.3 : L'évolutivité du réseau de capteurs sera discutée entre le COPEVUE et l'équipe de R\&D présente au sein de notre entreprise. Il doit être rapidement possible de déployer un nouveau type de capteurs sur site afin de répondre à un nouveau besoin. Ce sous-projet peut-être lancé à n'importe quel moment de la phase de vie de notre système.
+\item Sous-projet 2.2.1 : L'acquisition et la transmission vers la station locale des données capteurs. Il s'agit donc de développer un logiciel capable de faire l'interface entre les capteurs déployés sur le site isolé et la station locale représentée par une carte d'acquisition. La transmission qui se fera sans fil à intervales réguliers impliquera que la station locale soit en état "réveillée" pour pouvoir réceptionner les informations. Le logiciel sera développé et testé en interne avant son déploiement. L'équipe de développement attachera une grande importance à la stabilité et à la robustesse du système.
+\item Sous-projet 2.2.2 : La maintenance dynamique est l'interface logicielle du projet de maintenance du réseau de capteurs.
+\medskip
+\item Sous-projet 3.1.1 : La réception et le stockage temporaire des données capteurs permet de spécifier comment les données capteurs vont être gardées au sein de la carte d'acquisition. Le but étant de les garder le temps le plus court possible et de les transmettre assez rapidement afin d'économiser de l'énergie sur le site.
+\item Sous-projet 3.2.1 : La réception est le traitement des ordres de maintenance. La station sera à l'écoute d'ordre de maintenance arrivant du poste de supervision permettant par exemple de réinitialiser le système lors de l'apparition d'un problème grave. Il faut donc spécifier l'interface entre ces deux systèmes et définir un jeu de commandes que l'on va pouvoir exécuter à distance.
+\item Sous-projet 3.2.2 : Mise en place lors des phases de développement d'un système d'\og autoréparation du système d'acquisition, notre groupe n'a pas vraiment creusé ce point mais ressent le besoin d'un tel dispositif permettant au système isolé d'apprendre de ses erreurs à la manière par exemple des robots de la nasa envoyés sur une autre planète (d'une façon plus modeste bien entendu).
+\item Sous-projet 3.3.1 : Module de transmission des données capteurs vers le centre de supervision. Il est nécessaire de pouvoir switcher rapidement entre la technologie GPS et GPRS et de pouvoir assurer l'intégrité des donnés. Les requète d'envoi des données seront faites via le protocole HTTP.
+\meskip 
+\item Sous-projet 4.1.1 : Réception et stockage des données capteurs par le site de supervision central. Ces données seront stockées dans des bases de données et accessible via des requètes SQL. Il est important de dater les données afin de pouvoir exploiter et tracer l'évolution des données en fonction du temps.
+\item Sous-projet 4.1.2 : Envoi des ordres de maintenance vers la station d'acquisition par le centre de supervision. Ces ordres pourront être envoyés de manière automatique ou être initiés par les agents de supervision.
+%TODO Continuer.
+\end{itemize}
+
+
 \subsubsection{Choix des projets retenus pour établissement cahier des charges}
+Chaque projet défini plus haut va amener à l'établissement d'un cahier des charges. En ce qui concerne notre groupe de travail, nous avons décidé de rédiger :
+
+\begin{itemize}
+\item Cahier des charges du sous-projet 2.2.1 : Acquisition et transmission vers la station locale des données capteurs.
+\item Cahier des charges du sous-projet 3.3.1 : Transmission des données capteurs au serveur central via GPS/GPRS.
+\item Cahier des charges du sous-projet 4.3.1 : Elaboration d'une solution de restitution des données sur le Web.
+\end{itemize}
+
+
 
 \section{Moyens à mettre en oeuvre}
 \subsection{Moyens matériels}
