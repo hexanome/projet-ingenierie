@@ -3,7 +3,7 @@
 \contentsline {subsection}{\numberline {1.1}Terminologies et Abr\IeC {\'e}viations}{2}
 \contentsline {subsection}{\numberline {1.2}Cadre de l\IeC {\textquoteright }\IeC {\'e}tude et objectif}{2}
 \contentsline {subsection}{\numberline {1.3}Rappel synth\IeC {\'e}tique des critiques de l\IeC {\textquoteright }existant}{2}
-\contentsline {subsection}{\numberline {1.4}Description des axes de progr\IeC {\`e}s}{2}
+\contentsline {subsection}{\numberline {1.4}Description des axes de progr\IeC {\`e}s}{3}
 \contentsline {paragraph}{Gain en termes de co\IeC {\^u}ts directs}{3}
 \contentsline {paragraph}{Une qualit\IeC {\'e} de surveillance accrue (des r\IeC {\'e}ductions de co\IeC {\^u}ts indirects ou qualitatifs)}{3}
 \contentsline {subsection}{\numberline {1.5}Descriptions des exigences non fonctionnelles}{3}
