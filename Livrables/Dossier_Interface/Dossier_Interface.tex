@@ -203,8 +203,9 @@ En outre, il est connecté au module de transmission des informations de la stat
 \begin{itemize}
 \item \tt{List<struct sensor> getAllMeasures()}
 \item \tt{List<struct sensor> getInaccessibleSensors()}
-\item \tt{int getBatteryAlarm(string serialID)}
-\item \tt{int setBatteryAlarm(string serialID, int level)}
+\item \tt{double getBatteryAlarm(string serialID)}
+\item \tt{struct \{ double latitude, double longitude \} getGeoloc()}
+\item \tt{int setBatteryAlarm(string serialID, double level)}
 \item \tt{int getTransmissionPeriod()}
 \item \tt{int setTransmissionPeriod(int newPeriod)}
 \end{itemize}
@@ -258,9 +259,42 @@ Tandis que le suivi de camions ne concerne que l'apport de ressources (comme des
 
 \section{Supervision}
 
+La supervision s'occupe de la réception des données et de la transmission de configuration (en cas de re-configuration), ainsi que les API pour accéder aux autres modules à partir du serveur central qui recueille toutes les données.
+
 \subsection{Réception}
+
+L'envoi et la réception des données se fait par un protocole textuel simple et extensible, qui repose sur les protocoles textuels HTTPS/TCP, afin de garantir la sécurité des données. Le système repose sur un modèle client-serveur, dans lequel le client est le système embarqué et le serveur est le centre de supervision.
+
+Les données sont envoyées en JSON\footnotemark, 
+
+\footnotetext{\url{http://json.org/}}
+
+\begin{itemize}
+\item Le premier champ, \texttt{from}, donne le \texttt{siteID} qui caractérise de manière unique le site  (cf. module suivi des camions).
+\item Le deuxième champ, \texttt{op}, indique l'opération effectuée par le système embarqué présent sur le site. Les options sont les suivantes:
+\begin{itemize}
+\item \texttt{"sensor"} envoie toutes les informations des capteurs ainsi qu'obtenues par le module communication. Le JSON envoyé dans le champ \texttt{data} contient une liste d'objets \texttt{\{ serialID: ..., measure: ..., unit: ..., getBattery: \{ batteryLevel: ..., précision: ... \} \}} correspondant aux modules capteur et matériel. Un champ facultatif, \texttt{geoloc}, contient un objet \texttt{\{ latitude: ..., longitude: ... \}} indiquant l'emplacement du site isolé (ce qui est utile pour les sites mobiles).
+\item \texttt{"availability"} envoie une liste des serialID des capteurs qui répondent (et ne sont donc pas endommagés) via la méthode \texttt{getInaccessibleSensors} du module capteur.
+\item \texttt{"h2battery"} envoie un string correspondant au niveau de la pile hydrogène, du genre \texttt{"BATTERY\_FULL"}.
+\item \texttt{"alarm"} envoie une liste de serialID, afin de notifier le serveur d'une limite de remplissage de la batterie atteinte dans les capteurs correspondants.
+\item \texttt{"conf"} envoie l'objet de configuration. Ceci n'est utile qu'aux techniciens, pour pouvoir débugger le système en cas d'erreur. 
+\end{itemize}
+\item Le troisième champ, \texttt{data}, envoie toutes les informations associées à l'opération.
+\end{itemize}
+
+En retour à la requête POST, le client reçoit un objet JSON qui représente les mises à jour de la configuration. Dans la majorité des cas, il s'agira d'un objet vide (ie, pas de modification).
+
+La configuration du système s'effectue sous la forme d'une série d'associations clef-valeur (avec des clefs textuelles), sérialisées en JSON. La mise à jour de cette configuration se fait par envoi TCP, sur un port convenu à l'avance, d'un objet JSON dont les clefs correspondent aux clefs de la configuration. Chaque clef envoyée est à mettre à jour.
+
+La configuration est extensible. Elle contient des champs comme par exemple \texttt{batteryAlarm} qui associe, dans un objet, un serialID, un siteID, et un niveau (sous la forme d'un pourcentage de remplissage de la batterie, pour un capteur donné), à partir duquel le client doit envoyer une alarme au serveur.
 
 \subsection{Traitement}
 
+Les données se rangent tout naturellement dans une base de données, ainsi que la configuration en JSON. L'interface de la base de donnée est totalement opaque ; il n'y a donc pas d'interface.
+
 \subsection{Restitution}
+
+L'interface utilisateur se présente sous la forme d'une page web, accessible par login et mot de passe, et via laquelle il est possible de consulter les données des capteurs, les données de géolocalisation, et les données logistiques. Cette interface exploite directement les modules correspondant, et en premier lieu le module réception.
+
+Cette interface est malléable. Ainsi, outre les fonctionnalités fondamentales de l'interface (que nous avons listés dans le paragraphe précédent), il n'est pas nécessaire de s'appesantir sur la description de son apparence.
 
