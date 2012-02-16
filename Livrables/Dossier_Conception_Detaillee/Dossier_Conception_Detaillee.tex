@@ -73,7 +73,11 @@ La communication entre les modules de capteurs et la base ce fait grâce au prot
 , modèles de la base dedonnées intgrant les données de la prduction, volumétrie (évaluation de la base de données
 pour une entreprise type en s’appuyant sur réflexion de l’annexe 1),
 
-\subsection{Volume de données sur le réseau}
+\subsection{Volume de données}
+
+La première problématique qui se pose en regard du volume des données que nous allons devoir gérer est celle de la transmission de celles-ci depuis les sites jusqu'au serveur central. Les progrès récents en terme de transmission de données, autant par satellite que par réseau GSM, assurent un débit d'au moins 128kbps où que l'on se trouve dans le monde. Cela a pour conséquence de ne pas imposer de contrainte forte sur la taille des données que l'on souhaite transmettre. En effet, étant donné la nature de celles-ci, des valeurs de remplissage de cuves, au nombre d'une centaine par site au maximum, sur une période d'une journée (dans le cas où l'on souhaiterais une transmission quotidienne), on peut affirmer que chaque ``fichier'' envoyé par une station fera moins d'un MO. Les envoi étant effectués rapidement, c'est autant d'énergie qui sera économisée, augmentant ainsi la durée d'autonomie de chaque site.
+
+L'autre aspect de la volumétrie des données est celle du stockage de l'historique des relevés de chaque site, et ce sur une longue période, pour être capable de les utiliser plus tard (e.g pour faire une comparaison des moyennes mensuelles d'une année à l'autre). Mais encore une fois, la nature des données concernée, et leur quantité, ne font pas de leur stockage une des principales difficultés de ce système, et un simple déploiement de serveurs SQL feront sans problème l'affaire.
 
 \section{Gestion des problèmes et anomalies, sécurité}
 
