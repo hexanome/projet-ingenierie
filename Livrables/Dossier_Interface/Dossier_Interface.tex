@@ -263,7 +263,7 @@ La supervision s'occupe de la réception des données et de la transmission de c
 
 \subsection{Réception}
 
-L'envoi et la réception des données se fait par un protocole textuel simple et extensible, qui repose sur les protocoles textuels HTTPS/TCP, afin de garantir la sécurité des données. Le système repose sur un modèle client-serveur, dans lequel le client est le système embarqué et le serveur est le centre de supervision.
+L'envoi et la réception des données se fait par un protocole textuel simple et extensible, qui repose sur les protocoles textuels HTTPS/TCP, afin de garantir la sécurité des données. Le système repose sur un modèle client-serveur, dans lequel le client est le système embarqué et le serveur est le serveur central.
 
 Les données sont envoyées en JSON\footnotemark, 
 
@@ -294,7 +294,7 @@ Les données se rangent tout naturellement dans une base de données, ainsi que 
 
 \subsection{Restitution}
 
-L'interface utilisateur se présente sous la forme d'une page web, accessible par login et mot de passe, et via laquelle il est possible de consulter les données des capteurs, les données de géolocalisation, et les données logistiques. Cette interface exploite directement les modules correspondant, et en premier lieu le module réception.
+L'interface utilisateur se présente sous la forme d'un logiciel dont l'authentification se fait par login et mot de passe, et via laquelle il est possible de consulter les données des capteurs, les données de géolocalisation, et les données logistiques. Cette interface exploite directement les modules correspondant, et en premier lieu le module réception.
 
-Cette interface est malléable. Ainsi, outre les fonctionnalités fondamentales de l'interface (que nous avons listés dans le paragraphe précédent), il n'est pas nécessaire de s'appesantir sur la description de son apparence.
+Cette interface est malléable. Ainsi, outre les fonctionnalités fondamentales de l'interface (que nous avons listés dans le paragraphe précédent), il n'est pas nécessaire de s'appesantir sur la description de son apparence. Pour de plus amples informations, il faudra se reporter au cahier des charges ``Logiciel Supervision''.
 
