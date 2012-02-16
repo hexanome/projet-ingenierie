@@ -35,8 +35,16 @@ La station centrale dispose d'un autre sous-système, le ``système de transmiss
 
 \subsection{Système central}
 
+Le ``système central'' est une application connectée à internet servant à centraliser les informations collectées sur l'ensemble des sites d'un territoire (voir même du monde). En voici le fonctionnement :
+
+Les systèmes de transmission des sites isolés vont communiquer par internet avec le système central pour lui transmettre les derniers relevés des capteurs du site. Celui-ci va alors les stocker en base de données et vérifier si de nouvelles informations de configuration sont disponibles pour ce site. Si c'est le cas, celles-ci seront transmises en réponse.
+
+En arrière plan, le système central va appliquer un ensemble de règles configurables pour vérifier si les nouvelles valeurs transmisent doivent déclencher des actions automatisées telles que des alertes ou des demandes d'intervention sur site.
+
+Le système central va aussi présenter une interface de gestion au gestionnaires et clients du système, leur permettant de vérifier l'état et l'historique des mesures de chaque site, et la reconfiguration de ceux-ci. Cette interface doit aussi leur permettre de consulter d'éventuelles alertes, et de pouvoir y réagir en planifiant des interventions.
 
 \subsection{Communication}
+
 La communication entre la station et le central s’effectuera la plupart du temps en GSM. La plupart des sites isolés peuvent capter un signal, le GSM permet donc d’avoir une solution efficace, économe et peu cher. Dans le cas où aucune connexion GSM ne peut être faite, la base se connecte via satellite. La couverture des fournisseurs est quasi-totale, ce qui permet d’atteindre toutes les régions isolées. 
 
 La communication entre les modules de capteurs et la base ce fait grâce au protocole ZigBee, qui permet de faire un réseau de plus de 60 000 appareil. Le ZigBee est très économes et le protocole est simple d’utilisation. Les cartes appliquant le ZigBee se paye a quelques dizaines d’euros. 
@@ -50,12 +58,15 @@ La communication entre les modules de capteurs et la base ce fait grâce au prot
 \subsection{Architecture matérielle}
 
 \paragraph{Maintenance} Le technicien chargé de la maintenance du système est équipé d’un module capable de connecté à la station. Ce module doit être pourvu d’une prise USB pour relier l’appareil à la station. L’application de maintenance est utilisable sur un ordinateur  ou un matériel plus compact tel qu’un PDA ou un Smartphone. 
+
 \paragraph{Capteur} Le module du capteur est équipé d’une carte contenant le capteur, le module de communication sans-fil et l’alimentation. Le système embarqué résiste aux conditions climatiques et a une très grande autonomie.
+
 \paragraph{Base de la station} La base de la station est équipée du module de communication général  (GSM ou satellite selon la localisation du site), d’un module de communication ZigBee pour superviser le reste de la station. Cette base est capable d’enregistrer les informations les plus pertinentes avant de les retransmettre au central. La base est reliée à une source d’énergie qui l’alimente pendant de longue période. 
 
 \subsection{Architecture informatique}
 
 \paragraph{Module capteur} Le module capteur regroupe plusieurs parties logiciels. Le logiciel principal permet de vérifier le niveau de la batterie, de communiquer grâce au module ZigBee et de relever les valeurs du capteur. Pour cela un pilote est implémenté pour assurer une bonne intégration entre les éléments
+
 \paragraph{Base de la station} La base est composé que d’un seul logiciel, qui a pour rôle de superviser la station. Elle doit ainsi relever les valeurs de tous les capteurs, les enregistrer et les retransmettre au central. Ce logiciel peut également reconfigurer différents éléments de la base telle que la période de réveil du système. Le protocole de communication implémenté est sécurisé, pour empêcher une interception des données ou une intrusion dans le système.
 
 \section{Réflexions sur les données}
