@@ -26,16 +26,16 @@ Ce document présente le cahier des charges du logiciel permettant la supervisio
 
 \section{Présentation du problème}
 \subsection{Buts, nature du logiciel, utilisateurs concernés}
-L'objectif est de fournir une interface qui permette de suivre les informations dont on dispose sur les différents sites actuellement surveillés par notre système comme le niveau de liquide dans une cuve ou le niveau de remplissage des containers, de manière efficace et simple. Il offrira également la possibilité de reconfigurer certains paramètres du système pour faire de la maintenance à distance (modification du niveau d'alerte, cycle de d'envoi des données, ...)
+L'objectif est de fournir une interface qui permette de suivre les informations dont on dispose sur les différents sites actuellement surveillés par notre système comme le niveau de liquide dans une cuve ou le niveau de remplissage des containers, de manière efficace et simple. Il offrira également la possibilité de reconfigurer certains paramètres du système pour faire de la maintenance à distance (modification du niveau d'alerte, cycle de d'envoi des données, ...).
 Lorsque la situation est critique sur un site, l'utilisateur doit en être avertis par un affichage approprié pour prendre les décisions qui s'imposent.
 
 \subsection{Formulation des besoins, exploitation et ergonomie, expérience}
 
 \subsubsection{Authentification}
-La connexion au serveur centrale doit se faire de manière sécurisé et authentifié, afin de sécuriser l'ensemble.
+La connexion au serveur central doit se faire de manière sécurisé et authentifié, afin de sécuriser l'ensemble.
 
 \subsubsection{Récupération des données}
-Après que l'utilisateur se soit authentifié, toutes les données seront téléchargées depuis le serveur central pour être stocké en local, afin d'éviter d'avoir à les télécharger de nouveau en cas de perte de connexion. Les données téléchargés sont :
+Après que l'utilisateur se soit authentifié, toutes les données seront téléchargées depuis le serveur central pour être stockées en local, afin d'éviter d'avoir à les télécharger de nouveau en cas de perte de connexion. Les données téléchargés sont :
 \begin{itemize}
 \item La valeur des mesures effectuées depuis la dernière transmission par chacun des capteurs. La quantité de valeurs dépend de la granularité avec laquelle est configurée le site. Chaque valeur sera bien évidemment horodatée.
 \item L'état physique et logique de la station et du site. Cela peut comprendre la température ambiante, l'autonomie estimée des différentes batteries, les logs systèmes engrangés par le système informatique, etc.
@@ -68,7 +68,7 @@ L'utilisateur disposera d'interfaces pour modifier:
 On attachera également une grande importance à la facilité d'apprentissage et d'utilisation, car l'utilisateur finale n'a pas forcément une grande connaissance dans le maniement des outils informatiques. Il n'est pas souhaitable qu'une formation soit nécessaire pour l'utilisation de ce nouvel outil.
 
 \subsection{Portée, développement, mise en oeuvre, organisation de la maintenance}
-Le développement du logiciel se fera en Java avec un modèle MVC, en utilisant les méthodes agiles, afin d'avoir un retour-utlisateur le plus tôt possible, pour minimiser le risque d'avoir un logiciel qui ne sera pas accepté et diminuer ainsi les besoins de maintenance. Ce type de développement offre également l'avantage de rassurer la MOA qui peut voir une réalisation concrète très rapidement avec la possibilité de réagir très rapidement pour la MOE si ce qui est fait ne correspond pas aux attentes et cette méthode semble particulièrement adapté vu la taille relativement faible en terme de développement de ce sous-système. 
+Le développement du logiciel se fera en Java avec un modèle MVC, en utilisant les méthodes agiles, afin d'avoir un retour-utlisateur le plus tôt possible, pour minimiser le risque d'avoir un logiciel qui ne sera pas accepté et diminuer ainsi les besoins de maintenance. Ce type de développement offre également l'avantage de rassurer la MOA qui peut voir une réalisation concrète très rapidement avec la possibilité de réagir très rapidement pour la MOE si ce qui est fait ne correspond pas aux attentes et cette méthode semble particulièrement adapté vu la taille relativement faible en terme de développement de ce sous-système.\\
 Pour faciliter la future maintenance, on veillera à fournir une documentation suffissante tant sur l'application à proprement parlé que sur les tests effectués.
 
 \subsection{Limites}
@@ -86,7 +86,7 @@ On distinguera les fonctions principales suivantes:
 	\item configuration de la base,
 	\item configuration d'un capteur,
 	\item affichage de l'historique des données,
-	\item affichage de l'historique de paramétrages,
+	\item affichage de l'historique de paramétrages.\\
 \end{itemize}
 
 Au niveau des performances, on offrira une application fluide, sans aucun processus bloquant pour l'interface, pour ne pas gêner l'utilisateur et surtout lui offrir une expérience de navigation rapide et fluide.
@@ -99,15 +99,15 @@ La seule contrainte est d'avoir un accès au serveur central par Internet.
 \begin{tabular}{|c|c|c|}
 	\hline Fonction & Nécessité & Difficulté d'implémentation\\
 	\hline 
-	 Authentification & 9 & 5\\
-	 Affichage des sites sur une carte & 9 & 5\\
-	 Affichage de l'état d'un capteur & 9 & 5\\
-	 Affichage de l'état de la base & 9 & 5\\
-	 Affichage de la valeur d'un capteur & 9 & 5\\
-	 Configuration de la base & 9 & 5\\
-	 Configuration d'un capteur & 9 & 5\\
-	 Affichage de l'historique des données & 9 & 5\\
-	 Affichage de l'historique de paramétrage & 9 & 5\\
+	 Authentification & 9 & 8\\
+	 Affichage des sites sur une carte & 7 & 6\\
+	 Affichage de l'état d'un capteur & 8 & 5\\
+	 Affichage de l'état de la base & 8 & 5\\
+	 Affichage de la valeur d'un capteur & 8 & 5\\
+	 Configuration de la base & 7 & 7\\
+	 Configuration d'un capteur & 7 & 7\\
+	 Affichage de l'historique des données & 6 & 7\\
+	 Affichage de l'historique de paramétrage & 6 & 5\\
 	\hline
 \end{tabular}
 
@@ -133,7 +133,7 @@ En séparant distinctement les différents couches d'acquisition de données (au
 \subsection{Sûreté, planning, organisation, communication}
 
 \subsection{Complexité}
-Pour ce sous-système, il n'y a pas vraiment de complexité, aucun traitement n'étant fait et il existe des outils pour le développement d'interface.
+Pour ce sous-système, il n'y a pas vraiment de complexité, aucun traitement n'étant fait et il existe des outils pour accélérer le développement d'interface.
 
 \subsection{Compétences, moyens et règles}
 Les compétences nécessaires à la réalisation du projet :
@@ -167,11 +167,11 @@ Lors de futur évolution, on veillera à ce que la configuration minimale n'évo
 Ce sous-système n'expose aucune API, il y fait seulement appel.
 
 \section{Guide de réponse au cahier des charges}
-
+La réponse au cahier des charges se fera particulièrement sur la documentation, notament au niveau des tests. Une première verification sera ainsi effectué pour confirmer l'état du projet. Une fois cette étape validé, une prise en main et vérification complète du système sera effectué.
 
 \section{Annexes}
-\subsection{Observations de l'existant}
-\subsection{Propositions d'orientation}
+%\subsection{Observations de l'existant}
+%\subsection{Propositions d'orientation}
 
 \subsection{Images d'écrans principaux du logiciel}
 
@@ -189,4 +189,4 @@ Ce sous-système n'expose aucune API, il y fait seulement appel.
   {Ebauche de l'interface pour la fenêtre de visualisation de l'évolution des valeurs d'un capteur.}
 \end{figure}
  
-\subsection{Résultat de l'analyse de la valeur}
+%\subsection{Résultat de l'analyse de la valeur}
