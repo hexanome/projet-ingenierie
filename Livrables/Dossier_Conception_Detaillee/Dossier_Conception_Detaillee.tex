@@ -1,4 +1,4 @@
-\section{Introduction}
+﻿\section{Introduction}
 
 \subsection{Présentation du projet}
 
@@ -35,6 +35,7 @@ La station centrale dispose d'un autre sous-système, le ``système de transmiss
 
 \subsection{Système central}
 
+\subsection{Communication}
 
 
 \subsection{Communication}
@@ -44,6 +45,15 @@ La station centrale dispose d'un autre sous-système, le ``système de transmiss
 \section{Architecture applicative}
 
 \section{Architecture informatique et matérielle}
+\subsection{Architecture matérielle}
+\paragraph{Maintenance} Le technicien chargé de la maintenance du système est équipé d’un module capable de connecté à la station. Ce module doit être pourvu d’une prise USB pour relier l’appareil à la station. L’application de maintenance est utilisable sur un ordinateur  ou un matériel plus compact tel qu’un PDA ou un Smartphone. 
+\paragraph{Capteur} Le module du capteur est équipé d’une carte contenant le capteur, le module de communication sans-fil et l’alimentation. Le système embarqué résiste aux conditions climatiques et a une très grande autonomie.
+\paragraph{Base de la station} La base de la station est équipée du module de communication général  (GSM ou satellite selon la localisation du site), d’un module de communication ZigBee pour superviser le reste de la station. Cette base est capable d’enregistrer les informations les plus pertinentes avant de les retransmettre au central. La base est reliée à une source d’énergie qui l’alimente pendant de longue période. 
+
+\subsection{Architecture informatique}
+\paragraph{Module capteur} Le module capteur regroupe plusieurs parties logiciels. Le logiciel principal permet de vérifier le niveau de la batterie, de communiquer grâce au module ZigBee et de relever les valeurs du capteur. Pour cela un pilote est implémenté pour assurer une bonne intégration entre les éléments
+\paragraph{Base de la station} La base est composé que d’un seul logiciel, qui a pour rôle de superviser la station. Elle doit ainsi relever les valeurs de tous les capteurs, les enregistrer et les retransmettre au central. Ce logiciel peut également reconfigurer différents éléments de la base telle que la période de réveil du système. Le protocole de communication implémenté est sécurisé, pour empêcher une interception des données ou une intrusion dans le système.
+
 
 \section{Réflexions sur les données}
 
