@@ -1,9 +1,13 @@
 \section{Introduction}
+
 \subsection{Présentation du projet}
+
 Le COPEVUE a lancé un appel d'offre dans le cadre de la réalisation d'un système de monitoring de sites isolés. Il s'agit donc de concevoir en premier lieu une solution technique permettant de répondre au mieux aux exigences fonctionnelles et non fonctionnelles que le COPEVUE formule. De façon synthétique notre équipe va proposer une solution permettant de surveiller des sites naturels difficiles d'accès (souvent à cause des conditions environnementales) et peu peuplés. Dans ces sites isolés sont souvent regroupés des postes de travail et ces zones doivent pouvoir être surveillées en dépit de la distance qui les sépare du bureau de contrôle.
 
 \subsection{Présentation du document}
+
 Ce document permet de définir précisemment l'architecture applicative et technique de l'ensemble de notre solution, en rapport avec le dossier de Spécification Technique des Besoins. L'objectifs est d'apporté une réponse claire aux questions suivantes:
+
 %Copier coller du doc de Regis
 \begin{itemize}
 	\item Quels sont les objets manipulés?
@@ -15,14 +19,25 @@ Ce document permet de définir précisemment l'architecture applicative et techn
 \end{itemize}
 
 \section{Organisation générale du système}
+
 %Un beau schéma de l'architecture générale
+
+\subsection{Système sur site isolé}
+
+Chaque site isolé dispose d'un système complêt de monitoring du site, qui est décomposé de la manière suivante :
+
+Les cuves à monitorer sont chacune équipées de capteurs relevant leur niveau de remplissage. Chaque capteur est géré par un composant connecté direcement dessus, que nous appelerons ici le ``système de gestion du capteur''. Ces systèmes fonctionneront ponctuellement, se réveillant de manière périodique pour effectuer des mesures à l'aide du capteur.
+
+Le site est pourvu d'une ``station centrale'', principalement constituée d'un système embarqué à base d'OS Linux, qui va pouvoir communiquer avec les systèmes de capteurs vu précédement à l'aide d'une connexion sans-fil ZigBee. La station centrale aura elle aussi un fonctionnement ponctuel, se réveillant par tranches de 10 minutes toute les 6 heures (configuration par défaut), paramétrable bien évidement). Chaque fois qu'un système de gestion de capteur aura effectué une mesure, il essayera d'en communiquer le résultat à la base. En cas d'échec, il sera à même de conserver ces informations en vue d'une transmission ultérieur.\\
+C'est un sous-système de la station centrale, le ``système de gestion du site'' qui sera responsable de la collecte des données auprès des capteurs, du maintient de la configuration de la station, mais aussi de la journalisation de données aussi bien logiques que physiques telles que les erreurs systèmes, la température extérieur, etc.
+
+La station centrale dispose d'un autre sous-système, le ``système de transmission'', qui servira quant à lui à la communication avec le système central décrit plus loins. Cette transmission se fera de manière périodique, à une fréquence paramétrable, par satellite ou en utilisant le réseau GSM. Elle permettra d'envoyer dans un sens les relevés des capteurs, et dans l'autre l'envoi de nouveau paramètres de configuration à la station (et par extension, aux systèmes de gestion de capteurs).
 
 \subsection{Système central}
 
+
+
 \subsection{Communication}
-
-
-
 
 \section{Régles de pilotage du système}
 
@@ -30,7 +45,7 @@ Ce document permet de définir précisemment l'architecture applicative et techn
 
 \section{Architecture informatique et matérielle}
 
-\section{Réflexions sur les données }
+\section{Réflexions sur les données}
 
 \subsection{Modèles de données du système}
 , modèles de la base dedonnées intgrant les données de la prduction, volumétrie (évaluation de la base de données
