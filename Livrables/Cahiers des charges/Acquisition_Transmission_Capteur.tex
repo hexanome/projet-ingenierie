@@ -1,56 +1,66 @@
 ﻿\section{Introduction}
 
 \subsection{Présentation du projet}
+
 Le COPEVUE a lancé un appel d'offre dans le cadre de la réalisation d'un système de monitoring de sites isolés. Il s'agit donc de concevoir en premier lieu une solution technique permettant de répondre au mieux aux exigences fonctionnelles et non fonctionnelles que le COPEVUE formule. De façon synthétique notre équipe va proposer une solution permettant de surveiller des sites naturels difficiles d'accès (souvent à cause des conditions environnementales) et peu peuplés. Dans ces sites isolés sont souvent regroupés des postes de travail et ces zones doivent pouvoir être surveillées en dépit de la distance qui les sépare du bureau de contrôle.
 % On reprend ce qui a déjà été fait dans les autres documents.
 
 \subsection{Présentation du document}
 
-Ce dossier présentent les besoins nécessaires par rapport à la solution d'acquisition des données des capteurs, et de la transmission de celles-ci avec la base de la station. Nous essayerons tout d'abord de voir quels sont les objectifs de cette solution technique, les utilisateurs concernés et les problèmes pouvant se présenter, autant dans son développement, sa mise en oeuvre, et enfin sa maintenance. Ce document est accompagné d'annexes permettant d'appronfondir certains sujets plus techniques sur lesquels nous n'avons pas voulu nous attarder dans un but de clarté.
+Ce dossier présente les besoins nécessaires par rapport à la solution d'acquisition des données des capteurs, et de la transmission de celles-ci avec la base de la station. Nous essayerons tout d'abord de voir quels sont les objectifs de cette solution technique, les utilisateurs concernés et les problèmes pouvant se présenter, autant dans son développement, sa mise en oeuvre, et enfin sa maintenance. Ce document est accompagné d'annexes permettant d'approfondir certains sujets plus techniques sur lesquels nous n'avons pas voulu nous attarder dans un but de clarté.
 
 \subsection{Documents applicables / Documents de référence}
 
-% Décider ensemble de ce que l'on met dans ce genre de sections.
+Il peut être intéressant d'avoir pris connaissance de ces documents au préalable pour être mieux à même d'appréhender le contenu de ce cahier des charges.
+
+\begin{itemize}
+\item Dossier d'étude de faisabilité.
+\item Dossier de spécification technique des besoins.
+\item Dossier de conception.
+\end{itemize}
+
+En complément de ce document, il peut être utile de consulter le dossier des APIs et Interfaces.
 
 \subsection{Terminologie et abréviations}
 
 % A complêter au fur et à mesure.
 \begin{itemize}
 \item Base (de la station) : système informatique équipé d'un OS linux permettant de communiquer avec les capteurs et le serveur central. La base peut aussi enregistrer quelques données et permet de configurer la plupart des éléments de la station.
-\item Mode sommeil : mode dans lequel le microcontroleur et le capteur ne consomme que très peu d'énergie. Aucune acquisition et aucun calcul ne doivent être fait pendant cette periode. Le micro-controleur attend d'être réveillé par un évenement materiel ou logiciel.
+\item Mode sommeil : mode dans lequel le contrôleur et le capteur ne consomme que très peu d'énergie. Aucune acquisition et aucun calcul ne doivent être faits pendant cette période. Le contrôleur attend d'être réveillé par un évènement matériel ou logiciel.
+\item ZigBee : protocole de haut niveau permettant la communication de petites radios, à consommation réduite.
 \end{itemize}
 
 \section{Présentation du problème}
 
 \subsection{Buts, nature du logiciel, utilisateurs concernés}
 
-Le logicel qui doit être implementé a deux fonctions:
+Le logiciel qui doit être implémenté a deux fonctions:
 \begin{itemize}
 \item L'acquisition des données des capteurs à un intervalle de temps définie préalablement,
-\item L'envoi de ses données à la base de la station à un intervalle de temps régulier. Pendant cette connexion, la configuration des capteurs par la base devra être possible. Ainsi, l'écart entre chaque acquisition ou transmission devra être parametrable. Cette configuration sera faite pendant la transmission avec la base.
+\item L'envoi de ses données à la base de la station à un intervalle de temps régulier. Pendant cette connexion, la configuration des capteurs par la base devra être possible. Ainsi, l'écart entre chaque acquisition ou transmission devra être paramétrable. Cette configuration sera faite pendant la transmission avec la base.
 \end{itemize}
 
-Ce composant logiciel devra ainsi intéragir avec la base de la station, lui envoyer les données et vérifier si une reconfiguration est necessaire. Il devra également se charger de récuperer la valeur du capteur auquel il est attaché. Ce composant logiciel devra impérativement être économes et devra passer la grande majorité du temps en mode "sommeil".
+Ce composant logiciel devra ainsi interagir avec la base de la station, lui envoyer les données et vérifier si une reconfiguration est nécessaire. Il devra également se charger de récupérer la valeur du capteur auquel il est attaché. Ce composant logiciel devra impérativement être économe et devra passer la grande majorité du temps en mode "sommeil".
 
-D'un point de vue plus technique, ce logiciel devra s'exécuter sur un controleur attaché à une puce ZigBee, au capteur et à la batterie longue durée.
+D'un point de vue plus technique, ce logiciel devra s'exécuter sur un contrôleur attaché à une puce ZigBee, au capteur et à la batterie longue durée.
 
 Le protocole de communication utilisé par les modules de transmission avec la base sera décrit plus loin dans ce document.
 
-Ce document va aussi porter sur le matériel exploité par le logiciel précédement cité, à savoir le module de communication ZigBee. Les attentes par rapport à celui-ci seront également décrite.
+Ce document va aussi porter sur le matériel exploité par le logiciel précédemment cité, à savoir le module de communication ZigBee. Les attentes par rapport à celui-ci seront également décrites.
 
 \subsection{Formulation des besoins, exploitation et ergonomie, expérience}
 
-Le système présentement présenté doit répondre à deux besoins bien distincts, et ce quelque soit la localisation géographique du système dans le monde :
+Le système présentement présenté doit répondre à deux besoins bien distincts, et ce quel que soit la localisation géographique du système dans le monde :
 
-\parapraph{Acquisition} Le système doit pouvoir recuperer la valeur des capteurs de la façon suivante :
+\paragraph{Acquisition} Le système doit pouvoir récupérer la valeur des capteurs de la façon suivante :
 
 \begin{itemize}
-\item Le micro-controlleur sera reveillé selon la periode d'acquisition, il relevera la valeur du capteur 
-\item Selon la configuration de la periode de transmission, soit la donnée du capteur est en enregistré temporairement, soit directement envoyé à la base
-\item Le micro-controlleur devra s'adapter au capteur pour pouvoir gerer les differents types d'acquisitions
-\item Si besoin, le niveau de la batterie doit également être verifié
+\item Le contrôleur sera réveillé selon la période d'acquisition, il relèvera la valeur du capteur 
+\item Selon la configuration de la période de transmission, soit la donnée du capteur est en enregistré temporairement, soit directement envoyé à la base
+\item Le contrôleur devra s'adapter au capteur pour pouvoir gérer les différents types d'acquisitions
+\item Si besoin, le niveau de la batterie doit également être vérifié
 \item Le module doit être capable de se reconnecter à la base en cas de déconnexion
-\item En cas de situation critique (batterie ou capteur), les données necessaire à l'analyse de cette état devront être transmis à la base le plus tôt possible
+\item En cas de situation critique (batterie ou capteur), les données nécessaires à l'analyse de cet état devront être transmises à la base le plus tôt possible
 \end{itemize}
 
 \paragraph{Transmission} Pendant la transmission, le système doit être capable d'analyser les données et d'envoyer les informations suivantes à la base :
@@ -58,54 +68,55 @@ Le système présentement présenté doit répondre à deux besoins bien distinc
 \begin{itemize}
 \item Les informations nécessaire du capteur
 \item Au besoin et en cas de situation critique, le niveau restant de la batterie doit être envoyé
-\item La date du prochain reveil et eventuellement les informations utiles du micro-controlleur
+\item La date du prochain réveil et éventuellement les informations utiles du contrôleur
 \end{itemize}
 
 Pendant la transmission, le système doit être capable de recevoir des données correspondant à la reconfiguration du module :
 
 \begin{itemize}
-\item Les différents quantum de temps définissant la granularité avec laquelle le système transmet les résultats a la base, en analysant les données des capteurs.
+\item Les différents quantum de temps définissant la granularité avec laquelle le système transmet les résultats à la base, en analysant les données des capteurs.
 \item La configuration du capteur doit être possible.
 \end{itemize}
 
-Voici un schéma resumant les différents composants du module d'acquisition :
+Voici un schéma résumant les différents composants du module d'acquisition :
 
 \includegraphics[width=15cm]{schemacdc.png}
 
 \subsection{Portée, développement, mise en oeuvre, organisation de la maintenance}
 
-L'application devra être programmé en utilisant le langage C. Des tests unitaires et fonctionnels devront être implémenté.
+L'application devra être programmée en utilisant le langage C. Des tests unitaires et fonctionnels devront être implémentés.
 
-Les differents éléments (programme et tests) seront documentés, afin de faciliter la maintenance du système et de permettre des futures améliorations. Cette documentation devra contenir les différentes difficultés et erreurs rencontrées lors de la phase de developpement.
+Les différents éléments (programme et tests) seront documentés, afin de faciliter la maintenance du système et de permettre des futures améliorations. Cette documentation devra contenir les différentes difficultés et erreurs rencontrées lors de la phase de développement.
 
 \subsection{Limites}
 
-Le logiciel devra se limiter aux fonctions décrites dans ce documents. L'autonomie, la simplicité et la fiabilité du système sont primordiales. Toute fonctionnalité non décrite sera inutile.
+Le logiciel devra se limiter aux fonctions décrites dans ce document. L'autonomie, la simplicité et la fiabilité du système sont primordiales. Toute fonctionnalité non décrite sera inutile.
 
 \section{Exigences fonctionnelles}
 \subsection{Fonctions de base, performances et aptitudes}
 
-Le module d'acquisition doit sortir du mode "sommeil" à un intervalle de temps régulier définie en configuration. Le système doit rester le moins de temps possible en mode "éveillé" pour respecter les contraintes d'autonomie.
-L'acquisition du capteurs se fera via une interface. L'implémentation de cette interface ne doit pas être programmé et fera l'affaire d'une autre étude. Cette interface, réspecté par tous les types de capteurs, sera décrites plus loin.
+Le module d'acquisition doit sortir du mode "sommeil" à un intervalle de temps régulier défini en configuration. Le système doit rester le moins de temps possible en mode "éveillé" pour respecter les contraintes d'autonomie.
+L'acquisition du capteur se fera via une interface. L'implémentation de cette interface ne doit pas être programmée et fera l'affaire d'une autre étude. Cette interface, respectée par tous les types de capteurs, sera décrites plus loin.
 
-L'acquisition de la batterie devra être effectué régulierement à un intervalle de temps définie par la configuration. Une interface similaire à celle du capteur sera utilisé pour reperer le niveau de batterie.
+L'acquisition de la batterie devra être effectuée régulièrement à un intervalle de temps définie par la configuration. Une interface similaire à celle du capteur sera utilisé pour repérer le niveau de batterie.
 
-Après l'acquisition, une tentative de connexion devra être effecté avec la base de la station. Si celle-ci reussi, les données des capteurs et de la batterie sont transmises. Sinon, elles sont stockées temporairement. Ce stockage doit être étudié précisement et ne doit par être effectué si la consommation devient trop importante. Les données seront dans conservé dans les cas où la situation est critique.  
+Après l'acquisition, une tentative de connexion devra être effectuée avec la base de la station. Si celle-ci réussi, les données des capteurs et de la batterie sont transmises. Sinon, elles sont stockées temporairement. Ce stockage doit être étudié précisément et ne doit pas être effectué si la consommation devient trop importante. Les données seront dans conservé dans les cas où la situation est critique.  
 
-Pendant la transmission, la configuration doit être possible. Les points suivants peuvent être modifié :
+Pendant la transmission, la configuration doit être possible. Les points suivants peuvent être modifiés :
 \begin{itemize}
-\item La valeur du capteur en cas de mauvais reglage de celui ci,
-\item La periode d'acquisition des données du capteur,
-\item La periode d'acquisition des données de la batterie,
-\item La periode de transmission, dans la plupart des cas cette periode sera égal à la periode d'acquisition des données du capteur. 
+\item La valeur du capteur en cas de mauvais réglage de celui-ci,
+\item La période d'acquisition des données du capteur,
+\item La période d'acquisition des données de la batterie,
+\item La période de transmission, dans la plupart des cas cette période sera égale à la période d'acquisition des données du capteur. 
 \end{itemize}
 
 \subsection{Contraintes d'utilisation}
 
-Le système ne doit pas pouvoir être utilisé par un utilisateur humain. La sécurisation des données envoyées est à prévoir, il ne faut pas qu'un utilisateur externe puissent intercepter les données ou interagir avec le systeme. Cette interaction pourrait mener à des disfonctionnements du système. Un système de cryptage, tel qu'un certificat, ou une autre méthode de sécurisation doit être mis en place.
-Il faut prévoir qu'une opération de maintenance sur site a un coût élevé, le système doit être réflechit pour limiter au maximum les disfonctionnements necesitant un déplacement. 
+Le système ne doit pas pouvoir être utilisé par un utilisateur humain. La sécurisation des données envoyées est à prévoir, il ne faut pas qu'un utilisateur externe puissent intercepter les données ou interagir avec le système. Cette interaction pourrait mener à des disfonctionnements du système. Un système de cryptage, tel qu'un certificat, ou une autre méthode de sécurisation doit être mis en place.
+Il faut prévoir qu'une opération de maintenance sur site a un coût élevé, le système doit être réfléchit pour limiter au maximum les disfonctionnements nécessitant un déplacement. 
 
 \subsection{Critères d'appréciation de la réalisation effective de la fonction}
+
 Les différents critères seront pris en compte pour juger le système. A ces critères sont ajoutés la nécessité et le taux de difficulté estimé. Ces valeurs vont de 0 à 10, 0 étant la valeur la plus basse :
 
 \begin{tabular}{|l|l|l|}
@@ -113,7 +124,7 @@ Les différents critères seront pris en compte pour juger le système. A ces cr
   Critère & Nécessité & Difficulté \\
   \hline
   Sécurisation du protocole de transfert & 7 & 6 \\
-  Dépense énergetique & 9 & 5 \\
+  Dépense énergétique & 9 & 5 \\
   Stabilité & 9 & 7 \\
   Facilité de la maintenance du code & 8 & 4 \\
   Clarté de la documentation  & 8 & 4 \\
@@ -124,9 +135,10 @@ Les différents critères seront pris en compte pour juger le système. A ces cr
 
 \section{Contraintes imposées, faisabilité technologique, moyens}
 \subsection{Sûreté, planning, organinsation, communication}
-Le protocole utilisé est le ZigBee, qui à l'avantage d'être simple d'utilisation. Cependant, il est necessaire de prévoir un temps d'apprentisage de cette technologie si necessaire. 
 
-La communication avec la maitrise d'ouvrage peut être envisagé et sera si necessaire organisé par la maitrise d'oeuvre. Le planning devra également prendre en compte une période de test.
+Le protocole utilisé est le ZigBee, qui a l'avantage d'être simple d'utilisation. Cependant, il est nécessaire de prévoir un temps d'apprentissage de cette technologie si nécessaire. 
+
+La communication avec la maitrise d'ouvrage peut être envisagée et sera si nécessaire organisé par la maitrise d'oeuvre. Le planning devra également prendre en compte une période de test.
 
 Voici le planning prévisionnel du projet :
 
@@ -137,43 +149,47 @@ Voici le planning prévisionnel du projet :
   Spécification Code et Tests & 1 mois \\
   Dévellopement Code et Tests & 3 mois \\
   Tests intégration avec le système entier & 2 mois \\
-  Finalisation et reprise des élements  & 2 mois \\
+  Finalisation et reprise des éléments  & 2 mois \\
   \hline
   Total  & 8 mois \\
   \hline
 \end{tabular}
 
 \subsection{Complexité}
-Le système envisagé ne demande pas une complexité importante. Le protocole ZigBee étant largement documenté, le reste du système reste simple. Le fonctionnement de ce module avec le reste du sytème doit être pris en compte. 
-La principale difficulté reste la stabilité du système, celui ci doit absolument être fiable. 
+
+Le système envisagé ne demande pas une complexité importante. Le protocole ZigBee étant largement documenté, le reste du système reste simple. Le fonctionnement de ce module avec le reste du système doit être pris en compte. 
+La principale difficulté reste la stabilité du système, celui-ci doit absolument être fiable. 
 
 \subsection{Compétences, moyens et règles}
+
 Les compétences techniques suivantes sont exigées :
 \begin{itemize}
 \item Expertise en système embarquée
 \item Programmation bas niveau
-\item Connaissance de protocole reseau
-\item Securisation reseau
+\item Connaissance de protocole réseau
+\item Sécurisation réseau
 \end{itemize}
-Ce projet nécessite peu de ressource materiel, l'équipe devra être équipé de technologie pour programmer et debuguer la carte choisi. 
+Ce projet nécessite peu de ressource matérielle, l'équipe devra être équipée de technologie pour programmer et débuguer la carte choisi. 
 
 \section{Configuration cible}
 
 \subsection{Matériels et logiciels}
-Le materiel utilisé pour dévelloper le module est le suivant:
 
-Pour le controleur qui à la responsabilité de gérer le capteur, le ZigBee et le niveau de batterie, il a été decidé d'utiliser un carte FOX Board LX832.
+Le matériel utilisé pour développer le module est le suivant:
 
-Pour le ZigBee, un carte de type EB051 sera utilisé, la puce ZigBee est directement intégré au circuit de la carte. Cette carte permet une utilisation simplifié des protocoles ZigBee.
-Si le capteur n'en est pas doté, un micro-controleur sera couplé au capteur. Ce cahier des charges ne prends pas en compte cette partie. Un pilote sera devellopé par une autre équipe afin de coupler la capteur à la carte.
-L'utilisation de plusieurs cartes rend l'implementation plus facile. Une attention au moment du devellopement permettera une integration simplifié entre les systèmes.
+Pour le contrôleur qui à la responsabilité de gérer le capteur, le ZigBee et le niveau de batterie, il a été décidé d'utiliser un carte FOX Board LX832.
+
+Pour le ZigBee, une carte de type EB051 sera utilisé, la puce ZigBee est directement intégré au circuit de la carte. Cette carte permet une utilisation simplifiée des protocoles ZigBee.
+Si le capteur n'en est pas doté, un microcontrôleur sera couplé au capteur. Ce cahier des charges ne prend pas en compte cette partie. Un pilote sera développé par une autre équipe afin de coupler la capteur à la carte.
+L'utilisation de plusieurs cartes rend l'implémentation plus facile. Une attention au moment du développement permettra une intégration simplifié entre les systèmes.
 
 \subsection{Stabilité de la configuration}
 
 La maintenance du système étant naturellement très délicate, il sera nécessaire d'obtenir un version du logiciel très stable et ne présentant que peu de défauts. Comme précisé precedemment, une attention particulière sera donné aux phases de tests.
 
 \section{Guide de réponse au cahier des charges}
-La réponse au cahier des charges se fera particulièrement sur la documentation, notament au niveau des tests. Une première verification sera ainsi effectué pour confirmer l'état du projet. Une fois cette étape validé, une prise en main et vérification complète du système sera effectué.
+
+La réponse au cahier des charges se fera particulièrement sur la documentation, notamment au niveau des tests. Une première vérification sera ainsi effectuée pour confirmer l'état du projet. Une fois cette étape validée, une prise en main et vérification complète du système sera effectué.
 
 \section{Annexes}
 \subsection{Protocole ZigBee}
