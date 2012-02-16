@@ -35,6 +35,14 @@ La station centrale dispose d'un autre sous-système, le ``système de transmiss
 
 \subsection{Système central}
 
+Le ``système central'' est une application connectée à internet servant à centraliser les informations collectées sur l'ensemble des sites d'un territoire (voir même du monde). En voici le fonctionnement :
+
+Les systèmes de transmission des sites isolés vont communiquer par internet avec le système central pour lui transmettre les derniers relevés des capteurs du site. Celui-ci va alors les stocker en base de données et vérifier si de nouvelles informations de configuration sont disponibles pour ce site. Si c'est le cas, celles-ci seront transmises en réponse.
+
+En arrière plan, le système central va appliquer un ensemble de règles configurables pour vérifier si les nouvelles valeurs transmisent doivent déclencher des actions automatisées telles que des alertes ou des demandes d'intervention sur site.
+
+Le système central va aussi présenter une interface de gestion au gestionnaires et clients du système, leur permettant de vérifier l'état et l'historique des mesures de chaque site, et la reconfiguration de ceux-ci. Cette interface doit aussi leur permettre de consulter d'éventuelles alertes, et de pouvoir y réagir en planifiant des interventions.
+
 \subsection{Communication}
 
 \section{Régles de pilotage du système}
