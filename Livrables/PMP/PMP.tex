@@ -2,7 +2,6 @@
 \item
 \end{itemize}
 
-
 \section{Introduction}
 Nous répondons dans l'ensemble des documents produits par l'hexanôme H4111 à l'appel d'offre lancé par le COPEVUE visant à concevoir un Système de monitoring à distance de sites isolés. Dans ce document sont détaillés avec plus de précisions les constituants  du projet. Nous insisterons donc sur les points de vue organisationnels liés à la conception de notre solution technique.Après avoir resitué le contexte du problème, il s'agira de définir les objectifs ainsi que les contraintes liés à ce type de projet. Sont détaillées aussi dans ce document, les méthodes de travail,la répartition des rôles au sein du groupe d'ingénierie ainsi que le planning de répartition des tâches et des charges de travail. 
 
@@ -121,7 +120,13 @@ Pour chaque système, voici leurs décompositions en sous projets. Nous insiston
 \item Sous-projet 3.3.1 : Module de transmission des données capteurs vers le centre de supervision. Il est nécessaire de pouvoir switcher rapidement entre la technologie GPS et GPRS et de pouvoir assurer l'intégrité des donnés. Les requète d'envoi des données seront faites via le protocole HTTP.
 \meskip 
 \item Sous-projet 4.1.1 : Réception et stockage des données capteurs par le site de supervision central. Ces données seront stockées dans des bases de données et accessible via des requètes SQL. Il est important de dater les données afin de pouvoir exploiter et tracer l'évolution des données en fonction du temps.
-\item Sous-projet 4.1.2 : Envoi des ordres de maintenance vers la station d'acquisition par le centre de supervision. Ces ordres pourront être envoyés de manière automatique ou être initiés par les agents de supervision.
+\item Sous-projet 4.1.2 : Envoi des ordres de maintenance vers la station d'acquisition par le centre de supervision. Ces ordres pourront être envoyés de manière automatique ou être initiés par les agents de supervision. Cette envoi d'ordre de maintenance implique de définir un protocole de communication entre le poste de supervision et la station d'acquisition sur site.
+\item Sous-projet 4.2.1 et 4.2.2 : Gestion de la base de données capteurs et Elaboration d'une solution logicielle d'aide à la décision. Il s'agit ici de pouvoir déleguer une partie de l'analyse des données capteurs à la machine qui gère la base de données. Ce logiciel permettra par exemple de générer des alertes en fonction des niveau seuil de chaque capteurs. Il sera possible d'enrichir à tout moment le système à la manière d'un système expert.
+\item Sous-projet 4.3.1 : Elaboration d'une solution de restitution des données sur le web. Ce sous-projet concerne la création d'une interface web permettant de mettre en forme les données capteurs ainsi que les alertes générées par le système d'aide à la décision. Dans ce sous-projet logiciel on accordera une attention particulière à la clarté et à l'ergonomie de l'IHM. Ce sous-projet inclus de même le processus d'envoi des ordes de maintenance vers la station d'acquisition. Il s'agit de l'interface entre le superviseur et le site isolé.
+\item Sous-projet 4.3.2 : L'élaboration d'une solution de restitution des données sur application smartphone permettra au technicien de disposer d'informations très précise sur l'état du site isolé. Les informations seront communes à l'interface web puisqu'issues de la même base de données.
+\item Sous-projet 5.1.1 : La mise en place d'une solution de reporting technicien sera implémenté sous différentes plateformes à savoir l'interface web et l'application smartphone. L'application smartphone devra permettre le reporting du technicien au moment de son intervention. Ce reporting sera transmis puis mis à disposition du superviseur via l'interface web.
+\item Sous-projet 5.3.1 : Mise en place d'une solution d'aide à la décision pour l'intervention du technicien. Via l'interface web ou l'application smartphone, le technicien sera conseillé sur la manière de regler tel ou tel problème lorsqu'il est sur site. Les plans ainsi que les manuels des capteurs numérisés seront interprétés et les informations importantes pourront être restituées au techniciens.
+\item Sous-projet 5.3.2 : Intégration d'un progiciel de gestion des flux logistiques. Afin de positionner le camion d'intervention, savoir quand l'envoyer sur site, faire l'inventaire des outils nécessaires à une intervention.
 %TODO Continuer.
 \end{itemize}
 
@@ -135,18 +140,35 @@ Chaque projet défini plus haut va amener à l'établissement d'un cahier des ch
 \item Cahier des charges du sous-projet 4.3.1 : Elaboration d'une solution de restitution des données sur le Web.
 \end{itemize}
 
-
-
 \section{Moyens à mettre en oeuvre}
+
 \subsection{Moyens matériels}
 \subsection{Moyens logiciels}
-\subsection{Moyens humains}
-\subsubsection{Evaluation des charges de travail}
+Listes des différents outils et méthodes qui seront utilisés tout au long du projet:
+\begin{itemize}
+\item \textbf{Google Docs} : Outil en ligne permettant un partage et un travail simultané en temps réel sur différents types de documents, avec une gestion des versions. Ne sera utilisé que le temps de la mise en place d’outils plus avancés.
+\item \textbf{UML} : langage de modélisation, qui sera surtout utilisé pour la modélisation des cas d’utilisation.
+\item \textbf{Redmine} : Gestionnaire de projet en ligne, disposant d’un wiki, permettant de suivre le temps passé sur une tâche, d’attribuer les tâches aux différents utilisateurs, de créer un  diagramme de Gantt pour faciliter le travail du chef de projet.
+\item \textbf{Git} : Gestionnaire de sources, qui sera intégré directement à Redmine, permettant de travailler à plusieurs sur un même document et de résoudre facilement les conflits au moment de la mise en commun.
+\item \textbf{LaTeX} : Langage et système de composition de documents, qui a l’avantage d’être textuel, et donc plus facile à versionner que des documents binaires Office.
+\item \textbf{Diagramme de Gantt } : Outil permettant l’ordonnancement et la visualisation des tâches entre les différents membres du projet, afin de gérer au mieux l’avancement du projet.
+\end{itemize}
+Pour faire le développement des produits logiciels, il pourra être intéressant d'utiliser le framework .NET permettant de rendre des applications facilement portables sur internet. Ceci est important vis à vis de notre choix de vouloir rendre les informations disponibles via un site web.
 
-\section{Principes d'actions sur le système à distance}
-\subsection{Configuration à distance du système}
-\subsection{Maintenance à distance du système}
-\section{Conclusion}
+\subsection{Moyens humains}
+Comme définit au dessus, nous avons.
+\begin{itemize}
+\item Le Chef de projet.
+\item Le Responsable qualité.
+\item Le Responsable du déploiement du système.
+\item Le Responsable du pôle R\&D qui sera à la tête d'une équipe de 10 personnes en charges du développement des logiciel et du déploiement des infrastructures matérielles informatiques.
+\item Une équipe commerciale.
+\item Une équipe de technicien qui sera en charge d'intervenir sur les sites à problèmes.
+\end{itemize}
+Le pôle R\&D étant constitué d'ingénieur chargé de maintenir le système mais aussi de le faire évoluer.
+Le Responsable du déploiement est quant à lui chargé de manager les techniciens qui intègrent le système mais aussi de reporter les éventuels bugs d'intégration à l'équipe R\&D.
+\subsubsection{Evaluation des charges de travail}
+non défini dans ce draft.
 
 
 
