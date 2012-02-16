@@ -83,6 +83,11 @@ La première problématique qui se pose en regard du volume des données que nou
 L'autre aspect de la volumétrie des données est celle du stockage de l'historique des relevés de chaque site, et ce sur une longue période, pour être capable de les utiliser plus tard (e.g pour faire une comparaison des moyennes mensuelles d'une année à l'autre). Mais encore une fois, la nature des données concernée, et leur quantité, ne font pas de leur stockage une des principales difficultés de ce système, et un simple déploiement de serveurs SQL feront sans problème l'affaire.
 
 \section{Gestion des problèmes et anomalies, sécurité}
+Comme nous l'avons vu, la disponibilité du système est primordiale pour assurer une surveillance efficace des sites, c'est pourquoi il faut se prémunir contre les erreurs et surtout pouvoir gérer celles qui surviendraient pour éviter de paralyser tout le système. Notre architecture modulaire permet de limiter les risques, tous les éléments n'étant pas nécessaire au fontionnement de l'ensemble.
+Dans l'architecture, la détection de problèmes matériels est également prévu, avec la possibilité de récupérer l'état des capteurs et autres composants, ce qui permet d'identifier l'origine des erreurs.
+Le point névralgique de notre système est le dispositif de communication, son bon fonctionnement est primordial pour tous les autres composants qui gravitent autour. Il faut donc s'assurer de la qualité de service que l'opérateur choisi peut garantir. De notre côté, un soin tout particulier sera porté sur la résilience aux erreurs de ce module, pour ne pas pénaliser la bonne supervision des sites.
+Un autre point important est le serveur central, qui matériellement ne présente que peu de risque, grâce au solution de Cloud Computing, par contre il faudra là aussi portée une grande attention à son comportement en cas d'erreur. Au niveau de la base de données, il est possible d'avoir des moyens de retours en arrière (rollback) en cas de corruption de celle-ci.
+
 
 \section{Conclusion}
 

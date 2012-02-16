@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.1.5)  8 FEB 2012 11:58
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.1.5)  17 FEB 2012 00:39
 entering extended mode
  %&-line parsing enabled.
 **dossier-synthese.tex
@@ -478,12 +478,12 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 \openout3 = `dossier-synthese.toc'.
 
  [1]
-Overfull \hbox (2.30342pt too wide) in paragraph at lines 89--93
+Overfull \hbox (12.30342pt too wide) in paragraph at lines 95--96
 []\T1/lmr/m/n/10 La lo-gis-tique. Il n'ex-iste pas de plan-i-fi-ca-tion glob-al
 e et donc pas d'op-ti-mi-sa-tion dans les livraisons/enlèvements
  []
 
-[2] [3] (./dossier-synthese.aux) ) 
+[2] [3] [4] (./dossier-synthese.aux) ) 
 Here is how much of TeX's memory you used:
  2562 strings out of 495061
  32998 string characters out of 1182622
@@ -491,15 +491,15 @@ Here is how much of TeX's memory you used:
  5708 multiletter control sequences out of 15000+50000
  39202 words of font info for 33 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 25i,6n,24p,649b,189s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.en
-c}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/ty
-pe1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb></
-usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/p
-ublic/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr17.pfb>
-Output written on dossier-synthese.pdf (4 pages, 176367 bytes).
+ 25i,6n,24p,649b,161s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-e
+c.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/font
+s/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmcsc10.pf
+b></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/typ
+e1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr17.pfb>
+Output written on dossier-synthese.pdf (5 pages, 176802 bytes).
 PDF statistics:
- 40 PDF objects out of 1000 (max. 8388607)
+ 43 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
