@@ -212,3 +212,55 @@ En outre, il est connecté au module de transmission des informations de la stat
 Ce module sera référencé dans les autres modules comme étant \texttt{struct sensorComm}, une classe qui gère la communication et la configuration des capteurs vis-à-vis de la supervision.
 
 
+\section{Intervention Humaine}
+
+La question de l'intervention humaine survient lorsque l'on est confronté aux limites de l'automatisation des systèmes que l'on conçoit. En particulier, nous retrouvons la nécessité d'une main humaine au niveau du rechargement des batteries, de la recharge en matière première des sites isolés par camions, de la décharge de produits consommés, ou encore de la réparation des éléments du système trop endommagés pour une réparation à distance.
+
+\subsection{Réception Information Technicien}
+
+Les techniciens ont pour rôle de réparer les dommages physiques exceptionnels qui ne peuvent être effectués à distance, comme dans le cas de la destruction d'un capteur au cours d'une forte tempête. Il doivent également, de façon régulière, remplacer les batteries.
+
+Ce module obtient l'information concernant le bas niveau d'une batterie ou la disparition d'un composant par l'interface proposée par le module communication vu précédemment.
+
+Nous établissons un log de l'état des capteurs et des batteries sur le serveur, afin qu'il soit possible de consulter ces informations.
+
+\begin{itemize}
+\item \tt{void logStatus(struct sensorComm commSystem)}
+\end{itemize}
+
+Les techniciens peuvent prouver qu'ils ont réparé le système en lançant un simple logStatus, qui mettra à jour les informations concernant la disponibilité de chaque capteur et des batteries.
+
+
+\subsection{Suivi de camions}
+
+Il s'agit ici de connaître la feuille de route des camions afin de garantir un suivi logistique approprié.
+
+Typiquement, cette interface est utilisée pour enregistrer les mouvements des camions, afin de pouvoir les consulter plus tard sur le site web.
+
+\begin{itemize}
+\item \texttt{string getCurrentTarget(string vehicleID)} : obtient le siteID correspondant au site isolé vers lequel le camion \texttt{vehicleID} se dirige, ou \texttt{null}, s'il n'y en a pas actuellement (ou si le véhicule n'existe pas).
+\item \texttt{string getPurpose(string vehicleID, string siteID)} : donne le but du voyage identifié par un camion et son objectif.
+\item \texttt{struct \{ double latitude, double longitude\} getGeolocalization(string vehicleID)} : récupération des données de géolocalisation envoyées régulièrement par le smartphone du camionneur ou du technicien.
+\end{itemize}
+
+Une fois les informations obtenues sur le chargement des camions par communication directe (ie, via le smartphone fourni par COPEVUE) avec les camionneurs, il est possible d'optimiser la logistique à la volée en indiquant au camionneur qu'il peut effectuer un voyage de plus vers un site isolé à proximité, si son camion n'est pas totalement plein, par exemple.
+
+Ces considérations sont mentionnées dans le dossier d'appel d'offre, sans obligation. Notre système permet d'effectuer les optimisations logistiques espérées par effet de bord, et de manière flexible.
+
+\subsection{Logistique}
+
+Tandis que le suivi de camions ne concerne que l'apport de ressources (comme des réserves d'eau, etc.) ou l'embarquement de déchets, la logistique concerne de manière plus générale les flux de ressources qui nécessitent une intervention humaine. Ceci inclut en particulier l'accès à la gestion des routes.
+
+\begin{itemize}
+\item \texttt{int addRoute(string vehicleID, string siteID, string purpose)} : ajoute un parcours, indiquant ainsi que le véhicule donné (identifié de manière unique par son vehicleID) se rend au site identifié par siteID. Il est possible d'indiquer la raison du voyage, afin d'offrir des informations supplémentaires à la personne qui consultera par la suite les routes.
+\end{itemize}
+
+
+\section{Supervision}
+
+\subsection{Réception}
+
+\subsection{Traitement}
+
+\subsection{Restitution}
+
