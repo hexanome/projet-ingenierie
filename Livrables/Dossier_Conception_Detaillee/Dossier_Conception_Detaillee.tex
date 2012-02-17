@@ -56,6 +56,8 @@ La communication entre les modules de capteurs et la base ce fait grâce au prot
 
 \section{Règles de pilotage du système}
 
+
+
 \section{Architecture applicative}
 
 Au niveau des capteurs, l'usage de microcontrolleurs programmables ne nous impose pas d'utiliser un système d'exploitation. Le développement sur ces composants se fera en en C, en utilisant les outils fournis par le constructeur.
@@ -110,13 +112,25 @@ Dans l'architecture, la détection de problèmes matériels est également prév
 Le point névralgique de notre système est le dispositif de communication, son bon fonctionnement est primordial pour tous les autres composants qui gravitent autour. Il faut donc s'assurer de la qualité de service que l'opérateur choisi peut garantir. De notre côté, un soin tout particulier sera porté sur la résilience aux erreurs de ce module, pour ne pas pénaliser la bonne supervision des sites.
 Un autre point important est le serveur central, qui matériellement ne présente que peu de risque, grâce au solution de Cloud Computing, par contre il faudra là aussi portée une grande attention à son comportement en cas d'erreur. Au niveau de la base de données, il est possible d'avoir des moyens de retours en arrière (rollback) en cas de corruption de celle-ci.
 
-
 \section{Conclusion}
 
-\section{Annexe 1 : Répresentation informatique des objets (messages…..)}
+\newpage
+\appendix
+\appendixpage
+
+\section{Annexe 1 : Répresentation informatique des objets (messages...)}
 
 \section{Annexe 2 : Réflexion sur le réseau (principes qualité, pour la conception du réseau,
 description du réseau (logiciel, couches…)…}
 
 \section{Annexe 3 : Démarrage du système}
-L'objectif est de voir comment le démarrage du système s'effectue.
+
+Le démarrage du système, dans notre cas, profite de la contrainte de fiabilité que nous avons prise en compte dans l'ensemble des spécifications des différents sous-systèmes. En effet, il est prévu que les systèmes puissent reprendre leur fonctionnement normal suite à un défaut de leur matériel ou d'un autre système. Nous allons voir ici que cela a pour effet de faciliter la phase de démarrage du système.
+
+La première étape de démarrage du système consiste à mettre sous tension la station centrale ainsi que les différents capteurs. Ceux-ci vont automatiquement essayer de se connecter à la première station qu'il trouveront, et seront ensuite configurable à partir de celle-ci. Pour la station, le système de gestion du site va démarer immédiatement après l'OS, et ce sera à lui de démarer ensuite le système de transmission quand il le jugera utile. Une configuration initiale sera nécéssaire à partir d'un ordinateur connecté directement dessus pour lui renseigner son identifiant et son nom, l'adresse du système central, les informations nécéssaires à l'utilisation du module de transmission (fréquences satellite, code pin de la carte SIM pour ls GSM, etc.) et autres paramètres telle que la granularité avec laquelle doivent être effectuées les mesures pour les différentes types de capteurs, mais aussi la fréquence des transmissions au système central.
+
+Une fois la station centrale configurée, celle-ci commencera automatiquement à accepter les connexion des système de gestion des capteurs, et configurera alors automatiquement ceux-ci. Arrivé à ce stade-là, il n'est pas forcément nécéssaire que le système central soit déjà accéssible. Dans le cas où la station centrale n'arriverait pas à joindre celui-ci, elle conservera les données qu'elle souhaitait lui transmettre, et recommencera plus tard.
+
+Pour ce qui est du système justement, étant donné qu'il s'agit ici d'une application hébergée censée être disponible en permanence, on ne devrait avoir à la démarer qu'une seule fois, en début de l'exploitation.
+
+On constate donc que le fait d'avoir une architecture découplée, et permettant la reprise sur défaut, nous facilite ici la tâche pour ce qui est du démarrage du système.

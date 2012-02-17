@@ -1,12 +1,11 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.2.1)  16 FEB 2012 14:03
+This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=pdflatex 2011.4.27)  17 FEB 2012 02:27
 entering extended mode
-**C:/Users/XS/Documents/Scolaire/4IF/Ingenierie/projet-ingenierie/Livrables/Cah
-iers*des*charges/Transmission_Satellite_Final.tex
+**Transmission_Satellite_Final.tex
 
-("C:/Users/XS/Documents/Scolaire/4IF/Ingenierie/projet-ingenierie/Livrables/Cah
-iers des charges/Transmission_Satellite_Final.tex"
-LaTeX2e <2011/06/27>
-Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
+("D:\Visual Studio 2010\Insa\H4111\projet-ingenierie\Livrables\Cahiers des char
+ges\Transmission_Satellite_Final.tex"
+LaTeX2e <2009/09/24>
+Babel <v3.8l> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
 croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
 lician, german, german-x-2009-06-19, greek, gujarati, hindi, hungarian, iceland
@@ -16,9 +15,9 @@ an, ngerman-x-2009-06-19, nynorsk, oriya, panjabi, pinyin, polish, portuguese,
 romanian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swis
 sgerman, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, u
 senglishmax, welsh, loaded.
-("C:\Program Files (x86)\MiKTeX\tex\latex\base\article.cls"
+(D:\Soft2\Latex\USBTeX-1.6\programs\MiKTeX_2.9\tex\latex\base\article.cls
 Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
-("C:\Program Files (x86)\MiKTeX\tex\latex\base\size10.clo"
+(D:\Soft2\Latex\USBTeX-1.6\programs\MiKTeX_2.9\tex\latex\base\size10.clo
 File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
@@ -33,19 +32,19 @@ File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-("C:\Program Files (x86)\MiKTeX\tex\latex\base\inputenc.sty"
+(D:\Soft2\Latex\USBTeX-1.6\programs\MiKTeX_2.9\tex\latex\base\inputenc.sty
 Package: inputenc 2008/03/30 v1.1d Input encoding file
 \inpenc@prehook=\toks14
 \inpenc@posthook=\toks15
 
-("C:\Program Files (x86)\MiKTeX\tex\latex\base\utf8.def"
+(D:\Soft2\Latex\USBTeX-1.6\programs\MiKTeX_2.9\tex\latex\base\utf8.def
 File: utf8.def 2008/04/05 v1.1m UTF-8 support for inputenc
 Now handling font encoding OML ...
 ... no UTF-8 mapping file for font encoding OML
 Now handling font encoding T1 ...
 ... processing UTF-8 mapping file for font encoding T1
 
-("C:\Program Files (x86)\MiKTeX\tex\latex\base\t1enc.dfu"
+(D:\Soft2\Latex\USBTeX-1.6\programs\MiKTeX_2.9\tex\latex\base\t1enc.dfu
 File: t1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
@@ -195,7 +194,7 @@ File: t1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
 Now handling font encoding OT1 ...
 ... processing UTF-8 mapping file for font encoding OT1
 
-("C:\Program Files (x86)\MiKTeX\tex\latex\base\ot1enc.dfu"
+(D:\Soft2\Latex\USBTeX-1.6\programs\MiKTeX_2.9\tex\latex\base\ot1enc.dfu
 File: ot1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
@@ -226,7 +225,7 @@ File: ot1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
 Now handling font encoding OMS ...
 ... processing UTF-8 mapping file for font encoding OMS
 
-("C:\Program Files (x86)\MiKTeX\tex\latex\base\omsenc.dfu"
+(D:\Soft2\Latex\USBTeX-1.6\programs\MiKTeX_2.9\tex\latex\base\omsenc.dfu
 File: omsenc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A7 (decimal 167)
    defining Unicode char U+00B6 (decimal 182)
@@ -250,22 +249,22 @@ Now handling font encoding U ...
    defining Unicode char U+2122 (decimal 8482)
    defining Unicode char U+2423 (decimal 9251)
 ))
-("C:\Program Files (x86)\MiKTeX\tex\latex\geometry\geometry.sty"
+(D:\Soft2\Latex\USBTeX-1.6\programs\MiKTeX_2.9\tex\latex\geometry\geometry.sty
 Package: geometry 2010/09/12 v5.6 Page Geometry
 
-("C:\Program Files (x86)\MiKTeX\tex\latex\graphics\keyval.sty"
+(D:\Soft2\Latex\USBTeX-1.6\programs\MiKTeX_2.9\tex\latex\graphics\keyval.sty
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks16
 )
-("C:\Program Files (x86)\MiKTeX\tex\generic\oberdiek\ifpdf.sty"
+(D:\Soft2\Latex\USBTeX-1.6\programs\MiKTeX_2.9\tex\generic\oberdiek\ifpdf.sty
 Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
 Package ifpdf Info: pdfTeX in PDF mode is detected.
 )
-("C:\Program Files (x86)\MiKTeX\tex\generic\oberdiek\ifvtex.sty"
+(D:\Soft2\Latex\USBTeX-1.6\programs\MiKTeX_2.9\tex\generic\oberdiek\ifvtex.sty
 Package: ifvtex 2010/03/01 v1.5 Switches for detecting VTeX and its modes (HO)
 Package ifvtex Info: VTeX not detected.
-)
-("C:\Program Files (x86)\MiKTeX\tex\generic\ifxetex\ifxetex.sty"
+) (D:\Soft2\Latex\USBTeX-1.6\programs\MiKTeX_2.9\tex\generic\ifxetex\ifxetex.st
+y
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
 \Gm@cnth=\count87
@@ -281,11 +280,12 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@layoutvoffset=\dimen110
 \Gm@dimlist=\toks17
 
-("C:\Program Files (x86)\MiKTeX\tex\latex\geometry\geometry.cfg"))
-("C:\Program Files (x86)\MiKTeX\tex\latex\unicode\ucs.sty"
+(D:\Soft2\Latex\USBTeX-1.6\programs\MiKTeX_2.9\tex\latex\geometry\geometry.cfg)
+) (D:\Soft2\Latex\USBTeX-1.6\programs\MiKTeX_2.9\tex\latex\unicode\ucs.sty
 Package: ucs 2004/10/17 UCS: Unicode input support
 
-("C:\Program Files (x86)\MiKTeX\tex\latex\unicode\data\uni-global.def"
+(D:\Soft2\Latex\USBTeX-1.6\programs\MiKTeX_2.9\tex\latex\unicode\data\uni-globa
+l.def
 File: uni-global.def 2004/10/17 UCS: Unicode global data
 )
 \uc@secondtry=\count90
@@ -293,14 +293,14 @@ File: uni-global.def 2004/10/17 UCS: Unicode global data
 \uc@combtoksb=\toks19
 \uc@temptokena=\toks20
 )
-("C:\Program Files (x86)\MiKTeX\tex\latex\base\fontenc.sty"
+(D:\Soft2\Latex\USBTeX-1.6\programs\MiKTeX_2.9\tex\latex\base\fontenc.sty
 Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
 
-("C:\Program Files (x86)\MiKTeX\tex\latex\base\t1enc.def"
+(D:\Soft2\Latex\USBTeX-1.6\programs\MiKTeX_2.9\tex\latex\base\t1enc.def
 File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
 ))
-("C:\Program Files (x86)\MiKTeX\tex\latex\lm\lmodern.sty"
+(D:\Soft2\Latex\USBTeX-1.6\programs\MiKTeX_2.9\tex\latex\lm\lmodern.sty
 Package: lmodern 2009/10/30 v1.6 Latin Modern Fonts
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.
@@ -335,20 +335,20 @@ LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
 )
-("C:\Program Files (x86)\MiKTeX\tex\generic\babel\babel.sty"
-Package: babel 2008/07/08 v3.8m The Babel package
+(D:\Soft2\Latex\USBTeX-1.6\programs\MiKTeX_2.9\tex\generic\babel\babel.sty
+Package: babel 2008/07/06 v3.8l The Babel package
 
 *************************************
 * Local config file bblopts.cfg used
 *
-("C:\Program Files (x86)\MiKTeX\tex\latex\00miktex\bblopts.cfg"
+(D:\Soft2\Latex\USBTeX-1.6\programs\MiKTeX_2.9\tex\latex\00miktex\bblopts.cfg
 File: bblopts.cfg 2006/07/31 v1.0 MiKTeX 'babel' configuration
 )
-("C:\Program Files (x86)\MiKTeX\tex\generic\babel\frenchb.ldf"
+(D:\Soft2\Latex\USBTeX-1.6\programs\MiKTeX_2.9\tex\generic\babel\frenchb.ldf
 Language: frenchb 2009/03/16 v2.3d French support from the babel system
 
-("C:\Program Files (x86)\MiKTeX\tex\generic\babel\babel.def"
-File: babel.def 2008/07/08 v3.8m Babel common definitions
+(D:\Soft2\Latex\USBTeX-1.6\programs\MiKTeX_2.9\tex\generic\babel\babel.def
+File: babel.def 2008/07/06 v3.8l Babel common definitions
 \babel@savecnt=\count91
 \U@D=\dimen111
 )
@@ -364,61 +364,263 @@ Package babel Info: Making ? an active character on input line 123.
 *************************************
 * Local config file frenchb.cfg used
 *
-("C:\Program Files (x86)\MiKTeX\tex\generic\babel\frenchb.cfg")))
-("C:\Program Files (x86)\MiKTeX\tex\latex\carlisle\scalefnt.sty")
-("C:\Program Files (x86)\MiKTeX\tex\latex\graphics\graphicx.sty"
+(D:\Soft2\Latex\USBTeX-1.6\programs\MiKTeX_2.9\tex\generic\babel\frenchb.cfg)))
+(D:\Soft2\Latex\USBTeX-1.6\programs\MiKTeX_2.9\tex\latex\carlisle\scalefnt.sty)
+(D:\Soft2\Latex\USBTeX-1.6\programs\MiKTeX_2.9\tex\latex\graphics\graphicx.sty
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files (x86)\MiKTeX\tex\latex\graphics\graphics.sty"
+(D:\Soft2\Latex\USBTeX-1.6\programs\MiKTeX_2.9\tex\latex\graphics\graphics.sty
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files (x86)\MiKTeX\tex\latex\graphics\trig.sty"
+(D:\Soft2\Latex\USBTeX-1.6\programs\MiKTeX_2.9\tex\latex\graphics\trig.sty
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-("C:\Program Files (x86)\MiKTeX\tex\latex\00miktex\graphics.cfg"
+(D:\Soft2\Latex\USBTeX-1.6\programs\MiKTeX_2.9\tex\latex\00miktex\graphics.cfg
 File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
 )
 Package graphics Info: Driver file: pdftex.def on input line 91.
-
-("C:\Program Files (x86)\MiKTeX\tex\latex\pdftex-def\pdftex.def"
-File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
-
-("C:\Program Files (x86)\MiKTeX\tex\generic\oberdiek\infwarerr.sty"
-Package: infwarerr 2010/04/08 v1.3 Providing info/warning/message (HO)
-)
-("C:\Program Files (x86)\MiKTeX\tex\generic\oberdiek\ltxcmds.sty"
-Package: ltxcmds 2011/04/18 v1.20 LaTeX kernel commands for general use (HO)
-)
+(D:\Soft2\Latex\USBTeX-1.6\programs\MiKTeX_2.9\tex\latex\pdftex-def\pdftex.def
+File: pdftex.def 2011/01/28 v0.05d Graphics/color for pdfTeX
 \Gread@gobject=\count94
 ))
 \Gin@req@height=\dimen114
 \Gin@req@width=\dimen115
-)
-("C:\Program Files (x86)\MiKTeX\tex\latex\eurosym\eurosym.sty"
+) (D:\Soft2\Latex\USBTeX-1.6\programs\MiKTeX_2.9\tex\latex\eurosym\eurosym.sty
 Package: eurosym 1998/08/06 v1.1 European currency symbol ``Euro''
 \@eurobox=\box26
 )
+(D:\Soft2\Latex\USBTeX-1.6\programs\MiKTeX_2.9\tex\latex\appendix\appendix.sty
+Package: appendix 2009/09/02 v1.2b extra appendix facilities
+\c@@pps=\count95
+\c@@ppsavesec=\count96
+\c@@ppsaveapp=\count97
+) (D:\Soft2\Latex\USBTeX-1.6\programs\MiKTeX_2.9\tex\latex\subfig\subfig.sty
+Package: subfig 2005/06/28 ver: 1.3 subfig package
 
-! LaTeX Error: File `appendix.sty' not found.
+(D:\Soft2\Latex\USBTeX-1.6\programs\MiKTeX_2.9\tex\latex\caption\caption.sty
+Package: caption 2011/11/10 v3.2e Customizing captions (AR)
 
-Type X to quit or <RETURN> to proceed,
-or enter new name. (Default extension: sty)
+(D:\Soft2\Latex\USBTeX-1.6\programs\MiKTeX_2.9\tex\latex\caption\caption3.sty
+Package: caption3 2011/11/01 v1.4a caption3 kernel (AR)
+\captionmargin=\dimen116
+\captionmargin@=\dimen117
+\captionwidth=\dimen118
+\caption@indent=\dimen119
+\caption@parindent=\dimen120
+\caption@hangindent=\dimen121
+)
+\c@ContinuedFloat=\count98
+)
+\c@KVtest=\count99
+\sf@farskip=\skip43
+\sf@captopadj=\dimen122
+\sf@capskip=\skip44
+\sf@nearskip=\skip45
+\c@subfigure=\count100
+\c@subfigure@save=\count101
+\c@lofdepth=\count102
+\c@subtable=\count103
+\c@subtable@save=\count104
+\c@lotdepth=\count105
+\sf@top=\skip46
+\sf@bottom=\skip47
+) (D:\Soft2\Latex\USBTeX-1.6\programs\MiKTeX_2.9\tex\latex\float\float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count106
+\float@exts=\toks21
+\float@box=\box27
+\@float@everytoks=\toks22
+\@floatcapt=\box28
+)
+("D:\Visual Studio 2010\Insa\H4111\projet-ingenierie\Livrables\Cahiers des char
+ges\Transmission_Satellite_Final.aux")
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 28.
 
-Enter file name: 
-! Emergency stop.
-<read *> 
-         
-l.22 \usepackage
-                {subfig}
-End of file on the terminal!
+(D:\Soft2\Latex\USBTeX-1.6\programs\MiKTeX_2.9\tex\latex\lm\t1lmr.fd
+File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(56.9055pt, 483.69687pt, 56.9055pt)
+* v-part:(T,H,B)=(56.9055pt, 731.23584pt, 56.9055pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=483.69687pt
+* \textheight=731.23584pt
+* \oddsidemargin=-15.36449pt
+* \evensidemargin=-15.36449pt
+* \topmargin=-52.36449pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=57.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
- 
+(D:\Soft2\Latex\USBTeX-1.6\programs\MiKTeX_2.9\tex\latex\unicode\ucsencs.def
+File: ucsencs.def 2003/11/29 Fixes to fontencodings LGR, T3
+)
+
+Package ucs Warning: ***************************
+(ucs)                You seem to have loaded inputencoding utf8
+(ucs)                (LaTeX kernel UTF-8) instead of utf8x (ucs.sty UTF-8).
+(ucs)                Probably you are compiling a document written for a
+(ucs)                pre-august-2004 ucs.sty.
+(ucs)                ***************************
+(ucs)                Please use \usepackage[utf8x]{inputenc} instead of
+(ucs)                \usepackage[utf8]{inputenc}.
+(ucs)                ***************************
+(ucs)                If you should really want to use ucs.sty and kernel's
+(ucs)                utf8.def together, use \usepackage[utf8x,utf8]{inputenc}
+(ucs)                to disable compatibility mode
+(ucs)                ***************************
+(ucs)                Activating compatibility mode.
+(ucs)                ***************************
+(ucs)                 on input line 28.
+
+(D:\Soft2\Latex\USBTeX-1.6\programs\MiKTeX_2.9\tex\latex\unicode\utf8x.def
+File: utf8x.def 2004/10/17 UCS: Input encoding UTF-8
+)
+LaTeX Info: Redefining \degres on input line 28.
+LaTeX Info: Redefining \dots on input line 28.
+LaTeX Info: Redefining \up on input line 28.
+
+(D:\Soft2\Latex\USBTeX-1.6\programs\MiKTeX_2.9\tex\context\base\supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count107
+\scratchdimen=\dimen123
+\scratchbox=\box29
+\nofMPsegments=\count108
+\nofMParguments=\count109
+\everyMPshowfont=\toks23
+\MPscratchCnt=\count110
+\MPscratchDim=\dimen124
+\MPnumerator=\count111
+\makeMPintoPDFobject=\count112
+\everyMPtoPDFconversion=\toks24
+)
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: subfig package v1.3 is loaded.
+Package caption Info: float package is loaded.
+Package caption Info: End \AtBeginDocument code.
+
+(D:\Soft2\Latex\USBTeX-1.6\programs\MiKTeX_2.9\tex\latex\unicode\data\uni-0.def
+File: uni-0.def 2004/10/17 UCS: Unicode data U+0000..U+00FF
+)
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 48.
+ (D:\Soft2\Latex\USBTeX-1.6\programs\MiKTeX_2.9\tex\latex\lm\ot1lmr.fd
+File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 48.
+
+(D:\Soft2\Latex\USBTeX-1.6\programs\MiKTeX_2.9\tex\latex\lm\omllmm.fd
+File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 48.
+
+
+(D:\Soft2\Latex\USBTeX-1.6\programs\MiKTeX_2.9\tex\latex\lm\omslmsy.fd
+File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 48.
+
+
+(D:\Soft2\Latex\USBTeX-1.6\programs\MiKTeX_2.9\tex\latex\lm\omxlmex.fd
+File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 48.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 48.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 48.
+
+[1
+
+{D:/Soft2/Latex/USBTeX-1.6/programs/MiKTeX_2.9/pdftex/config/pdftex.map}]
+("D:\Visual Studio 2010\Insa\H4111\projet-ingenierie\Livrables\Cahiers des char
+ges\Transmission_Satellite_Final.toc" [1])
+\tf@toc=\write3
+ [2]
+("D:\Visual Studio 2010\Insa\H4111\projet-ingenierie\Livrables\Cahiers des char
+ges\Transmission_Satellite.tex" [3] [4] [5] [6] [7] [8]
+<Transmission/Modem3G_1.jpg, id=38, 38.544pt x 38.544pt>
+File: Transmission/Modem3G_1.jpg Graphic file (type jpg)
+
+<use Transmission/Modem3G_1.jpg>
+
+Package frenchb.ldf Warning: Degrees would look better in TS1-encoding: 
+(frenchb.ldf)                add \usepackage{textcomp} to the preamble. 
+(frenchb.ldf)                Degrees used on input line 268.
+
+[9 <D:/Visual Studio 2010/Insa/H4111/projet-ingenierie/Livrables/Cahiers des ch
+arges/Transmission/Modem3G_1.jpg>]
+<Transmission/ModemSatellite_1.jpg, id=42, 305.69044pt x 247.40819pt>
+File: Transmission/ModemSatellite_1.jpg Graphic file (type jpg)
+
+<use Transmission/ModemSatellite_1.jpg>
+<Transmission/ModemSatellite_2.jpg, id=43, 122.6181pt x 112.9821pt>
+File: Transmission/ModemSatellite_2.jpg Graphic file (type jpg)
+
+<use Transmission/ModemSatellite_2.jpg>
+(D:\Soft2\Latex\USBTeX-1.6\programs\MiKTeX_2.9\tex\latex\unicode\data\uni-32.de
+f
+File: uni-32.def 2004/10/17 UCS: Unicode data U+2000..U+20FF
+)) [10 <D:/Visual Studio 2010/Insa/H4111/projet-ingenierie/Livrables/Cahiers de
+s charges/Transmission/ModemSatellite_1.jpg> <D:/Visual Studio 2010/Insa/H4111/
+projet-ingenierie/Livrables/Cahiers des charges/Transmission/ModemSatellite_2.j
+pg>]
+("D:\Visual Studio 2010\Insa\H4111\projet-ingenierie\Livrables\Cahiers des char
+ges\Transmission_Satellite_Final.aux") ) 
 Here is how much of TeX's memory you used:
- 2645 strings out of 494045
- 35900 string characters out of 3147591
- 99847 words of memory out of 3000000
- 5931 multiletter control sequences out of 15000+200000
- 4403 words of font info for 15 fonts, out of 3000000 for 9000
- 715 hyphenation exceptions out of 8191
- 27i,0n,24p,446b,38s stack positions out of 5000i,500n,10000p,200000b,50000s
-!  ==> Fatal error occurred, no output PDF file produced!
+ 5035 strings out of 494019
+ 74691 string characters out of 3128541
+ 137490 words of memory out of 3000000
+ 8236 multiletter control sequences out of 15000+200000
+ 51199 words of font info for 37 fonts, out of 3000000 for 9000
+ 714 hyphenation exceptions out of 8191
+ 44i,10n,46p,696b,562s stack positions out of 5000i,500n,10000p,200000b,50000s
+{D:/Soft2/Latex/USBTeX-1.6/programs/MiK
+TeX_2.9/fonts/enc/dvips/lm/lm-ec.enc}<D:/Soft2/Latex/USBTeX-1.6/programs/MiKTeX
+_2.9/fonts/type1/public/lm/lmbx10.pfb><D:/Soft2/Latex/USBTeX-1.6/programs/MiKTe
+X_2.9/fonts/type1/public/lm/lmbx12.pfb><D:/Soft2/Latex/USBTeX-1.6/programs/MiKT
+eX_2.9/fonts/type1/public/lm/lmcsc10.pfb><D:/Soft2/Latex/USBTeX-1.6/programs/Mi
+KTeX_2.9/fonts/type1/public/lm/lmr10.pfb><D:/Soft2/Latex/USBTeX-1.6/programs/Mi
+KTeX_2.9/fonts/type1/public/lm/lmr12.pfb><D:/Soft2/Latex/USBTeX-1.6/programs/Mi
+KTeX_2.9/fonts/type1/public/lm/lmr17.pfb><D:/Soft2/Latex/USBTeX-1.6/programs/Mi
+KTeX_2.9/fonts/type1/public/lm/lmr7.pfb><D:/Soft2/Latex/USBTeX-1.6/programs/MiK
+TeX_2.9/fonts/type1/public/lm/lmr8.pfb>
+Output written on Transmission_Satellite_Final.pdf (11 pages, 388867 bytes).
+PDF statistics:
+ 74 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+
