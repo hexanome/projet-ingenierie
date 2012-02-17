@@ -1,4 +1,4 @@
-﻿\section{Introduction}
+\section{Introduction}
 
 \subsection{Présentation du projet}
 
@@ -102,6 +102,7 @@ Cela peut se traduire par plusieurs règles à respecter lors du développement 
 
 C'est évidement une des contraintes dont nous avons du tenir compte lors du choix du DBMS à utiliser. Il fallait en effet que celui-ci puisse supporter des modifications de schéma en temps réel, sans que cela n'ai d'impact sur les performances de celui-ci, et même qu'il puisse accepter plusieurs versions en paralèlle d'un même schéma.
 
+Pour ce qui est de notre premier modèle à proprement parler, nous avons privilégiés une forte resseblance entre notre modèle de données et les objets physiques correspondants à ces entités. Cela présente l'avantage de pouvoir mieux communiquer le sens de notre modèle à des personnes exterieurs au projet, et de permettre des évolutions plus simples à l'avenir, puisque celles-ci seront calquées sur les ajout réels, physiques et concrets qui seront fait au système.
 
 \subsection{Volume de données}
 
@@ -122,33 +123,20 @@ Un autre point important est le serveur central, qui matériellement ne présent
 \appendix
 \appendixpage
 
-\section{Annexe 1 : Répresentation informatique des objets}
-On va listers ici les principaux objets qui seront manipulés par notre solution, sans pour autant fournir une liste exhaustive permettant de constituer la base de données.
-On distinguera les principaux objets:
-\begin{itemize}
-	\item capteurs (ID, type )
-	\item stations (ID, localisation)
-	\item relevé des capteurs (ID, ensemble des valeurs horodaté en JSON)
-	\item PDA (ID, propriétaire, localisation)
-	\item ordre de maitenance (ID, station_ID, heure )
-	\item configuration des capteurs (ID, ensembles des paramètres)
-	\item configuration des stations (ID, ensembles des paramètres)
-	\item utilisateur (ID, permission)
-\end{itemize}
+\section{Annexe 1 : Répresentation informatique des objets (messages...)}
 
 \section{Annexe 2 : Réflexion sur le réseau (principes qualité, pour la conception du réseau,
 description du réseau (logiciel, couches…)…}
-
 
 
 \section{Annexe 3 : Démarrage du système}
 
 Le démarrage du système, dans notre cas, profite de la contrainte de fiabilité que nous avons prise en compte dans l'ensemble des spécifications des différents sous-systèmes. En effet, il est prévu que les systèmes puissent reprendre leur fonctionnement normal suite à un défaut de leur matériel ou d'un autre système. Nous allons voir ici que cela a pour effet de faciliter la phase de démarrage du système.
 
-La première étape de démarrage du système consiste à mettre sous tension la station centrale ainsi que les différents capteurs. Ceux-ci vont automatiquement essayer de se connecter à la première station qu'ils trouveront, et seront ensuite configurables à partir de celle-ci. Pour la station, le système de gestion du site va démarrer immédiatement après l'OS, et ce sera à lui de démarer ensuite le système de transmission quand il le jugera utile. Une configuration initiale sera nécéssaire à partir d'un ordinateur connecté directement dessus pour lui renseigner son identifiant et son nom, l'adresse du système central, les informations nécessaires à l'utilisation du module de transmission (fréquences satellite, code pin de la carte SIM pour le GSM, etc.) et autres paramètres telles que la granularité avec laquelle doivent être effectuées les mesures pour les différentes types de capteurs, mais aussi la fréquence des transmissions au système central.
+La première étape de démarrage du système consiste à mettre sous tension la station centrale ainsi que les différents capteurs. Ceux-ci vont automatiquement essayer de se connecter à la première station qu'il trouveront, et seront ensuite configurable à partir de celle-ci. Pour la station, le système de gestion du site va démarer immédiatement après l'OS, et ce sera à lui de démarer ensuite le système de transmission quand il le jugera utile. Une configuration initiale sera nécéssaire à partir d'un ordinateur connecté directement dessus pour lui renseigner son identifiant et son nom, l'adresse du système central, les informations nécéssaires à l'utilisation du module de transmission (fréquences satellite, code pin de la carte SIM pour ls GSM, etc.) et autres paramètres telle que la granularité avec laquelle doivent être effectuées les mesures pour les différentes types de capteurs, mais aussi la fréquence des transmissions au système central.
 
-Une fois la station centrale configurée, celle-ci commencera automatiquement à accepter les connexions des système de gestion des capteurs, et configurera alors automatiquement ceux-ci. Arrivé à ce stade-là, il n'est pas forcément nécessaire que le système central soit déjà accessible. Dans le cas où la station centrale n'arriverait pas à joindre celui-ci, elle conservera les données qu'elle souhaitait lui transmettre, et recommencera plus tard.
+Une fois la station centrale configurée, celle-ci commencera automatiquement à accepter les connexion des système de gestion des capteurs, et configurera alors automatiquement ceux-ci. Arrivé à ce stade-là, il n'est pas forcément nécéssaire que le système central soit déjà accéssible. Dans le cas où la station centrale n'arriverait pas à joindre celui-ci, elle conservera les données qu'elle souhaitait lui transmettre, et recommencera plus tard.
 
-Pour ce qui est du système justement, étant donné qu'il s'agit ici d'une application hébergée censée être disponible en permanence, on ne devrait avoir à la démarrer qu'une seule fois, en début de l'exploitation.
+Pour ce qui est du système justement, étant donné qu'il s'agit ici d'une application hébergée censée être disponible en permanence, on ne devrait avoir à la démarer qu'une seule fois, en début de l'exploitation.
 
 On constate donc que le fait d'avoir une architecture découplée, et permettant la reprise sur défaut, nous facilite ici la tâche pour ce qui est du démarrage du système.
