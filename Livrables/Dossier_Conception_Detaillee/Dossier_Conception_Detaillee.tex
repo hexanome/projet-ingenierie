@@ -117,19 +117,27 @@ Dans l'architecture, la détection de problèmes matériels est également prév
 Le point névralgique de notre système est le dispositif de communication, son bon fonctionnement est primordial pour tous les autres composants qui gravitent autour. Il faut donc s'assurer de la qualité de service que l'opérateur choisi peut garantir. De notre côté, un soin tout particulier sera porté sur la résilience aux erreurs de ce module, pour ne pas pénaliser la bonne supervision des sites.
 Un autre point important est le serveur central, qui matériellement ne présente que peu de risque, grâce au solution de Cloud Computing, par contre il faudra là aussi portée une grande attention à son comportement en cas d'erreur. Au niveau de la base de données, il est possible d'avoir des moyens de retours en arrière (rollback) en cas de corruption de celle-ci.
 
-\section{Conclusion}
-
 \newpage
 \appendix
 \appendixpage
 
-\section{Annexe 1 : Répresentation informatique des objets (messages...)}
+\section{Répresentation informatique des objets}
+	
+On va lister ici les principaux objets qui seront manipulés par notre solution, sans pour autant fournir une liste exhaustive permettant de constituer la base de données.
+On distinguera les principaux objets:
 
-\section{Annexe 2 : Réflexion sur le réseau (principes qualité, pour la conception du réseau,
-description du réseau (logiciel, couches…)…}
+\begin{itemize}
+\item capteurs (ID, type )
+\item stations (ID, localisation)	
+\item relevé des capteurs (ID, ensemble des valeurs horodaté en JSON)
+\item PDA (ID, propriétaire, localisation)
+\item ordre de maitenance (ID, station_ID, heure )
+\item configuration des capteurs (ID, ensembles des paramètres)
+\item configuration des stations (ID, ensembles des paramètres)
+\item utilisateur (ID, permission)
+\end{itemize}
 
-
-\section{Annexe 3 : Démarrage du système}
+\section{Démarrage du système}
 
 Le démarrage du système, dans notre cas, profite de la contrainte de fiabilité que nous avons prise en compte dans l'ensemble des spécifications des différents sous-systèmes. En effet, il est prévu que les systèmes puissent reprendre leur fonctionnement normal suite à un défaut de leur matériel ou d'un autre système. Nous allons voir ici que cela a pour effet de faciliter la phase de démarrage du système.
 

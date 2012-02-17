@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2012.1.16)  17 FEB 2012 10:31
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2012.1.16)  17 FEB 2012 14:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -579,18 +579,18 @@ See the ucs package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.24 Le projet d
+l.27 Le projet d
                   ingénierie est un projet important de la 4IF, et est sure...
 
 ? 
-LaTeX Font Info:    Try loading font information for OT1+lmtt on input line 24.
+LaTeX Font Info:    Try loading font information for OT1+lmtt on input line 27.
 
 (/usr/local/texlive/2011/texmf-dist/tex/latex/lm/ot1lmtt.fd
 File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 
 Package ucs Warning: Unknown character 146 = 0x0092 appeared again. on input li
-ne 24.
+ne 27.
 
 (/usr/local/texlive/2011/texmf-dist/tex/latex/ucs/data/uninames.dat
 File: uninames.dat 2004/10/17 UCS: Unicode character names, compressed
@@ -607,27 +607,27 @@ See the ucs package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.25 ...te et au gout du jour. Pouvoir jeter un 
-                                                  il aux projets de nos pré...
+l.28 ...te et au gout du jour. Pouvoir jeter un 
+                                                  oeil aux projets de nos pr...
 
 ? 
 
 Package ucs Warning: Unknown character 146 = 0x0092 appeared again. on input li
-ne 26.
+ne 29.
 
 
 Package ucs Warning: Unknown character 146 = 0x0092 appeared again. on input li
-ne 26.
+ne 29.
 
 [2]) [3] (./Bilan_CdP_Final.aux) ) 
 Here is how much of TeX's memory you used:
  4101 strings out of 493633
  56837 string characters out of 3143377
- 123943 words of memory out of 3000000
+ 124943 words of memory out of 3000000
  7304 multiletter control sequences out of 15000+200000
  39513 words of font info for 34 fonts, out of 3000000 for 9000
  831 hyphenation exceptions out of 8191
- 37i,6n,24p,2353b,589s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 37i,6n,24p,2352b,589s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/local/texlive/2011/texmf-dist/fonts/enc
 /dvips/lm/lm-rmtt.enc}{/usr/local/texlive/2011/texmf-dist/fonts/enc/dvips/lm/lm
 -ec.enc}</usr/local/texlive/2011/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></
@@ -637,7 +637,7 @@ texlive/2011/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2
 ist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2011/texmf-dist/fonts/t
 ype1/public/lm/lmr17.pfb></usr/local/texlive/2011/texmf-dist/fonts/type1/public
 /lm/lmtt10.pfb>
-Output written on Bilan_CdP_Final.pdf (4 pages, 180073 bytes).
+Output written on Bilan_CdP_Final.pdf (4 pages, 181330 bytes).
 PDF statistics:
  47 PDF objects out of 1000 (max. 8388607)
  33 compressed objects within 1 object stream
