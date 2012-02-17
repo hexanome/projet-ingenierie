@@ -7,31 +7,34 @@ Dans le cadre notre système de monitoring de sites isolés, nous avons retenu d
 \subsection{Axes de progrès retenus}
 
 \subsubsection{Améliorer la disponibilité}
-Actuellement les propriétaires des sites isolés doivent actuellement passer des appels manuels afin de contacter les entreprises de ravitaillement et d’évacuation. Alors qu’un système automatisé pourrait rendre la tâche plus simple et éviter toute erreur humaine, afin de prévenir que des incidents que l’on pourrait empêcher, incendies et autres, ne se produisent.
+
+Actuellement les propriétaires des sites isolés doivent passer par des appels manuels afin de contacter les entreprises de ravitaillement et d’évacuation. Un système automatisé pourrait rendre la tâche plus simple et éviter toute erreur humaine, afin d'empêcher que des incidents type incendie et autres ne se produisent.
 
 \subsubsection{Améliorer la logistique}
-Pour l’heure, le COPEVUE ne possède aucun système de monitoring. En particulier, la gestion non globalisée des camions pour amener des ressources aux sites et pour les vider /  nettoyer est loin de l’optimal.
+
+Pour l’heure, le COPEVUE ne possède aucun système de monitoring. En particulier, la gestion non globalisée des camions pour amener des ressources aux sites et pour les vider / nettoyer est loin d'être optimal.
 
 \subsubsection{Améliorer la maintenace}
-Une automatisation du contrôle du niveau des réservoirs ou containers par capteurs permettra d’éviter des oublis humains et transmettra à tout instant le niveau de remplissage au système global, qui répondra si besoin par un envoi de camions.
+
+Une automatisation du contrôle du niveau des réservoirs ou containers par capteurs permettra d’éviter des oublis humains et transmettra à tout instant le niveau de remplissage au système global. Celui-ci répondra si besoin est par un envoi de camions.
 
 \subsection{Axes de progrès marginaux}
 
-Pour améliorer la surveillance des sites, on pourrait envisager de proposer dans le futur une surveillance vidéo, pour pouvoir analyser l’environnement alentour, et ainsi agir au plus vite contre les accidents humains ou environnementaux.
+Pour améliorer la surveillance des sites, on pourrait envisager de proposer dans le futur une surveillance vidéo, pour pouvoir analyser l’environnement alentour, et ainsi réagir au plus vite contre les accidents humains ou environnementaux.
 
 \subsection{Faux axes de progrès éventuels}
 
-La suppression de  toute intervention humaine pour la surveillance des sites n’est certainement pas un but. En effet, il s’agit avant tout d’aider les personnes qui travaillent sur place. Toutefois, les technologies d’automatisation utilisées nécessitent l’intervention humaine, ne serait-ce que pour s’assurer du bon fonctionnement des capteurs et des systèmes mis en place.
+La suppression de toute intervention humaine pour la surveillance des sites n’est certainement pas un but. En effet, il s’agit avant tout d’aider les personnes qui travaillent sur place. Toutefois, les technologies d’automatisation utilisées nécessitent l’intervention humaine, ne serait-ce que pour s’assurer du bon fonctionnement des capteurs et des systèmes mis en place.
 
 \section{Description des exigences non fonctionnelles}
 
 Parmi les exigences non fonctionnelles les plus simples, nous promettons un système résilient qui gère les cas de perte de connexion au réseau, de blackout de satellites, et de déconnexion du réseau GSM par le stockage des données en local, dans le système embarqué. Le système tente alors une connexion toutes les dix minutes. Dès qu’il se reconnecte, il envoie les informations qu’il a retenues, avant de passer dans le mode de fonctionnement normal.
 
-Chef parmi nos exigences non fonctionnelles, se trouve l’autonomie de nos systèmes embarqués. Les boîtiers présents sur les sites isolés sont alimentés par des batteries longue-durée (de l’ordre de la dizaine d’année) pour tous les capteurs, excepté GPS (qui requiert trop d’énergie). Si nous optons pour cette solution sur le site, chaque capteur sera également couplé avec une batterie longue durée.
+Plus important parmi nos exigences non fonctionnelles, se trouve l’autonomie de nos systèmes embarqués. Les boîtiers présents sur les sites isolés sont alimentés par des batteries longue-durée (de l’ordre de la dizaine d’année) pour tous les capteurs, excepté GPS (qui requiert trop d’énergie). Si nous optons pour cette solution sur le site, chaque capteur sera également couplé avec une batterie longue durée.
 
-De plus, pour les zones méditerranéennes, dont le climat est principalement chaud, nous pouvons installer des panneaux solaires reliés à une batterie pour stocker l’énergie quand il ne fait pas soleil. Une solution envisagée serait d’utiliser l’énergie solaire en combinaison avec une pile à combustible afin de stocker l’énergie produite sur de longue période.
+De plus, pour les zones méditerranéennes, dont le climat est principalement chaud, nous pouvons installer des panneaux solaires reliés à une batterie pour stocker l’énergie et la libérer à nouveau lorsque l'ensoleillement fait défaut. Une solution envisagée serait d’utiliser l’énergie solaire en combinaison avec une pile à combustible afin de stocker l’énergie produite sur de longues périodes.
 
-Nous pouvons également faire usage de piles à combustible que l’on peut ravitailler en hydrogène. Cette méthode présente l’avantage de fournir une puissance constante, de pouvoir fonctionner dans des conditions extrêmes et de demander très peu d’entretien. Il suffit de prévoir une quantité suffisante de combustible au départ pour que le système puisse fonctionner sur une période donnée, puis de venir réapprovisionner le site une fois celui-ci consommé. Il sera même possible de détecter le niveau en hydrogène, afin d’automatiser également le processus de ravitaillement. Pour donner un exemple, une bonbonne d’hydrogène permettrait de faire fonctionner notre système pour une durée d’environ un an. 
+Nous pouvons également faire usage de piles à combustible réapprovisionnable en hydrogène. Cette méthode présente l’avantage de fournir une puissance constante, de pouvoir fonctionner dans des conditions extrêmes et de demander très peu d’entretien. Il suffit de prévoir une quantité suffisante de combustible au départ pour que le système puisse fonctionner sur une période donnée, puis de venir réapprovisionner le site une fois le carburant consommé. Il sera même possible de détecter le niveau en hydrogène, afin d’automatiser le processus de ravitaillement. Pour donner un exemple, une bonbonne d’hydrogène permettrait de faire fonctionner notre système pour une durée d’environ un an. 
 
 Enfin, il sera également possible d’utiliser des éoliennes. Leur production en énergie électrique, quoique modeste, est amplement suffisante pour nos usages, ce qui est d’autant plus vrai en mer (où elles produisent davantage).
 
@@ -105,4 +108,4 @@ L’utilisation de composants connus et robustes comme le couplage batterie - pi
 
 Notre système cherche la robustesse, tout en étant générique.
 
-Il permet la conception d’un système à prix raisonnable, qui s’implémente facilement avec des composants standards, et qui respecte des exigences plus drastiques que celles requises.
+Il permet la conception d’un système à prix raisonnable, s’implémentant facilement avec des composants standards, et conforme à des exigences légèrement plus sévères que ce qui a été demandé.
