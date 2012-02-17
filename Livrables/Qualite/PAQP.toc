@@ -7,66 +7,60 @@
 \contentsline {subsection}{\numberline {1.5}Proc\IeC {\'e}dure \IeC {\`a} suivre en cas de non-application du PAQP}{3}
 \contentsline {section}{\numberline {2}Introduction}{3}
 \contentsline {section}{\numberline {3}Documents de R\IeC {\'e}f\IeC {\'e}rence et applicables}{3}
-\contentsline {subsection}{\numberline {3.1}Documents de r\IeC {\'e}f\IeC {\'e}rence}{3}
-\contentsline {subsection}{\numberline {3.2}Documents Applicables}{3}
-\contentsline {section}{\numberline {4}Terminologies et abr\IeC {\'e}viations}{3}
-\contentsline {section}{\numberline {5}Organisation humaine du comit\IeC {\'e} de pilotage du projet}{3}
-\contentsline {subsection}{\numberline {5.1}R\IeC {\^o}le des diff\IeC {\'e}rents intervenants (Intervenants pour la ma\IeC {\^\i }trise d'ouvrage, intervenants pour la ma\IeC {\^\i }trise d'\IeC {\oe }uvre)}{3}
-\contentsline {subsection}{\numberline {5.2}Relations entre les intervenants}{3}
-\contentsline {subsection}{\numberline {5.3}Planning des r\IeC {\'e}unions et r\IeC {\`e}gles}{3}
-\contentsline {section}{\numberline {6}Qualit\IeC {\'e} au niveau du Processus}{3}
-\contentsline {subsection}{\numberline {6.1}Pr\IeC {\'e}sentation de la d\IeC {\'e}marche de d\IeC {\'e}veloppement au niveau Projet (ou Syst\IeC {\`e}me)}{3}
-\contentsline {subsubsection}{\numberline {6.1.1}G\IeC {\'e}n\IeC {\'e}ralit\IeC {\'e}s}{3}
+\contentsline {section}{\numberline {4}Terminologies et abbr\IeC {\'e}viations}{3}
+\contentsline {section}{\numberline {5}Organisation humaine du comit\IeC {\'e} de pilotage du projet}{4}
+\contentsline {subsection}{\numberline {5.1}R\IeC {\^o}le des diff\IeC {\'e}rents intervenants (Intervenants pour la ma\IeC {\^\i }trise d'ouvrage, intervenants pour la ma\IeC {\^\i }trise d'\IeC {\oe }uvre)}{4}
+\contentsline {subsection}{\numberline {5.2}Relations entre les intervenants}{4}
+\contentsline {subsection}{\numberline {5.3}Planning des r\IeC {\'e}unions et r\IeC {\`e}gles}{4}
+\contentsline {section}{\numberline {6}Qualit\IeC {\'e} au niveau du Processus}{4}
+\contentsline {subsection}{\numberline {6.1}Pr\IeC {\'e}sentation de la d\IeC {\'e}marche de d\IeC {\'e}veloppement au niveau Projet (ou Syst\IeC {\`e}me)}{4}
+\contentsline {subsubsection}{\numberline {6.1.1}G\IeC {\'e}n\IeC {\'e}ralit\IeC {\'e}s}{4}
 \contentsline {subsubsection}{\numberline {6.1.2}Phase d'Etude Pr\IeC {\'e}alable}{4}
 \contentsline {subsubsection}{\numberline {6.1.3}Phase d'Etude D\IeC {\'e}taill\IeC {\'e}e}{4}
 \contentsline {subsubsection}{\numberline {6.1.4}Phase d'Int\IeC {\'e}gration Syst\IeC {\`e}me}{4}
 \contentsline {subsubsection}{\numberline {6.1.5}Phase de Validation Syst\IeC {\`e}me}{4}
 \contentsline {subsubsection}{\numberline {6.1.6}Phase de mise en \IeC {\oe }uvre sur site pilote}{4}
-\contentsline {subsection}{\numberline {6.2}R\IeC {\`e}gles de Qualit\IeC {\'e} pour l'ing\IeC {\'e}nierie concurrente}{4}
-\contentsline {subsubsection}{\numberline {6.2.1}R\IeC {\`e}gles sur la r\IeC {\'e}daction d'un Cahier des Charges d'un sous-projet}{4}
-\contentsline {subsubsection}{\numberline {6.2.2}R\IeC {\`e}gles sur la d\IeC {\'e}finition pr\IeC {\'e}cise des r\IeC {\'e}sultats attendus pour chaque sous-projets}{4}
-\contentsline {subsubsection}{\numberline {6.2.3}R\IeC {\`e}gles sur le suivi qualit\IeC {\'e} des sous-projets}{4}
-\contentsline {subsubsection}{\numberline {6.2.4}R\IeC {\`e}gles sur la d\IeC {\'e}finition de crit\IeC {\`e}res d'acceptation des sous-projets avant int\IeC {\'e}gration}{4}
-\contentsline {subsection}{\numberline {6.3}Pr\IeC {\'e}sentation des d\IeC {\'e}marche de d\IeC {\'e}veloppement au niveau sous-projets (niv. r\IeC {\'e}alisation)}{4}
-\contentsline {subsubsection}{\numberline {6.3.1}Liste des processus de d\IeC {\'e}veloppement susceptibles d'\IeC {\^e}tre retenus pour le d\IeC {\'e}veloppement des sous-projets}{4}
-\contentsline {subsubsection}{\numberline {6.3.2}Description du cycle de d\IeC {\'e}veloppement num\IeC {\'e}ro 1}{4}
-\contentsline {section}{\numberline {7}Documentation (R\IeC {\`e}gles communes au projet)}{4}
-\contentsline {subsection}{\numberline {7.1}Structuration de la documentation}{4}
-\contentsline {subsection}{\numberline {7.2}Liste des documents de gestion de projet}{4}
-\contentsline {subsection}{\numberline {7.3}Liste des documents relatifs \IeC {\`a} la qualit\IeC {\'e}}{4}
-\contentsline {subsection}{\numberline {7.4}Liste des documents techniques et de r\IeC {\'e}alisation}{4}
-\contentsline {subsection}{\numberline {7.5}Manuels d'utilisation et de mise en \IeC {\oe }uvre}{4}
-\contentsline {section}{\numberline {8}Gestion de configuration (R\IeC {\`e}gles communes au projet)}{4}
-\contentsline {subsection}{\numberline {8.1}Conventions d'Identification}{4}
-\contentsline {subsection}{\numberline {8.2}Proc\IeC {\'e}dures d'identification des \IeC {\'e}l\IeC {\'e}ments de configuration }{4}
-\contentsline {subsubsection}{\numberline {8.2.1}Responsabilit\IeC {\'e}s}{4}
-\contentsline {subsubsection}{\numberline {8.2.2}Proc\IeC {\'e}dures de gestion de la configuration (Gestion des El\IeC {\'e}ments de Configuration Logiciel et des Configurations de R\IeC {\'e}f\IeC {\'e}rence)}{4}
-\contentsline {subsection}{\numberline {8.3}Gestion des ressources partag\IeC {\'e}es}{4}
-\contentsline {paragraph}{Remarques}{4}
-\contentsline {section}{\numberline {9}Gestions des modifications (R\IeC {\`e}gles communes au projet)}{5}
-\contentsline {subsection}{\numberline {9.1}Origines des modifications}{5}
-\contentsline {subsection}{\numberline {9.2}Proc\IeC {\'e}dures et organisation des modifications}{5}
-\contentsline {section}{\numberline {10}M\IeC {\'e}thodes, Outils et R\IeC {\`e}gles (R\IeC {\`e}gles communes au projet)}{5}
-\contentsline {subsection}{\numberline {10.1}M\IeC {\'e}thodes}{5}
-\contentsline {subsection}{\numberline {10.2}Outils (Outils logiciels, autres outils)}{5}
-\contentsline {subsection}{\numberline {10.3}R\IeC {\`e}gles et normes (Documentation, programmation)}{5}
-\contentsline {section}{\numberline {11}Contr\IeC {\^o}le des Fournisseurs}{5}
-\contentsline {subsection}{\numberline {11.1}Exigences vis-\IeC {\`a}-vis des sous-traitants}{5}
-\contentsline {subsection}{\numberline {11.2}Exigences vis-\IeC {\`a}-vis des co-traitants}{5}
-\contentsline {subsection}{\numberline {11.3}Logiciels achet\IeC {\'e}s, lou\IeC {\'e}s ou impos\IeC {\'e}s}{5}
-\contentsline {section}{\numberline {12}Reproduction, Protection, Livraison (au niveau projet)}{5}
-\contentsline {subsection}{\numberline {12.1}Pr\IeC {\'e}cautions \IeC {\`a} prendre lors de la reproduction}{5}
-\contentsline {subsection}{\numberline {12.2}Pr\IeC {\'e}cautions prises pour assurer le stockage des logiciels}{5}
-\contentsline {subsubsection}{\numberline {12.2.1}Protection des donn\IeC {\'e}es contre les incidents}{5}
-\contentsline {subsubsection}{\numberline {12.2.2}Protection des donn\IeC {\'e}es contre les agressions ext\IeC {\'e}rieures}{5}
-\contentsline {subsubsection}{\numberline {12.2.3}Autres pr\IeC {\'e}cautions}{5}
-\contentsline {subsection}{\numberline {12.3}Modalit\IeC {\'e}s de livraison}{5}
-\contentsline {subsubsection}{\numberline {12.3.1}D\IeC {\'e}lais}{5}
-\contentsline {subsubsection}{\numberline {12.3.2}Installation}{5}
-\contentsline {subsubsection}{\numberline {12.3.3}Formation}{5}
-\contentsline {subsubsection}{\numberline {12.3.4}Migration de l'ancien vers le nouveau syst\IeC {\`e}me}{5}
-\contentsline {section}{\numberline {13}Suivi de l'application du Plan Qualit\IeC {\'e}}{5}
-\contentsline {subsection}{\numberline {13.1}Principes}{5}
-\contentsline {subsection}{\numberline {13.2}Interventions du Responsable Qualit\IeC {\'e} (Niv. Projet) sur la d\IeC {\'e}marche de D\IeC {\'e}veloppement}{5}
-\contentsline {subsection}{\numberline {13.3}Modalit\IeC {\'e}s de r\IeC {\'e}ception des r\IeC {\'e}sultats des sous-projets avant int\IeC {\'e}gration (description par sous-projets)}{6}
-\contentsline {section}{\numberline {14}Conclusion}{6}
+\contentsline {subsection}{\numberline {6.2}R\IeC {\`e}gles de Qualit\IeC {\'e} pour l'ing\IeC {\'e}nierie concurrente}{5}
+\contentsline {subsubsection}{\numberline {6.2.1}R\IeC {\`e}gles sur la r\IeC {\'e}daction d'un Cahier des Charges d'un sous-projet}{5}
+\contentsline {subsubsection}{\numberline {6.2.2}R\IeC {\`e}gles sur la d\IeC {\'e}finition pr\IeC {\'e}cise des r\IeC {\'e}sultats attendus pour chaque sous-projets}{5}
+\contentsline {subsubsection}{\numberline {6.2.3}R\IeC {\`e}gles sur le suivi qualit\IeC {\'e} des sous-projets}{5}
+\contentsline {subsubsection}{\numberline {6.2.4}R\IeC {\`e}gles sur la d\IeC {\'e}finition de crit\IeC {\`e}res d'acceptation des sous-projets avant int\IeC {\'e}gration}{5}
+\contentsline {subsection}{\numberline {6.3}Pr\IeC {\'e}sentation des d\IeC {\'e}marche de d\IeC {\'e}veloppement au niveau sous-projets (niv. r\IeC {\'e}alisation)}{5}
+\contentsline {subsubsection}{\numberline {6.3.1}Liste des processus de d\IeC {\'e}veloppement susceptibles d'\IeC {\^e}tre retenus pour le d\IeC {\'e}veloppement des sous-projets}{5}
+\contentsline {section}{\numberline {7}Documentation (R\IeC {\`e}gles communes au projet)}{5}
+\contentsline {subsection}{\numberline {7.1}Structuration de la documentation}{5}
+\contentsline {subsection}{\numberline {7.2}Liste des documents de gestion de projet}{5}
+\contentsline {subsection}{\numberline {7.3}Liste des documents relatifs \IeC {\`a} la qualit\IeC {\'e}}{5}
+\contentsline {subsection}{\numberline {7.4}Liste des documents techniques et de r\IeC {\'e}alisation}{6}
+\contentsline {subsection}{\numberline {7.5}Manuels d'utilisation et de mise en \IeC {\oe }uvre}{6}
+\contentsline {section}{\numberline {8}Gestion de configuration (R\IeC {\`e}gles communes au projet)}{6}
+\contentsline {subsection}{\numberline {8.1}Conventions d'Identification}{6}
+\contentsline {subsection}{\numberline {8.2}Proc\IeC {\'e}dures d'identification des \IeC {\'e}l\IeC {\'e}ments de configuration }{6}
+\contentsline {subsubsection}{\numberline {8.2.1}Responsabilit\IeC {\'e}s}{6}
+\contentsline {subsubsection}{\numberline {8.2.2}Proc\IeC {\'e}dures de gestion de la configuration (Gestion des El\IeC {\'e}ments de Configuration Logiciel et des Configurations de R\IeC {\'e}f\IeC {\'e}rence)}{6}
+\contentsline {subsection}{\numberline {8.3}Gestion des ressources partag\IeC {\'e}es}{7}
+\contentsline {paragraph}{Remarques}{7}
+\contentsline {section}{\numberline {9}Gestions des modifications (R\IeC {\`e}gles communes au projet)}{7}
+\contentsline {subsection}{\numberline {9.1}Origines des modifications}{7}
+\contentsline {subsection}{\numberline {9.2}Proc\IeC {\'e}dures et organisation des modifications}{7}
+\contentsline {section}{\numberline {10}M\IeC {\'e}thodes, Outils et R\IeC {\`e}gles (R\IeC {\`e}gles communes au projet)}{7}
+\contentsline {section}{\numberline {11}Contr\IeC {\^o}le des Fournisseurs}{7}
+\contentsline {subsection}{\numberline {11.1}Exigences vis-\IeC {\`a}-vis des sous-traitants}{7}
+\contentsline {subsection}{\numberline {11.2}Exigences vis-\IeC {\`a}-vis des co-traitants}{7}
+\contentsline {subsection}{\numberline {11.3}Logiciels achet\IeC {\'e}s, lou\IeC {\'e}s ou impos\IeC {\'e}s}{7}
+\contentsline {section}{\numberline {12}Reproduction, Protection, Livraison (au niveau projet)}{7}
+\contentsline {subsection}{\numberline {12.1}Pr\IeC {\'e}cautions \IeC {\`a} prendre lors de la reproduction}{7}
+\contentsline {subsection}{\numberline {12.2}Pr\IeC {\'e}cautions prises pour assurer le stockage des logiciels}{7}
+\contentsline {subsubsection}{\numberline {12.2.1}Protection des donn\IeC {\'e}es contre les incidents}{7}
+\contentsline {subsubsection}{\numberline {12.2.2}Protection des donn\IeC {\'e}es contre les agressions ext\IeC {\'e}rieures}{8}
+\contentsline {subsubsection}{\numberline {12.2.3}Autres pr\IeC {\'e}cautions}{8}
+\contentsline {subsection}{\numberline {12.3}Modalit\IeC {\'e}s de livraison}{8}
+\contentsline {subsubsection}{\numberline {12.3.1}D\IeC {\'e}lais}{8}
+\contentsline {subsubsection}{\numberline {12.3.2}Installation}{8}
+\contentsline {subsubsection}{\numberline {12.3.3}Formation}{8}
+\contentsline {subsubsection}{\numberline {12.3.4}Migration de l'ancien vers le nouveau syst\IeC {\`e}me}{8}
+\contentsline {section}{\numberline {13}Suivi de l'application du Plan Qualit\IeC {\'e}}{8}
+\contentsline {subsection}{\numberline {13.1}Principes}{8}
+\contentsline {subsection}{\numberline {13.2}Interventions du Responsable Qualit\IeC {\'e} (Niv. Projet) sur la d\IeC {\'e}marche de D\IeC {\'e}veloppement}{8}
+\contentsline {subsection}{\numberline {13.3}Modalit\IeC {\'e}s de r\IeC {\'e}ception des r\IeC {\'e}sultats des sous-projets avant int\IeC {\'e}gration (description par sous-projets)}{8}
+\contentsline {section}{\numberline {14}Conclusion}{9}

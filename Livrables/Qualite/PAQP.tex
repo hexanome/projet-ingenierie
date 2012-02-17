@@ -67,12 +67,28 @@ Le PAQP est mis en place dans le cadre de la réponse par l'hexanôme H4111 (MOE
 
 \subsection{Logiciels concernés par le Plan d'Assurance Qualité Projet (PAQP)}
 
+Liste des composants logiciels de l'application, des moyens de développement et de tests - liaison entre les différents éléments.
+
 \subsection{Responsabilités associées au Plan d'Assurance Qualité Projet}
+
+Les responsabilités associées au PAQP sont les suivantes :
+
+\begin{itemize}
+\item La mise en place des éléments constituants du PAQP, par le Responsable Qualité
+\item L'identification des spécificités du projet par rapport à la Qualité, par le Reponsable Qualité
+\item La consultation et l'application des principes de qualité, par l'Equipe d'Ingénierie
+\item La mise en place des processus et l'enforcement des principes de qualité, par le Chef de Projet
+\item L'identification des éventuelles difficultés des GEI par rapport au PAQP, par le Chef de Projet et le Responsable Qualité
+\item Les évolutions et la mise à jour du PAQP, par le Responsable Qualité
+\end{itemize}
+
+Le Responsable Qualité joue également un rôle formateur au sein de l'équipe, en sensibilisant chacun au respect des principes généraux de la qualité dans ses activités quotidiennes, de l'ébauche des idées grâce à des Drafts (brouillons) à la finalisation des documents livrables.
+
 \subsection{Procédures d'évolution du PAQP}
 
 Tout le monde peut être force de proposition pour faire évoluer le PAQP. Le PAQP est un document qui par nature est régulièrement amélioré. L'objectif de ce document est d'assurer la bonne qualité du projet, et d'approcher le ``Zero Defaut''.
 
-Le PAQP peut-être amené à évoluer pour plusieurs raisons:
+Le PAQP peut-être amené à évoluer pour plusieurs raisons :
 
 \begin{itemize}
 \item détection d'un défaut, d'une imprécision ou d'une faille dans le PAQP
@@ -94,21 +110,32 @@ L'auteur de la non-conformité ou de l'écart par rapport à la référence sera
 
 \section{Documents de Référence et applicables}
 
-% best practise, procédure
+Les documents et références applicables sont les suivants :
 
-\subsection{Documents de référence}
+\begin{itemize}
+\item Dossier de Gestion et d'Organisation de la Documentation : dossier-documentation.pdf
+\item Bonne Pratique 1 - Réalisation d'une procédure : best-practise-1.pdf
+\item Bonne Pratique 2 - Réalisation d'un PAQ logiciel : best-practise-2.pdf
+\end{itemize}
 
-\subsection{Documents Applicables}
 
-\section{Terminologies et abréviations}
+\section{Terminologies et abbréviations}
+
+Pour une liste exhaustive des abbréviations et de la terminologie utilisées au sein de ce projet, voir le document ``glossaire-commun.pdf''.
 
 \section{Organisation humaine du comité de pilotage du projet}
 
 \subsection{Rôle des différents intervenants (Intervenants pour la maîtrise d'ouvrage, intervenants pour la maîtrise d'œuvre)}
+Cette partie n'est pas couverte dans le cadre de notre projet.
 
 \subsection{Relations entre les intervenants}
+Cette partie n'est pas couverte dans le cadre de notre projet.
 
 \subsection{Planning des réunions et règles}
+
+Les réunions seront organisées au fil de l'eau, lorsque le besoin apparaît, avec une avance d'au moins une semaine si possible. Il faudra veiller à éviter les réunions inutiles : Seules les personnes concernées par la réunion devraient y participer, et si une réunion peut être évitée par une simple recherche personnelle, il est important d'effectuer cette démarche de prise d'initiative pour ne pas faire perdre de temps à l'équipe.
+
+A l'issue de chaque réunion, une forme de synthèse devra avoir lieu, soit aux membres n'ayant pas participé mais étant quand même concerné par ce qui s'est dit, soit pour information générale et pour donner une idée globale de l'état des travaux.
 
 \section{Qualité au niveau du Processus}
 
@@ -116,62 +143,99 @@ L'auteur de la non-conformité ou de l'écart par rapport à la référence sera
 
 \subsubsection{Généralités}
 
-Le développement de ce système se basera sur le "cycle en V", qui produit des livrables à la fin de chacune des phases du cycle.
-
-Ceci permettra de pouvoir valider les livrables produits avant de passer à l'étape suivante en cas de validation, ou alors de recommencer jusqu'à validation dans le cas inverse.
-
-% TODO Diagramme du "Cycle en V" du cours.
+Le développement de ce système intègrera une démarche de "cycle en V", produisant des livrables à la fin de chacune des phases du cycle, tout en conservant un modèle itératif dynamique et adaptable à toutes les situations. Notre façon de travailler s'inspirera des méthodes agiles pour pouvoir faire intervenir les clients le plus en amont possible des travaux de réalisation, pour s'assurer de la bonne compréhension du projet par tous les acteurs, et pour pouvoir réajuster les activités en fonction des besoins changeants.
 
 \subsubsection{Phase d'Etude Préalable}
 
+Il s'agira dans un premier temps d'identifier les grandes lignes du projet, ainsi que les exigences fonctionnelles et non fonctionnelles exprimées par le client dans son appel d'offre, pour les classifier et les traiter en vue de les intégrer en tant que priorités dans la conception des différents modules et composants du système.
+
 \subsubsection{Phase d'Etude Détaillée}
+
+Une fois l'appel d'offre validé, plus de moyens peuvent être mobilisés pour l'étude détaillée de ce projet, raffinant point par point les éléments identifiés dans la phase d'étude préalable en les complément par des exemples détaillés et des points complémentaires. Le niveau de précision pourra être augmenté.
+
+Il s'agira également d'anticiper et de corriger le plus en avance possible les problèmes d'intégrations pouvant être causés par des écarts significatifs ou des points flous dans les spécifications.
 
 \subsubsection{Phase d'Intégration Système}
 
+Une fois tout le système conçu et dimensionné, il s'agira d'assembler tous ses composants et de les intégrer. Ceci est une étape cruciale qui peut prendre beaucoup de temps si des problèmes non identifiés en phase d'étude détaillée obligent l'équipe à refaire une passe de spécification / conception sur un composant qui refuse de s'intégrer avec le reste du système.
+
 \subsubsection{Phase de Validation Système}
+Cette partie n'est pas couverte dans le cadre de notre projet.
 
 \subsubsection{Phase de mise en œuvre sur site pilote}
+Cette partie n'est pas couverte dans le cadre de notre projet.
 
 \subsection{Règles de Qualité pour l'ingénierie concurrente}
+Cette partie n'est pas couverte dans le cadre de notre projet.
 
 \subsubsection{Règles sur la rédaction d'un Cahier des Charges d'un sous-projet}
+Cette partie n'est pas couverte dans le cadre de notre projet.
 
 \subsubsection{Règles sur la définition précise des résultats attendus pour chaque sous-projets}
+Cette partie n'est pas couverte dans le cadre de notre projet.
 
 \subsubsection{Règles sur le suivi qualité des sous-projets}
+Cette partie n'est pas couverte dans le cadre de notre projet.
 
 \subsubsection{Règles sur la définition de critères d'acceptation des sous-projets avant intégration}
+Cette partie n'est pas couverte dans le cadre de notre projet.
 
 \subsection{Présentation des démarche de développement au niveau sous-projets (niv. réalisation)}
+Cette partie n'est pas couverte dans le cadre de notre projet.
 
 \subsubsection{Liste des processus de développement susceptibles d'être retenus pour le développement des sous-projets}
-
-\subsubsection{Description du cycle de développement numéro 1}
-
-Liste des étapes
-Pour étape numéro J
-Documents en entrée
-Documents en sortie
-Conditions de validation de l'étape
-      -     Suivi de projet
+Cette partie n'est pas couverte dans le cadre de notre projet.
 
 \section{Documentation (Règles communes au projet)}
 
 \subsection{Structuration de la documentation}
 
+Voir le document ``Dossier de Structuration et d'Organisation de la Documentation'' (dossier-documentation.pdf).
+
 \subsection{Liste des documents de gestion de projet}
+
+\begin{itemize}
+\item \textbf{Le Dossier d'Initialisation} : Ce document sert de référentiel commun entre le COPEVUE et notre équipe qui proposera une solution. Celui-ci permet de répertorier et de décrire chaque livrable. Pour la plupart des livrables, on définit leurs plan généraux. Ce livrable informera le COPEVUE des étapes d'élaboration de la solution la plus adaptée à la gestion des sites isolés. Le contenu de ce dossier est donc défini selon les parties précisées dans le sommaire (Livrables, Macro-Phasage, Répartition des rôles, Gestion des risques).
+\item \textbf{Le Relevé de Décisions} : Dossier rédigé qui rend compte des décisions prisent lors des revues de travail au sein des séances. Il justifiera les décisions concernant en particulier le dossier de faisabilité (pour la phase 1) et sera mis à jour tout au long du déroulement du projet.
+\item \textbf{La Fiche d'Argumentation Commerciale} : Ce document permettra de présenter le produit sous un angle commercial. Il donnera une vue synthétique, claire et fonctionnel de notre réponse à l'appel d'offre lancé par le COPEVUE.
+\item \textbf{La Rédaction d'une procédure} : Le chef de projet devra rédiger la procédure de son choix à savoir : soit la \og décomposition d'un sytème et choix de sous projets \fg ou \og gestion de configuration \fg.
+\item \textbf{Le Plan de Mangement de Projet} : Le PMP doit présenter pour l'ensemble du projet de monitoring de systèmes isolés les livrables et l'organisation fonctionnelle du projet. Ce rapport permet donc de bien délimiter le domaine d'étude de chaque sous-projet.
+\end{itemize}
 
 \subsection{Liste des documents relatifs à la qualité}
 
+\begin{itemize}
+\item \textbf{Le Glossaire Commun} : Ce document doit être rempli par tout à chacun au sein du groupe et servira notamment pour la compréhension des termes complexes rencontrés tout au long de la rédaction des dossiers (pour le CdP, le RQ, le GEI).
+\item \textbf{Le Dossier de structuration de la documentation et d'organisation de la production} : Dossier précisant les processus à appliquer pour gérer la production et la gestion des documents à fournir au client. Ce document a l'avantage qu'il s'agit d'un point d'attache procédurale et que chacun peut aller se renseigner dedans sur les règles impératives à appliquer lorsque l'on rédige un document.
+\item \textbf{Rédaction de la Best Practice 1} : Cette Best Practice devra répondre à la problématique \og Comment rédiger une bonne procédure ?\fg. Ce dossier rédigé permet d'amorcer le travail de rédaction de procédure du chef de projet. Ce document est détaché du domaine technique de notre étude mais permet cependant de poser les bases et de donner les consignes nécessaires à la rédaction d'une procédure. Le RQ devra définir les éléments clefs en insistant sur le domaine pratique de ce type de document.
+\item \textbf{Rédaction de la Best Practice 2} : Le rôle de cette Best Practise sera de répondre à la problématique \og Comment rédiger un Cahier des Charges logiciel ? \fg.
+\item \textbf{Rédaction du dossier de synthèse} : Ce document permet au RQ de se faire une idée générale des choix techniques pris par l'équipe GEI et le chef de projet. Ce dossier présente donc une synthèse des améliorations que notre groupe de travail va apporter au système déjà existant, c'est donc l'essentiel du projet qui est présenté ici. Ce dossier permettra au COPEVUE d'avoir l'éssentiel de notre travail en un document clair et concis.
+\item \textbf{PAQP} : Ce document doit définir l'ensemble des règles pour garantir l'intégration et la réussite du projet.
+\end{itemize}
+
 \subsection{Liste des documents techniques et de réalisation}
 
+\begin{itemize}
+\item \textbf{Dossier de faisabilité} : Ce dossier permet de prendre connaissance des possibilités qui s'offrent à nous dans les domaines techniques qui nous touchent pour la réponse à l'appel d'offre. Le GEI va donc étudier les différentes sortes de capteurs aujourd'hui présent sur le marché mais aussi tout ce qui sera autour, à savoir ce qui va nous permettre de transmettre l'information, ou encore de la stocker. D'une manière encore sommaire, le groupe GEI se fera une idée dont seront agencés les appareils que nous choisissont.
+\item \textbf{Le Dossier de spécification technique des besoins} : Ce dossier récapitule les besoins techniques transmis par le biais de l'appel d'offre. Ces besoins seront donc traduits en exigences fonctionnelles et non fontionnelles. Enfin, notre groupe de travail définira les axes de progrès à apporter au projet.
+\item \textbf{Le Dossier de conception détaillée du système} :  C'est l'initialisation de la partie conceptuelle du projet. Nous nous attacherons à préciser l'architecture générale du système et à commenter l'assemblage plus précis des différents composants qui entrent en jeu.
+\item \textbf{Les cahier des charges logiciels} :  Ce sont les cahiers des charges qui définissent les exigences des éléments logiciels qu'il sera nécessaire de développer dans le cadre de tel ou tel sous-projet. Pour avoir plus d'informations sur le contenu de ces sous-projet, voir le PMP.
+\end{itemize}
+
 \subsection{Manuels d'utilisation et de mise en œuvre}
+Cette partie n'est pas couverte dans le cadre de notre projet.
 
 \section{Gestion de configuration (Règles communes au projet)}
 
+Voir le document ``Dossier de Structuration et d'Organisation de la Documentation'' (dossier-documentation.pdf).
+
 \subsection{Conventions d'Identification}
 
+Voir le document ``Dossier de Structuration et d'Organisation de la Documentation'' (dossier-documentation.pdf).
+
 \subsection{Procédures d'identification des éléments de configuration }
+
+Voir le document ``Dossier de Structuration et d'Organisation de la Documentation'' (dossier-documentation.pdf).
 
 \subsubsection{Responsabilités}
 
@@ -181,7 +245,10 @@ Les différents membres du projet devront maîtriser l'outil. Pour cela, se réf
 
 \subsubsection{Procédures de gestion de la configuration (Gestion des Eléments de Configuration Logiciel et des Configurations de Référence)}
 
+Voir le document ``Dossier de Structuration et d'Organisation de la Documentation'' (dossier-documentation.pdf).
+
 \subsection{Gestion des ressources partagées}
+Cette partie n'est pas couverte dans le cadre de notre projet.
 
 \paragraph{Remarques}
 
@@ -190,46 +257,68 @@ Mettre l'arbre de découpage en Articles de configuration logicielle du Projet e
 \section{Gestions des modifications (Règles communes au projet)}
 
 \subsection{Origines des modifications}
+Cette partie n'est pas couverte dans le cadre de notre projet.
 
 \subsection{Procédures et organisation des modifications}
+Cette partie n'est pas couverte dans le cadre de notre projet.
 
 \section{Méthodes, Outils et Règles (Règles communes au projet)}
 
-\subsection{Méthodes}
+Liste des différents outils et méthodes qui seront utilisés tout au long du projet :
 
-\subsection{Outils (Outils logiciels, autres outils)}
-
-\subsection{Règles et normes (Documentation, programmation)}
+\begin{itemize}
+\item \textbf{Google Docs} : Outil en ligne permettant un partage et un travail simultané en temps réel sur différents types de documents, avec une gestion des versions. Ne sera utilisé que le temps de la mise en place d'outils plus avancés.
+\item \textbf{UML} : Langage de modélisation, qui sera surtout utilisé pour la modélisation des cas d'utilisation.
+\item \textbf{Redmine} : Gestionnaire de projet en ligne, disposant d'un wiki, permettant de suivre le temps passé sur une tâche, d'attribuer les tâches aux différents utilisateurs, de créer un  diagramme de Gantt pour faciliter le travail du chef de projet.
+\item \textbf{Git} : Gestionnaire de sources, qui sera intégré directement à Redmine, permettant de travailler à plusieurs sur un même document et de résoudre facilement les conflits au moment de la mise en commun.
+\item \textbf{LaTeX} : Langage et système de composition de documents, qui a l'avantage d'être textuel, et donc plus facile à versionner que des documents binaires Office.
+\item \textbf{Diagramme de Gantt } : Outil permettant l'ordonnancement et la visualisation des tâches entre les différents membres du projet, afin de gérer au mieux l'avancement du projet.
+\end{itemize}
 
 \section{Contrôle des Fournisseurs}
 
 \subsection{Exigences vis-à-vis des sous-traitants}
+Cette partie n'est pas couverte dans le cadre de notre projet.
 
 \subsection{Exigences vis-à-vis des co-traitants}
+Cette partie n'est pas couverte dans le cadre de notre projet.
 
 \subsection{Logiciels achetés, loués ou imposés}
+Cette partie n'est pas couverte dans le cadre de notre projet.
 
 \section{Reproduction, Protection, Livraison (au niveau projet)}
 
 \subsection{Précautions à prendre lors de la reproduction}
+Cette partie n'est pas couverte dans le cadre de notre projet.
 
 \subsection{Précautions prises pour assurer le stockage des logiciels}
+Cette partie n'est pas couverte dans le cadre de notre projet.
 
 \subsubsection{Protection des données contre les incidents}
+Cette partie n'est pas couverte dans le cadre de notre projet.
 
 \subsubsection{Protection des données contre les agressions extérieures}
+Cette partie n'est pas couverte dans le cadre de notre projet.
 
 \subsubsection{Autres précautions}
+Cette partie n'est pas couverte dans le cadre de notre projet.
 
 \subsection{Modalités de livraison}
 
+Une fois les livrables finalisés et validés, ils seront imprimés et remis au client sous enveloppe scellée. Une liste des livrables signée accompagnera le groupe de documents avant d'éviter la perte de tout document. Afin de pouvoir réagir aux cas de perte, une copie numérique sera conservée jusqu'à confirmation de réception et validation du client.
+
 \subsubsection{Délais}
 
+Les documents devront impérativement être rendus dans les délais impartis par le client. En cas de problème d'anticipation sur la charge de travail demandée sur un livrable, ce soucis devra être detecté le plus tôt possible dans l'avancement du projet afin de pouvoir prévenir le client des éventuels retards. Il pourra ainsi prendre ses dispositions. Il est important de se souvenir que tout retard entraîne des pénalités de paiement, pouvant devenir significativement importantes en cas de retard déraisonable.
+
 \subsubsection{Installation}
+Cette partie n'est pas couverte dans le cadre de notre projet.
 
 \subsubsection{Formation}
+Cette partie n'est pas couverte dans le cadre de notre projet.
 
 \subsubsection{Migration de l'ancien vers le nouveau système}
+Cette partie n'est pas couverte dans le cadre de notre projet.
 
 \section{Suivi de l'application du Plan Qualité}
 
@@ -244,6 +333,7 @@ L'assurance qualité concerne toutes les procédures qualité établies par le R
 Lors des différentes phases de développement du projet, le RQ a pour principales responsabilités: - Le support qualité auprès de l'équipe projet - la validation de la forme des documents produits et livrés selon les règles énoncées dans la Gestion de la Documentation. - la vérification du suivi et de l'application du PAQP par l'équipe projet - la création, le maintien et l'évolution du Système Qualité.
 
 \subsection{Modalités de réception des résultats des sous-projets avant intégration (description par sous-projets)}
+Cette partie n'est pas couverte dans le cadre de notre projet.
 
 \section{Conclusion}
 
