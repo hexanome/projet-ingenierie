@@ -26,26 +26,27 @@
 \contentsline {subsubsection}{\numberline {5.2.2}Mat\IeC {\'e}riel}{6}{subsubsection.5.2.2}
 \contentsline {subsection}{\numberline {5.3}Production d'\IeC {\'e}nergie}{6}{subsection.5.3}
 \contentsline {subsubsection}{\numberline {5.3.1}Batteries longue dur\IeC {\'e}e}{6}{subsubsection.5.3.1}
-\contentsline {subsubsection}{\numberline {5.3.2}\IeC {\'E}nergie solaire}{6}{subsubsection.5.3.2}
+\contentsline {subsubsection}{\numberline {5.3.2}\IeC {\'E}nergie solaire}{7}{subsubsection.5.3.2}
 \contentsline {subsubsection}{\numberline {5.3.3}\IeC {\'E}nergie \IeC {\'e}olienne}{7}{subsubsection.5.3.3}
 \contentsline {subsubsection}{\numberline {5.3.4}Pile \IeC {\`a} combustible}{7}{subsubsection.5.3.4}
-\contentsline {subsection}{\numberline {5.4}Communication}{7}{subsection.5.4}
-\contentsline {subsubsection}{\numberline {5.4.1}Communication entre la station et le site central}{7}{subsubsection.5.4.1}
-\contentsline {paragraph}{R\IeC {\'e}seau GSM/CDMA}{7}{section*.9}
+\contentsline {subsection}{\numberline {5.4}Communication}{8}{subsection.5.4}
+\contentsline {subsubsection}{\numberline {5.4.1}Communication entre la station et le site central}{8}{subsubsection.5.4.1}
+\contentsline {paragraph}{R\IeC {\'e}seau GSM/CDMA}{8}{section*.9}
 \contentsline {paragraph}{R\IeC {\'e}seau satellite}{8}{section*.10}
 \contentsline {subsubsection}{\numberline {5.4.2}Communication entre les capteurs et la station}{8}{subsubsection.5.4.2}
 \contentsline {paragraph}{Solution filaire}{8}{section*.11}
 \contentsline {paragraph}{ZigBee}{8}{section*.12}
 \contentsline {paragraph}{Capteur avec communication int\IeC {\'e}gr\IeC {\'e}e}{8}{section*.13}
-\contentsline {subsubsection}{\numberline {5.4.3}Communication entre les \IeC {\'e}quipes d\IeC {\textquoteright }entretien et les stations}{8}{subsubsection.5.4.3}
-\contentsline {subsection}{\numberline {5.5}Localisation}{8}{subsection.5.5}
+\contentsline {subsubsection}{\numberline {5.4.3}Communication entre les \IeC {\'e}quipes d'entretien et les stations}{9}{subsubsection.5.4.3}
+\contentsline {subsection}{\numberline {5.5}Localisation}{9}{subsection.5.5}
 \contentsline {subsection}{\numberline {5.6}Capteurs de niveau}{9}{subsection.5.6}
 \contentsline {subsubsection}{\numberline {5.6.1}Capteurs de niveau pour liquides}{9}{subsubsection.5.6.1}
 \contentsline {paragraph}{Le flotteur}{9}{section*.14}
 \contentsline {paragraph}{Le plongeur}{9}{section*.15}
 \contentsline {paragraph}{Le capteur de pression}{9}{section*.16}
 \contentsline {paragraph}{Sonde capacitive}{9}{section*.17}
-\contentsline {subsubsection}{\numberline {5.6.2}Capteurs de niveau pour solides}{9}{subsubsection.5.6.2}
-\contentsline {paragraph}{D\IeC {\'e}tecteur \IeC {\`a} lames vibrantes}{9}{section*.18}
-\contentsline {subsubsection}{\numberline {5.6.3}Capteurs hybrides (liquides \& solides)}{9}{subsubsection.5.6.3}
+\contentsline {subsubsection}{\numberline {5.6.2}Capteurs de niveau pour solides}{10}{subsubsection.5.6.2}
+\contentsline {paragraph}{D\IeC {\'e}tecteur \IeC {\`a} lames vibrantes}{10}{section*.18}
+\contentsline {subsubsection}{\numberline {5.6.3}Capteurs hybrides (liquides \& solides)}{10}{subsubsection.5.6.3}
 \contentsline {section}{\numberline {6}Conclusion}{10}{section.6}
+\contentsline {section}{\numberline {7}Annexes}{10}{section.7}
