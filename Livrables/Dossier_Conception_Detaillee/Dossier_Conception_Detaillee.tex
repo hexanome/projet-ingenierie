@@ -35,8 +35,16 @@ La station centrale dispose d'un autre sous-système, le ``système de transmiss
 
 \subsection{Système central}
 
+Le ``système central'' est une application connectée à internet servant à centraliser les informations collectées sur l'ensemble des sites d'un territoire (voir même du monde). En voici le fonctionnement :
+
+Les systèmes de transmission des sites isolés vont communiquer par internet avec le système central pour lui transmettre les derniers relevés des capteurs du site. Celui-ci va alors les stocker en base de données et vérifier si de nouvelles informations de configuration sont disponibles pour ce site. Si c'est le cas, celles-ci seront transmises en réponse.
+
+En arrière plan, le système central va appliquer un ensemble de règles configurables pour vérifier si les nouvelles valeurs transmisent doivent déclencher des actions automatisées telles que des alertes ou des demandes d'intervention sur site.
+
+Le système central va aussi présenter une interface de gestion au gestionnaires et clients du système, leur permettant de vérifier l'état et l'historique des mesures de chaque site, et la reconfiguration de ceux-ci. Cette interface doit aussi leur permettre de consulter d'éventuelles alertes, et de pouvoir y réagir en planifiant des interventions.
 
 \subsection{Communication}
+
 La communication entre la station et le central s’effectuera la plupart du temps en GSM. La plupart des sites isolés peuvent capter un signal, le GSM permet donc d’avoir une solution efficace, économe et peu cher. Dans le cas où aucune connexion GSM ne peut être faite, la base se connecte via satellite. La couverture des fournisseurs est quasi-totale, ce qui permet d’atteindre toutes les régions isolées. 
 
 La communication entre les modules de capteurs et la base ce fait grâce au protocole ZigBee, qui permet de faire un réseau de plus de 60 000 appareil. Le ZigBee est très économes et le protocole est simple d’utilisation. Les cartes appliquant le ZigBee se paye a quelques dizaines d’euros. 
@@ -50,12 +58,15 @@ La communication entre les modules de capteurs et la base ce fait grâce au prot
 \subsection{Architecture matérielle}
 
 \paragraph{Maintenance} Le technicien chargé de la maintenance du système est équipé d’un module capable de connecté à la station. Ce module doit être pourvu d’une prise USB pour relier l’appareil à la station. L’application de maintenance est utilisable sur un ordinateur  ou un matériel plus compact tel qu’un PDA ou un Smartphone. 
+
 \paragraph{Capteur} Le module du capteur est équipé d’une carte contenant le capteur, le module de communication sans-fil et l’alimentation. Le système embarqué résiste aux conditions climatiques et a une très grande autonomie.
+
 \paragraph{Base de la station} La base de la station est équipée du module de communication général  (GSM ou satellite selon la localisation du site), d’un module de communication ZigBee pour superviser le reste de la station. Cette base est capable d’enregistrer les informations les plus pertinentes avant de les retransmettre au central. La base est reliée à une source d’énergie qui l’alimente pendant de longue période. 
 
 \subsection{Architecture informatique}
 
 \paragraph{Module capteur} Le module capteur regroupe plusieurs parties logiciels. Le logiciel principal permet de vérifier le niveau de la batterie, de communiquer grâce au module ZigBee et de relever les valeurs du capteur. Pour cela un pilote est implémenté pour assurer une bonne intégration entre les éléments
+
 \paragraph{Base de la station} La base est composé que d’un seul logiciel, qui a pour rôle de superviser la station. Elle doit ainsi relever les valeurs de tous les capteurs, les enregistrer et les retransmettre au central. Ce logiciel peut également reconfigurer différents éléments de la base telle que la période de réveil du système. Le protocole de communication implémenté est sécurisé, pour empêcher une interception des données ou une intrusion dans le système.
 
 \section{Réflexions sur les données}
@@ -72,6 +83,11 @@ La première problématique qui se pose en regard du volume des données que nou
 L'autre aspect de la volumétrie des données est celle du stockage de l'historique des relevés de chaque site, et ce sur une longue période, pour être capable de les utiliser plus tard (e.g pour faire une comparaison des moyennes mensuelles d'une année à l'autre). Mais encore une fois, la nature des données concernée, et leur quantité, ne font pas de leur stockage une des principales difficultés de ce système, et un simple déploiement de serveurs SQL feront sans problème l'affaire.
 
 \section{Gestion des problèmes et anomalies, sécurité}
+Comme nous l'avons vu, la disponibilité du système est primordiale pour assurer une surveillance efficace des sites, c'est pourquoi il faut se prémunir contre les erreurs et surtout pouvoir gérer celles qui surviendraient pour éviter de paralyser tout le système. Notre architecture modulaire permet de limiter les risques, tous les éléments n'étant pas nécessaire au fontionnement de l'ensemble.
+Dans l'architecture, la détection de problèmes matériels est également prévu, avec la possibilité de récupérer l'état des capteurs et autres composants, ce qui permet d'identifier l'origine des erreurs.
+Le point névralgique de notre système est le dispositif de communication, son bon fonctionnement est primordial pour tous les autres composants qui gravitent autour. Il faut donc s'assurer de la qualité de service que l'opérateur choisi peut garantir. De notre côté, un soin tout particulier sera porté sur la résilience aux erreurs de ce module, pour ne pas pénaliser la bonne supervision des sites.
+Un autre point important est le serveur central, qui matériellement ne présente que peu de risque, grâce au solution de Cloud Computing, par contre il faudra là aussi portée une grande attention à son comportement en cas d'erreur. Au niveau de la base de données, il est possible d'avoir des moyens de retours en arrière (rollback) en cas de corruption de celle-ci.
+
 
 \section{Conclusion}
 
