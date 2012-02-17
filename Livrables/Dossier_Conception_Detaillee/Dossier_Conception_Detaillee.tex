@@ -6,7 +6,7 @@ Le COPEVUE a lancé un appel d'offre dans le cadre de la réalisation d'un syst�
 
 \subsection{Présentation du document}
 
-Ce document permet de définir précisemment l'architecture applicative et technique de l'ensemble de notre solution, en rapport avec le dossier de Spécification Technique des Besoins. L'objectifs est d'apporté une réponse claire aux questions suivantes:
+Ce document permet de définir précisément l'architecture applicative et technique de l'ensemble de notre solution, en rapport avec le dossier de Spécification Technique des Besoins. L'objectifs est d'apporter une réponse claire aux questions suivantes:
 
 %Copier coller du doc de Regis
 \begin{itemize}
@@ -29,14 +29,14 @@ Ce document permet de définir précisemment l'architecture applicative et techn
 
 \subsection{Système sur site isolé}
 
-Chaque site isolé dispose d'un système complêt de monitoring du site, qui est décomposé de la manière suivante :
+Chaque site isolé dispose d'un système complet de monitoring du site, qui est décomposé de la manière suivante :
 
-Les cuves à monitorer sont chacune équipées de capteurs relevant leur niveau de remplissage. Chaque capteur est géré par un composant connecté direcement dessus, que nous appelerons ici le ``système de gestion du capteur''. Ces systèmes fonctionneront ponctuellement, se réveillant de manière périodique pour effectuer des mesures à l'aide du capteur.
+Les cuves à monitorer sont chacunes équipées de capteurs relevant leur niveau de remplissage. Chaque capteur est géré par un composant connecté direcement dessus, que nous appelerons ici le ``système de gestion du capteur''. Ces systèmes fonctionneront ponctuellement, se réveillant de manière périodique pour effectuer des mesures à l'aide du capteur.
 
-Le site est pourvu d'une ``station centrale'', principalement constituée d'un système embarqué à base d'OS Linux, qui va pouvoir communiquer avec les systèmes de capteurs vu précédement à l'aide d'une connexion sans-fil ZigBee. La station centrale aura elle aussi un fonctionnement ponctuel, se réveillant par tranches de 10 minutes toute les 6 heures (configuration par défaut), paramétrable bien évidement). Chaque fois qu'un système de gestion de capteur aura effectué une mesure, il essayera d'en communiquer le résultat à la base. En cas d'échec, il sera à même de conserver ces informations en vue d'une transmission ultérieur.\\
+Le site est pourvu d'une ``station centrale'', principalement constituée d'un système embarqué à base d'OS Linux, qui va pouvoir communiquer avec les systèmes de capteurs vu précédement à l'aide d'une connexion sans-fil ZigBee. La station centrale aura elle aussi un fonctionnement ponctuel, se réveillant par tranches de 10 minutes toutes les 6 heures (configuration par défaut, paramétrable bien évidement). Chaque fois qu'un système de gestion de capteur aura effectué une mesure, il essayera d'en communiquer le résultat à la base. En cas d'échec, il sera à même de conserver ces informations en vue d'une transmission ultérieur.\\
 C'est un sous-système de la station centrale, le ``système de gestion du site'' qui sera responsable de la collecte des données auprès des capteurs, du maintient de la configuration de la station, mais aussi de la journalisation de données aussi bien logiques que physiques telles que les erreurs systèmes, la température extérieur, etc.
 
-La station centrale dispose d'un autre sous-système, le ``système de transmission'', qui servira quant à lui à la communication avec le système central décrit plus loins. Cette transmission se fera de manière périodique, à une fréquence paramétrable, par satellite ou en utilisant le réseau GSM. Elle permettra d'envoyer dans un sens les relevés des capteurs, et dans l'autre l'envoi de nouveau paramètres de configuration à la station (et par extension, aux systèmes de gestion de capteurs).
+La station centrale dispose d'un autre sous-système, le ``système de transmission'', qui servira quant à lui à la communication avec le système central décrit plus loin. Cette transmission se fera de manière périodique, à une fréquence paramétrable, par satellite ou en utilisant le réseau GSM. Elle permettra d'envoyer dans un sens les relevés des capteurs, et dans l'autre l'envoi de nouveaux paramètres de configuration à la station (et par extension, aux systèmes de gestion de capteurs).
 
 \subsection{Système central}
 
@@ -46,13 +46,13 @@ Les systèmes de transmission des sites isolés vont communiquer par internet av
 
 En arrière plan, le système central va appliquer un ensemble de règles configurables pour vérifier si les nouvelles valeurs transmisent doivent déclencher des actions automatisées telles que des alertes ou des demandes d'intervention sur site.
 
-Le système central va aussi présenter une interface de gestion au gestionnaires et clients du système, leur permettant de vérifier l'état et l'historique des mesures de chaque site, et la reconfiguration de ceux-ci. Cette interface doit aussi leur permettre de consulter d'éventuelles alertes, et de pouvoir y réagir en planifiant des interventions.
+Le système central va aussi présenter une interface de gestion aux gestionnaire et clients du système, leur permettant de vérifier l'état et l'historique des mesures de chaque site, et la reconfiguration de ceux-ci. Cette interface doit aussi leur permettre de consulter d'éventuelles alertes, et de pouvoir y réagir en planifiant des interventions.
 
 \subsection{Communication}
 
 La communication entre la station et le central s’effectuera la plupart du temps en GSM. La plupart des sites isolés peuvent capter un signal, le GSM permet donc d’avoir une solution efficace, économe et peu cher. Dans le cas où aucune connexion GSM ne peut être faite, la base se connecte via satellite. La couverture des fournisseurs est quasi-totale, ce qui permet d’atteindre toutes les régions isolées. 
 
-La communication entre les modules de capteurs et la base ce fait grâce au protocole ZigBee, qui permet de faire un réseau de plus de 60 000 appareil. Le ZigBee est très économes et le protocole est simple d’utilisation. Les cartes appliquant le ZigBee se paye a quelques dizaines d’euros. 
+La communication entre les modules de capteurs et la base se fait grâce au protocole ZigBee, qui permet de faire un réseau de plus de 60 000 appareils. Le ZigBee est très économe et le protocole est simple d’utilisation. Les cartes appliquant le ZigBee se paye à quelques dizaines d’euros. 
 
 \section{Règles de pilotage du système}
 
@@ -60,27 +60,27 @@ La communication entre les modules de capteurs et la base ce fait grâce au prot
 
 \section{Architecture applicative}
 
-Au niveau des capteurs, l'usage de microcontrolleurs programmables ne nous impose pas d'utiliser un système d'exploitation. Le développement sur ces composants se fera en en C, en utilisant les outils fournis par le constructeur.
+Au niveau des capteurs, l'usage de micro-contrôleurs programmables ne nous impose pas d'utiliser un système d'exploitation. Le développement sur ces composants se fera en en C, en utilisant les outils fournis par le constructeur.
 
-Pour le système embarqué de la station, le premier choix à faire est celui de l'OS. Il nous faut pour cela un système petit et fiable, qui doit pouvoir supporter la mise en veille profonde pour des raisons d'économie d'energie. Il doit également supporter les connexions USB et PCIe pour pouvoir communiquer avec les différents périphériques que nous comptons lui ajouter. Le choix s'est donc porté sur Embedded Linux, qui non seulement réponds à ces contraintes, mais présente de plus l'avantage d'être gratuit et libre, nous autorisant ainsi à l'adapter à nos besoins tout en n'ajoutant pas de coûts supplémentaires.
+Pour le système embarqué de la station, le premier choix à faire est celui de l'OS. Il nous faut pour cela un système petit et fiable, qui doit pouvoir supporter la mise en veille profonde pour des raisons d'économie d'energie. Il doit également supporter les connexions USB et PCIe pour pouvoir communiquer avec les différents périphériques que nous comptons lui ajouter. Le choix s'est donc porté sur Embedded Linux, qui non seulement répond à ces contraintes, mais présente de plus l'avantage d'être gratuit et libre, nous autorisant ainsi à l'adapter à nos besoins tout en n'ajoutant pas de coûts supplémentaires.
 
 Les logiciels que nous développerons sur le système embarqué seront en C/C++ pour des raisons de performances et d'empreinte mémoire.
 
-Concernant le système central, l'usage d'une plateforme de cloud computing est envisagé pour permettre des temps de développement plus court (pas de gestion d'infrastructure à faire) et une garantie d'intégrité plus importe sur les données. Au niveau de l'OS, c'est encore une fois sur Linux que s'est porté notre choix, dans sa version serveur cette fois-ci. N'ayant plus à faire ses preuves dans le monde du serveur, on appréciera encore une fois son aspect gratuit/libre, et sa grande versatilité.
+Concernant le système central, l'usage d'une plateforme de cloud computing est envisagé pour permettre des temps de développement plus court (pas de gestion d'infrastructure à faire) et une garantie d'intégrité plus importante sur les données. Au niveau de l'OS, c'est encore une fois sur Linux que s'est porté notre choix, dans sa version serveur cette fois-ci. N'ayant plus à faire ses preuves dans le monde du serveur, on appréciera encore une fois son aspect gratuit/libre, et sa grande versatilité.
 
 Les différentes composants du système central utiliseront les technologies suivantes :
 
 \begin{itemize}
-\item NodeJS pour le serveur d'API responsable de la communication avec les sites isolés. Ayant fait ses preuves dans des application très demandantes en terme de performances, ce serveur/framework web tire partis de son modèle asynchrone pour utiliser au mieux les ressources à sa disposition. Il est par ailleurs simple à interfacer avec les principaux DBMS du marché.
-\item Nous nous servirons aussi de NodeJS pour la partie présentation des données sous forme de site web. Il suffira de lui un adjoindre un framework de templating tel qu'ExpressJS.
-\item Le moteur de traitement des règles à appliquer sur les données sera quant à lui développé en Java, technologie plus adaptée au lourds traitements tout en gardant un interfacage efficace et bien fourni avec les DBMS.
+\item NodeJS pour le serveur d'API responsable de la communication avec les sites isolés. Ayant fait ses preuves dans des applications très demandantes en terme de performances, ce serveur/framework web tire partis de son modèle asynchrone pour utiliser au mieux les ressources à sa disposition. Il est par ailleurs simple à interfacer avec les principaux DBMS du marché.
+\item Nous nous servirons de Java pour la partie présentation des données. Le logiciel utilisera l'API décrite dans le dossier correspondant.
+\item Le moteur de traitement des règles à appliquer sur les données sera lui aussi développé en Java, technologie plus adaptée que NodeJS aux lourds traitements tout en gardant un interfacage efficace et bien fourni avec les DBMS.
 \end{itemize}
 
 \section{Architecture informatique et matérielle}
 
 \subsection{Architecture matérielle}
 
-\paragraph{Maintenance} Le technicien chargé de la maintenance du système est équipé d’un module capable de connecté à la station. Ce module doit être pourvu d’une prise USB pour relier l’appareil à la station. L’application de maintenance est utilisable sur un ordinateur  ou un matériel plus compact tel qu’un PDA ou un Smartphone. 
+\paragraph{Maintenance} Le technicien chargé de la maintenance du système est équipé d’un module capable de se connecter à la station. Ce module doit être pourvu d’une prise USB pour relier l’appareil à la station. L’application de maintenance est utilisable sur un ordinateur  ou un matériel plus compact tel qu’un PDA ou un Smartphone. 
 
 \paragraph{Capteur} Le module du capteur est équipé d’une carte contenant le capteur, le module de communication sans-fil et l’alimentation. Le système embarqué résiste aux conditions climatiques et a une très grande autonomie.
 
