@@ -1,11 +1,14 @@
 \section{Introduction}
+
 \subsection{Présentation du projet}
-Le COPEVUE a lancé un appel d'offre dans le cadre de la réalisation d'un système de monitoring de sites isolés. Il s'agit donc de concevoir en premier lieu une solution technique permettant de répondre au mieux aux exigences fonctionnelles et non fonctionnelles que le COPEVUE formule. De façon synthétique notre équipe va proposer une solution permettant de surveiller des sites naturels difficiles d'accès (souvent à cause des conditions environnementales) et peu peuplés. Dans ces sites isolés sont souvent regroupés des postes de travail et ces zones doivent pouvoir être surveillées en dépit de la distance qui les sépare du bureau de contrôle.
+
+Le COPEVUE a lancé un appel d'offre dans le cadre de la réalisation d'un système de monitoring de sites isolés. Il s'agit donc de concevoir en premier lieu une solution technique permettant de répondre au mieux aux exigences fonctionnelles et non fonctionnelles que le COPEVUE formule. De façon synthétique notre équipe va proposer une solution permettant de surveiller des sites naturels difficiles d'accès (souvent à cause des conditions environnementales) et peu densément peuplés. Dans ces sites isolés sont souvent regroupés des postes de travail et ces zones doivent pouvoir être surveillées en dépit de la distance qui les sépare du bureau de contrôle.
 
 \subsection{Présentation du document}
-Ce document présente le cahier des charges du logiciel permettant la supervision centralisée de tous les site isolés surveillés,c'est à dire la définition des spécifités du logiciel qui sera développé. C'est une formalisation des besoins exprimés par la MOA et permet de s'assurer que les différents parties se comprennent sur le``quoi''. Ce document servira de référence à la MOE et la MOA pour les phases suivantes du projet.
+Ce document présente le cahier des charges du logiciel permettant la supervision centralisée de tous les site isolés surveillés, c'est à dire la définition des spécifités du logiciel qui sera développé. C'est une formalisation des besoins exprimés par la MOA et permet de s'assurer que les différents parties se comprennent sur le ``quoi''. Ce document servira de référence à la MOE et la MOA pour les phases suivantes du projet.
 
 \subsection{Documents applicables / Documents de référence}
+
 \begin{itemize}
 	\item Cours de Génie Logiciel
 	\item Cours de Qualité Logiciel
@@ -15,6 +18,7 @@ Ce document présente le cahier des charges du logiciel permettant la supervisio
 \end{itemize}
 
 \subsection{Terminologie et abréviations}
+
 \begin{itemize}
 	\item CdC : cahier des charges.
 	\item MOA : maîtrise d'ouvrage.
@@ -25,38 +29,50 @@ Ce document présente le cahier des charges du logiciel permettant la supervisio
 \end{itemize}
 
 \section{Présentation du problème}
+
 \subsection{Buts, nature du logiciel, utilisateurs concernés}
-L'objectif est de fournir une interface qui permette de suivre les informations dont on dispose sur les différents sites actuellement surveillés par notre système comme le niveau de liquide dans une cuve ou le niveau de remplissage des containers, de manière efficace et simple. Il offrira également la possibilité de reconfigurer certains paramètres du système pour faire de la maintenance à distance (modification du niveau d'alerte, cycle de d'envoi des données, ...).
-Lorsque la situation est critique sur un site, l'utilisateur doit en être avertis par un affichage approprié pour prendre les décisions qui s'imposent.
+
+L'objectif est de fournir une interface qui permette de suivre les informations dont on dispose sur les différents sites actuellement surveillés par notre système comme le niveau de liquide dans une cuve ou le niveau de remplissage des containers, de manière simple et efficace. Il offrira également la possibilité de reconfigurer certains paramètres du système pour faire de la maintenance à distance (modification du niveau d'alerte, cycle de d'envoi des données, ...).
+
+Lorsque la situation est critique sur un site, l'utilisateur doit en être averti par un affichage approprié pour qu'il puisse prendre les décisions qui s'imposent.
 
 \subsection{Formulation des besoins, exploitation et ergonomie, expérience}
 
 \subsubsection{Authentification}
-La connexion au serveur central doit se faire de manière sécurisé et authentifié, afin de sécuriser l'ensemble.
+
+La connexion au serveur central doit se faire de manière sécurisée avec authentification par login et mot de passe.
 
 \subsubsection{Récupération des données}
+
 Après que l'utilisateur se soit authentifié, toutes les données seront téléchargées depuis le serveur central pour être stockées en local, afin d'éviter d'avoir à les télécharger de nouveau en cas de perte de connexion. Les données téléchargés sont :
+
 \begin{itemize}
 \item La valeur des mesures effectuées depuis la dernière transmission par chacun des capteurs. La quantité de valeurs dépend de la granularité avec laquelle est configurée le site. Chaque valeur sera bien évidemment horodatée.
 \item L'état physique et logique de la station et du site. Cela peut comprendre la température ambiante, l'autonomie estimée des différentes batteries, les logs systèmes engrangés par le système informatique, etc.
 \item L'identification du site et des différents capteurs. % A voir.
 \end{itemize}
+
 La récupération se fera grâce à l'API qu'exposera le serveur centrale, décrite plus en détail dans le dossier ``APIs et Interfaces''. Tous les transferts sont bien sûr sécurisés.
 
 \subsubsection{Visualisation}
-Il s'agit du besoin principal de ce sous-système, qui doit permettre à l'utilisateur de superviser l'ensemble des sites isolés de manière efficace et sûr. Pour faciliter sa tâche, différents niveau de visualisation seront offerts:
+
+Il s'agit du besoin principal de ce sous-système, qui doit permettre à l'utilisateur de superviser l'ensemble des sites isolés de manière efficace et sûre. Pour faciliter sa tâche, différents niveaux de visualisation seront offerts :
+
 \begin{itemize}
-	\item L'affichage général de l'ensemble des sites présents le monde avec leur localisation, avec une mise en évidence des sites dans un état critique, pour aider l'utilisateur dans sa prise de décision.
-	\item L'affichage des données physiques ( niveau de liquide, état des batteries,...) d'un capteur que l'utilisateur aura sélectionné parmi tous les capteurs d'un site.
+	\item L'affichage général de l'ensemble des sites présents dans le monde avec leur localisation, avec une mise en évidence des sites dans un état critique, pour aider l'utilisateur dans sa prise de décision.
+	\item L'affichage des données physiques (niveau de liquide, état des batteries, ...) d'un capteur que l'utilisateur aura sélectionné parmi tous les capteurs d'un site.
 	\item L'affichage de l'historique des données d'un capteur pour gagner en traçabilité sur l'évolution d'un site.
-	\item L'affichage la liste des capteurs d'un site pour la sélection des capteurs mais aussi pour donner de manière condensé les informations sur un site.
-	\item L'affichage des paramètres de configuration actuelle de la station d'un site afin de pouvoir vérifier et attester son bon paramétrage.
+	\item L'affichage de la liste des capteurs d'un site pour la sélection des capteurs mais aussi pour donner de manière condensée les informations sur un site.
+	\item L'affichage des paramètres de configuration actuels de la station d'un site afin de pouvoir vérifier et attester de son bon paramétrage.
 	\item L'affichage de l'historique de paramétrage pour la traçabilité de l'évolution éventuelle des configurations.
 \end{itemize}
 
 \subsubsection{Configuration}
-Dans l'objectif d'optimiser le processus de maintenance, si elle peut être effectuée à distance, le logiciel de supervision offrira également des possibilités de configuration.
-L'utilisateur disposera d'interfaces pour modifier:
+
+Dans l'objectif d'optimiser le processus de maintenance, s'il peut être effectué à distance, le logiciel de supervision offrira également des possibilités de configuration.
+
+L'utilisateur disposera d'interfaces pour modifier :
+
 \begin{itemize}
 	\item Les différents quantum de temps définissant la granularité avec laquelle la station du site isolé effectue ses mesures et en transmet les résultats au système central.
 	\item Les fréquences de transmission satellite utilisées par le présent sous-système.
@@ -65,18 +81,25 @@ L'utilisateur disposera d'interfaces pour modifier:
 \end{itemize}
 
 \subsubsection{Expérience utlisateur}
+
 On attachera également une grande importance à la facilité d'apprentissage et d'utilisation, car l'utilisateur finale n'a pas forcément une grande connaissance dans le maniement des outils informatiques. Il n'est pas souhaitable qu'une formation soit nécessaire pour l'utilisation de ce nouvel outil.
 
 \subsection{Portée, développement, mise en oeuvre, organisation de la maintenance}
-Le développement du logiciel se fera en Java avec un modèle MVC, en utilisant les méthodes agiles, afin d'avoir un retour-utlisateur le plus tôt possible, pour minimiser le risque d'avoir un logiciel qui ne sera pas accepté et diminuer ainsi les besoins de maintenance. Ce type de développement offre également l'avantage de rassurer la MOA qui peut voir une réalisation concrète très rapidement avec la possibilité de réagir très rapidement pour la MOE si ce qui est fait ne correspond pas aux attentes et cette méthode semble particulièrement adapté vu la taille relativement faible en terme de développement de ce sous-système.\\
-Pour faciliter la future maintenance, on veillera à fournir une documentation suffissante tant sur l'application à proprement parlé que sur les tests effectués.
+
+Le développement du logiciel se fera en Java avec un modèle MVC, en utilisant les méthodes agiles, afin d'avoir un retour utlisateur le plus tôt possible pour minimiser le risque d'avoir un logiciel qui ne serait pas accepté et diminuer ainsi les besoins de maintenance. Ce type de développement offre également l'avantage de rassurer la MOA qui peut voir une réalisation concrète très rapidement avec la possibilité pour la MOE de réagir au fil de l'eau si ce qui est fait ne correspond pas aux attentes. Cette méthode semble particulièrement adapté vu la taille relativement faible en terme de développement de ce sous-système.\\
+
+Pour faciliter la future maintenance, on veillera à fournir une documentation suffissante tant sur l'application à proprement parler que sur les tests effectués.
 
 \subsection{Limites}
+
 Si aucune connexion avec le serveur central ne peut être établie, le logiciel n'est pas fonctionnel, dans le sens où seul la configuration au serveur central est possible.
 
 \section{Exigences fonctionnelles}
+
 \subsection{Fonctions de base, performances et aptitudes}
+
 On distinguera les fonctions principales suivantes:
+
 \begin{itemize}
 	\item authentification pour accéder aux serveurs,
 	\item affichage d'une carte avec la localisation des différents sites sur une carte,
@@ -92,6 +115,7 @@ On distinguera les fonctions principales suivantes:
 Au niveau des performances, on offrira une application fluide, sans aucun processus bloquant pour l'interface, pour ne pas gêner l'utilisateur et surtout lui offrir une expérience de navigation rapide et fluide.
 
 \subsection{Contraintes d'utilisation}
+
 La seule contrainte est d'avoir un accès au serveur central par Internet.
 
 \subsection{Critères d'appréciation de la réalisation effective de la fonction}
@@ -114,22 +138,24 @@ La seule contrainte est d'avoir un accès au serveur central par Internet.
 %\subsection{Flexibilité dans la façon de mettre en oeuvre la fonction convercée, variation de coûts associée en fonction de cette flexibilité}
 
 \section{Exigences non fonctionnelles}
+
 \subsection{Sécurité}
 Il faut que l'accès aux paramétrages des stations soient sécurisés pour éviter toute mauvaise configuration qui pourrait nuire à la pérennité du sytème.
 
 \subsection{Fiabilité}
-La fiabilité de l'application installé doit être bonne, avec une résistance aux erreurs, pour éviter de paralyser la prise de décision.
+La fiabilité de l'application installée doit être bonne, avec une résistance aux erreurs, pour éviter de paralyser la prise de décision.
 
 \subsection{Portabilité}
-Pour que le logiciel soit installable sur différents configurations matérielles ou logicielles (systèmes d'exploitation différents), le logiciel sera développé dans un langage de haut niveau qui sera executé sur la machine virtuelle de l'ordinateur cible. On a choisit Java car c'est un langage très largement utilisé.
+Pour que le logiciel soit installable sur différents configurations matérielles ou logicielles (systèmes d'exploitation différents), le logiciel sera développé dans un langage de haut niveau qui sera executé sur la machine virtuelle de l'ordinateur cible. Nous avons choisi Java car c'est un langage cross-platform très largement utilisé.
 
-\subsection{Ergonoomie}
+\subsection{Ergonomie}
 Le logiciel doit être le plus ergonomique possible pour faciliter la prise en main et avoir un haut niveau d'acceptation auprès des utilisateurs finaux. L'objectif est de fournir un logiciel dont la prise en main ne nécessitera aucune formation, mais juste le temps de parcourir les différentes fenêtres.
 
 \subsection{Modularité}
 En séparant distinctement les différents couches d'acquisition de données (auprès d'un autre module) de l'affichage, pour permettre une maintenance plus facile et évolutive en cas d'évolution future.
 
 \section{Contraintes imposées, faisabilité technologique, moyens}
+
 \subsection{Sûreté, planning, organisation, communication}
 
 \subsection{Complexité}
@@ -148,6 +174,7 @@ Les compétences nécessaires à la réalisation du projet :
 Les normes de documentation à adopter sont décrites dans le plan d'assurance qualité commun aux différents éléments de ce projets.
 
 \section{Configuration cible}
+
 \subsection{Matériels et logiciels}
 La configuration minimale pour le bon fonctionnement du logiciel : 
 \begin{itemize}
@@ -167,7 +194,7 @@ Lors de futur évolution, on veillera à ce que la configuration minimale n'évo
 Ce sous-système n'expose aucune API, il y fait seulement appel.
 
 \section{Guide de réponse au cahier des charges}
-La réponse au cahier des charges se fera particulièrement sur la documentation, notament au niveau des tests. Une première verification sera ainsi effectué pour confirmer l'état du projet. Une fois cette étape validé, une prise en main et vérification complète du système sera effectué.
+La réponse au cahier des charges se fera particulièrement sur la documentation, notament au niveau des tests. Une première verification sera ainsi effectuée pour confirmer l'état du projet. Une fois cette étape validée, une prise en main et vérification complète du système sera effectué.
 
 \section{Annexes}
 %\subsection{Observations de l'existant}
