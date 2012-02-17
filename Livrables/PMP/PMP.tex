@@ -1,11 +1,11 @@
 \section{Introduction}
-Nous répondons dans l'ensemble des documents produits par l'hexanôme H4111 à l'appel d'offre lancé par le COPEVUE visant à concevoir un Système de monitoring à distance de sites isolés. Dans ce document sont détaillés avec plus de précisions les constituants  du projet. Nous insisterons donc sur les points de vue organisationnels liés à la conception de notre solution technique.Après avoir resitué le contexte du problème, il s'agira de définir les objectifs ainsi que les contraintes liés à ce type de projet. Sont détaillées aussi dans ce document, les méthodes de travail,la répartition des rôles au sein du groupe d'ingénierie ainsi que le planning de répartition des tâches et des charges de travail. 
+Nous répondons dans l'ensemble des documents produits par l'hexanôme H4111 à l'appel d'offre lancé par le COPEVUE visant à concevoir un Système de monitoring à distance de sites isolés. Dans ce document sont détaillés avec plus de précisions les constituants  du projet. Nous insisterons donc sur les points de vue organisationnels liés à la conception de notre solution technique.Après avoir resitué le contexte du problème, il s'agira de définir les objectifs ainsi que les contraintes liées à ce type de projet. Sont détaillées aussi dans ce document, les méthodes de travail,la répartition des rôles au sein du groupe d'ingénierie ainsi que le planning de répartition des tâches et des charges de travail. 
 
 \subsection{Présentation du projet}
-Le COPEVUE a lancé un appel d'offre dans le cadre de la réalisation d'un système de monitoring de sites isolés. Il s'agit donc de concevoir en premier lieu une solution technique permettant de répondre aux mieux aux exigences fonctionnelles et non fonctionnelles que le COPEVUE formule. De façon synthétique notre équipe va proposer une solution permettant de surveiller des sites naturels difficiles d'accès (souvent à cause des conditions environnementales) et peu peuplés. Dans ces sites isolés sont souvent regroupés des postes de travail et ces zones doivent pouvoir être surveillées en dépit de la distance qui les sépare du bureau de contrôle.
+Le COPEVUE a lancé un appel d'offre dans le cadre de la réalisation d'un système de monitoring de sites isolés. Il s'agit donc de concevoir en premier lieu une solution technique permettant de répondre au mieux aux exigences fonctionnelles et non fonctionnelles que le COPEVUE formule. De façon synthétique, notre équipe va proposer une solution permettant de surveiller des sites naturels difficiles d'accès (souvent à cause des conditions environnementales) et peu peuplés. Dans ces sites isolés sont souvent regroupés des postes de travail et ces zones doivent pouvoir être surveillées en dépit de la distance qui les sépare du bureau de contrôle.
 
 \subsubsection{Contexte du projet}
-Notre cas d'étude se limite pour l'instant à considérer une situation simple : comment pouvoir maintenir de manière rentable des réserves de tel ou tel composé à un niveau correct bien que le site de stockage soit situer dans des zones difficiles d'accès ? L'idéal serait donc de pouvoir suivre a distance l'évolution d'un niveau d'un composé en fonction du temps.Le ravitaillement serait ainsi plus raisonnable car on saurait alors la quantité de composant à acheminer sur place. Trouver une solution fonctionnelle à cette problématique permettrait ainsi d'économiser en frais de maintenance mais aussi et surtout d'éviter certaines catastrophe écologique comme par exemple un manque d'eau dans un réservoir lors d'un feu de forêt ou encore une fuite de carburant d'un réservoir de forêt.
+Notre cas d'étude se limite pour l'instant à considérer une situation simple : comment pouvoir maintenir de manière rentable des réserves de tel ou tel composé à un niveau correct bien que le site de stockage soit situé dans des zones difficiles d'accès ? L'idéal serait donc de pouvoir suivre a distance l'évolution d'un niveau d'un composé en fonction du temps.Le ravitaillement serait ainsi plus raisonnable car on saurait alors la quantité de composant à acheminer sur place. Trouver une solution fonctionnelle à cette problématique permettrait ainsi d'économiser en frais de maintenance mais aussi et surtout d'éviter certaines catastrophes écologiques comme par exemple un manque d'eau dans un réservoir lors d'un feu de forêt ou encore une fuite de carburant d'un réservoir de forêt.
 
 \subsubsection{Objectifs du projet}
 Les objectifs principaux de ce projet sont pour ainsi dire assez simple conceptuellement parlant, il s'agit en effet de pouvoir surveiller à distance une installation présente sur un site isolé en installant un réseau de capteurs que l'on va pouvoir relevé et maintenir à distance. Dans un deuxième temps, notre sytème permettra de même d'anticiper les pannes et les desagréments au niveau du site à monitorer en générant des alertes au sein d'un site de supervision pouvant être situé à des miliers de kilomètres des sites à surveiller.
@@ -22,8 +22,7 @@ Ce document a pour objectif de décrire le pilotage de  tout le projet du point 
 
 \section{Organisation du projet et différents acteurs}
 \subsection{La maitrise d'ouvrage}
-La maitrise d'ouvrage sera représentée par la comission européenne COPEVUE en charge de l'envoi de l'appel d'offre aux différents bureaux d'études. Il pourra être intéressant de mettre en oeuvre un site dit tampon ou de référence permettant de tester en temps réel les améliorations apportées au système. Ce système pourra être testé en présence de représentants du
- COPEVUE pour attester de l'avancée du travail.
+La maitrise d'ouvrage sera représentée par la commission européenne COPEVUE en charge de l'envoi de l'appel d'offre aux différents bureaux d'études. Il pourra être intéressant de mettre en oeuvre un site dit tampon ou de référence permettant de tester en temps réel les améliorations apportées au système. Ce système pourra être testé en présence de représentants du COPEVUE pour attester de l'avancée du travail.
 \subsection{La maitrise d'oeuvre}
 L'équipe de travail en charge de ce projet sera augmentée de quelques personnes par rapport à l'équipe en charge de la réponse à l'appel d'offre.
 Notre groupe se compose donc au final de :
@@ -54,7 +53,7 @@ D'après le cycle de vie du système décrit plus haut, il est nécessaire de se
 \includegraphics[width=\textwidth]{png/decoupageType.png}
 \end {center}
 
-Le premier niveau de découpage d'un système en sous systèmes dissocie les différents domaines fonctionnels présent au sein du système à construire. Dans un deuxième temps, il s'agit de s'intéresser plus aux découpages logiciels/matériels qui peuvent être fait pour chaque sous-système représentant un domaine fonctionnel.
+Le premier niveau de découpage d'un système en sous-systèmes dissocie les différents domaines fonctionnels présent au sein du système à construire. Dans un deuxième temps, il s'agit de s'intéresser plus aux découpages logiciels/matériels qui peuvent être fait pour chaque sous-système représentant un domaine fonctionnel.
 Ensuite, chaque sous-système de 2ème niveau va donner lieu à l'établissement de cahiers des charges. Ces cahiers des charges seront les résultats (en termes de livrables) de la décomposition des sous-systèmes en sous projets. Lorsque l'on rédige les cahiers des charges touchant aux différents sous projets, l'équipe se fait une idée très précise de comment doit s'articuler le système.
 
 \subsection{Découpage du système monitoring de sites isolés}
@@ -62,10 +61,6 @@ Nous avons découpé notre système en suivant le document de référence \og D�
 
 \subsubsection{Découpage du système en sous-systèmes}
 
-%TODO Mettre en landcape ce png.
-%\begin {center}
-%\includegraphics[width=\textwidth]{png/graphDecompoSousSystemes.png}
-%\end {center}
 
 \begin{figure}[H]
 \centering
@@ -108,7 +103,7 @@ Pour chaque système, voici leurs décompositions en sous projets. Nous insiston
 \begin{itemize}
 \item Sous-projet 1.1.1 : Le déploiement de la pile à combustible consiste dans un premier temps en l'acquisition du matériel à installer sur place au niveau du site isolé à savoir le reservoir d'hydrogène ainsi que le générateur qui transforme de cette hydrogène préssurisé en éléctricité. Il est donc nécessaire de disposer du matériel nécessaire pour réaliser cette installation à savoir :  2 ou 3 techniciens selon la taille du site à monitorer, un camion équipé en outils mais aussi équipé d'un lieu à vivre pour pouvoir éventuellement loger les techniciens le temps de l'installation du système de production d'énergie. Le camion doit pouvoir être traçable par GPS et les techniciens doivent éffectué leur reporting quotidiennement.
 \item Sous-projet 1.1.2 : La maintenance de l'installation électrique doit pouvoir être faite à distance. Pour cela il est nécessaire d'avoir un bilan de l'état de marche de la station. Il est donc nécessaire que des capteurs soient installés au niveau des installations électriques pour guetter un éventuel problème de fonctionnement du système. Ce système de maintenance/supervision permet donc d'anticiper les pannes et le cas échéant, de faire intervenir un techicien sur zone. L'installation des outils de relevé de la santé du système électrique devront être fait en même temps que la mise en marche de la station d'acquisition des données capteurs car c'est elle qui va relayer l'information vers le poste de supervision.
-\item Sous-projet 1.1.3 : La maintenance de l'installation de production d'énergie devra être planifiée, il sera donc nécessaire d'envoyer des techniciens de manière très espacé dans le temps (tout les ans ou tout les deux ans) afin de vérifier l'état de la pile à hydrogène. Cette vérification est obligatoire et ne remet pas en cause le sous-projet précédent permettant de dresser le bilan de santé en temps réel de l'installation électrique. Ce type de travail peut être réalisé par un technicien seul. Le principe étant qu'un technicien puisse réviser toute les stations d'une zone en se déplaçant avec son camion. De même, ce technicien est tenu au reporting quotidien via l'interface smartphone de la plateforme de supervision.
+\item Sous-projet 1.1.3 : La maintenance de l'installation de production d'énergie devra être planifiée, il sera donc nécessaire d'envoyer des techniciens de manière très espacée dans le temps (tout les ans ou tout les deux ans) afin de vérifier l'état de la pile à hydrogène. Cette vérification est obligatoire et ne remet pas en cause le sous-projet précédent permettant de dresser le bilan de santé en temps réel de l'installation électrique. Ce type de travail peut être réalisé par un technicien seul. Le principe étant qu'un technicien puisse réviser toutes les stations d'une zone en se déplaçant avec son camion. De même, ce technicien est tenu au reporting quotidien via l'interface smartphone de la plateforme de supervision.
 \item Sous-projet 1.2.1 : Le monitoring de l'installation électrique consistera en la restitution des informations renvoyées par les capteurs vers le centre de supervision. Lors d'un problème technique nécessitant de se déplacer, une fiche d'intervention sera formulée et adressée au technicien en charge du site. Cette fiche décrira le problème, rappelera les éventuelles étapes de réparation et prodiguera des conseils pratiques aidant le technicien. Tout ceci sera donc accessible au technicien par le biais de son interface smartphone.
 \medskip
 \item Sous-projet 2.1.1 : Le déploiement des capteurs sur site sera éffectué de la même façon que pour le déploiement de la pile a hydrogène. Après l'acquisition matérielle des capteurs et la préparation de ceux-ci pour l'installation sur site, un groupe de technicien sera chargé d'installer physiquement ces capteurs sur site suivant les plans fournis par la R\&D. En plus des techniciens, il peut être intéressant qu'un ingénieur puisse manager le projet au sein du site isolé afin de palier aux éventuels problèmes de dernière minute.
@@ -130,7 +125,6 @@ Pour chaque système, voici leurs décompositions en sous projets. Nous insiston
 \item Sous-projet 5.1.1 : La mise en place d'une solution de reporting technicien sera implémenté sous différentes plateformes à savoir l'interface web et l'application smartphone. L'application smartphone devra permettre le reporting du technicien au moment de son intervention. Ce reporting sera transmis puis mis à disposition du superviseur via l'interface web.
 \item Sous-projet 5.3.1 : Mise en place d'une solution d'aide à la décision pour l'intervention du technicien. Via l'interface web ou l'application smartphone, le technicien sera conseillé sur la manière de regler tel ou tel problème lorsqu'il est sur site. Les plans ainsi que les manuels des capteurs numérisés seront interprétés et les informations importantes pourront être restituées au techniciens.
 \item Sous-projet 5.3.2 : Intégration d'un progiciel de gestion des flux logistiques. Afin de positionner le camion d'intervention, savoir quand l'envoyer sur site, faire l'inventaire des outils nécessaires à une intervention.
-%TODO Continuer.
 \end{itemize}
 
 
@@ -145,7 +139,6 @@ Chaque projet défini plus haut va amener à l'établissement d'un cahier des ch
 
 \section{Moyens à mettre en oeuvre}
 
-\subsection{Moyens matériels}
 \subsection{Moyens logiciels}
 Listes des différents outils et méthodes qui seront utilisés tout au long du projet:
 \begin{itemize}
