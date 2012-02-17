@@ -96,7 +96,11 @@ Les différentes composants du système central utiliseront les technologies sui
 
 \subsection{Modèles de données du système}
 
-La question s'est rapidement posée sur la fléxibilité que nous voulions apporter à notre modèle de données. En effet, on peut facilement imaginer que le système aura à évoluer à l'avenir selon les fonctionnalités que l'on voudra lui apporter, et le schéma de données du système sera naturellement amené à s'adapter à ces évolutions.
+La question s'est rapidement posée sur la flexibilité que nous voulions apporter à notre modèle de données. En effet, on peut facilement imaginer que le système aura à évoluer à l'avenir selon les fonctionnalités que l'on voudra lui apporter, et le schéma de données du système sera naturellement amené à s'adapter à ces évolutions. Il faut donc nous assurer dès maintenant que cette transition à venir pourra se faire sans problèmes.
+
+Cela peut se traduire par plusieurs règles à respecter lors du développement de certains parties du système. Il a déjà été mentionné auparavant qu'une architecture en couches sera nécessaire pour garantir la maintenabilité du système, et on peut peut rajouter à cela la contrainte de pouvoir régénerer automatiquement la couche DAO des différents composants du système lors d'une modification du schéma de la base de données. Dans le même esprit, on peut aussi imaginer que l'interface d'édition des différents objets métier puisse se construire à la volée en fonction des propriétés de ceux-ci.
+
+C'est évidement une des contraintes dont nous avons du tenir compte lors du choix du DBMS à utiliser. Il fallait en effet que celui-ci puisse supporter des modifications de schéma en temps réel, sans que cela n'ai d'impact sur les performances de celui-ci, et même qu'il puisse accepter plusieurs versions en paralèlle d'un même schéma.
 
 \subsection{Volume de données}
 
@@ -121,6 +125,8 @@ Un autre point important est le serveur central, qui matériellement ne présent
 
 \section{Annexe 2 : Réflexion sur le réseau (principes qualité, pour la conception du réseau,
 description du réseau (logiciel, couches…)…}
+
+
 
 \section{Annexe 3 : Démarrage du système}
 
